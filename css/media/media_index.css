@@ -1,0 +1,229 @@
+@media all and (min-width:1025px) and (max-width:1200px){
+/*################## visual 1025 ~ 1024px ######################*/
+	.visual_main{height:750px;}
+		.visual_main_icon{width:130px; height:130px; margin-left:-65px;}
+
+/*################# room_info 1025 ~ 1200px ####################*/
+	#room_info{height:750px;}
+		.room_area ul{height:655px;}
+		.room_area img{min-width:1200px; min-height:750px; position:absolute;}
+
+/*################# location 1025 ~ 1200px #####################*/
+	#location{
+						width:1024px;
+						height:375px;
+	}
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+@media all and (min-width:769px) and (max-width:1024px){
+/*########################## header 769 ~ 1024px ###############################*/
+/*#################### gnb 769 ~ 1024px #######################*/
+	.sub_gnb_list li a{color:#fff; font-size:11px; padding:0 5px;}
+
+/*########################## content 769 ~ 1024px ##############################*/
+/*################# visual 769 ~ 1024px #####################*/
+	.visual_main{height:650px;}
+		.visual_main_text h3{font-size:1.8em;}
+		.visual_main_text em{font-size:1em;}
+
+		.visual_main_icon{width:120px; height:120px; margin-left:-60px;}
+
+/*################ room_info 769 ~ 1024px ###################*/
+	#room_info{height:650px;}
+		.room_area ul{height:560px;}
+			.room_area	ul li div h4{font-size:18px;}
+			.room_area	ul li div p{font-size:12px;}
+			.room_area img{min-width:900px; min-height:650px; position:absolute;}
+
+/*################ special 769 ~ 1024px ####################*/
+	#special{height:350px;}
+		#special h2{padding-top:30px;}
+		.special_area{height:250px; padding-top:30px;}
+			.film_special{width:2500px; height:250px; padding-top:30px;}
+				.film_special li{width:180px;height:180px;border-radius:90px;}
+					.film_special li img{margin-left:-138px; margin-top:-40px;}
+
+/*################## tour 769 ~ 1024px ####################*/
+	#tour{height:550px; margin-top:30px;}
+		.pic_group{margin:10px auto 0;}
+			.pic_back{bottom:10%; left:10%;}
+
+/*################# about 769 ~ 1024px ###################*/
+	#about{height:300px; margin:0 auto 30px;}
+
+/*############### location 769 ~ 1024px ##################*/
+	#location{width:100%; margin:0 auto 50px;}
+		.location_area{margin-top:30px;}
+
+/*########################## footer 769 ~ 1024px ###############################*/
+/*############# footer bottom 769 ~ 1024px ###############*/
+	.footer_bottom_area{width:100%; height:100%; margin:0 auto;}
+	}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+@media all and (min-width:481px) and (max-width:768px){
+/*########################## header 481 ~ 768px ###############################*/
+/*#################### gnb 481 ~ 768px #######################*/
+	#header{width:100%; height:50px;}
+		h1{width:140px; height:30px; margin-left:-70px; top:5px;}
+		.d_gnb{display:none;}
+		.gnb{display:none;}
+		.nav{display:none;}
+		.m_header_btn{display:block;}
+
+/*########################## content 481 ~ 768px ###############################*/
+	#contentWrap{padding-top:50px;}
+
+/*################### visual 481 ~ 768px #######################*/
+	.visual_main_icon{width:100px; height:100px; margin-left:-50px;}
+	.visual_main_text{width:80%;margin-left:-40%;}
+		.visual_main_text h3{font-size:24px;}
+		.visual_main_text em{font-size:14px;}
+
+/*################## room_info 481 ~ 768px #####################*/
+	#room_info{height:2860px;}
+		#room_info h2{color:#000; top:20px;}
+		.room_area .dark{display:none;}
+			.room_scene{padding-top:60px;}
+		.m_room_area{display:block;}
+			.room_area	ul li{width:100%; height:350px; border:none; border-bottom:1px solid #fff; background:url("../../img/preview/00_alie.jpg") no-repeat center center; background-size:cover;}
+			.room_area	ul li.pre01_amant{background-image:url("../../img/preview/01_amant.jpg");}
+			.room_area	ul li.pre02_mistere{background-image:url("../../img/preview/02_mister.jpg");}
+			.room_area	ul li.pre03_hobby{background-image:url("../../img/preview/03_hobby.jpg");}
+			.room_area	ul li.pre04_blancmoir{background-image:url("../../img/preview/04_blancnoir.jpg");}
+			.room_area	ul li.pre05_mienne{background-image:url("../../img/preview/05_mienne.jpg");}
+			.room_area	ul li.pre06_rosa{background-image:url("../../img/preview/06_missa.jpg");}
+			.room_area	ul li.pre07_bonuour{background-image:url("../../img/preview/07_bonjour.jpg");}
+				.room_area	ul li .dark{display:block;}
+				.room_area	ul li div{color:#fff;}
+
+/*################### special 481 ~ 768px ######################*/
+	#special{height:1305px;}
+		#special h2{padding-top:15px;}
+		/*높이값 = #special - #special h2(padding) - .special_area(padding)*/
+		.special_area{height:1260px; padding-top:15px;}
+			.stick{display:none;}
+			.film_special{width:100%; height:100%; padding-top:0;}
+				.film_special li{width:50%; border-radius:0; margin-right:0; border-bottom:1px solid #fff; box-sizing:border-box;}
+				.right{border-right:1px solid #fff; box-sizing:border-box;}
+				.film_special .dark{border-radius:0; opacity:1;}
+
+/*#################### tour 481 ~ 768px #######################*/
+	#tour{margin-top:15px; height:370px;}
+		.pic_group{width:100%; height:300px; margin:15px auto 0;}
+			.pic{width:420px; height:260px;}
+			.pic_back_text{font-size:18px;}
+
+/*################### about 481 ~ 768px ######################*/
+	#about{height:250px; margin:0 auto 15px;}
+		#about a h2{margin-left:-157px;font-size:22px;}
+		#about a p{margin-left:-32px; font-size:12px;}
+
+/*################# location 481 ~ 768px ####################*/
+	#location{width:100%; height:300px; margin:0 auto}
+		.location_area{width:100%; height:230px; position:relative; margin-top:15px;}
+			.location_text{font-size:12px;}
+				.location_text strong{font-size:15px; color:#fff;}
+			.more_info{position:bottom:10%; right:10%;}
+
+/*########################## footer 481 ~ 768px ###############################*/
+
+		.footer_gnb{width:100%; font-size:12px; text-align:center;}
+
+	.footer_bottom{width:100%; height:330px; background-color:#2B2727;}
+	.footer_bottom_area{width:100%;}
+		.footer_info li{width:100%; margin-right:0; padding-bottom:20px;}
+
+			.footer_info li dl dt{font-size:14px;}
+}
+	@media all and (min-width:320px) and (max-width:480px){
+		/*########################## header 320 ~ 480px ###############################*/
+			.m_menu_btn{left:20px;}
+			.m_reser_btn{right:20px;}
+			.m_menu_close_btn{left:20px;}
+			.m_header_btn{display:block;}
+		/*#################### gnb 320 ~ 480px #######################*/
+			#header{width:100%; height:50px;}
+				h1{width:140px; height:30px; margin-left:-70px; top:5px;}
+				.d_gnb{display:none;}
+				.gnb{display:none;}
+				.nav{display:none;}
+
+		/*########################## content 320 ~ 480px ###############################*/
+			#contentWrap{padding-top:50px;}
+
+		/*################### visual 320 ~ 480px #######################*/
+			.visual_main_icon{width:100px; height:100px; margin-left:-50px;}
+			.visual_main_text{width:80%;margin-left:-40%;}
+				.visual_main_text h3{font-size:24px;}
+				.visual_main_text em{font-size:14px;}
+
+		/*################## room_info 320 ~ 480px #####################*/
+			#room_info{height:1790px;}
+			h2{font-size:11px;}
+				#room_info h2{color:#000; top:10px; margin-left:-68px;}
+				.room_area .dark{display:none;}
+					.room_scene{padding-top:35px;}
+				.m_room_area{display:block;}
+					.room_area	ul li{width:100%; height:220px; border:none; border-bottom:1px solid #fff; background:url("../../img/preview/00_alie.jpg") no-repeat center center; background-size:cover;}
+					.room_area	ul li.pre01_amant{background-image:url("../../img/preview/01_amant.jpg");}
+					.room_area	ul li.pre02_mistere{background-image:url("../../img/preview/02_mister.jpg");}
+					.room_area	ul li.pre03_hobby{background-image:url("../../img/preview/03_hobby.jpg");}
+					.room_area	ul li.pre04_blancmoir{background-image:url("../../img/preview/04_blancnoir.jpg");}
+					.room_area	ul li.pre05_mienne{background-image:url("../../img/preview/05_mienne.jpg");}
+					.room_area	ul li.pre06_rosa{background-image:url("../../img/preview/06_missa.jpg");}
+					.room_area	ul li.pre07_bonuour{background-image:url("../../img/preview/07_bonjour.jpg");}
+						.room_area	ul li .dark{display:block;}
+						.room_area	ul li div{color:#fff;}
+							.room_area	ul li div h4{font-size:18px;}
+							.room_area	ul li div p{width:100%; font-size:11px;}
+
+		/*################### special 320 ~ 480px ######################*/
+			#special{height:885px;}
+				#special h2{padding-top:10px;}
+				/*높이값 = #special - #special h2(padding) - .special_area(padding)*/
+				.special_area{height:1260px; padding-top:10px;}
+					.stick{display:none;}
+					.film_special{width:100%; height:100%; padding-top:0;}
+						.film_special li{width:50%; height:170px; border-radius:0; margin-right:0; border-bottom:1px solid #fff; box-sizing:border-box;}
+						.film_special li img{margin-left:-210px; margin-top:-80px;}
+						.right{border-right:1px solid #fff; box-sizing:border-box;}
+						.film_special .dark{border-radius:0; opacity:1;}
+
+		/*#################### tour 320 ~ 480px #######################*/
+			#tour{margin-top:15px; height:280px;}
+				.pic_group{width:100%; height:225px; margin:10px auto 0;}
+					.pic{width:290px; height:200px;}
+					.pic_back_text{font-size:16px;right:-10%; top:30%;}
+
+		/*################### about 320 ~ 480px ######################*/
+			#about{height:200px; margin:0 auto 10px;}
+				#about a h2{margin-left:-128px;font-size:18px;}
+				#about a p{margin-left:-32px; font-size:11px;}
+
+		/*################# location 320 ~ 480px ####################*/
+			#location{width:100%; height:220px; margin:0 auto}
+				.location_area{width:100%; height:180px; position:relative; margin-top:10px;}
+					.location_text{font-size:10px; padding:5% 0 0 5%;}
+						.location_text strong{font-size:13px; color:#fff;}
+					.location_phone img{width:11px; height:9px;}
+					.more_info{bottom:5%; right:5%; font-size:12px;}
+
+					.location_img{width:85%;}
+
+		/*########################## footer 320 ~ 480px ###############################*/
+
+				.footer_gnb{width:100%; font-size:12px; text-align:center;}
+					.footer_gnb li{margin-left:2px;}
+						.footer_gnb li a{padding:5px 3px;}
+				.footer_logo{padding-top:10px;}
+
+			.footer_bottom{width:100%; height:330px; background-color:#2B2727;}
+			.footer_bottom_area{width:100%;}
+				.footer_info li{width:100%; margin-right:0; padding-bottom:20px;}
+
+					.footer_info li dl dt{font-size:14px;}
+		}

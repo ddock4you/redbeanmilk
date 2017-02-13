@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta  charset="utf-8"/>
+  <title> CLAIRE PENSION </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+  <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+  <link rel="stylesheet" type="text/css" href="css/reservation_step2.css"/>
+  <link rel="stylesheet" type="text/css" href="css/media_index.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="css/ie7.css"/>
+  <![endif]-->
+  <!--[if IE 8]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 9]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 10]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <style type="text/css">
+
+  </style>
+  <script type="text/javascript">
+  //Sub_gnb 영역
+  jQuery(document).ready(function(){
+	$(".sub_gnb ul").hide();
+
+	$(".sub_gnb").bind("click mouseover focusin",function(){
+		$(this).children("ul").stop().slideDown(500);
+	}).bind("mouseout focusout",function(){
+		$(this).children("ul").stop().slideUp(500);
+	});
+
+
+  });
+
+  //Room 선택 영역
+	jQuery(document).ready(function(){
+		$(".pre00_alie").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/00_alie.jpg");
+		});
+
+		$(".pre01_amant").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/01_amant.jpg");
+		});
+
+		$(".pre02_mistere").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/02_mister.jpg");
+		});
+
+		$(".pre03_hobby").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/03_hobby.jpg");
+		});
+
+		$(".pre04_blancmoir").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/04_blancnoir.jpg");
+		});
+
+		$(".pre05_mienne").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/05_mienne.jpg");
+		});
+
+		$(".pre06_rosa").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/06_missa.jpg");
+		});
+
+		$(".pre07_bonuour").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/07_bonjour.jpg");
+		});
+	});
+  //로그인 페이지 on/off
+  	jQuery(document).ready(function(){
+      $("#top_headerWrap").hide();
+      $(".login a").bind("click focusin", function(){
+        $("#top_headerWrap").slideDown(500);
+      }).focusout(function(){
+        $("#top_headerWrap").slideUp(500);
+      });
+
+      $(".login a").siblings().click(function(){
+        $("#top_headerWrap").slideUp(500);
+      });
+    });
+  </script>
+ </head>
+
+ <body>
+	<div id="wrap">
+		<div id="headerWrap">
+			<div id="top_headerWrap">
+				<form class="login_info" action="#" method="post">
+					<fieldset>
+						<legend class="blind">로그인 영역</legend>
+            <h2>LOGIN</h2>
+            <div class="input_user">
+							<p class="input_userid">
+								<input id="userid" type="text" name="userid" required placeholder="ID 입력"/>
+							</p>
+							<p class="input_userpw">
+								<input id="userpw" type="password" name="userpw" required placeholder="Password 입력" autocomplete=off;/>
+							</p>
+              <p class="input_btn_login">
+                <input id="btn_login" type="button" name="btn_login" value="login"/>
+              </p>
+						</div>
+            <div class="input_etc">
+              <ul>
+                <li>
+                  <a href="#none" title="회원가입 페이지로 이동">회원가입</a>
+                </li>
+                <li>
+                  <a href="#none" title="아이디 찾기 페이지로 이동">아이디 찾기</a>
+                </li>
+                <li>
+                  <a href="#none" title="비밀번호 찾기 페이지로 이동">비밀번호 찾기</a>
+                </li>
+              </ul>
+            </div>
+					</fieldset>
+				</form>
+			</div>
+			<div id="bottom_headerWrap">
+        <div class="nav"><!--로그인 관련 gnb-->
+          <ul>
+            <li class="login">
+              <a href="#none" title="login page 열기">log in</a>
+            </li>
+            <!--<li class="welcome">
+              <a href="#none" title="welcome">윤승현 님 환영합니다!</a>
+            </li>
+            <li class="logout">
+              <a href="#none" title="log out">log out</a>
+            </li>
+            <li class="mypage">
+              <a href="#none" title="my page">my page</a>
+            </li>-->
+            <li class="joinus">
+              <a href="#none" title="join us 열기">join us</a>
+            </li>
+            <li class="fast_event">
+              <a href="#none" title="log out">
+              <img src="img/icon_event.png" alt="이벤트 이미지"/>
+                event</a>
+            </li>
+          </ul>
+        </div>
+				<div id="header">
+					<h2 class="blind">HEADER</h2>
+					<h1>
+						<a href="#mome" title="메인 홈페이지로 이동">
+							<img src="img/logo_claire.png" alt="로고"/>
+						</a>
+					</h1>
+					<div class="m_l_gnb"><!--모바일 전용 left gnb-->
+						<p>
+							<a href="#none" title="메뉴">
+								<img src="img/menu.png" alt="메뉴 아이콘 이미지"/>
+							</a>
+						</p>
+					</div>
+					<div class="m_r_gnb"><!--모바일 전용 right gnb-->
+						<p class="m_fast_reservation">
+							<a href="#none" title="reservation 페이지로 이동">
+								<img src="img/icon_reservation.png">
+							</a>
+						</p>
+					</div>
+					<div class="gnb">
+						<ul class="sub_gnb_list">
+
+							<li class="sub_gnb">
+								<a href="#none" title="room info 페이지로 이동"><span></span>room info V</a>
+								<ul>
+									<li><a href="#none" title="ALIE 방 페이지로 이동">ALIE</a></li>
+									<li><a href="#none" title="AMANT 방 페이지로 이동">AMANT</a></li>
+									<li><a href="#none" title="MISTER 방 페이지로 이동">MISTER</a></li>
+									<li><a href="#none" title="HOBBY 방 페이지로 이동">HOBBY</a></li>
+									<li><a href="#none" title="BLANCNOIR 방 페이지로 이동">BLANCNOIR</a></li>
+									<li><a href="#none" title="MIENNE 방 페이지로 이동">MIENNE</a></li>
+									<li><a href="#none" title="MISSA 방 페이지로 이동">MISSA</a></li>
+									<li><a href="#none" title="BONJOUR 방 페이지로 이동">BONJOUR</a></li>
+								</ul>
+							</li>
+							<li class="sub_gnb">
+								<a href="#none" title="special 페이지로 이동"><span></span>special V</a>
+								<ul class="sub_gnb_list">
+									<li><a href="#none" title="SWIMMING POOL 페이지로 이동">POOL</a></li>
+									<li><a href="#none" title="ZET SPA  페이지로 이동">ZET SPA</a></li>
+									<li><a href="#none" title="BARBECUE  페이지로 이동">BARBECUE</a></li>
+									<li><a href="#none" title="CAFFE  페이지로 이동">CAFFE</a></li>
+									<li><a href="#none" title="BEAM PROJECT  페이지로 이동">BEAM PROJECT</a></li>
+									<li><a href="#none" title="GAME CENTER  페이지로 이동">GAME CENTER</a></li>
+									<li><a href="#none" title="LOUNGE  페이지로 이동">LOUNGE</a></li>
+									<li><a href="#none" title="EVENT  페이지로 이동">EVENT</a></li>
+									<li><a href="#none" title="KIDS  페이지로 이동">KIDS</a></li>
+									<li><a href="#none" title="SERVICE  페이지로 이동">SERVICE</a></li>
+								</ul>
+							</li>
+              <li class="reservation_gnb">
+								<a href="#none" title="location 페이지로 이동"><span></span>reservation</a>
+							</li>
+							<li>
+								<a href="#none" title="guide tour 페이지로 이동"><span></span>guide tour</a>
+							</li>
+							<li class="sub_gnb">
+								<a href="#none" title="contact us 페이지로 이동"><span></span>contact us V</a>
+                <ul class="sub_gnb_list">
+									<li><a href="#none" title="공지사항 페이지로 이동">공지사항</a></li>
+									<li><a href="#none" title="QnA  페이지로 이동">QnA</a></li>
+									<li><a href="#none" title="여행후기 페이지로 이동">여행후기</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="contentWrap">
+      <div class="slide_area">
+				<span class="dark"></span>
+				<div class="slide_area_title">
+					<hr/>
+					<h2>RESERVATION</h2>
+				</div>
+			</div>
+      <form class="reservation_form" action="#" method="post">
+        <div class="option confirm">
+          <div class="option_title reservation_title">
+            <h3>선택사항 확인</h3>
+            <hr/>
+          </div>
+          <div class="table_area">
+            <table class="table_1">
+              <caption class="blind">선택사항 확인표</caption>
+              <tbody>
+                <tr>
+                  <th>객실</th>
+                  <td id="confirm_room">a</td>
+                </tr>
+                <tr>
+                  <th>날짜</th>
+                  <td id="confirm_date">a</td>
+                </tr>
+                <tr>
+                  <th>숙박인원</th>
+                  <td id="confirm_people">a</td>
+                </tr>
+                <tr>
+                  <th>옵션</th>
+                  <td id="confirm_room">a</td>
+                </tr>
+                <tr>
+                  <th>가격</th>
+                  <td id="confirm_room" class="last">
+                    <div><p class="price_box">객실금액: </p><em class="price_value" id="room_price">668,000</em><span class="won">  원</span><span class="oper">+</span><br/></div>
+                    <div><p class="price_box">인원추가금액: </p><em class="price_value" id="people_price">0</em><span class="won">  원</span><span class="oper">+</span><br/></div>
+                    <div><p class="price_box">옵션추가금액: </p><em class="price_value" id="option_price">0</em><span class="won">  원</span><span class="oper">+</span><br/></div>
+                    <div><p class="price_box">적립금 사용: </p><em class="price_value" id="mileage_price">0</em><span class="won">  원</span><span class="oper">-</span><br/></div>
+                    <hr/>
+                    <div><p class="price_box">합계: </p><strong class="price_value" id="total_price">668,000</strong><span class="won"> 원</span></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="option user_info">
+          <div class="option_title reservation_title">
+            <h3>개인정보 입력</h3>
+            <hr/>
+          </div>
+          <div class="table_area">
+            <table class="table_1">
+              <caption class="blind">개인정보 입력표</caption>
+              <tbody>
+                <tr>
+                  <th>이름</th>
+                  <td>
+                    <input type="text" id="user_name" name="user_name"/>
+                  </td>
+                </tr>
+                <tr>
+                  <th>연락처</th>
+                  <td class="phone_area">
+                    <input type="text" id="user_phone_first" name="user_phone_first" maxlength="3" autocomplete="off"/> -
+                    <input type="text" id="user_phone_second" name="user_phone_second" maxlength="4" autocomplete="off"/> -
+                    <input type="text" id="user_phone_last" name="user_phone_last" maxlength="4" autocomplete="off"/>
+                  </td>
+                </tr>
+                <tr>
+                  <th>비상연락처</th>
+                  <td class="phone_area">
+                    <input type="text" id="user2_phone_first" name="user2_phone_first"maxlength="3" autocomplete="off"/> -
+                    <input type="text" id="user2_phone_second" name="user2_phone_second" maxlength="4" autocomplete="off"/> -
+                    <input type="text" id="user2_phone_last" name="user2_phone_last" maxlength="4" autocomplete="off"/>
+                  </td>
+                </tr>
+                <tr>
+                  <th>남기실 말씀</th>
+                  <td class="last comment_area">
+                    <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="option etc_info">
+          <div class="option_title reservation_title">
+            <h3>기타 선택사항</h3>
+            <hr/>
+          </div>
+          <div class="table_area">
+            <table class="table_1">
+              <caption class="blind">기타 선택사항표</caption>
+              <tbody>
+                <tr>
+                  <th>입실시간</th>
+                  <td>
+                    <select name="in_time" id="in_time">
+                      <option value="none" selected>입실시간 선택</option>
+                      <option value="15">15:00</option>
+                      <option value="16">16:00</option>
+                      <option value="17">17:00</option>
+                      <option value="18">18:00</option>
+                      <option value="19">19:00</option>
+                      <option value="20">20:00</option>
+                      <option value="21">21:00</option>
+                    </select>
+                    <p class="info_text">입실시간 기재 부탁드립니다.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th>픽업서비스(입실 시)</th>
+                  <td class="last">
+                    <select name="in_time" id="in_time">
+                      <option value="none" selected>입실시간 선택</option>
+                      <option value="14.5">14:30</option>
+                      <option value="15">15:00</option>
+                      <option value="15.5">15:30</option>
+                      <option value="16">16:00</option>
+                      <option value="16.5">16:30</option>
+                    </select>
+                    <p class="info_text">가평터미널에서 나오시면 우측에 조은마트가 보입니다.<br/>
+                       마트에 가셔서 '끌레르펜션' 가신다고 말씀하신 후<br/>
+                       장을 보시면 펜션까지 픽업해드립니다.
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="option refund_info">
+          <div class="option_title reservation_title">
+            <h3>환불규정 확인</h3>
+            <hr/>
+          </div>
+          <ul>
+            <li>예약전화 : 010-9543-9177 / 010-9350-9177</li>
+            <li>예약계좌 : 농협 352-0275-6308-13 예금주 : 정보경</li>
+            <li>예약방법은 실시간예약과 전화로만 가능합니다.</li>
+            <li>전화예약은 오후10시까지만 받고 있습니다.</li>
+            <li>입실은 오후 3시 이후부터 가능합니다.</li>
+            <li>퇴실은 오전 11시까지 해주시길 바랍니다.</li>
+            <li>송금 약속날짜까지 미입금시 자동 해약 처리 됩니다.</li>
+            <li>예약자나 송금하실 분은 동일한 이름으로 사용하시고 오시는 날짜와 성명을 정확히 써주세요.</li>
+            <li>예약자와 입금자가 다를 경우 펜션으로 연락바랍니다.</li>
+            <li>애완동물과 함께 펜션을 이용하실 수 없습니다.</li>
+            <li>파손물품에 대해서는 객실 이용자가 변상을 원칙으로 하여 구입가격으로 상환합니다.</li>
+            <li>퇴실 시 객실 안에 있는 모든 음식물과 일반쓰레기를 분리수거하여 주시기 바랍니다.</li>
+            <li>7.저녁10시 이후 도착예정이신 분은 사전에 미리 말씀해주시기 바랍니다.</li>
+            <li>날짜변경수수료와 취소수수료가 같습니다.</li>
+            <li style="color:red;">*예약후 취소시에는 10%의 위약금이 있습니다.</li>
+            <li style="color:red;">*기타 취소시 : 예약금 10% 공제후 환급</li>
+          </ul>
+            <table class="table_2">
+              <caption>취소 시 환불금액</caption>
+              <colgroup>
+                <col width="12.5%">
+                <col width="12.5%">
+                <col width="12.5%">
+                <col width="12.5%">
+                <col width="12.5%">
+                <col width="12.5%">
+                <col width="12.5%">
+                <col width="12.5%">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>당일 취소시</th>
+                  <th>1일전 취소시</th>
+                  <th>2일전 취소시</th>
+                  <th>3일전 취소시</th>
+                  <th>4일전 취소시</th>
+                  <th>5일전 취소시</th>
+                  <th>6일전 취소시</th>
+                  <th>7일전 취소시</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="4">환불불가</td>
+                  <td>50% 환불</td>
+                  <td>30% 환불</td>
+                  <td>20% 환불</td>
+                  <td>10% 환불</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <div class="btn_submit_area">
+          <input type="submit" id="btn_submit" name="btn_submit" value="완료"/>
+        </div>
+  		</form>
+    </div>
+		<div id="footerWrap">
+			<h2  class="blind">푸터 영역</h2>
+			<div class="footer_top">
+				<div class="footer_top_area">
+          <ul class="footer_gnb">
+            <li>
+              <a href="#none" title="about 페이지로 이동">
+              about
+              </a>
+            </li>
+            <li>
+              <a href="#none" title="이용 약관 페이지로 이동">
+                개인정보·수집 이용
+              </a>
+            </li>
+            <li>
+              <a href="#none" title="개인정보·수집 이용 페이지로 이동">
+                이용약관
+              </a>
+            </li>
+            <li>
+              <a href="#none" title="location 페이지로 이동">
+                location
+              </a>
+            </li>
+          </ul>
+          <p class="footer_logo">
+            <a href="index.html" title="메인 페이지로 이동">
+              <img src="img/logo_footer_white.png" alt="footer logo"/>
+            </a>
+          </p>
+
+        </div>
+			</div>
+			<div class="footer_bottom">
+					<div class="footer_bottom_area">
+					<div class="footer_info1">
+            <ul class="footer_info">
+              <li class="address_area">
+                <dl>
+                  <dt>주소</dt>
+                  <dd>
+                    <address>경기도 가평군 북면 백둔리 455-18번지</address>
+                  </dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>계좌번호</dt>
+                  <dd>농협 352-0275-6308-13 예금주 정보경</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>사업자 번호</dt>
+                  <dd>105-12-99908</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>통신판매 신고번호</dt>
+                  <dd>제2013-경기가평-51호</dd>
+                </dl>
+              </li>
+            </ul>
+						<p class="copyright">
+							Copyright 2016 YSH&copy; all rights reserved
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ </body>
+</html>

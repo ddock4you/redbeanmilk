@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title> 레이아웃 </title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+  <!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="css/ie7.css"/>
+  <![endif]-->
+  <!--[if IE 8]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 9]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 10]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  
+  <style type = "text/css">
+	
+	
+	/*############################### wrap #######################################*/
+	#wrap{width : 100%;}
+
+	/*############################### header ######################################*/
+	#headerWrap{width : 100%; border-bottom : 2px solid #000; background-color : #fff;}
+	#header{width : 1200px; height : 70px; margin : 0 auto; position : relative;}
+		#header h1{position : absolute; top : 0; left : 0;}
+			#header h1 img{height : 70px;}
+			#header p.sub_title{float : left; margin-left : 100px; line-height : 70px; font-weight : bold; font-size : 20px;}
+		#header .header_btn{width : 140px; height : 70px; line-height : 70px; float: right;}
+			#header .header_btn ul{width : 100%; height : 100%;}
+				#header .header_btn li{width : 60px; padding-left : 10px; float : left; margin-top : 15px;}
+				#header .header_btn img{width : 60%;}
+
+		/*################################# contant ##################################*/
+		#contantWrap{width : 100%;}
+			.contant{width : 100%;}
+
+		/*########### slide_area ############*/
+			.contant div.slide_area{width : 100%; height : 100%; position : relative;}
+				.contant div.slide_area p{width : 100%; height : 100%;}
+					.contant div.slide_area p img{width : 100%; height : 100%;}
+				.contant div.slide_area div.room_text_area{width : 100%; height : 100px; position : absolute; bottom : 0; left : 0; background-color : rgba(0,0,0,0.5);}
+					div.room_text_area h3{padding-top : 5px; text-align : center; color : #fff; font-size : 38px;}
+					div.room_text_area p.img_control_area{text-align : center; font-size: 40px; color : #fff; line-height : 30px;}
+					div.room_text_area p a.img_control{color : #fff; padding : 0 20px;}
+			
+		/*###########room_info_area##############*/
+		.room_info_area{width : 1200px; overflow : hidden; margin : 50px auto 0;}
+		
+		/*### room_title ####*/
+		.room_title{width : 400px; height : 70px; margin : 0 auto; position : relative;}
+			.room_title span{display : inline-block; font-size : 24px; color : #ccc; }
+			.room_title h4{font-size : 40px;position : absolute; bottom : 5px; left : 50%; margin-left : -188px;}
+
+		/*### room_info ####*/
+		.room_info{width : 1200px; overflow : hidden; margin : 0 auto;}
+			.room_info_text{width : 400px; margin : 0 auto; padding : 20px 0;}
+
+		.room_info div.table{width : 800px; margin : 0 auto; padding : 20px 0;}
+			div.table tbody{border-top : 2px solid #333;}
+
+		.room_info p.room_sub_img{width : 600px; margin : 0 auto;}
+			p.room_sub_img img{width : 600px; height :100%;}
+
+		a.reser_btn{display : block; width : 100%; height : 15px; background-color : #2B2727; color : #fff; font-size : 16px; text-align : center; line-height : 15px; padding : 10px 0; margin : 10px 0; }
+		/*################################## footer ##################################*/
+		#footerWrap{width : 100%;background-color : #2B2727;}
+		#footer{width : 1200px; height : 300px; margin : 0 auto; position : relative; color : #fff;}
+			.footer_top_menu{padding : 30px 0; text-transform : uppercase;}
+			.footer_top_menu  li{padding : 3px;}
+				.footer_top_menu  li a{padding : 2px; color : #fff; font-weight : bold;}
+
+			address{font-style : normal;}
+
+			.footer_bottom_menu{position : absolute; bottom : 30px; right : 10px; font-weight : bold;}
+					a.footer_logo{display : block; text-align : center;}
+					a.footer_logo img{width : 180px}
+					.copyright{text-transform : uppercase;}
+  </style>
+ </head>
+
+ <body>
+	<div id = "wrap">
+		<div id = "headerWrap">
+			<header id = "header">
+				<h2>헤더 영역</h2>
+				<h1>
+					<img src = "img/logo_black.png" alt = "로고"/>
+				</h1>
+				<p class = "sub_title">
+					KOREA RENTAL LODGE
+				</p>
+				<div class = "header_btn">
+					<ul>
+						<li>
+							<a href = "#none" title = "예약 페이지로 이동">
+								<img src = "img/btn_reservation.png" alt = "예약 버튼"/>
+							</a>
+						</li>
+						<li>
+							<a href = "#none" title = "메뉴 활성화">
+								<img src = "img/btn_menu.png" alt = "메뉴 버튼"/>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</header>
+		</div>
+		<div id = "contantWrap">
+			<div class = "contant">
+				<div class = "slide_area">
+					<p>
+						<img src = "img/room_info/00_alie.jpg" alt = "alie 룸 이미지 1"/>
+					</p>
+					<div class = "room_text_area">
+						<h3>ALIE</h3>
+						<p class = "img_control_area">
+							<a class = "img_control" href = "#" title = "왼쪽 이미지 보기">&lt;</a><span>0 1</span><a class = "img_control"href = "#" title = "오른쪽 이미지 보기">&gt;</a>
+						</p>
+					</div>
+				</div>
+				<div class = "room_info_area">
+					<div class = "room_title">
+						<span>CONCEPT IS..</span>
+						<h4>URBAN &amp; VINTAGE</h4>
+					</div>
+					<div class = "room_info">
+						<p class = "room_info_text">
+						사계절 따뜻하고 프라이빗하게 즐기는 커플스파와 바베큐공간.
+						도시적 느낌과 빈티지한 느낌의 북유럽풍 모던인테리어로 꾸며졌으며, 
+						천정에 달린 대형 비행기 조형물이 인상적인 럭셔리한 객실입니다.
+						</p>
+						<div class = "table">
+							<tbody>
+								<tr>
+									<th scope="col" rowspan="2">객실형태</th>
+									<th scope="col" colspan="2" class="border_bottom">인원</th>
+									<th scope="col" colspan="3" class="border_bottom">비수기</th>
+									<th scope="col" colspan="2" class="border_bottom">준성수기</th>
+									<th scope="col" colspan="2" class="border_bottom">성수기</th>
+								</tr>
+								<tr>
+									<th scope="col">기준</th>
+									<th scope="col" class="border_left">최대</th>
+									<th scope="col">주중</th>
+									<th scope="col" class="border_left">금요일</th>
+									<th scope="col" class="border_left">주말</th>
+									<th scope="col">주중</th>
+									<th scope="col" class="border_left">주말</th>
+									<th scope="col">주중</th>
+									<th scope="col" class="border_left">주말</th>
+								</tr>
+								<tr>
+									<td>복층/커플/빔프로젝트/제트스파/침대2</td>
+									<td>2명</td>
+									<td class="border_left">5명</td>
+									<td>20만원</td>
+									<td class="border_left">22만원</td>
+									<td class="border_left">27만원</td>
+									<td colspan="4">실시간참조</td>
+								</tr>
+							</tbody>
+						</div>
+						<p class = "room_sub_img">
+							<img src = "img/room_info/00_alie/img02.jpg" alt = "alie 룸 이미지2"/>
+						</p>
+						<a class = "reser_btn" href = "#" title = "예약 페이지로 이동">RESERVATION NOW</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id = "footerWrap">
+			<footer id = "footer">
+				<h2>푸터 영역</h2>
+				<div class = "footer_top_menu">
+					<ul>
+						<li><a href = "#" title = "Main">Main</a></li>
+						<li><a href = "#" title = "Main">About</a></li>
+						<li><a href = "#" title = "Main">Room Information</a></li>
+						<li><a href = "#" title = "Main">Tour Guide</a></li>
+						<li><a href = "#" title = "Main">Reservation</a></li>
+						<li><a href = "#" title = "Main">Question</a></li>
+					</ul>
+				</div>
+				<div class = "address">
+					<address>
+						주소: 경북 청도군 운문면 신원리 449 | 사업자등록번호 : 515-07-98984 <br/> 전화: 010-5214-2701 | 메일: dnjftnr122@naver.com | 대표자: 김월숙
+					</address>
+				</div>
+				<div class = "footer_bottom_menu">
+					<a class = "footer_logo" href = "index.html" title = "메인으로">
+						<img src = "img/logo_footer.png" alt = "푸터 로고"/>
+					</a>
+					<p class = "copyright">
+						Copyright 2016 YSH&copy; all rights reserved
+					</p>
+				</div>
+			</footer>
+		</div>
+	</div>
+ </body>
+</html>

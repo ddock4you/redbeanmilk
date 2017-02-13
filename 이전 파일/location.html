@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8"/>
+  <title> 레이아웃 </title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+  <!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="css/ie7.css"/>
+  <![endif]-->
+  <!--[if IE 8]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 9]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 10]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  
+  <style type = "text/css">
+	
+	
+	/*############################### wrap #######################################*/
+	#wrap{width : 100%;}
+
+	/*############################### header ######################################*/
+	#headerWrap{width : 100%; border-bottom : 2px solid #000; background-color : #fff;}
+	#header{width : 1200px; height : 70px; margin : 0 auto; position : relative;}
+		#header h1{position : absolute; top : 0; left : 0;}
+			#header h1 img{height : 70px;}
+			#header p.sub_title{float : left; margin-left : 100px; line-height : 70px; font-weight : bold; font-size : 20px;}
+		#header .header_btn{width : 140px; height : 70px; line-height : 70px; float: right;}
+			#header .header_btn ul{width : 100%; height : 100%;}
+				#header .header_btn li{width : 60px; padding-left : 10px; float : left; margin-top : 15px;}
+				#header .header_btn img{width : 60%;}
+
+		/*################################# contant ##################################*/
+		#contantWrap{width : 100%;}
+			.contant{width : 100%;}
+			.location_img{width:100%; height: 500px;}
+				.location_img img{width:100%; height:100%;}
+		
+			/*### location_title ####*/
+			.location_title{width : 400px; height : 70px; margin : 20px auto; position : relative;}
+				.location_title span{display : inline-block; font-size : 24px; color : #ccc; }
+				.location_title h4{font-size : 40px;position : absolute; bottom : 5px; left : 50%; margin-left : -188px;}
+
+			/*### location_title ####*/
+			.location_text{width:1200px; margin:0 auto; overflow:hidden;}
+				.location_text1, .location_text2, .location_text3{width:50%; float:left; overflow:hidden;}
+				.location_text1{background-color:#EAEAEA;}
+				.location_text2{background-color:#BDBDBD;}
+				.location_text3{background-color:#8C8C8C;}
+				
+
+		/*################################## footer ##################################*/
+		#footerWrap{width : 100%;background-color : #2B2727;}
+		#footer{width : 1200px; height : 300px; margin : 0 auto; position : relative; color : #fff;}
+			.footer_top_menu{padding : 30px 0; text-transform : uppercase;}
+			.footer_top_menu  li{padding : 3px;}
+				.footer_top_menu  li a{padding : 2px; color : #fff; font-weight : bold;}
+
+			address{font-style : normal;}
+
+			.footer_bottom_menu{position : absolute; bottom : 30px; right : 10px; font-weight : bold;}
+					a.footer_logo{display : block; text-align : center;}
+					a.footer_logo img{width : 180px}
+					.copyright{text-transform : uppercase;}
+  </style>
+ </head>
+
+ <body>
+	<div id = "wrap">
+		<div id = "headerWrap">
+			<header id = "header">
+				<h2>헤더 영역</h2>
+				<h1>
+					<img src = "img/logo_black.png" alt = "로고"/>
+				</h1>
+				<p class = "sub_title">
+					KOREA RENTAL LODGE
+				</p>
+				<div class = "header_btn">
+					<ul>
+						<li>
+							<a href = "#none" title = "예약 페이지로 이동">
+								<img src = "img/btn_reservation.png" alt = "예약 버튼"/>
+							</a>
+						</li>
+						<li>
+							<a href = "#none" title = "메뉴 활성화">
+								<img src = "img/btn_menu.png" alt = "메뉴 버튼"/>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</header>
+		</div>
+		<div id="contantWrap">
+			<div class="contant">
+			<h2>지도 영역</h2><!------------------ 지도 영역 ----------------->
+				<div class="location_img">
+					<span class="blind">지도 이미지 영역</span><!------ 지도 이미지 영역 ------>
+					<img src="img/location_img.jpg" alt="지도 이미지"/>
+				</div>
+				<div class="location_info">
+					<div class = "location_title">
+						<h2>컨텐츠별 타이틀 영역</h2><!------------------ 컨텐츠별 타이틀 영역 ----------------->
+						<span>CONCEPT IS..</span>
+						<h4>URBAN &amp; VINTAGE</h4>
+					</div>
+					<div class="location_text">
+						<h2>찾아오는길 설명 영역</h2><!------------------ 찾아오는길 설명 영역 ----------------->
+						<div class="location_text1">
+							<span class="blind">자가용 이용 설명 영역</span><!------ 자가용 이용 설명 영역 ------>
+							<dl>
+								<dt>자가용 이용시</dt>
+								<dd>
+									<strong>올림픽대로 이용시</strong><br/>
+									올림픽대로 - 팔당대교(우회전) - 팔당터널지나 500m 진행 - 조안 IC(청평/춘천,가평방면) - 금남리 - 새터삼거리 - 청평 - 가평오거리 가평진입 - 북면방향 - 목동삼거리에서 명지산, 연인산방향 좌회전 후 직진 - 연인산, 백둔리방향으로 좌회전 후 백둔교 건너 직진 - 연인산 캠핑장 지나 삼거리에서 우측으로 100m직진 - 우측 엘리시아타운으로 들어오시면 끌레르펜션
+								</dd>
+								<dd>
+									<strong>강변북로 이용시</strong><br/>
+									강변북로 - 남양주 문화체육관앞 지나 - 경춘국도 쪽으로(우회전) - 도농삼거리(약간 좌회전/ 춘천방향) - 평내 - 마석 - 청평 - 가평오거리가평진입 - 북면방향 - 목동삼거리에서 명지산, 연인산방향 좌회전 후 직진 - 연인산, 백둔리방향으로 좌회전 후 백둔교 건너 직진 - 연인산 캠핑장 지나 삼거리에서 우측으로 100m 직진 - 우측 엘리시아타운으로 들어오시면 끌레르펜션
+								</dd>
+								<dd>
+									<strong>자유로/내부순환도로 이용시</strong><br/>
+									자유로/내부순환도로 - 성산대교 분기점 - 홍은IC - 정릉터널 - 월릉IC진입 - 북부순환도로 - 신내동 분기점 - 구리IC - 가평, 춘천 방향 P턴(외곽순환도로 의정부 방향 약 4km진행) - 퇴계원IC - 우측 일동/포천 방향으로 진입 후 약 2.5km진행 - 춘천, 가평방면으로 진입(진관IC) - 자동차 전용도로 - 평내 - 마석 - 새터삼거리(고가도로에서 청평, 춘천 방면 진입) - 대성리 - 청평 - 가평오거리 -가평진입 - 북면방향 - 목동삼거리에서 명지산, 연인산방향 좌회전 후 직진 - 연인산, 백둔리방향으로 좌회전 후 백둔교 건너 직진- 연인산 캠핑장 지나 삼거리에서 우측으로 100m직진 - 우측 엘리시아타운으로 들어오시면 끌레르펜션
+								</dd>
+								<dd>
+									<strong>중부고속도로/경부고속도로 이용시</strong><br/>
+									중부고속도로/ 경부고속도로 - 판교/구리IC - 외곽순환도로(의정부방향) - 퇴계원IC - 우측 일동/포천방향으로 진입 약 2.5km 진행 - 춘천,가평방면으로 진입(진관IC) - 자동차전용도로 - 평내 - 마석 - 새터 삼거리(고가도로에서 청평, 춘천 방면 진입) - 대성리 - 청평 - 가평오거리 가평진입 - 연인산 캠핑장 지나 삼거리에서 우측으로 100m직진 - 우측 엘리시아타운으로 들어오시면 끌레르펜션
+								</dd>
+								<dd>
+									<strong>중앙고속도로(춘천) 이용시</strong><br/>
+									춘천/경춘국도 - 강촌 - 가평대교 - 가평진입 - 북면방향 - 목동삼거리에서 명지산, 연인상방향 좌회전 후 직진 - 연인산,백둔리방향으로 좌회전 후 백둔교 건너 직진 - 연인산 캠핑장 지나 삼거리에서 우측으로 100m 직진 - 우측 엘리시아타운으로 들어오시면 끌레르펜션
+								</dd>
+							</dl>
+						</div>
+						<div>
+							<div class="location_text2">
+								<span class="blind">대중교통 이용  설명 영역</span><!------ 대중교통 이용 설명 영역 ------>
+								<dl>
+									<dt>대중교통 이용시</dt>
+									<dd>
+										<strong>전철 이용시</strong><br/>
+										1. 상봉역에서 전철을 타시고 가평역에서 하차<br/>
+										2. 가평역에서 하차 후 도보로 3분거리인 가평버스터미널로 이동<br/>
+										3. 가평버스터미널에서 북면 적목리, 백둔리 행 탑승<br/>
+										4. 용산,청량리역에서 itx청춘열차를 타시고 가평에서 하차
+									</dd>
+									<dd>
+										<strong>버스 이용시</strong><br/>
+										1. 동서울버스터미널이나 상봉버스터미널에서 가평행 버스를 타시고 가평에서 하차<br/>
+										2. 잠실역 9번 출구 시외버스 7000번을 타시고 가평터미널에 하차<br/>
+										3. 북면 적목리, 백둔리 행 탑승
+									</dd>
+								</dl>
+							</div>
+							<div class="location_text3">
+								<span class="blind">PICK-UP 이용 설명 영역</span><!------ PICK-UP 이용 설명 영역 ------>
+								<dl>
+									<dt>PICK-UP</dt>
+									<dd>
+										<strong>픽업(조은마트)</strong><br/>
+										가평터미널에서 나오시면 우측에 조은마트가 보입니다.<br/>
+										마트에 가셔서 '끌레르펜션' 가신다고 말씀하신 후<br/>
+										장을 보시면 펜션까지 픽업해드립니다.
+									</dd>
+									<dd>
+										* 펜션자체픽업을 운행하지 않습니다. <br/>
+										* 나가실 때는 픽업을 하지 않으므로 <br/>
+										시내버스를 이용해주셔야 합니다.
+									</dd>
+									<dd>
+										* 픽업방법이 변경될 수 있으니 <br/>
+										공지사항을 참조하시거나 성수기에는 <br/>
+										꼭 전화문의바랍니다.
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id = "footerWrap">
+			<footer id = "footer">
+				<h2>푸터 영역</h2>
+				<div class = "footer_top_menu">
+					<ul>
+						<li><a href = "#" title = "Main">Main</a></li>
+						<li><a href = "#" title = "Main">About</a></li>
+						<li><a href = "#" title = "Main">Room Information</a></li>
+						<li><a href = "#" title = "Main">Tour Guide</a></li>
+						<li><a href = "#" title = "Main">Reservation</a></li>
+						<li><a href = "#" title = "Main">Question</a></li>
+					</ul>
+				</div>
+				<div class = "address">
+					<address>
+						주소: 경북 청도군 운문면 신원리 449 | 사업자등록번호 : 515-07-98984 <br/> 전화: 010-5214-2701 | 메일: dnjftnr122@naver.com | 대표자: 김월숙
+					</address>
+				</div>
+				<div class = "footer_bottom_menu">
+					<a class = "footer_logo" href = "index.html" title = "메인으로">
+						<img src = "img/logo_footer.png" alt = "푸터 로고"/>
+					</a>
+					<p class = "copyright">
+						Copyright 2016 YSH&copy; all rights reserved
+					</p>
+				</div>
+			</footer>
+		</div>
+	</div>
+ </body>
+</html>

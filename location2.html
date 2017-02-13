@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta  charset="utf-8"/>
+  <title> CLAIRE PENSION </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-sclalable=no"/>
+  <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+  <link rel="stylesheet" type="text/css" href="css/location.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+  <!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="css/ie7.css"/>
+  <![endif]-->
+  <!--[if IE 8]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 9]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 10]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <script type="text/javascript">
+  //Sub_gnb 영역
+  jQuery(document).ready(function(){
+	$(".sub_gnb ul").hide();
+	
+	$(".sub_gnb").bind("click mouseover focusin",function(){
+		$(this).children("ul").stop().slideDown(500);
+	}).bind("mouseout focusout",function(){
+		$(this).children("ul").stop().slideUp(500);
+	});
+	
+
+  });
+  
+  //Room 선택 영역
+	jQuery(document).ready(function(){
+		$(".pre00_alie").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/00_alie.jpg"); 
+		});
+
+		$(".pre01_amant").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/01_amant.jpg"); 
+		});
+
+		$(".pre02_mistere").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/02_mister.jpg"); 
+		});
+
+		$(".pre03_hobby").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/03_hobby.jpg"); 
+		});
+
+		$(".pre04_blancmoir").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/04_blancnoir.jpg"); 
+		});
+
+		$(".pre05_mienne").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/05_mienne.jpg"); 
+		});
+
+		$(".pre06_rosa").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/06_missa.jpg"); 
+		});
+
+		$(".pre07_bonuour").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/07_bonjour.jpg"); 
+		});
+		
+	});
+  </script>
+ </head>
+
+ <body>
+	<div id="wrap">
+		<div id="headerWrap">
+			<div class="d_gnb">
+				<p class="fast_event">
+					<a href="#none" title="event 페이지로 이동">
+						event
+					</a>
+				</p>
+				<p class="fast_reservation">
+					<a href="#none" title="reservation 페이지로 이동">
+						reservation
+					</a>
+				</p>
+			</div>
+			<div id="header">
+				<h2 class="blind">HEADER</h2>
+				<h1>
+					<a href="#mome" title="메인 홈페이지로 이동">
+						<img src="img/logo_claire.png" alt="로고"/>
+					</a>
+				</h1>
+				<div class="m_l_gnb"><!--모바일 전용 left gnb-->
+					<p>
+						<a href="#none" title="메뉴">
+							<img src="img/menu.png" alt="메뉴 아이콘 이미지"/>
+						</a>
+					</p>
+				</div>
+				<div class="m_r_gnb"><!--모바일 전용 right gnb-->
+					<p class="m_fast_reservation">
+						<a href="#none" title="reservation 페이지로 이동">
+							<img src="img/icon_reservation.png">
+						</a>
+					</p>
+				</div>
+				<div class="gnb">
+					<ul class="sub_gnb_list">
+						<li class="about1">
+							<a href="#none" title="about 페이지로 이동"><span></span>about</a>
+						</li>
+						<li class="sub_gnb">
+							<a href="#none" title="room info 페이지로 이동"><span></span>room info V</a>
+							<ul>
+								<li><a href="#none" title="ALIE 방 페이지로 이동">ALIE</a></li>
+								<li><a href="#none" title="AMANT 방 페이지로 이동">AMANT</a></li>
+								<li><a href="#none" title="MISTER 방 페이지로 이동">MISTER</a></li>
+								<li><a href="#none" title="HOBBY 방 페이지로 이동">HOBBY</a></li>
+								<li><a href="#none" title="BLANCNOIR 방 페이지로 이동">BLANCNOIR</a></li>
+								<li><a href="#none" title="MIENNE 방 페이지로 이동">MIENNE</a></li>
+								<li><a href="#none" title="MISSA 방 페이지로 이동">MISSA</a></li>
+								<li><a href="#none" title="BONJOUR 방 페이지로 이동">BONJOUR</a></li>
+							</ul>
+						</li>
+						<li class="sub_gnb">
+							<a href="#none" title="special 페이지로 이동"><span></span>special V</a>
+							<ul class="sub_gnb_list">
+								<li><a href="#none" title="SWIMMING POOL 페이지로 이동">POOL</a></li>
+								<li><a href="#none" title="ZET SPA  페이지로 이동">ZET SPA</a></li>
+								<li><a href="#none" title="BARBECUE  페이지로 이동">BARBECUE</a></li>
+								<li><a href="#none" title="CAFFE  페이지로 이동">CAFFE</a></li>
+								<li><a href="#none" title="BEAM PROJECT  페이지로 이동">BEAM PROJECT</a></li>
+								<li><a href="#none" title="GAME CENTER  페이지로 이동">GAME CENTER</a></li>
+								<li><a href="#none" title="LOUNGE  페이지로 이동">LOUNGE</a></li>
+								<li><a href="#none" title="EVENT  페이지로 이동">EVENT</a></li>
+								<li><a href="#none" title="KIDS  페이지로 이동">KIDS</a></li>
+								<li><a href="#none" title="SERVICE  페이지로 이동">SERVICE</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#none" title="guide tour 페이지로 이동"><span></span>guide tour</a>
+						</li>
+						<li>
+							<a href="#none" title="location 페이지로 이동"><span></span>location</a>
+						</li>
+						<li>
+							<a href="#none" title="contact us 페이지로 이동"><span></span>contact us</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="contentWrap">
+			<div class="content">
+				<div class="top_content">
+					<div class="title"><!------------------ 컨텐츠별 타이틀 영역 ----------------->
+						<p class="title_stick"></p>
+						<h2>location</h2>
+					</div>
+					<div class="location_img">
+						<span class="blind">지도 이미지 영역</span><!------ 지도 이미지 영역 ------>
+						<img src="img/location_img.jpg" alt="지도 이미지"/>
+					</div>
+				</div>
+				<div class="location_info">
+					<ul class="location_info_area">
+						<li class="use_car">
+							<h3>자가용 이용시</h3>
+							<ul>
+								<li>
+									<h4>올림픽대로 이용시</h4>
+									<p class="location_text">
+										올림픽대로 - 팔당대교(우회전) - 팔당터널지나 500M 진행 - 조안 IC(청평/춘천,가평방면) - 금남리 - 새터삼거리 - 청평 - 가평오거리 가평진입 - 북면방향 - 목동삼거리에서 명지산, 연인산방향 좌회전 후 직진 - 연인산, 백둔리방향으로 좌회전 후 백둔교 건너 직진 - 연인산 캠핑장 지나 삼거리에서 우측으로 100M직진 - 우측 엘리시아타운으로 들어오시면 끌레르펜션
+									</p>
+								</li>
+								<li>
+									<h4>강변북로 이용시</h4>
+									<p class="location_text">
+										강변북로 - 남양주 문화체육관앞 지나 - 경춘국도 쪽으로(우회전) - 도농삼거리(약간 좌회전/ 춘천방향) - 평내 - 마석 - 청평 - 가평오거리가평진입 - 북면방향 - 목동삼거리에서 명지산, 연인산방향 좌회전 후 직진 - 연인산, 백둔리방향으로 좌회전 후 백둔교 건너 직진 - 연인산 캠핑장 지나 삼거리에서 우측으로 100M 직진 - 우측 엘리시아타운으로 들어오시면 끌레르펜션
+									</p>
+								</li>
+								<li>
+									<h4>자유로/내부순환도로 이용시</h4>
+									<p class="location_text">
+										자유로/내부순환도로 - 성산대교 분기점 - 홍은IC - 정릉터널 - 월릉IC진입 - 북부순환도로 - 신내동 분기점 - 구리IC - 가평, 춘천 방향 P턴(외곽순환도로 의정부 방향 약 4KM진행) - 퇴계원IC - 우측 일동/포천 방향으로 진입 후 약 2.5KM진행 - 춘천, 가평방면으로 진입(진관IC) - 자동차 전용도로 - 평내 - 마석 - 새터삼거리(고가도로에서 청평, 춘천 방면 진입) - 대성리 - 청평 - 가평오거리 -가평진입 - 북면방향 - 목동삼거리에서 명지산, 연인산방향 좌회전 후 직진 - 연인산, 백둔리방향으로 좌회전 후 백둔교 건너 직진- 연인산 캠핑장 지나 삼거리에서 우측으로 100M직진 - 우측 엘리시아타운으로 들어오시면 끌레르펜션
+									</p>
+								</li>
+								<li>
+									<h4>중부고속도로/경부고속도로 이용시</h4>
+									<p class="location_text">
+										중부고속도로/ 경부고속도로 - 판교/구리IC - 외곽순환도로(의정부방향) - 퇴계원IC - 우측 일동/포천방향으로 진입 약 2.5KM 진행 - 춘천,가평방면으로 진입(진관IC) - 자동차전용도로 - 평내 - 마석 - 새터 삼거리(고가도로에서 청평, 춘천 방면 진입) - 대성리 - 청평 - 가평오거리 가평진입 - 연인산 캠핑장 지나 삼거리에서 우측으로 100M직진 - 우측 엘리시아타운으로 들어오시면 끌레르펜션
+									</p>
+								</li>
+								<li>
+									<h4>중앙고속도로(춘천) 이용시</h4>
+									<p class="location_text">
+										춘천/경춘국도 - 강촌 - 가평대교 - 가평진입 - 북면방향 - 목동삼거리에서 명지산, 연인상방향 좌회전 후 직진 - 연인산,백둔리방향으로 좌회전 후 백둔교 건너 직진 - 연인산 캠핑장 지나 삼거리에서 우측으로 100M 직진 - 우측 엘리시아타운으로 들어오시면 끌레르펜션
+									</p>
+								</li>
+							</ul>
+						</li>
+						<li class="use_public">
+							<h3>대중교통 이용시</h3>
+							<ul>
+								<li>
+									<h4>전철 이용시</h4>
+									<p class="location_text">
+										1. 상봉역에서 전철을 타시고 가평역에서 하차<br/>
+										2. 가평역에서 하차 후 도보로 3분거리인 가평버스터미널로 이동<br/>
+										3. 가평버스터미널에서 북면 적목리, 백둔리 행 탑승<br/><br/>
+										4. 용산,청량리역에서 ITX청춘열차를 타시고 가평에서 하차
+									</p>
+								</li>
+								<li>
+									<h4>버스 이용시</h4>
+									<p class="location_text">
+										1. 동서울버스터미널이나 상봉버스터미널에서 가평행 버스를 타시고 가평에서 하차<br/>
+										2. 잠실역 9번 출구 시외버스 7000번을 타시고 가평터미널에 하차<br/>
+										3. 북면 적목리, 백둔리 행 탑승
+									</p>
+								</li>
+							</ul>
+						</li>
+						<li class="use_pickup">
+							<h3>PICK-UP</h3>
+							<ul>
+								<li>
+									<h4>PICK-UP(조은마트)</h4>
+									<p class="location_text">
+										가평터미널에서 나오시면 우측에 조은마트가 보입니다. 마트에 가셔서 '끌레르펜션' 가신다고 말씀하신 후 장을 보시면 펜션까지 픽업해드립니다.
+										* 펜션자체픽업을 운행하지 않습니다. 
+										* 나가실 때는 픽업을 하지 않으므로 시내버스를 이용해주셔야 합니다.
+										* 픽업방법이 변경될 수 있으니 공지사항을 참조하시거나 성수기에는 꼭 전화문의바랍니다.
+									</p>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="footerWrap">
+			<h2  class="blind">푸터 영역</h2>
+			<div class="footer_top">
+				<div class="footer_top_area">
+					<h2>CONTACT</h2>
+					<p class="to_top">
+						<a href="#" title="맨 위로">
+							<img src="img/to_top.png" alt="to top 이미지"/>
+						</a>
+					</p>
+					<div class="footer_top_left">
+						<address class="master_place">
+							<img src="img/icon_place_white.png" alt="주소 이미지"/>
+							경북 청도군 운문면 신원리 449
+						</address>
+						<p class="master_email">
+							<a href="dnjftnr122@naver.com" title="클레르 펜션 이메일">
+								<img src="img/icon_letter_white.png" alt="주소 이미지"/>
+								dnjftnr122@naver.com
+							</a>
+						</p>
+						<p class="master_phone">
+							<img src="img/icon_phone_white.png" alt="주소 이미지"/>
+							010-5214-2701
+						</p>
+					</div>
+					<form class="footer_top_right" action="#" method="post">
+						<fieldset>
+							<legend>contact 영역</legend>
+							<p class="input contact_name">
+								<input id="name" type="text" name="name" required placeholder="NAME"/>
+							</p>
+							<p class="input contact_email">
+								<input id="email" type="email" name="email" required placeholder="EMAIL ex) abc@abc.com"/>
+							</p>
+							<p class="input contact_message">
+								<textarea placeholder="MESSAGE"></textarea>
+							</p>
+						</fieldset>
+						<p class="btn_submit">
+							<input id="submit" type="submit" name="submit" value="SEND"/>
+						</p>
+					</form>
+				</div>
+			</div>
+			<div class="footer_bottom">
+					<div class="footer_bottom_area">
+					<div class="footer_logo">
+						<a class="footer_logo_img" href="index.html" title="메인으로">
+							<img src="img/logo_footer_white.png" alt="푸터 로고"/>
+						</a>
+					</div>
+					<div class="footer_info">
+						<p>
+							사업자 번호 : 105-12-99908
+						</p>
+						</p>
+							통신판매신고번호 : 제2013-경기가평-51호
+						</p>
+						<p class="copyright">
+							Copyright 2016 YSH&copy; all rights reserved
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ </body>
+</html>

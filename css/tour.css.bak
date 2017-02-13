@@ -1,0 +1,167 @@
+body{font-family:"Montserrat", Noto Sans; margin:0; padding:0;}
+	
+/*############################### wrap #######################################*/
+	#wrap{width:100%; text-transform:uppercase;}
+		
+/*############################### header #####################################*/
+	#headerWrap{
+							width:100%;
+							border-top:4px solid #2B2727;
+							background-color:#fff;
+							border-bottom:1px solid #ccc;
+							position:fixed;
+							top:0;
+							z-index:9999;
+							}
+		
+	/*##################### top gnb #########################*/
+		.d_gnb{position:absolute; top:20px; right:50px;}
+			.d_gnb p{float:left;}
+				.d_gnb p a{padding-left:18px; background-size:15px 15px;}
+					.fast_event a{
+										background-image:url("../img/icon_event.png");
+										background-repeat:no-repeat;
+										color:#FF3636;
+										}
+				.fast_reservation{margin-left:10px;}
+					.fast_reservation a{
+													background-image:url("../img/icon_reservation.png");
+													background-repeat:no-repeat;
+													color:#FFBB00;
+													}
+
+	/*#################### 모바일용 gnb ########################*/
+			.m_r_gnb, .m_l_gnb{position:absolute;top:15px; right:40px; display:none;}
+				.m_l_gnb{ left:40px;}
+				.m_r_gnb p{width:30px; height:30px;}
+
+				.m_l_gnb{top:18px;}
+				 .m_l_gnb p{width:26px; height:26px;}
+				 
+					.m_r_gnb p img, .m_l_gnb p img{width:100%; height:100%;}
+			
+	#header{max-width:1200px; height:90px; margin:0 auto; position:relative;}
+		h1{width:190px; height:40px; position:absolute; top:10px; left:50%; margin-left:-95px;}
+			h1 img{width:100%; height:100%;}
+		
+	/*####################### gnb ###########################*/
+		.gnb{padding-top:60px;text-align:center;}
+			.gnb ul li{display:inline-block; margin-left:10px;}
+			.gnb ul li:last-child{margin-left:0;}
+				.gnb ul li a{display:block;padding:0 8px; color:#AEA288; font-weight:bold;}
+					.gnb ul li a span{
+												display:block;
+												width:100%;
+												height:2px;
+												background-color:#AEA288;
+												transform:scalex(0); 
+												transition: all 0.3s ease-in-out; 
+												margin-bottom:5px;
+											}
+
+/*############################## content ###################################*/
+	#contentWrap{width:100%;background-color:#fff; overflow:hidden;}
+		.slide_area{width:100%; height:850px; padding-top:90px; position:relative; background-attachment : fixed;}
+			.slide_area p{width:100%; height:100%;}
+				.slide_area p img{width:100%; height:100%;}
+			.dark{display:block; width:100%; height:100%; background-color:rgba(0,0,0,0.2); position:absolute; top:0; left:0;}
+
+			.slide_area_title{width:100%; height:400px; position:absolute; top:35%; text-align:center; color:#fff;}
+				.slide_area_title hr{width:200px; border:2px solid #fff; margin:0 auto; animation:title_stick_ani 1s;}
+				.slide_area_title h2{font-size:48px; letter-spacing:5px; animation:title_ani 1s;}
+				.slide_area_title p{padding-top:30px; animation:title_stick_ani 1s;}
+				
+				@keyframes title_stick_ani{
+				0%{transform:scalex(0);}
+				30%{transform:scalex(0);}
+				100%{transform:scalex(1);}
+			}
+
+			@keyframes title_ani{
+				0%{transform:scaley(0);}
+				50%{transform:scaley(0);}
+				100%{transform:scaley(1);}
+			}
+
+			.scroll_down{display:block; position:absolute; top: 70%; width:150px; left:50%; color:#fff; margin-left:-75px; text-align:center;  text-transform:none; animation:title_stick_ani 1s;}
+			
+				.scroll_down p{font-weight:bold; animation:up_down 1s infinite;}
+
+				@keyframes up_down{
+					50%{margin-top:20px;}
+				}
+		.tour_area{width:1200px; height:2000px; margin:0 auto; background-color:#AEA288; position:relative;}
+			.milestone{width:200px; height:100%; background-color:pink; position:absolute; top:0; left:50%; margin-left:-100px;}
+				.road{width:5px; height:100%; background-color:#000; position:absolute; top:0; left:50%; margin-left:-2.5px;}
+					.point{width:15px; height:100%; background-color:gold;}
+					.point:after{content:""; display:block; clear:both;}
+						.point li{width:100%; height:15px; background-color:lightblue; margin-bottom:10px; border-radius:50%;}
+
+			.tour_info:after, .tour_info_area:after{content:""; display:block; clear:both;}
+				.tour_info_area li{width:300px; overflow:hidden; background-color:gold; position:relative;}
+					.location_img{width:100%; height:100%; background-color:red; position:absolute; top:0; left:0; z-index:-1;}
+					.tour_title{width:100%; height:100px; background-color:#ccc;}
+					.tour_title h3, .tour_title p{float:left;}
+
+/*############################### footer ######################################*/
+	#footerWrap{width:100%;height:420px;}
+		#footerWrap h2{
+									font-size:32px; 
+									color:#fff; 
+									padding:20px 0; 
+									text-align:center; 
+									letter-spacing:15px; 
+									font-weight:400;
+									}
+
+	/*#################### footer top ######################*/
+		.footer_top{width:100%; height:310px; background-color:#777; color:#fff;}
+			.footer_top_area{width:1000px; height:100%; margin:0 auto;position:relative;}
+				.to_top{width:26px; height:26px; position:absolute; top:20px; right:50px; border:2px solid #fff; border-radius:2px;}
+					.to_top a{display:block; width:100%; height:100%;}
+						.to_top a img{width:90%; height:90%;padding:5%;}
+
+				.footer_top_left, .footer_top_right{width:50%; height:220px; float:left;}
+						
+					.footer_top_left p, .master_place{
+																	margin:20px 0 20px 30px; 
+																	padding-left:20px
+																	;text-transform:lowercase;
+																}
+					.footer_top_left img{width:20px; height:20px; padding-right:5px;}
+					.master_place{font-style:normal;}
+					.master_email a{color:#fff;}
+
+					fieldset{border:none; width:400px; margin:0 auto;}
+					legend{display:none;}
+					.contact_name, .contact_email{width:100%; height:30px; margin-bottom:10px;}
+						.contact_name input, .contact_email input{width:100%; height:100%;}
+						
+						
+					.contact_message{width:100%; height:100px;}
+						.contact_message textarea{width:100%; height:100%; font-size:16px;}
+							
+					.contact_name input, .contact_email input, .contact_message textarea{
+																													border:none; text-indent:12px;
+																													}
+					
+					.btn_submit{text-align:center; margin:10px 0;}
+						#submit{
+										width:100px;
+										height:30px;
+										border:3px solid #fff;
+										border-radius:3px;
+										font-weight:bold;
+										background:none;
+										color:#fff;
+										cursor:pointer;
+										}
+
+	/*#################### footer bottom ######################*/
+		.footer_bottom{width:100%; height:120px; background-color:#2B2727;}
+			.footer_bottom_area{width:1000px; height:100%; margin:0 auto;}
+				.footer_logo{width:40px; height:40px; margin:0 auto; padding:10px 0;}
+					.footer_logo img{width:100%; height:100%;}
+				
+				.footer_info{width:100%; font-size:11px; text-align:center; color:#fff;}
+					.footer_info p{padding-bottom:3px;}			

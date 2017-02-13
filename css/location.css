@@ -1,0 +1,151 @@
+body{font-family:"Montserrat", Noto Sans; margin:0;}
+
+/*############################### wrap #######################################*/
+	#wrap{width:100%; text-transform:uppercase;}
+
+/*############################### header #####################################*/
+	#headerWrap{
+							width:100%;
+							border-top:4px solid #2B2727;
+							background-color:#fff;
+							border-bottom:1px solid #ccc;
+							position:fixed;
+							top:0;
+							z-index:9999;
+							}
+
+	/*##################### top gnb #########################*/
+		.d_gnb{position:absolute; top:20px; right:50px;}
+			.d_gnb p{float:left;}
+				.d_gnb p a{padding-left:18px; background-size:15px 15px;}
+					.fast_event a{
+										background-image:url("../img/icon_event.png");
+										background-repeat:no-repeat;
+										color:#FF3636;
+										}
+				.fast_reservation{margin-left:10px;}
+					.fast_reservation a{
+													background-image:url("../img/icon_reservation.png");
+													background-repeat:no-repeat;
+													color:#FFBB00;
+													}
+
+	/*#################### 모바일용 gnb ########################*/
+			.m_r_gnb, .m_l_gnb{position:absolute;top:15px; right:40px; display:none;}
+				.m_l_gnb{ left:40px;}
+				.m_r_gnb p{width:30px; height:30px;}
+
+				.m_l_gnb{top:18px;}
+				 .m_l_gnb p{width:26px; height:26px;}
+
+					.m_r_gnb p img, .m_l_gnb p img{width:100%; height:100%;}
+
+	#header{max-width:1200px; height:90px; margin:0 auto; position:relative;}
+		h1{width:190px; height:40px; position:absolute; top:10px; left:50%; margin-left:-95px;}
+			h1 img{width:100%; height:100%;}
+
+	/*####################### gnb ###########################*/
+		.gnb{padding-top:60px;text-align:center;}
+			.gnb ul li{display:inline-block; margin-left:10px; position:relative;}
+			.gnb ul li:last-child{margin-left:0;}
+				.gnb ul li a{display:block;padding:0 8px; color:#AEA288; font-weight:bold;}
+					.gnb ul li a span{
+												display:block;
+												width:100%;
+												height:2px;
+												background-color:#AEA288;
+												transform:scalex(0);
+												transition: all 0.3s ease-in-out;
+												margin-bottom:5px;
+											}
+					.sub_gnb ul{display:block; width:100%; position:absolute; top:30px; left:0; z-index:2;background-color:#fff;}
+					.sub_gnb ul li{display:block; text-align:center; margin-left:0; border-bottom:1px solid #AEA288; padding:3px 0;}
+
+/*############################### content ######################################*/
+	#contentWrap{width:100%;background-color:#fff; padding-top:90px;}
+		.top_content{width:100%; position:fixed; top:90px; background-color:#fff;}
+		.location_img{width:100%; height:350px;}
+				.location_img img{width:100%; height:100%;}
+				.title{width:100%; margin:30px 0 10px;}
+					.title_stick{width:170px; height:5px; background-color:#000; margin:0 auto; animation:title_stick_ani 0.5s ease-in-out;}
+				h2{font-size:44px; text-align:center; letter-spacing:15px; font-weight:400; margin-top:10px; animation:title_ani 1s ease-in-out;}
+
+				@keyframes title_stick_ani{
+					0%{transform:scalex(0);}
+					30%{transform:scalex(0);}
+					100%{transform:scalex(1);}
+				}
+
+				@keyframes title_ani{
+					0%{transform:scaley(0);}
+					50%{transform:scaley(0);}
+					100%{transform:scaley(1);}
+				}
+				.location_info{width:1200px; overflow:hidden; margin:460px auto 0;}
+					h3{font-size:22px; text-indent:10px; margin-top:50px; border-left:3px solid #FFBB00; color:#AEA288;}
+					h4{font-size:16px; padding-top:15px;}
+					.location_text{font-size:14px; text-transform:lowercase;}
+
+/*############################### footer ######################################*/
+	#footerWrap{width:100%;height:420px;}
+		#footerWrap h2{
+									font-size:32px;
+									color:#fff;
+									padding:20px 0;
+									text-align:center;
+									letter-spacing:15px;
+									font-weight:400;
+									}
+								h3{}
+
+	/*#################### footer top ######################*/
+		.footer_top{width:100%; height:310px; background-color:#777; color:#fff;}
+			.footer_top_area{width:1000px; height:100%; margin:0 auto;position:relative;}
+				.to_top{width:26px; height:26px; position:absolute; top:20px; right:50px; border:2px solid #fff; border-radius:2px;}
+					.to_top a{display:block; width:100%; height:100%;}
+						.to_top a img{width:90%; height:90%;padding:5%;}
+
+				.footer_top_left, .footer_top_right{width:50%; height:220px; float:left;}
+
+					.footer_top_left p, .master_place{
+																	margin:20px 0 20px 30px;
+																	padding-left:20px
+																	;text-transform:lowercase;
+																}
+					.footer_top_left img{width:20px; height:20px; padding-right:5px;}
+					.master_place{font-style:normal;}
+					.master_email a{color:#fff;}
+
+					fieldset{border:none; width:400px; margin:0 auto;}
+					legend{display:none;}
+					.contact_name, .contact_email{width:100%; height:30px; margin-bottom:10px;}
+						.contact_name input, .contact_email input{width:100%; height:100%;}
+
+
+					.contact_message{width:100%; height:100px;}
+						.contact_message textarea{width:100%; height:100%; font-size:16px;}
+
+					.contact_name input, .contact_email input, .contact_message textarea{
+																													border:none; text-indent:12px;
+																													}
+
+					.btn_submit{text-align:center; margin:10px 0;}
+						#submit{
+										width:100px;
+										height:30px;
+										border:3px solid #fff;
+										border-radius:3px;
+										font-weight:bold;
+										background:none;
+										color:#fff;
+										cursor:pointer;
+										}
+
+	/*#################### footer bottom ######################*/
+		.footer_bottom{width:100%; height:120px; background-color:#2B2727;}
+			.footer_bottom_area{width:1000px; height:100%; margin:0 auto;}
+				.footer_logo{width:40px; height:40px; margin:0 auto; padding:10px 0;}
+					.footer_logo img{width:100%; height:100%;}
+
+				.footer_info{width:100%; font-size:11px; text-align:center; color:#fff;}
+					.footer_info p{padding-bottom:3px;}

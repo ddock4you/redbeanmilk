@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title> 레이아웃 </title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+  <!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="css/ie7.css"/>
+  <![endif]-->
+  <!--[if IE 8]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 9]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 10]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  
+  <style type = "text/css">
+	
+	
+	/*############################### wrap #######################################*/
+	#wrap{width : 100%;}
+
+	/*############################### header ######################################*/
+	#headerWrap{width : 100%; border-bottom : 2px solid #000; background-color : #fff;}
+	#header{width : 1200px; height : 70px; margin : 0 auto; position : relative;}
+		#header h1{position : absolute; top : 0; left : 0;}
+			#header h1 img{height : 70px;}
+			#header p.sub_title{float : left; margin-left : 100px; line-height : 70px; font-weight : bold; font-size : 20px;}
+		#header .header_btn{width : 140px; height : 70px; line-height : 70px; float: right;}
+			#header .header_btn ul{width : 100%; height : 100%;}
+				#header .header_btn li{width : 60px; padding-left : 10px; float : left; margin-top : 15px;}
+				#header .header_btn img{width : 60%;}
+
+		/*################################# contant ##################################*/
+		#contantWrap{width : 100%;}
+			.contant{width : 100%;}
+			.contant ul{width : 100%; overflow : hidden;}
+				.contant ul li{width : 12.5%; height : 830px; float : left;}
+					.contant ul li.alie{background-image : url("img/room_info/00_alie.jpg");}
+					.contant ul li.amant{background-image : url("img/room_info/01_amant.jpg");}
+					.contant ul li.mister{background-image : url("img/room_info/02_mister.jpg");}
+					.contant ul li.hobby{background-image : url("img/room_info/03_hobby.jpg");}
+					.contant ul li.blancnoir{background-image : url("img/room_info/04_blancnoir.jpg");}
+					.contant ul li.mienne{background-image : url("img/room_info/05_mienne.jpg");}
+					.contant ul li.missa{background-image : url("img/room_info/06_missa.jpg");}
+					.contant ul li.bonjour{background-image : url("img/room_info/07_bonjour.jpg");}
+
+						.contant ul li a span.room_text{display : block; color : #fff; top : 0;width : 100%; height : 100%; background-color : rgba(0,0,0,0.5);}
+						.contant ul li a span em{display : block; font-size : 32px;padding-top : 350px; text-align : center; font-style : normal; }
+						.contant ul li a span strong{display : block; font-size : 48px; text-align : center;}
+					
+					.contant ul li a img{width : 100%; height : 100%;}
+
+		/*######## content_hover ##########*/
+			.contant ul li a span.room_text1:hover{display : none;}/*작동에 문제가 있음.(호버 적용됬다가 풀렸다가 반복)*/
+		/*################################## footer ##################################*/
+		#footerWrap{width : 100%;background-color : #2B2727;}
+		#footer{width : 1200px; height : 300px; margin : 0 auto; position : relative; color : #fff;}
+			.footer_top_menu{padding : 30px 0; text-transform : uppercase;}
+			.footer_top_menu  li{padding : 3px;}
+				.footer_top_menu  li a{padding : 2px; color : #fff; font-weight : bold;}
+
+			address{font-style : normal;}
+
+			.footer_bottom_menu{position : absolute; bottom : 30px; right : 10px; font-weight : bold;}
+					a.footer_logo{display : block; text-align : center;}
+					a.footer_logo img{width : 180px}
+					.copyright{text-transform : uppercase;}
+  </style>
+ </head>
+
+ <body>
+	<div id = "wrap">
+		<div id = "headerWrap">
+			<header id = "header">
+				<h2>헤더 영역</h2>
+				<h1>
+					<img src = "img/logo_black.png" alt = "로고"/>
+				</h1>
+				<p class = "sub_title">
+					KOREA RENTAL LODGE
+				</p>
+				<div class = "header_btn">
+					<ul>
+						<li>
+							<a href = "#none" title = "예약 페이지로 이동">
+								<img src = "img/btn_reservation.png" alt = "예약 버튼"/>
+							</a>
+						</li>
+						<li>
+							<a href = "#none" title = "메뉴 활성화">
+								<img src = "img/btn_menu.png" alt = "메뉴 버튼"/>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</header>
+		</div>
+		<div id = "contantWrap">
+			<div class = "contant">
+				<ul>
+					<li class = "alie">
+						<a class = "room_img" href ="#" title = "alie 상세 페이지로 이동">
+							<span class = "room_text">
+								<em>ROOM.1</em>
+								<strong>ALIE</strong>
+							</span>
+						</a>
+					</li>
+					<li class = "amant">
+						<a class = "room_img" href ="#" title = "amant 상세 페이지로 이동">
+							<span class = "room_text">
+								<em>ROOM.2</em>
+								<strong>AMANT</strong>
+							</span>
+						</a>
+					</li>
+					<li class = "mister">
+						<a class = "room_img" href ="#" title = "mister 상세 페이지로 이동">
+							<span class = "room_text">
+								<em>ROOM.3</em>
+								<strong>MISTER</strong>
+							</span>
+						</a>
+					</li>
+					<li class = "hobby">
+						<a class = "room_img" href ="#" title = "hobby 상세 페이지로 이동">
+							<span class = "room_text">
+								<em>ROOM.4</em>
+								<strong>HOBBY</strong>
+							</span>
+						</a>
+					</li>
+					<li class = "blancnoir">
+						<a class = "room_img" href ="#" title = "blancnoir 상세 페이지로 이동">
+							<span class = "room_text">
+								<em>ROOM.5</em>
+								<strong>BLANCNOIR</strong>
+							</span>
+						</a>
+					</li>
+					<li class = "mienne">
+						<a class = "room_img" href ="#" title = "mienne 상세 페이지로 이동">
+							<span class = "room_text">
+								<em>ROOM.6</em>
+								<strong>MIENNE</strong>
+							</span>
+						</a>
+					</li>
+					<li class = "missa">
+						<a class = "room_img" href ="#" title = "missa 상세 페이지로 이동">
+							<span class = "room_text">
+								<em>ROOM.7</em>
+								<strong>MISSA</strong>
+							</span>
+						</a>
+					</li>
+					<li class = "bonjour">
+						<a class = "room_img" href ="#" title = "bonjour 상세 페이지로 이동">
+							<span class = "room_text">
+								<em>ROOM.8</em>
+								<strong>BONJOUR</strong>
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id = "footerWrap">
+			<footer id = "footer">
+				<h2>푸터 영역</h2>
+				<div class = "footer_top_menu">
+					<ul>
+						<li><a href = "#" title = "Main">Main</a></li>
+						<li><a href = "#" title = "Main">About</a></li>
+						<li><a href = "#" title = "Main">Room Information</a></li>
+						<li><a href = "#" title = "Main">Tour Guide</a></li>
+						<li><a href = "#" title = "Main">Reservation</a></li>
+						<li><a href = "#" title = "Main">Question</a></li>
+					</ul>
+				</div>
+				<div class = "address">
+					<address>
+						주소: 경북 청도군 운문면 신원리 449 | 사업자등록번호 : 515-07-98984 <br/> 전화: 010-5214-2701 | 메일: dnjftnr122@naver.com | 대표자: 김월숙
+					</address>
+				</div>
+				<div class = "footer_bottom_menu">
+					<a class = "footer_logo" href = "index.html" title = "메인으로">
+						<img src = "img/logo_footer.png" alt = "푸터 로고"/>
+					</a>
+					<p class = "copyright">
+						Copyright 2016 YSH&copy; all rights reserved
+					</p>
+				</div>
+			</footer>
+		</div>
+	</div>
+ </body>
+</html>

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta  charset="utf-8"/>
+  <title> CLAIRE PENSION </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+  <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+  <link rel="stylesheet" type="text/css" href="css/reservation_step1.css"/>
+  <link rel="stylesheet" type="text/css" href="css/media_index.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="css/ie7.css"/>
+  <![endif]-->
+  <!--[if IE 8]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 9]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 10]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <style type="text/css">
+
+  </style>
+  <script type="text/javascript">
+  //Sub_gnb 영역
+  jQuery(document).ready(function(){
+	$(".sub_gnb ul").hide();
+
+	$(".sub_gnb").bind("click mouseover focusin",function(){
+		$(this).children("ul").stop().slideDown(500);
+	}).bind("mouseout focusout",function(){
+		$(this).children("ul").stop().slideUp(500);
+	});
+
+
+  });
+
+  //Room 선택 영역
+	jQuery(document).ready(function(){
+		$(".pre00_alie").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/00_alie.jpg");
+		});
+
+		$(".pre01_amant").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/01_amant.jpg");
+		});
+
+		$(".pre02_mistere").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/02_mister.jpg");
+		});
+
+		$(".pre03_hobby").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/03_hobby.jpg");
+		});
+
+		$(".pre04_blancmoir").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/04_blancnoir.jpg");
+		});
+
+		$(".pre05_mienne").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/05_mienne.jpg");
+		});
+
+		$(".pre06_rosa").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/06_missa.jpg");
+		});
+
+		$(".pre07_bonuour").bind("mouseover focusin", function(){
+			$(".room_area img").attr("src","img/room_info/07_bonjour.jpg");
+		});
+	});
+  //로그인 페이지 on/off
+  	jQuery(document).ready(function(){
+      $("#top_headerWrap").hide();
+      $(".login a").bind("click focusin", function(){
+        $("#top_headerWrap").slideDown(500);
+      }).focusout(function(){
+        $("#top_headerWrap").slideUp(500);
+      });
+
+      $(".login a").siblings().click(function(){
+        $("#top_headerWrap").slideUp(500);
+      });
+    });
+  </script>
+ </head>
+
+ <body>
+	<div id="wrap">
+		<div id="headerWrap">
+			<div id="top_headerWrap">
+				<form class="login_info" action="#" method="post">
+					<fieldset>
+						<legend class="blind">로그인 영역</legend>
+            <h2>LOGIN</h2>
+            <div class="input_user">
+							<p class="input_userid">
+								<input id="userid" type="text" name="userid" required placeholder="ID 입력"/>
+							</p>
+							<p class="input_userpw">
+								<input id="userpw" type="password" name="userpw" required placeholder="Password 입력" autocomplete=off;/>
+							</p>
+              <p class="input_btn_login">
+                <input id="btn_login" type="button" name="btn_login" value="login"/>
+              </p>
+						</div>
+            <div class="input_etc">
+              <ul>
+                <li>
+                  <a href="#none" title="회원가입 페이지로 이동">회원가입</a>
+                </li>
+                <li>
+                  <a href="#none" title="아이디 찾기 페이지로 이동">아이디 찾기</a>
+                </li>
+                <li>
+                  <a href="#none" title="비밀번호 찾기 페이지로 이동">비밀번호 찾기</a>
+                </li>
+              </ul>
+            </div>
+					</fieldset>
+				</form>
+			</div>
+			<div id="bottom_headerWrap">
+        <div class="nav"><!--로그인 관련 gnb-->
+          <ul>
+            <li class="login">
+              <a href="#none" title="login page 열기">log in</a>
+            </li>
+            <!--<li class="welcome">
+              <a href="#none" title="welcome">윤승현 님 환영합니다!</a>
+            </li>
+            <li class="logout">
+              <a href="#none" title="log out">log out</a>
+            </li>
+            <li class="mypage">
+              <a href="#none" title="my page">my page</a>
+            </li>-->
+            <li class="joinus">
+              <a href="#none" title="join us 열기">join us</a>
+            </li>
+            <li class="fast_event">
+              <a href="#none" title="log out">
+              <img src="img/icon_event.png" alt="이벤트 이미지"/>
+                event</a>
+            </li>
+          </ul>
+        </div>
+				<div id="header">
+					<h2 class="blind">HEADER</h2>
+					<h1>
+						<a href="#mome" title="메인 홈페이지로 이동">
+							<img src="img/logo_claire.png" alt="로고"/>
+						</a>
+					</h1>
+					<div class="m_l_gnb"><!--모바일 전용 left gnb-->
+						<p>
+							<a href="#none" title="메뉴">
+								<img src="img/menu.png" alt="메뉴 아이콘 이미지"/>
+							</a>
+						</p>
+					</div>
+					<div class="m_r_gnb"><!--모바일 전용 right gnb-->
+						<p class="m_fast_reservation">
+							<a href="#none" title="reservation 페이지로 이동">
+								<img src="img/icon_reservation.png">
+							</a>
+						</p>
+					</div>
+					<div class="gnb">
+						<ul class="sub_gnb_list">
+
+							<li class="sub_gnb">
+								<a href="#none" title="room info 페이지로 이동"><span></span>room info V</a>
+								<ul>
+									<li><a href="#none" title="ALIE 방 페이지로 이동">ALIE</a></li>
+									<li><a href="#none" title="AMANT 방 페이지로 이동">AMANT</a></li>
+									<li><a href="#none" title="MISTER 방 페이지로 이동">MISTER</a></li>
+									<li><a href="#none" title="HOBBY 방 페이지로 이동">HOBBY</a></li>
+									<li><a href="#none" title="BLANCNOIR 방 페이지로 이동">BLANCNOIR</a></li>
+									<li><a href="#none" title="MIENNE 방 페이지로 이동">MIENNE</a></li>
+									<li><a href="#none" title="MISSA 방 페이지로 이동">MISSA</a></li>
+									<li><a href="#none" title="BONJOUR 방 페이지로 이동">BONJOUR</a></li>
+								</ul>
+							</li>
+							<li class="sub_gnb">
+								<a href="#none" title="special 페이지로 이동"><span></span>special V</a>
+								<ul class="sub_gnb_list">
+									<li><a href="#none" title="SWIMMING POOL 페이지로 이동">POOL</a></li>
+									<li><a href="#none" title="ZET SPA  페이지로 이동">ZET SPA</a></li>
+									<li><a href="#none" title="BARBECUE  페이지로 이동">BARBECUE</a></li>
+									<li><a href="#none" title="CAFFE  페이지로 이동">CAFFE</a></li>
+									<li><a href="#none" title="BEAM PROJECT  페이지로 이동">BEAM PROJECT</a></li>
+									<li><a href="#none" title="GAME CENTER  페이지로 이동">GAME CENTER</a></li>
+									<li><a href="#none" title="LOUNGE  페이지로 이동">LOUNGE</a></li>
+									<li><a href="#none" title="EVENT  페이지로 이동">EVENT</a></li>
+									<li><a href="#none" title="KIDS  페이지로 이동">KIDS</a></li>
+									<li><a href="#none" title="SERVICE  페이지로 이동">SERVICE</a></li>
+								</ul>
+							</li>
+              <li class="reservation_gnb">
+								<a href="#none" title="location 페이지로 이동"><span></span>reservation</a>
+							</li>
+							<li>
+								<a href="#none" title="guide tour 페이지로 이동"><span></span>guide tour</a>
+							</li>
+							<li class="sub_gnb">
+								<a href="#none" title="contact us 페이지로 이동"><span></span>contact us V</a>
+                <ul class="sub_gnb_list">
+									<li><a href="#none" title="공지사항 페이지로 이동">공지사항</a></li>
+									<li><a href="#none" title="QnA  페이지로 이동">QnA</a></li>
+									<li><a href="#none" title="여행후기 페이지로 이동">여행후기</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="contentWrap">
+      <div class="slide_area">
+				<span class="dark"></span>
+				<div class="slide_area_title">
+					<hr/>
+					<h2>RESERVATION</h2>
+				</div>
+			</div>
+      <form class="reservation_form" action="#" method="post">
+        <div class="room_select_area">
+          <h3 class="blind">방 선택</h3>
+          <div class="room_select_title">
+            객실선택
+          </div>
+          <ul class="room_select">
+            <li class="border_top"><a href="#none" title="ALIE 선택">alie</a></li>
+            <li class="border_top"><a href="#none" title="AMANT 선택">amant</a></li>
+            <li class="border_top"><a href="#none" title="MISTERE 선택">mistere</a></li>
+            <li class="border_right border_top"><a href="#none" title="HOBBY 선택">hobby</a></li>
+            <li><a href="#none" title="BLANCNOIR 선택">blancnoir</a></li>
+            <li><a href="#none" title="MIENNE 선택">Mienne</a></li>
+            <li><a href="#none" title="ROSA 선택">Rosa</a></li>
+            <li class="border_right"><a href="#none" title="BONUOUR 선택">Bonuour</a></li>
+          </ul>
+        </div>
+        <div class="calender">
+          <h3 class="blind">날짜 선택</h3>
+          <div class="ym_select">
+            <span>2017.01</span>
+            <p class="btn_ym_select btn_ym_select_prev">
+              <img src="img/btn_prev_darkgrey.png" alt="이전달으로 이동"/>
+            </p>
+            <p class="btn_ym_select btn_ym_select_next">
+              <img src="img/btn_next_darkgrey.png" alt="다음달로 이동"/>
+            </p>
+          </div>
+          <div class="d_select">
+            <ul class="d_select_header">
+              <li><span class="sun">sun</span></li>
+              <li>mon</li>
+              <li>tue</li>
+              <li>wed</li>
+              <li>thu</li>
+              <li>fri</li>
+              <li class="border_right"><span class="sat">sat</span></li>
+            </ul>
+            <ul class="d_select_date week1">
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/1</span></p>
+                  <p class="event_date"><span>신년</span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/2</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/3</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/4</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/5</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/6</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li class="border_right">
+                <a href class="select_date">
+                  <p class="d_date"><span>1/7</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+            </ul>
+            <ul class="d_select_date week2">
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/8</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/9</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/10</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/11</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/12</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/13</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li class="border_right">
+                <a href class="select_date">
+                  <p class="d_date"><span>1/14</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+            </ul>
+            <ul class="d_select_date week3">
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/15</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/16</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/17</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/18</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/19</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/20</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li class="border_right">
+                <a href class="select_date">
+                  <p class="d_date"><span>1/21</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+            </ul>
+            <ul class="d_select_date week4">
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/22</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/23</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/24</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/25</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/26</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/27</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li class="border_right">
+                <a href class="select_date">
+                  <p class="d_date"><span>1/28</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+            </ul>
+            <ul class="d_select_date week5">
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/29</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/30</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>1/31</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>2/1</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>2/2</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li>
+                <a href class="select_date">
+                  <p class="d_date"><span>2/3</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+              <li class="border_right">
+                <a href class="select_date">
+                  <p class="d_date"><span>2/4</span></p>
+                  <p class="event_date"><span></span></p>
+                  <p class="price_date"><span>300,000원</span></p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="option_area">
+          <div class="option_area_right">
+            <p class="necessary_guide"><span class="necessary">*</span> : 필수 선택</p>
+            <div class="option check_inout">
+              <div class="option_title check_inout_title">
+                <h3>기간 선택</h3><span class="necessary"> *</span>
+              </div>
+              <div class="option_content check_inout_content">
+                <div class="check_inout_area">
+                  <div class="check_in">
+                    <span>check in</span>
+                    <p class="check_in_date">2017.01.01</p>
+                  </div>
+                  <span class="check_between">
+                    ~
+                  </span>
+                  <div class="check_out">
+                    <span>check out</span>
+                    <p class="check_out_date"></p>
+                  </div>
+                </div>
+                <p>
+                  <select name="check_date" id="check_date">
+                    <option value="sel" selected>머무실 기간 선택</option>
+                  </select>
+                </p>
+              </div>
+            </div>
+            <div class="option check_poeple">
+              <div class="option_title people_title">
+                <h3>인원</h3><span class="necessary"> *</span>
+              </div>
+                <div class="option_content check_people_content">
+                <div class="check_people_content_area">
+                  <div class="check_adult">
+                    <label for="adult">성인</label>
+                    <select name="adult" id="adult">
+                      <option value="adult_sel" selected>선택</option>
+                    </select>
+                  </div>
+                  <div class="check_child">
+                    <label for="child">아동</label>
+                    <select name="child" id="child">
+                      <option value="child_sel" selected>선택</option>
+                    </select>
+                  </div>
+                  <div class="check_kid">
+                    <label for="kid">유아</label>
+                    <select name="kid" id="kid">
+                      <option value="kid" selected>선택</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="option add_option">
+              <div class="option_title add_option_title">
+                <h3>옵션선택</h3>
+              </div>
+              <div class="option_content add_option_content">
+                <ul>
+                  <li>
+                    <input type="checkbox" id="charcoal_2p" name="charcoal_2p">
+                    <label for="charcoal_2p">숯불+바베큐그릴 2인 10,000원</label>
+                    <select name="charcoal_2p_select" id="charcoal_2p_select">
+                      <option value="select" selected>선택</option>
+                      <option value="1" selected>1회</option>
+                      <option value="2" selected>2회</option>
+                    </select>
+                    <p>
+                      숯불과 바비큐그릴을 이용하실 수 있습니다.<br/>
+                      1번 사용이고 2인기준 10000원입니다.
+                    </p>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="charcoal_4p" name="charcoal_4p">
+                    <label for="charcoal_4p">숯불+바베큐그릴 3~4인 20,000원</label>
+                    <select name="charcoal_4p_select" id="charcoal_4p_select">
+                      <option value="select" selected>선택</option>
+                      <option value="1" selected>1회</option>
+                      <option value="2" selected>2회</option>
+                    </select>
+                    <p>
+                      숯불과 바비큐그릴을 이용하실 수 있습니다.<br/>
+                      1번 사용이고 3~4인기준 20000원입니다.
+                    </p>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="balloon_event" name="balloon_event">
+                    <label for="balloon_event">풍선이벤트(기본 110,000원, 전화요망)</label>
+                    <select name="balloon_select" id="balloon_select">
+                      <option value="select" selected>선택</option>
+                      <option value="1" selected>1회</option>
+                      <option value="2" selected>2회</option>
+                      <option value="3" selected>3회</option>
+                      <option value="4" selected>4회</option>
+                      <option value="5" selected>5회</option>
+                      <option value="6" selected>6회</option>
+                      <option value="7" selected>7회</option>
+                      <option value="8" selected>8회</option>
+                      <option value="9" selected>9회</option>
+                    </select>
+                    <p>
+                      아기자기한 풍선으로 멋진, 깜짝 이벤트를 선물하세요!<br/>
+                      전문업체에서 정성들여 설치해 드립니다.<br/>
+                      현수막이나 케익.티라이트동영상은 별도입니다.<br/>
+                      신청 후 전화로 문의주세요.
+                    </p>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="sparkling_wine" name="sparkling_wine">
+                    <label for="sparkling_wine">스파클링 와인(기본 20,000원)</label>
+                    <select name="sparkling_wine_select" id="sparkling_wine_select">
+                      <option value="select" selected>선택</option>
+                      <option value="1" selected>1회</option>
+                      <option value="2" selected>2회</option>
+                      <option value="3" selected>3회</option>
+                      <option value="4" selected>4회</option>
+                      <option value="5" selected>5회</option>
+                      <option value="6" selected>6회</option>
+                      <option value="7" selected>7회</option>
+                      <option value="8" selected>8회</option>
+                      <option value="9" selected>9회</option>
+                    </select>
+                    <p>
+                      와인잔에 얼음을 채워서 드시면 시원하고 달콤한맛이 진해집니다.<br/>
+                      차게해서 드세요~~
+                    </p>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="red_wine" name="red_wine">
+                    <label for="red_wine">가또 네그로 까베르네쇼비뇽 (20,000 원)</label>
+                    <select name="red_wine_select" id="red_wine_select">
+                      <option value="select" selected>선택</option>
+                      <option value="1" selected>1회</option>
+                      <option value="2" selected>2회</option>
+                      <option value="3" selected>3회</option>
+                      <option value="4" selected>4회</option>
+                      <option value="5" selected>5회</option>
+                      <option value="6" selected>6회</option>
+                      <option value="7" selected>7회</option>
+                      <option value="8" selected>8회</option>
+                      <option value="9" selected>9회</option>
+                    </select>
+                    <p>
+                      생산자는 산 페드로사이고 검은 고양이가 그려진 칠레의 대표와인.<br/>
+                      칠레내수1위이고 70여개 국가에서 리더의 위치를 고수하고 있는 와인
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="option_area_left">
+            <div class="mileage">
+              <div class="option_title price_title">
+                <h3>적립금 사용</h3>
+              </div>
+              <div class="option_content mileage_content">
+                <p>
+                  <label for="have_mileage">사용가능 적립금</label>
+                  <input type="text" id="have_mileage" name="have_mileage" readonly/>
+                  <span>원</span>
+                </p>
+                <p>
+                  <label for="use_mileage">적립금 사용</label>
+                  <input type="text" id="use_mileage" name="use_mileage">
+                  <span>원</span>
+                </p>
+              </div>
+            </div>
+            <div class="option price">
+              <div class="option_title price_title">
+                <h3>금액</h3>
+              </div>
+              <div class="option_content price_content">
+                <p>
+                  <label for="room_price">객실금액 : </label>
+                  <input type="text" id="room_price" name="room_price" readonly value="0"/>
+                  <span>원</span>
+                </p>
+                <p>
+                  <label for="people_price">인원추가 금액 : </label>
+                  <input type="text" id="people_price" name="people_price" readonly value="0"/>
+                  <span>원</span>
+                </p>
+                <p>
+                  <label for="option_price">옵션금액 : </label>
+                  <input type="text" id="option_price" name="option_price" readonly value="0"/>
+                  <span>원</span>
+                </p>
+                <p>
+                  <label for="mileage_sale">적립금 할인 : </label>
+                  <input type="text" id="mileage_sale" name="mileage_sale" readonly value="0"/>
+                  <span>원</span>
+                </p>
+                <p class="total_area">
+                  <label for="total">총 금액 : </label>
+                  <input type="text" id="total" name="total" readonly value="132000"/>
+                  <span>원</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btn_submit_area">
+          <input type="submit" id="btn_submit" name="btn_submit" value="다음단계"/>
+        </div>
+  		</form>
+    </div>
+		<div id="footerWrap">
+			<h2  class="blind">푸터 영역</h2>
+			<div class="footer_top">
+				<div class="footer_top_area">
+          <ul class="footer_gnb">
+            <li>
+              <a href="#none" title="about 페이지로 이동">
+              about
+              </a>
+            </li>
+            <li>
+              <a href="#none" title="이용 약관 페이지로 이동">
+                개인정보·수집 이용
+              </a>
+            </li>
+            <li>
+              <a href="#none" title="개인정보·수집 이용 페이지로 이동">
+                이용약관
+              </a>
+            </li>
+            <li>
+              <a href="#none" title="location 페이지로 이동">
+                location
+              </a>
+            </li>
+          </ul>
+          <p class="footer_logo">
+            <a href="index.html" title="메인 페이지로 이동">
+              <img src="img/logo_footer_white.png" alt="footer logo"/>
+            </a>
+          </p>
+
+        </div>
+			</div>
+			<div class="footer_bottom">
+					<div class="footer_bottom_area">
+					<div class="footer_info1">
+            <ul class="footer_info">
+              <li class="address_area">
+                <dl>
+                  <dt>주소</dt>
+                  <dd>
+                    <address>경기도 가평군 북면 백둔리 455-18번지</address>
+                  </dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>계좌번호</dt>
+                  <dd>농협 352-0275-6308-13 예금주 정보경</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>사업자 번호</dt>
+                  <dd>105-12-99908</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>통신판매 신고번호</dt>
+                  <dd>제2013-경기가평-51호</dd>
+                </dl>
+              </li>
+            </ul>
+						<p class="copyright">
+							Copyright 2016 YSH&copy; all rights reserved
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ </body>
+</html>

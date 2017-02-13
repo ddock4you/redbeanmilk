@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta  charset="utf-8"/>
+  <title> CLAIRE PENSION </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+  <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+  <link rel="stylesheet" type="text/css" href="css/index.css"/>
+  <link rel="stylesheet" type="text/css" href="css/media/media_index.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+  <!--jQuery rotate, scale 플러그인-->
+  <script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="css/ie7.css"/>
+  <![endif]-->
+  <!--[if IE 8]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 9]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 10]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <style type="text/css">
+
+  </style>
+  <script type="text/javascript">
+  var scroll_event,
+      scroll_value=5,
+      last_scroll_place=0,
+      $header_height=$("#headerWrap").outerHeight(),
+      $window_height=$(window).height(),
+      $window_width=$(window).width();
+
+  //스크롤 방향에 따른  header 영역 slideIn, slideDown 애니메이션 효과
+  $(window).scroll(function(event){
+    scroll_event=true;
+  });
+
+  setInterval(function(){
+    if(scroll_event){
+      has_scrolled();
+      scroll_event=false;
+    }
+  }, 250);
+
+  function has_scrolled(){
+    var now_scroll_place=$(this).scrollTop();
+
+    if(Math.abs(last_scroll_place - now_scroll_place) <= scroll_value)
+    return;
+
+    if(now_scroll_place > last_scroll_place && now_scroll_place > $header_height){
+      //Scroll Down
+      $("#headerWrap").slideUp(400);
+    }
+    else{
+      //Scroll Up
+      if(now_scroll_place + $(window).height() < $(document).height()){
+        $("#headerWrap").slideDown(400);
+      }
+    }
+    last_scroll_place=now_scroll_place;
+  }
+
+  // visual 영역 애니메이션 효과
+  $(document).ready(function(){
+    $(".visual_main_img").scale(1.15).animate({scale:"1"},20000);
+    $(".visual_main_icon").animate({opacity:"1", top:"20%"},1200, "easeInOutQuart");
+    $(".visual_main_text").delay(1000).animate({opacity:"1",top:"52%"},1400, "easeInOutQuart");
+  });
+
+  $(function(){
+		// Sub_gnb on/off
+    $(".sub_gnb_list").hide();
+
+
+    /*gnb영역에서 버튼(들)을 클릭하면 나타나는 효과
+    보완 필요.(코드 압축, 일부 영역 Tab 접근 안되는 문제 해결)*/
+		$(".gnb_room").on("click focusin",function(){
+      $(".sub_gnb_list").hide();
+      $(".gnb_list").children().children("a").css({"color":"#AEA288"});
+      $(".gnb_list").find("span").html("∧");
+      $(this).children("a").css({"color":"#E41B23"});
+      $(this).find("span").html("∨");
+      $(this).children("ul").slideDown(300);
+		});
+
+    $(".gnb_special").on("click focusin",function(){
+      $(".gnb_list").children().children("a").css({"color":"#AEA288"});
+      $(".gnb_list").find("span").html("∧");
+      $(this).children("a").css({"color":"#E41B23"});
+      $(this).find("span").html("∨");
+      $(".sub_gnb_list").hide();
+      $(this).children("ul").slideDown(300);
+		});
+
+    $(".gnb_contact").on("click focusin",function(){
+      $(".gnb_list").children().children("a").css({"color":"#AEA288"});
+      $(".gnb_list").find("span").html("∧");
+      $(this).children("a").css({"color":"#E41B23"});
+      $(this).find("span").html("∨");
+      $(".sub_gnb_list").hide();
+      $(this).children("ul").slideDown(300);
+		});
+
+    /*gnb영역에서 버튼(들)을 클릭하면 나타나는 효과
+    보완 필요.(코드 압축, 일부 영역 Tab 접근 안되는 문제 해결)*/
+    $(".m_sub_gnb_list").hide();
+    $(".m_gnb_room").on("click focusin",function(){
+
+      $(".m_gnb_list").children().children("a").css({"color":"#000"});
+      $(".m_gnb_list").find("span").html("∧");
+      $(this).find("span").html("∨");
+      $(".m_sub_gnb_list").stop().slideUp();
+      $(this).children("ul").stop().slideDown(300);
+		});
+
+
+    $(".m_gnb_special").on("click focusin",function(){
+      $(".m_gnb_list").children().children("a").css({"color":"#000"});
+      $(".m_gnb_list").find("span").html("∧");
+      $(this).find("span").html("∨");
+      $(".m_sub_gnb_list").stop().slideUp();
+      $(this).children("ul").stop().slideDown(300);
+		});
+
+    $(".m_gnb_contact").on("click focusin",function(){
+      $(".m_gnb_list").children().children("a").css({"color":"#000"});
+      $(".m_gnb_list").find("span").html("∧");
+      $(this).find("span").html("∨");
+      $(".m_sub_gnb_list").stop().slideUp();
+      $(this).children("ul").stop().slideDown(300);
+		});
+
+    //mobile header on/off
+    $(".m_menu_btn").on("click focusin",function(){
+      $(".m_header").animate({left:"0px"},500);
+    });
+
+    $(".m_menu_close_btn").on("click focusin",function(){
+      $(".m_header").animate({left:"-320px"},500);
+    });
+
+    //로그인 창 on / off
+      $("#top_headerWrap").hide();
+      $(".login a").on("mouseover focusin", function(){
+        $("#top_headerWrap").slideDown(500);
+      });
+
+    //다른 영역 클릭 시 로그인 영역 비활성화(숨기기)
+    //보완 필요(세부적인 영역 설정)
+      $("#bottom_headerWrap, #contentWrap, #footerWrap").click(function(){
+        $("#top_headerWrap").slideUp(500);
+      });
+
+		 //Room 선택 영역
+       //Room hover하면 hover된 영역에 글자 애니메이션 표시
+      $(".room_area ul li a").on("mouseover focusin", function(){
+        $(".room_area ul li a div").stop().animate({top:"45%", color:"#bbb"});
+        $(this).children("div").stop().animate({top:"35%", color:"#fff"});
+      })
+      .on("mouseout focusout", function(){
+        $(this).children("div").stop().animate({top:"45%", color:"#bbb"});
+      });
+
+       //Room click하면 선택한 room image를 Room_info 부모영역에 표시
+     $(".room_select li").on("click", function(){
+       var room_name=["_alie","_amant","_mister","_hobby","_blancnoir","_mienne","_missa","_bonjour"],
+           $room_number=$(this).index();
+
+       $(".room_area img").before("<img src='img/room_info/0"+$room_number+room_name[$room_number]+".jpg' alt='방 이미지'/>");
+         $(".room_area img:last").fadeOut(300, function(){
+           $(this).remove();
+       });
+       return false;
+     });
+
+      //special hover 기능
+      //special 마우스 드래그 기능도 필요.
+      $(".film_special li a").on("mouseover focusin", function(){
+        $(".film_special li a").find(".dark").stop().animate({opacity:"0"},300);
+        $(".film_special li a").find("h4").stop().animate({opacity:"0", top:"55%"},300);
+        $(this).children(".dark").stop().animate({opacity:"1"},300);
+        $(this).find("h4").stop().animate({opacity:"1", top:"45%"},300);
+      })
+      .on("mouseout focusout", function(){
+        $(".film_special li a").find(".dark").stop().animate({opacity:"0"},300);
+        $(".film_special li a").find("h4").stop().animate({opacity:"0", top:"55%"},300);
+      });
+
+    //tour hover 기능
+      $(".pic_group").on("mouseover focusin", function(){
+        $(".pic_back").stop().animate({bottom:"10%", left:"10%"},400);
+      });
+      if($window_width > 1024){
+        $(".pic_group").on("mouseout focusout", function(){
+          $(".pic_back").stop().animate({bottom:"5%", left:"2%"},400);
+        });
+      };
+		});
+
+
+  </script>
+ </head>
+
+ <body>
+	<div id="wrap">
+		<div id="headerWrap">
+			<div id="top_headerWrap">
+				<form class="login_info" action="#" method="post">
+					<fieldset>
+						<legend class="blind">로그인 영역</legend>
+            <h2>LOGIN</h2>
+            <div class="input_user">
+							<p class="input_userid">
+								<input id="userid" type="text" name="userid" required placeholder="ID 입력"/>
+							</p>
+							<p class="input_userpw">
+								<input id="userpw" type="password" name="userpw" required placeholder="Password 입력" autocomplete=off;/>
+							</p>
+              <p class="input_btn_login">
+                <input id="btn_login" type="button" name="btn_login" value="login"/>
+              </p>
+						</div>
+            <div class="input_etc">
+              <ul>
+                <li>
+                  <a href="#none" title="회원가입 페이지로 이동">회원가입</a>
+                </li>
+                <li>
+                  <a href="#none" title="아이디 찾기 페이지로 이동">아이디 찾기</a>
+                </li>
+                <li>
+                  <a href="#none" title="비밀번호 찾기 페이지로 이동">비밀번호 찾기</a>
+                </li>
+              </ul>
+            </div>
+					</fieldset>
+				</form>
+			</div>
+			<div id="bottom_headerWrap">
+        <div class="nav"><!--로그인 관련 gnb-->
+          <ul>
+            <li class="login">
+              <a href="#none" title="login page 열기">log in</a>
+            </li>
+            <!--<li class="welcome">
+              <a href="#none" title="welcome">윤승현 님 환영합니다!</a>
+            </li>
+            <li class="logout">
+              <a href="#none" title="log out">log out</a>
+            </li>
+            <li class="mypage">
+              <a href="#none" title="my page">my page</a>
+            </li>-->
+            <li class="joinus">
+              <a href="#none" title="join us 열기">join us</a>
+            </li>
+            <li class="fast_event">
+              <a href="#none" title="log out">
+              <img src="img/icon_event.png" alt="이벤트 이미지"/>
+                event</a>
+            </li>
+          </ul>
+        </div>
+				<div id="header">
+					<h2 class="blind">HEADER</h2>
+					<h1>
+						<a href="#nome" title="메인 홈페이지로 이동">
+							<img src="img/logo_claire.png" alt="로고"/>
+						</a>
+					</h1>
+          <div class="m_header_btn">
+            <p class="m_menu_btn">
+              <a href="#none" title="모바일 메뉴 버튼">
+                <img src="img/menu_black.png" alt="모바일 메뉴 버튼"/>
+              </a>
+            </p>
+            <p class="m_reser_btn">
+              <a href="m_reser_btn" title="모바일 실시간 예약 버튼">
+                <img src="img/menu_black.png" alt=" 모바일 메뉴 버튼"/>
+              </a>
+            </p>
+          </div>
+          <div class="m_header">
+            <div class="m_top">
+  						<p class="m_btn m_menu_close_btn">
+  							<a href="#none" title="메뉴">
+                  <img src="img/cross_black.png" alt="모바일 메뉴 닫기 버튼"/>
+  							</a>
+  						</p>
+              <p class="m_logo">
+                <img src="img/logo_footer_white.png" alt="로고 이미지"/>
+              </p>
+            </div>
+            <div class="m_bottom">
+              <ul class="user_info">
+                <li class="m_login">
+                  <a href="#none" title="모바일 로그인 페이지로 이동">
+                    login
+                  </a>
+                </li>
+                <li class="m_join">
+                  <a href="#none" title="모바일 회원가입 페이지로 이동">
+                    join us
+                  </a>
+                </li>
+              </ul>
+            </div>
+              <!--mobile reservation btn-->
+    					<!--<div class="m_btn m_reser_btn">
+    						<p>
+    							<a href="#none" title="reservation 페이지로 이동">
+
+    							</a>
+    						</p>
+    					</div>-->
+              <!--mobile login btn-->
+              <!--<div class="m_btn m_login_btn">
+    						<p>
+    							<a href="#none" title="reservation 페이지로 이동">
+
+    							</a>
+    						</p>
+    					</div>
+            -->
+            <div class="m_gnb">
+              <ul class="m_gnb_list">
+  							<li class="m_sub_gnb m_gnb_room">
+  								<a href="#none" title="room info 페이지로 이동">room info<span>∧</span></a>
+  								<ul class="m_sub_gnb_list">
+  									<li><a href="#none" title="ALIE 방 페이지로 이동">ALIE</a></li>
+  									<li><a href="#none" title="AMANT 방 페이지로 이동">AMANT</a></li>
+  									<li><a href="#none" title="MISTER 방 페이지로 이동">MISTER</a></li>
+  									<li><a href="#none" title="HOBBY 방 페이지로 이동">HOBBY</a></li>
+  									<li><a href="#none" title="BLANCNOIR 방 페이지로 이동">BLANCNOIR</a></li>
+  									<li><a href="#none" title="MIENNE 방 페이지로 이동">MIENNE</a></li>
+  									<li><a href="#none" title="MISSA 방 페이지로 이동">MISSA</a></li>
+  									<li><a href="#none" title="BONJOUR 방 페이지로 이동">BONJOUR</a></li>
+  								</ul>
+  							</li>
+  							<li class="m_sub_gnb m_gnb_special">
+  								<a href="#none" title="special 페이지로 이동">special<span>∧</span></a>
+  								<ul class="m_sub_gnb_list">
+  									<li><a href="#none" title="SWIMMING POOL 페이지로 이동">POOL</a></li>
+  									<li><a href="#none" title="ZET SPA  페이지로 이동">ZET SPA</a></li>
+  									<li><a href="#none" title="BARBECUE  페이지로 이동">BARBECUE</a></li>
+  									<li><a href="#none" title="CAFFE  페이지로 이동">CAFFE</a></li>
+  									<li><a href="#none" title="BEAM PROJECT  페이지로 이동">BEAM PROJECT</a></li>
+  									<li><a href="#none" title="GAME CENTER  페이지로 이동">GAME CENTER</a></li>
+  									<li><a href="#none" title="LOUNGE  페이지로 이동">LOUNGE</a></li>
+  									<li><a href="#none" title="EVENT  페이지로 이동">EVENT</a></li>
+  									<li><a href="#none" title="KIDS  페이지로 이동">KIDS</a></li>
+  									<li><a href="#none" title="SERVICE  페이지로 이동">SERVICE</a></li>
+  								</ul>
+  							</li>
+                <li class="m_reservation_gnb">
+  								<a href="#none" title="location 페이지로 이동">reservation</a>
+  							</li>
+  							<li>
+  								<a href="#none" title="guide tour 페이지로 이동">guide tour</a>
+  							</li>
+  							<li class="m_sub_gnb m_gnb_contact">
+  								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
+                  <ul class="m_sub_gnb_list">
+  									<li><a href="#none" title="공지사항 페이지로 이동">공지사항</a></li>
+  									<li><a href="#none" title="QnA  페이지로 이동">QnA</a></li>
+  									<li><a href="#none" title="여행후기 페이지로 이동">여행후기</a></li>
+  								</ul>
+  							</li>
+  						</ul>
+            </div>
+          </div>
+					<div class="gnb">
+						<ul class="gnb_list">
+							<li class="sub_gnb gnb_room">
+								<a href="#none" title="room info 페이지로 이동">room info<span>∧</span></a>
+								<ul class="sub_gnb_list">
+									<li><a href="#none" title="ALIE 방 페이지로 이동">ALIE</a></li>
+									<li><a href="#none" title="AMANT 방 페이지로 이동">AMANT</a></li>
+									<li><a href="#none" title="MISTER 방 페이지로 이동">MISTER</a></li>
+									<li><a href="#none" title="HOBBY 방 페이지로 이동">HOBBY</a></li>
+									<li><a href="#none" title="BLANCNOIR 방 페이지로 이동">BLANCNOIR</a></li>
+									<li><a href="#none" title="MIENNE 방 페이지로 이동">MIENNE</a></li>
+									<li><a href="#none" title="MISSA 방 페이지로 이동">MISSA</a></li>
+									<li><a href="#none" title="BONJOUR 방 페이지로 이동">BONJOUR</a></li>
+								</ul>
+							</li>
+							<li class="sub_gnb gnb_special">
+								<a href="#none" title="special 페이지로 이동">special<span>∧</span></a>
+								<ul class="sub_gnb_list">
+									<li><a href="#none" title="SWIMMING POOL 페이지로 이동">POOL</a></li>
+									<li><a href="#none" title="ZET SPA  페이지로 이동">ZET SPA</a></li>
+									<li><a href="#none" title="BARBECUE  페이지로 이동">BARBECUE</a></li>
+									<li><a href="#none" title="CAFFE  페이지로 이동">CAFFE</a></li>
+									<li><a href="#none" title="BEAM PROJECT  페이지로 이동">BEAM PROJECT</a></li>
+									<li><a href="#none" title="GAME CENTER  페이지로 이동">GAME CENTER</a></li>
+									<li><a href="#none" title="LOUNGE  페이지로 이동">LOUNGE</a></li>
+									<li><a href="#none" title="EVENT  페이지로 이동">EVENT</a></li>
+									<li><a href="#none" title="KIDS  페이지로 이동">KIDS</a></li>
+									<li><a href="#none" title="SERVICE  페이지로 이동">SERVICE</a></li>
+								</ul>
+							</li>
+              <li class="reservation_gnb">
+								<a href="#none" title="location 페이지로 이동">reservation</a>
+							</li>
+							<li>
+								<a href="#none" title="guide tour 페이지로 이동">guide tour</a>
+							</li>
+							<li class="sub_gnb gnb_contact">
+								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
+                <ul class="sub_gnb_list">
+									<li><a href="#none" title="공지사항 페이지로 이동">공지사항</a></li>
+									<li><a href="#none" title="QnA  페이지로 이동">QnA</a></li>
+									<li><a href="#none" title="여행후기 페이지로 이동">여행후기</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="contentWrap">
+			<!--<div class="event">
+				<h2>이벤트 영역</h2>
+				<div class="event_area">
+					<p class="event_power_btn">
+						버튼
+					</p>
+				</div>
+			</div>-->
+			<div id="visual">
+				<h2 class="blind">VISUAL</h2>
+				<div class="visual_main">
+          <p class="visual_main_img">
+		        <!--visual background 영역-->
+					</p>
+          <p class="visual_main_icon">
+            <img src="img/logo_footer_white.png" alt="메인 이미지"/>
+          </p>
+					<div class="visual_main_text">
+						<em>special restroom broke the desires</em>
+						<h3>Luxury Modern Theme Spa<br/><span class="amp">&amp;</span><br/>Heated Swimming Pool</h3>
+					</div>
+				</div>
+			</div>
+			<!--
+			<div id="about">
+				<h2 class="blind">about claire</h2>
+				<p class="about_text">
+					<a href="#none" title="ABOUT 페이지로 이동">
+						<strong>안녕하세요.</strong><br/>
+						<em>끌레르 펜션 소개</em>
+					</a>
+				</p>
+			</div>-->
+			<div id="room_info">
+				<h2>choose a room</h2>
+					<div class="room_area">
+						<span class="dark"></span>
+						<img src="img/room_info/00_alie.jpg" alt="방 이미지"/>
+            <p class="m_room_area">
+            </p>
+            <div class="room_scene">
+							<ul class="room_scene room_select">
+								<li class="bottom pre00_alie">
+                  <span class="dark"></span>
+									<a href="#" title="alie 방 상세 페이지로 이동">
+										<div class="pre00_alie_text">
+											<h4>alie</h4>
+											<p>URBAN &amp; VINTAGE</p>
+										</div>
+									</a>
+								</li>
+								<li class="bottom pre01_amant">
+                  <span class="dark"></span>
+									<a href="#" title="amant 방 상세 페이지로 이동">
+										<div class="pre01_amant_text">
+											<h4>amant</h4>
+											<p>ELEGANT &amp; MODERN</p>
+										</div>
+									</a>
+								</li>
+								<li class="bottom pre02_mistere">
+                  <span class="dark"></span>
+									<a href="#" title="mistere 방 상세 페이지로 이동">
+										<div class="pre02_mistere_text">
+											<h4>mistere</h4>
+											<p>SEMICLASSIC &amp; MODERN</p>
+										</div>
+									</a>
+								</li>
+								<li class="bottom pre03_hobby">
+                  <span class="dark"></span>
+									<a href="#" title="hobby 방 상세 페이지로 이동">
+										<div class="pre03_hobby_text">
+											<h4>hobby</h4>
+											<p>THEME &amp; MODERN</p>
+										</div>
+									</a>
+								</li>
+								<li class="pre04_blancmoir">
+                  <span class="dark"></span>
+									<a href="#" title="blancmoir 방 상세 페이지로 이동">
+										<div class="pre04_blancmoir_text">
+											<h4>blancmoir</h4>
+											<p>SEMICLASSIC &amp; MODERN</p>
+										</div>
+									</a>
+								</li>
+								<li class="pre05_mienne">
+                  <span class="dark"></span>
+									<a href="#" title="mienne 방 상세 페이지로 이동">
+										<div class="pre05_mienne_text">
+											<h4>mienne</h4>
+											<p>LOVELY &amp; LUMINOUS</p>
+										</div>
+									</a>
+								</li>
+								<li class="pre06_rosa">
+                  <span class="dark"></span>
+									<a href="#" title="rosa 방 상세 페이지로 이동">
+										<div class="pre06_rosa_text">
+											<h4>rosa</h4>
+											<p>WHITE  &amp; MODERN</p>
+										</div>
+									</a>
+								</li>
+								<li class="pre07_bonuour">
+                  <span class="dark"></span>
+									<a href="#" title="bonuour 방 상세 페이지로 이동">
+										<div class="pre07_bonuour_text">
+											<h4>bonuour</h4>
+											<p>CUTE &amp; LUMINOUS</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+				</div>
+			</div>
+			<div id="special">
+				<h2>special</h2>
+				<div class="special_area">
+				<p class="scroll">
+					<span class="stick"></span>
+				</p>
+					<ul class="film_special">
+						<li class="right spe00_pool">
+							<a href="#none" title="온수수영장 상세 페이지로 이동">
+								<img src="img/special/preview/spe00_pool.jpg" alt="온수수영장 이미지"/>
+								<span class="dark"></span>
+								<h4>swimming pool</h4>
+							</a>
+						</li>
+						<li class="spe01_zet">
+							<a href="#none" title="제트 스파 상세 페이지로 이동">
+								<img src="img/special/preview/spe01_zet.jpg" alt="제트 스파 이미지"/>
+								<span class="dark"></span>
+								<h4>zet spa</h4>
+							</a>
+						</li>
+						<li class="right spe02_barbecue">
+							<a href="#none" title="바베큐 상세 페이지로 이동">
+								<img src="img/special/preview/spe02_barbecue.jpg" alt="바베큐 이미지"/>
+								<span class="dark"></span>
+								<h4>barbecue</h4>
+							</a>
+						</li>
+						<li class="spe03_cafe">
+							<a href="#none" title="카페 상세 페이지로 이동">
+								<img src="img/special/preview/spe03_cafe.jpg" alt="카페 이미지"/>
+								<span class="dark"></span>
+								<h4>cafe</h4>
+							</a>
+						</li>
+						<li class="right spe04_beam">
+							<a href="#none" title="빔 프로젝트 상세 페이지로 이동">
+								<img src="img/special/preview/spe04_beam.jpg" alt="빔 프로젝트이미지"/>
+								<span class="dark"></span>
+								<h4>beam project</h4>
+							</a>
+						</li>
+						<li class="spe05_game">
+							<a href="#none" title="게임 센터 상세 페이지로 이동">
+								<img src="img/special/preview/spe05_game.jpg" alt="게임 센터 이미지"/>
+								<span class="dark"></span>
+								<h4>game center</h4>
+							</a>
+						</li>
+						<li class="right spe06_lounge">
+							<a href="#none" title="라운지 상세 페이지로 이동">
+								<img src="img/special/preview/spe06_lounge.jpg" alt="라운지 이미지"/>
+								<span class="dark"></span>
+								<h4>lounge</h4>
+							</a>
+						</li>
+						<li class="spe07_event">
+							<a href="#none" title="이벤트 상세 페이지로 이동">
+								<img src="img/special/preview/spe07_event.jpg" alt="이벤트 이미지"/>
+								<span class="dark"></span>
+								<h4>event</h4>
+							</a>
+						</li>
+						<li class="right spe08_kids">
+							<a href="#none" title="키즈 상세 페이지로 이동">
+								<img src="img/special/preview/spe08_kids.jpg" alt="키즈 이미지"/>
+								<span class="dark"></span>
+								<h4>kids</h4>
+							</a>
+						</li>
+						<li class="spe09_service">
+							<a href="#none" title="서비스 상세 페이지로 이동">
+								<img src="img/special/preview/spe09_service.jpg" alt="서비스 이미지"/>
+								<span class="dark"></span>
+								<h4>service</h4>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			<div id="tour">
+				<div>
+					<h2>tour</h2>
+					<div class="pic_group">
+						<a href="#none" title="TOUR 상세 페이지로 이동">
+							<div class="pic pic_back">
+								<p class="pic_img pic_back_img">
+									<img src="img/11_01.jpg" alt="더보기 이미지"/>
+								</p>
+								<p class="pic_back_text">
+									More Tour
+								</p>
+							</div>
+							<div class="pic pic_front">
+								<p class="pic_img pic_front_img">
+									<img src="img/tour_guide2.jpg" alt="투어 이미지"/>
+								</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+      <div id="about">
+        <a href="#none" title="about 페이지로 이동">
+          <div>
+            <h2>
+              Are you curious about Claire?
+            </h2>
+            <p>
+              More Story
+            </p>
+          </div>
+        </a>
+      </div>
+      <div id="location">
+        <h2>
+          location
+        </h2>
+        <div class="location_area">
+          <a href="#none" title="location 페이지로 이동">
+            <div class="location_text_area">
+              <p class="location_text">
+                <strong>Clare Location</strong>
+                경기도 가평군<br/>
+                북면 백둔리<br/>
+                455-18번지
+              </p>
+              <p class="location_text location_phone">
+                <img src="img/icon_phone_white.png" alt="전화번호 이미지"/>
+                010.9543.9177
+              </p>
+              <p class="more_info">
+                More Info
+              </p>
+            </div>
+            <p class="location_img">
+              <img src="img/location_img.jpg" alt="지도 이미지"/>
+            </p>
+          </a>
+        </div>
+      </div>
+		</div>
+		<div id="footerWrap">
+			<h2  class="blind">푸터 영역</h2>
+			<div class="footer_top">
+				<div class="footer_top_area">
+          <ul class="footer_gnb">
+            <li>
+              <a href="#none" title="about 페이지로 이동">
+              about
+              </a>
+            </li>
+            <li>
+              <a href="#none" title="이용 약관 페이지로 이동">
+                개인정보·수집 이용
+              </a>
+            </li>
+            <li>
+              <a href="#none" title="개인정보·수집 이용 페이지로 이동">
+                이용약관
+              </a>
+            </li>
+            <li>
+              <a href="#none" title="location 페이지로 이동">
+                location
+              </a>
+            </li>
+          </ul>
+          <p class="footer_logo">
+            <a href="index.html" title="메인 페이지로 이동">
+              <img src="img/logo_footer_white.png" alt="footer logo"/>
+            </a>
+          </p>
+
+        </div>
+			</div>
+			<div class="footer_bottom">
+					<div class="footer_bottom_area">
+					<div class="footer_info1">
+            <ul class="footer_info">
+              <li class="address_area">
+                <dl>
+                  <dt>주소</dt>
+                  <dd>
+                    <address>경기도 가평군 북면 백둔리 455-18번지</address>
+                  </dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>계좌번호</dt>
+                  <dd>농협 352-0275-6308-13 예금주 정보경</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>사업자 번호</dt>
+                  <dd>105-12-99908</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>통신판매 신고번호</dt>
+                  <dd>제2013-경기가평-51호</dd>
+                </dl>
+              </li>
+            </ul>
+						<p class="copyright">
+							Copyright 2016 YSH&copy; all rights reserved
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ </body>
+</html>

@@ -1,0 +1,160 @@
+body{font-family:"Montserrat", Noto Sans; margin:0;}
+
+/*############################### wrap #######################################*/
+	#wrap{width:100%; text-transform:uppercase;}
+
+
+/*############################# headerWRap ###################################*/
+	#headerWrap{
+							width:100%;
+							border-top:4px solid #2B2727;
+							background-color:#fff;
+							border-bottom:1px solid #ccc;
+							position:fixed;
+							top:0;
+							z-index:9999;
+							}
+
+/*###################### top_headerWRap ############################*/
+#top_headerWrap{width:100%; height:240px; background-color:#2B2727;}
+	.login_info{width:100%;}
+		.login_info h2{padding:30px 0;}
+		.input_user{width:700px; height:40px; margin:0 auto 20px;}
+			.input_user p{width:200px; height:35px; float:left;margin-left:30px;}
+				.input_user p.input_btn_login{width:80px; height:39px;}
+				.input_user p.input_userid{margin-left:80px;}
+				.input_user p input{
+														width:100%;
+														height:100%;
+														border:2px solid #fff;
+														background-color:#2B2727;
+														color:#fff;
+													 }
+					#userid, #userpw{text-indent:12px;}
+
+		.input_etc{width:700px; auto; text-align:center;}
+			.input_etc ul:after{content:""; display:block; clear:both;}
+				.input_etc ul li{display:inline-block; padding:0 7px; color:#fff;}
+					.input_etc ul li a{color:#fff;}
+
+/*###################### bottom_headerWRap #########################*/
+#bottom_headerWrap{width:100%; height:100%; position:relative;}
+
+/*##################### top gnb #########################*/
+		.d_gnb{position:absolute; top:20px; right:50px;}
+			.d_gnb p{float:left;}
+				.d_gnb p a{padding-left:18px; background-size:15px 15px;}
+					.fast_event a{
+										background-image:url("../img/icon_event.png");
+										background-repeat:no-repeat;
+										color:#FF3636;
+										}
+				.fast_reservation{margin-left:10px;}
+					.fast_reservation a{
+													background-image:url("../img/icon_reservation.png");
+													background-repeat:no-repeat;
+													color:#FFBB00;
+													}
+
+	/*#################### �����Ͽ� gnb ########################*/
+			.m_r_gnb, .m_l_gnb{position:absolute;top:15px; right:40px; display:none;}
+				.m_l_gnb{ left:40px;}
+				.m_r_gnb p{width:30px; height:30px;}
+
+				.m_l_gnb{top:18px;}
+				 .m_l_gnb p{width:26px; height:26px;}
+
+					.m_r_gnb p img, .m_l_gnb p img{width:100%; height:100%;}
+
+	#header{max-width:1200px; height:90px; margin:0 auto; position:relative;}
+		h1{width:190px; height:40px; position:absolute; top:10px; left:50%; margin-left:-95px;}
+			h1 img{width:100%; height:100%;}
+
+	/*####################### gnb ###########################*/
+		.gnb{padding-top:60px;text-align:center;}
+			.gnb ul li{display:inline-block; margin-left:10px; position:relative;}
+			.gnb ul li:last-child{margin-left:0;}
+				.gnb ul li a{display:block;padding:0 8px; color:#AEA288; font-weight:bold;}
+					.gnb ul li a span{
+												display:block;
+												width:100%;
+												height:2px;
+												background-color:#AEA288;
+												transform:scalex(0);
+												transition: all 0.3s ease-in-out;
+												margin-bottom:5px;
+											}
+					.sub_gnb ul{display:block; width:100%; position:absolute; top:30px; left:0; z-index:2;background-color:#fff;}
+					.sub_gnb ul li{display:block; text-align:center; margin-left:0; border-bottom:1px solid #AEA288; padding:3px 0;}
+
+/*############################### content #####################################*/
+	#contentWrap{width:100%; overflow:hidden; padding-top:90px;}
+		.title{width:100%; margin:50px 0;}
+			.title_stick{width:170px; height:5px; background-color:#000; margin:0 auto; animation:title_stick_ani 0.5s ease-in-out;}
+		h2{font-size:28px; text-align:center; font-weight:400; margin-top:10px; animation:title_ani 1s ease-in-out;}
+
+		@keyframes title_stick_ani{
+			0%{transform:scalex(0);}
+			30%{transform:scalex(0);}
+			100%{transform:scalex(1);}
+		}
+
+		@keyframes title_ani{
+			0%{transform:scaley(0);}
+			50%{transform:scaley(0);}
+			100%{transform:scaley(1);}
+		}
+	/*########################### privacy #################################*/
+		#user_info{width:700px; margin:50px auto 0;}
+		.privacy{width:100%;}
+		h3{text-align:center;}
+		.input_area{width:400px; height:95px; margin:0 auto 10px;}
+			.input_area input{height:36px; border:2px solid #ccc;}/*input_area 내 모든 input border 조절*/
+			#user_name, #user_pw, #user_pw_chk{width:98.5%; height:36px;}
+			#user_id{width:65.7%; height:36px;}
+			#chk_id{width:31.5%; height:38px; vertical-align:middle; border: 2px solid #000; background-color:#fff; font-weight:bold;}
+			#user_front_email, #user_back_email{width:30%; height:36px; text-align:center;}
+			#user_back_select_email{width:29.6%; height:40px; border:2px solid #ccc;}
+			.user_phone input{width:29%;height:36px;text-align:center;}/*휴대폰 input 일괄 설정*/
+			.user_reg_number input{width:46.2%; height:36px;text-align:center;}
+			#user_recommend{width:65.7%; height:36px;}
+			#chk_recommend{width:31.5%; height:38px;vertical-align:middle; border: 2;px solid #000; background-color:#fff; font-weight:bold;}
+			.btn_group{width:100%; height:40px; text-align:center;}
+				.btn_group input{width:20%; height:40px; background-color:#fff; border:2px solid #000; font-weight:bold;}
+			.basic_label{display:block;width:100%; padding-bottom:5px; font-weight:bold;}/*기본정보 입력 내 모든 라벨 사이즈 조정*/
+			input[type=checkbox]{width:20px; height:20px; vertical-align:middle; border-radius:none; background-color:gold;}
+	/*########################### terms #################################*/
+	.terms{width:100%; margin-top:50px;}
+		.terms ul li{border-top:1px solid #ccc;}
+			.terms ul li a{display:block; width:83%; height:100%; float:left;}
+		.terms_title{width:100%; height:30px;}
+		.terms h3{text-align:left; float:left;width:83%;}
+			.accept_area{float:right;width:17%; text-align:right;}
+		.terms_text{widtn:100%; overflow:hidden; background-color:#AEA288;clear:both;}
+			textarea{width:650px; display:block; margin: 10px auto;}
+/*############################### footer ######################################*/
+	#footerWrap{width:100%;height:420px;}
+		#footerWrap h2{
+									font-size:32px;
+									color:#fff;
+									padding:20px 0;
+									text-align:center;
+									letter-spacing:15px;
+									font-weight:400;
+									}
+
+	/*#################### footer top ######################*/
+		.footer_top{width:100%; height:310px; background-color:#777; color:#fff;}
+			.footer_top_area{width:700px; height:100%; margin:0 auto; background-color:gold; position:relative;}
+
+
+
+
+	/*#################### footer bottom ######################*/
+		.footer_bottom{width:100%; height:120px; background-color:#2B2727;}
+			.footer_bottom_area{width:1000px; height:100%; margin:0 auto;}
+				.footer_logo{width:40px; height:40px; margin:0 auto; padding:10px 0;}
+					.footer_logo img{width:100%; height:100%;}
+
+				.footer_info{width:100%; font-size:11px; text-align:center; color:#fff;}
+					.footer_info p{padding-bottom:3px;}

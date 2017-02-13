@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title> 레이아웃 </title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="css/ie7.css"/>
+  <![endif]-->
+  <!--[if IE 8]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 9]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  <!--[if IE 10]>
+		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
+  <![endif]-->
+  
+  <style type="text/css">
+	
+	body{font-family:"Noto Sans"}
+	/*############################### wrap #######################################*/
+	#wrap{width:100%; text-transform:uppercase;}
+
+	/*############################### header ######################################*/
+	#headerWrap{width:100%; border-top:4px solid #2B2727; border-bottom:1px solid #ccc; font-family:"Noto Sans";}
+	#header{width:1200px; height:90px; margin:0 auto; position:relative;}
+		#header h1{width:190px; height:40px; position:absolute; top:10px; left:50%; margin-left:-95px;}
+			#header h1 img{width:100%; height:100%;}
+		
+		#header .gnb{padding-top:60px;text-align:center;}
+		#header .gnb ul li{display:inline-block; margin-left:10px;}
+		#header .gnb ul li:last-child{margin-left:0;}
+			#header .gnb ul li a{padding:0 5px; color:#AEA288; font-weight:bold;}
+			#header .gnb ul li a:hover{color:#D9C9A6;}
+			
+
+
+	/*############################### content ######################################*/
+			#contentWrap{width:100%;}
+
+	/*############# visual ###############*/
+	#visual{width:100%; overflow:hidden;}
+		.visual_main{width:100%; height:600px; background-image:url("img/main01_04.jpg"); background-repeat:no-repeat; background-size:100% 100%; animation:visual_main_ani 10s;}
+
+		@keyframes visual_main_ani{
+			0%{transform:scale(1.1);}
+		}
+
+			.visual_main div.visual_main_text{width:50%;position:absolute; top:35%; left:50%; margin-left:-25%; color:#fff; text-align:center; animation:visual_main_text_ani 1.5s ease-in-out;}
+				.visual_main_text h3{color:#fff; font-size:44px;}
+				.visual_main_text span.amp{font-size:24px;}
+				.visual_main_text em{font-family:Courgette; font-size:20px;letter-spacing:2px; text-transform:none;}
+			
+			@keyframes visual_main_text_ani{
+				0%{top:40%; opacity:0;}
+				70%{top:40%; opacity:0;}
+			}
+			.visual_sub{width:100%; height:400px;}
+				.visual_sub ul{width:100%; height:100%;position:relative;}
+					.visual_sub li{float:left; position:absolute;}
+					.visual_sub li.visual_sub1{width:45%; height:100%; background-image:url("img/room_info.jpg"); background-repeat:no-repeat; background-size:100% 100%; top:0;left:0;animation:visual_sub1_ani 0.5s ease-out;}
+
+					@keyframes visual_sub1_ani{
+						0%{opacity:0; left:-50%;}
+					}
+						
+					.visual_sub li.visual_sub2{width:35%; height:100%; background-image:url("img/special.jpg"); background-repeat:no-repeat; background-size:120% 100%;top:0;left:45.0000001%; animation:visual_sub2_ani 1s ease-out;}
+
+					@keyframes visual_sub2_ani{
+						0%{opacity:0; left:15%;}
+						15%{opacity:0; left:15%;}
+					}
+
+					.visual_sub li.visual_sub3{width:20%; height:100%;background-image:url("img/tour_guide2.jpg"); background-repeat:no-repeat; background-size:200% 100%;top:0;left:80.0000001%; animation:visual_sub3_ani 1.5s ease-out;}
+
+					@keyframes visual_sub3_ani{
+						0%{opacity:0; left:65%;}
+						30%{opacity:0; left:65%;}
+					}
+
+						.visual_sub li p{width:50%; height:100px;font-size:28px; font-weight:bold; color:#fff; position:absolute; top:35%; left:50%; margin-left:-25%; text-align:center;}
+							.visual_sub li p em{font-size:16px;text-transform:none; font-weight:100; font-family:Courgette; letter-spacing:2px;}
+							
+							/*메인 페이지 내 모든 고스트 버튼 정의*/
+							a.link_btn{display:block; width:150px; height:40px; border:3px solid #fff; font-size:18px; line-height:40px; text-align:center; margin:20px auto 0; transition: 0.3s; color:#fff; font-weight:bold;}
+
+							a.link_btn:hover{background-color:orange;}
+	
+		/*######## about_claire #########*/
+		#about_claire{width:100%; height:420px; margin:100px 0;position:relative; background-image:url("img/main01_03.jpg"); background-repeat:no-repeat; background-position:0 -400px;}
+			
+			.about_claire_title{width:1200px; margin:0 auto; padding-top:120px; }
+				.about_claire_title h3.about_title{font-size:60px; color:#fff; text-align:center; letter-spacing:15px; font-weight:400;}
+				 .about_claire_title a.link_btn{width:300px; margin-top:}
+
+		/*########### Location ###########*/
+		#location{width:1200px; margin:0 auto 70px;}
+			.map_img{width:100%; height:420px; overflow:hidden;}
+			.map_img img{width:100%;}
+
+		/*########### reservation ###########*/
+		#reservation{width:100%; height:420px; margin:70px 0;}
+			
+
+		/*########### contact_us ###########*/
+		#contact_us{width:1200px; overflow:hidden; margin:0 auto 70px;}
+			.input_about_text{padding-bottom:70px;}
+			#contact_us fieldset{border:none;}
+			#contact_us legend {font-size:24px; font-weight:bold;color:#A2A288;}
+			#contact_us h4{font-size:24px; color:#A2A288; padding:20px 0;}
+			#contact_us form{padding-top:30px;}
+			#contact_us form div{padding:20px 0;}
+			#contact_us div.contact_name, #contact_us div.contact_mail, #contact_us div.contact_phone{width:300px; overflow:hidden; padding-right:150px; float:left;}
+			
+				#contact_us form div.contact_phone{padding-right:0;}
+				#contact_us form div label{display:block; padding-bottom:10px; font-weight:bold;}
+				#contact_us form div input{width:296px; height:36px; border:2px solid #ccc; line-height:36px;}
+				#contact_us form div select{width:746px; height:40px; border:2px solid #ccc; line-height:39px;}
+				#contact_us form div.contact_message{width:1200px; overflow:hidden;}
+				#contact_us form div input#input_message{width:1196px; height:396px; border:2px solid #ccc;}
+
+		/*############# footer #############*/
+		#footerWrap{width:100%;background-color:#2B2727;}
+		#footer{width:1200px; height:300px; margin:0 auto; position:relative; color:#fff;}
+			.footer_top_menu{padding:30px 0; text-transform:uppercase;}
+			.footer_top_menu  li{padding:3px;}
+				.footer_top_menu  li a{padding:2px; color:#fff; font-weight:bold;}
+
+			address{font-style:normal;}
+
+			.footer_bottom_menu{position:absolute; bottom:30px; right:10px; font-weight:bold;}
+					a.footer_logo{display:block; text-align:center;}
+					a.footer_logo img{width:180px}
+					.copyright{text-transform:uppercase;}
+  </style>
+ </head>
+
+ <body>
+	<div id = "wrap">
+		<div id = "headerWrap">
+			<div id = "header">
+				<h2>헤더 영역</h2>
+				<h1>
+					<img src = "img/logo_claire.png" alt = "로고"/>
+				</h1>
+				<div class = "gnb">
+					<ul>
+						<li>
+							<a href="#none" title="about 페이지로 이동">about</a>
+						</li>
+						<li>
+							<a href="#none" title="room info 페이지로 이동">room info</a>
+						</li>
+						<li>
+							<a href="#none" title="special 페이지로 이동">special</a>
+						</li>
+						<li>
+							<a href="#none" title="guide tour 페이지로 이동">guide tour</a>
+						</li>
+						<li>
+							<a href="#none" title="location 페이지로 이동">location</a>
+						</li>
+						<li>
+							<a href="#none" title="contact us 페이지로 이동">contact us</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id = "contentWrap">
+			<div id = "visual">
+				<h2>visual 영역</h2>
+					<div class="visual_main">
+						<div class="visual_main_text">
+							<em>special restroom broke the desires</em>
+							<h3>Luxury Modern Theme Spa<br/><span class="amp">&amp;</span><br/>Heated Swimming Pool<h3>
+						</div>
+					</div>
+				<div class="visual_sub">
+					<ul>
+						<li class="visual_sub1">
+							<p class="visual_sub_text1">
+								<em>claire theme room</em><br/>
+								<strong>room information</strong>
+								<a class="link_btn" href="#none" title="Room Info 페이지로 이동">view all</a>
+							</p>
+						</li>
+						<li class="visual_sub2">
+							<p class="visual_sub_text2">
+								<em>Today is an opputunity. in Claire pension.</em><br/>
+								<strong>special</strong>
+								<a class="link_btn" href="#none" title="Special 페이지로 이동">view all</a>
+							</p>
+						</li>
+						<li class="visual_sub3">
+							<p class="visual_sub_text3">
+								<em>Leave, Gapyeong tour</em><br/>
+								<strong>tour guide</strong>
+								<a class="link_btn" href="#none" title="Tour Guide 페이지로 이동">view all</a>
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		
+			<div id = "about_claire">
+				<h2>클레어 펜션 소개 영역(about claire)</h2>
+				<div class="about_claire_title">
+					<h3 class = "about_title">about claire</h3>
+					<a class="link_btn" href = "#none" title = "dtail view">view all</a>
+				</div>
+			</div>
+	
+			<div id = "location">
+				<h2>지도 영역(LOCATION)</h2>
+				<div class = "title">
+					<h3>location</h3>
+					<p></p>
+					<p class = "map_img">
+						<img src = "img/location_img.jpg" alt = "지도" />
+					</p>
+
+				</div>
+				
+			</div>
+			<div id = "reservation">
+				<h2>예약하기 영역(RESERVATION)</h2>
+				<div class = "about_back_wrap">
+					<p class = "back_img">
+						<img src = "img/reservation_img.jpg" alt = "reservation 이미지"/>
+					</p>
+					
+					<div class = "about_black_img">
+							<h3 class = "about_title">RESERVATION</h3>
+							<a class = "detail_view_btn" href = "#none" title = "dtail view">DETAIL VIEW</a>
+					</div>
+				</div>
+			</div>
+			<div id = "contact_us">
+				<h2>문의하기 영역(CONTACT US)</h2>
+				<div class = "title">
+					<p class = "title_img">
+						<img src = "img/title_img.png" title = "타이틀 이미지"/>
+					</p>
+					<h3>CONTACT US</h3>
+				</div>
+				<div class = "contact_guide">
+					<h4>이것을 보시오1</h4>
+					<p class = "contact_text">
+						Inspired by the vanishing sub-genre of agricultural memo books, ornate pocket ledgers, and the simple, unassuming beauty of a well-crafted grocery list, the Draplin Design Company of Portland and Coudal Partners, a Chicago creative firm, have created Field Notes Brand, a collection of smartly-designed, vintage-styled pocket notebooks, calendars, and various office accoutrements.<br/><br/>
+						In 2006, Aaron Draplin, a designer and collector of American ephemera, decided to create an homage to the utilitarian pocket notebooks found in the first half of the 20th century at full-service gas stations, midwestern feed stores, and all points in between. (Lots more on the products that inspire us here.) He called the hundred or so books he’d printed, “Field Notes,” and sent them out to friends, including Jim Coudal. The day that first book arrived in Chicago, Jim called Aaron. In less than a week, a company was born.<br/><br/>
+						Beginning with packages of three graph-ruled booklets wrapped with a thick “kraft” brown cover, Field Notes has since printed dozens of variations and introduced wildly popular limited editions, exploring new colors, papers, printing processes, and special packaging.
+					</p>
+					<h4>이것을 보시오2</h4>
+					<p class = "contact_text">
+						Swing by our studio in the West Loop to buy notebooks in person. Already know what you’d like? Order Field Notes products online and choose the “Local Pickup” option. We’ll have your order ready when you arrive.
+					</p>
+				</div>
+				<form action = "#" method = "post">
+					<fieldset>
+						<legend>
+							Contact Us
+						</legend>
+						<div class = "contact_name">
+							<p>
+								<label for = "input_name">Name</label>
+							<p>
+							<input id = "input_name" type = "text" name = "input_name"/>
+						</div>
+						<div class = "contact_mail">
+							<p>
+								<label for = "input_mail">e-mail</label>
+							<p>
+							<input id = "input_mail" type = "email" name = "input_mail"/>
+						</div>
+						<div class = "contact_phone">
+							<p>
+								<label for = "input_phone">phone-number</label>
+							<p>
+							<input id = "input_phone" type = "number" name = "input_mail"/>
+						</div>
+						<div class = "contact_about">
+							<p>
+								<label for = "input_about">What's this about?</label>
+							<p>
+							<select id = "input_about">
+								<option>문의사항1</option>
+								<option>문의사항2</option>
+								<option>문의사항3</option>
+								<option>문의사항4</option>
+							</select>
+						</div>
+						<div class = "contact_message">
+							<p>
+								<label for = "input_message">Message</label>
+							<p>
+							<input id = "input_message" type = "text" name = "input_message"/>
+						</div>
+						<a class = "view_all_btn" href = "#none" title = "전체 보기 버튼">SEND MESSAGE</a>
+					</fieldset>
+				</form>
+				<div>
+			</div>
+		</div>
+		
+		<div id = "footerWrap">
+			<div id = "footer">
+				<h2>푸터 영역</h2>
+				<div class = "footer_top_menu">
+					<ul>
+						<li><a href = "#" title = "Main">Main</a></li>
+						<li><a href = "#" title = "Main">About</a></li>
+						<li><a href = "#" title = "Main">Room Information</a></li>
+						<li><a href = "#" title = "Main">Tour Guide</a></li>
+						<li><a href = "#" title = "Main">Reservation</a></li>
+						<li><a href = "#" title = "Main">Question</a></li>
+					</ul>
+				</div>
+				<div class = "address">
+					<address>
+						주소: 경북 청도군 운문면 신원리 449 | 사업자등록번호:515-07-98984 <br/> 전화: 010-5214-2701 | 메일: dnjftnr122@naver.com | 대표자: 김월숙
+					</address>
+				</div>
+				<div class = "footer_bottom_menu">
+					<a class = "footer_logo" href = "index.html" title = "메인으로">
+						<img src = "img/logo_footer.png" alt = "푸터 로고"/>
+					</a>
+					<p class = "copyright">
+						Copyright 2016 YSH&copy; all rights reserved
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+ </body>
+</html>
