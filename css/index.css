@@ -129,7 +129,6 @@ body{font-family:"Montserrat", Noto Sans; margin:0;}
 /*###################### m_header ##########################*/
 	.m_header{
 						width:320px;
-						height:950px;
 						position:fixed;
 						top:5px;
 						left:-320px;
