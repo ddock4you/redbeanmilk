@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-sclalable=no"/>
   <link rel="stylesheet" type="text/css" href="css/reset.css"/>
   <link rel="stylesheet" type="text/css" href="css/room00_alie.css"/>
-  <link rel="stylesheet" type="text/css" href="css/media/room00_alie.css"/>
+  <link rel="stylesheet" type="text/css" href="css/media/room.css"/>
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js"></script>
   <!--[if IE 7]>
 		<link rel="stylesheet" type="text/css" href="css/ie7.css"/>
   <![endif]-->
@@ -22,86 +23,76 @@
   <!--[if IE 10]>
 		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
   <![endif]-->
-  <script>
+  <script type=text/javascript>
+  //room 폴더 이름(이걸로 각 room_info 컨텐츠 사진 표시 제어 가능)
+  var room_name = ["00_alie","01_amant","02_mister","03_hobby","04_blancnoir","05_mienne","06_missa","07_bonjour"]
+  var room_name_no = room_name[0];
 	$(function(){
-
 		//Sub_gnb on/off
 		$(".sub_gnb ul").hide();
 
-		$(".sub_gnb").bind("click mouseover focusin",function(){
+		$(".sub_gnb").on("click mouseover focusin",function(){
 			$(this).children("ul").stop().slideDown(500);
-		}).bind("mouseout focusout",function(){
+		}).on("mouseout focusout",function(){
 			$(this).children("ul").stop().slideUp(500);
 		});
 
-		 //Room 선택 영역
-			$(".pre00_alie").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/00_alie.jpg");
-		});
-
-		$(".pre01_amant").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/01_amant.jpg");
-		});
-
-		$(".pre02_mistere").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/02_mister.jpg");
-		});
-
-		$(".pre03_hobby").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/03_hobby.jpg");
-		});
-
-		$(".pre04_blancmoir").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/04_blancnoir.jpg");
-		});
-
-		$(".pre05_mienne").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/05_mienne.jpg");
-		});
-
-		$(".pre06_rosa").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/06_missa.jpg");
-		});
-
-		$(".pre07_bonuour").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/07_bonjour.jpg");
-		});
-
+      $(".visual_main_text").hide().fadeIn(1000);
 
 			//로그인 창 on / off
 			  $("#top_headerWrap").hide();
-			  $(".login a").bind("click focusin", function(){
+			  $(".login a").on("click focusin", function(){
 				$("#top_headerWrap").slideDown(500);
 			  });
 
-			  /*focusout(function(){
-				$("#top_headerWrap").slideUp(500);
-			  });*/
+      //visual 이미지 생성
+        $(".visual_main_img").css({"background-image":"url(img/room_info/"+room_name_no+"/"+room_name_no+".jpg)"});
+      // room_info 이미지 생성
+        $(".room_info_desc").css({"background-image":"url(img/room_info/"+room_name_no+"/"+room_name_no+"_back.jpg)"});
 
-			  $("#bottom_headerWrap, #contentWrap, #footerWrap").click(function(){
-				$("#top_headerWrap").slideUp(500);
-			});
+      // li 이미지 생성
+        var i = $(".modal_area li").index();
+        for(i;i<20;i++){
+          $(".modal_area li:eq("+i+")").css({"background-image":"url(img/room_info/"+room_name_no+"/"+i+".jpg)"});
+        }
+      // 모달 팝업
+        $(".wrap_dark, .modal").hide();
+        $(".modal_area li a").on("click focusin", function(){
+          var j = $(this).parent().index();
+          $(".modal").css({"background-image":"url(img/room_info//"+room_name_no+"/"+j+".jpg)"});
+          $(".wrap_dark, .modal").show();
+          return false;
+        });
 
-			//슬라이딩 윈도우
-			$("#film").prepend($(".scene:last"));
-			$("#film").css({"marginLeft":"-100%"});
-			$(".next").click(function(){
+        $(".wrap_dark, .modal").on("click", function(){
+          $(".wrap_dark, .modal").hide();
+        });
+      // footer_gnb에 focusin되면 모달 팝업창 꺼지게 설정(탭키 접근)
+        $(".footer_gnb").on("focusin", function(){
+          $(".wrap_dark, .modal").hide();
+        });
 
-				$("#film").stop().animate({"marginLeft":"-=100%"},1000,"swing",function(){
-					$("#film").append($(".scene:first"));
-					$("#film").css({"marginLeft":"-100%"});
-					$("#screen").css({"height":"auto"});
-				});
-			});
-			$(".prev").click(function(){
-				$("#film").stop().animate({"marginLeft":"+=100%"},1000,"swing",function(){
-					$("#film").prepend($(".scene:last"));
-					$("#film").css({"marginLeft":"-100%"});
-					$("#screen").css({"height":"auto"});
-				});
-			});
-			var autoClicks = setInterval(function(){ $(".next").click(); },3000);
-			// $("h1").click(function(){clearInterval(autoClicks)});
+        //슬라이딩 윈도우
+      var $window_width = $(window).width();
+      if($window_width < 769){
+  			$(".room_info_desc ul").prepend($(".room_info_desc ul li:last"));
+  			$(".room_info_desc ul").css({"marginLeft":"-100%"});
+
+        $(".next").on("click focusin", function(){
+  				$(".room_info_desc ul").stop().animate({"marginLeft":"-=100%"},1000,"swing",function(){
+  					$(".room_info_desc ul")
+              .append($(".room_info_desc ul li:first"))
+  					  .css({"marginLeft":"-100%"},{"height":"auto"});
+  				});
+  			});
+  			$(".prev").on("click focusin", function(){
+  				$(".room_info_desc ul").stop().animate({"marginLeft":"+=100%"},1000,"swing",function(){
+  					$(".room_info_desc ul")
+              .prepend($(".room_info_desc ul li:last"))
+  					  .css({"marginLeft":"-100%"},{"height":"auto"});
+  				});
+        });
+      }
 		});
   </script>
  </head>
@@ -324,87 +315,83 @@
 			</div>
 		</div>
 		<div id="contentWrap">
-			<div class="slide_area" id="screen">
-				<ul id="film">
-					<li class="scene">
-						<img src="img/room_info/00_alie/00.jpg" alt="alie 룸 이미지0"/>
+      <div id="visual">
+				<div class="visual_main">
+          <p class="visual_main_img">
+            <span class="dark">
+            </span>
+		        <!--visual background 영역-->
+					</p>
+					<div class="visual_main_text">
+  					<hr/>
+  					<h2>ALIE</h2>
+  					<p>URBAN &amp; VINTAGE</p>
+  				</div>
+				</div>
+			</div>
+			<div class="modal_area">
+				<ul>
+					<li>
+						<a href="#none" title="방 이미지 1"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/01.jpg" alt="alie 룸 이미지1"/>
+          <li>
+						<a href="#none" title="방 이미지 2"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/02.jpg" alt="alie 룸 이미지2"/>
+          <li>
+						<a href="#none" title="방 이미지 3"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/03.jpg" alt="alie 룸 이미지3"/>
+          <li>
+						<a href="#none" title="방 이미지 4"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/04.jpg" alt="alie 룸 이미지4"/>
+          <li class="right1920">
+						<a href="#none" title="방 이미지 5"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/05.jpg" alt="alie 룸 이미지5"/>
+          <li>
+						<a href="#none" title="방 이미지 6"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/06.jpg" alt="alie 룸 이미지6"/>
+          <li>
+						<a href="#none" title="방 이미지 7"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/07.jpg" alt="alie 룸 이미지7"/>
+          <li>
+						<a href="#none" title="방 이미지 8"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/08.jpg" alt="alie 룸 이미지8"/>
+          <li>
+						<a href="#none" title="방 이미지 9"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/09.jpg" alt="alie 룸 이미지9"/>
+          <li class="right1920">
+						<a href="#none" title="방 이미지 10"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/10.jpg" alt="alie 룸 이미지10"/>
+          <li>
+						<a href="#none" title="방 이미지 11"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/11.jpg" alt="alie 룸 이미지11"/>
+          <li>
+						<a href="#none" title="방 이미지 12"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/12.jpg" alt="alie 룸 이미지12"/>
+          <li>
+						<a href="#none" title="방 이미지 13"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/13.jpg" alt="alie 룸 이미지13"/>
+          <li>
+						<a href="#none" title="방 이미지 14"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/14.jpg" alt="alie 룸 이미지14"/>
+          <li class="right1920">
+						<a href="#none" title="방 이미지 15"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/15.jpg" alt="alie 룸 이미지15"/>
+          <li>
+						<a href="#none" title="방 이미지 16"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/16.jpg" alt="alie 룸 이미지16"/>
+          <li>
+						<a href="#none" title="방 이미지 17"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/17.jpg" alt="alie 룸 이미지17"/>
+          <li>
+						<a href="#none" title="방 이미지 18"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/18.jpg" alt="alie 룸 이미지18"/>
+          <li>
+						<a href="#none" title="방 이미지 19"></a>
 					</li>
-					<li class="scene">
-						<img src="img/room_info/00_alie/19.jpg" alt="alie 룸 이미지19"/>
+          <li class="right1920">
+						<a href="#none" title="방 이미지 20"></a>
 					</li>
 				</ul>
-				<p class="next">
-					<img src="img/btn_next_darkgrey.png" alt="다음 이미지"/>
-				</p>
-				<p class="prev">
-					<img src="img/btn_prev_darkgrey.png" alt="이전 이미지"/>
-				</p>
-				<span class="dark"></span>
-				<div class="slide_area_title">
-					<hr/>
-					<h2>ALIE</h2>
-					<p>URBAN &amp; VINTAGE</p>
-				</div>
-				<a class="scroll_down" href="#none" title="scroll down">Scroll Down
-					<p>↓</p>
-				</a>
-				<div class="reser_area">
-					<a href="#none" title="reseration 페이지로 이동">reservation</a>
-				</div>
 			</div>
 			<div class="room_info_area">
 				<!--<p class="room_bottom_img">
@@ -415,7 +402,7 @@
 						도시적 느낌과 빈티지한 느낌의 북유럽풍 모던인테리어로 꾸며졌으며,<br/>
 						천정에 달린 대형 비행기 조형물이 인상적인 럭셔리한 객실입니다.
 				</p>
-				<div class = "table">
+				<div class="table">
 					<h3 class="blind">
 					  가격표
 					</h3>
@@ -482,6 +469,18 @@
 							<p class="object">5.1채널, 빔프로젝트, TV, 닌텐도Wii</p>
 						</li>
 					</ul>
+          <div class="slide_btn">
+            <p class="prev">
+              <a href="#none" title="prev 버튼">
+    					  <img src="img/btn_prev_darkgrey.png" alt="이전 이미지"/>
+              </a>
+            </p>
+    				<p class="next">
+              <a href="#none" title="next 버튼">
+    					  <img src="img/btn_next_darkgrey.png" alt="다음 이미지"/>
+              </a>
+    				</p>
+          </div>
 				</div>
 			</div>
 		</div>
@@ -557,6 +556,8 @@
 				</div>
 			</div>
 		</div>
+    <span class="wrap_dark"></span>
+    <p class="modal"></p>
 	</div>
  </body>
 </html>

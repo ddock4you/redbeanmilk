@@ -180,13 +180,13 @@
 							.room_area	ul li div p{width:100%; font-size:11px;}
 
 		/*################### special 320 ~ 480px ######################*/
-			#special{height:885px;}
+			#special{height:580px;}
 				#special h2{padding-top:10px;}
 				/*높이값 = #special - #special h2(padding) - .special_area(padding)*/
-				.special_area{height:1260px; padding-top:10px;}
+				.special_area{height:546px; padding-top:10px;}
 					.stick{display:none;}
 					.film_special{width:100%; height:100%; padding-top:0;}
-						.film_special li{width:50%; height:170px; border-radius:0; margin-right:0; border-bottom:1px solid #fff; box-sizing:border-box;}
+						.film_special li{width:50%; height:110px; border-radius:0; margin-right:0; border-bottom:1px solid #fff; box-sizing:border-box;}
 						.film_special li img{margin-left:-210px; margin-top:-80px;}
 						.right{border-right:1px solid #fff; box-sizing:border-box;}
 						.film_special .dark{border-radius:0; opacity:1;}
