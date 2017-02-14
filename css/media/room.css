@@ -93,7 +93,7 @@
 			.slide_btn{display:block;}
 
 /*########################## footer 481 ~ 768px ###############################*/
-
+#footerWrap{height:460px;}
 		.footer_gnb{width:100%; font-size:12px; text-align:center;}
 
 	.footer_bottom{width:100%; height:330px; background-color:#2B2727;}
@@ -153,16 +153,16 @@
 
 			.slide_btn{display:block;}
 
-	/*########################## footer 320 ~ 480px ###############################*/
+/*########################## footer 320 ~ 480px ###############################*/
+	#footerWrap{height:460px;}
+		.footer_gnb{width:100%; font-size:12px; text-align:center;}
+			.footer_gnb li{margin-left:2px;}
+				.footer_gnb li a{padding:5px 3px;}
+		.footer_logo{padding-top:10px;}
 
-			.footer_gnb{width:100%; font-size:12px; text-align:center;}
-				.footer_gnb li{margin-left:2px;}
-					.footer_gnb li a{padding:5px 3px;}
-			.footer_logo{padding-top:10px;}
+	.footer_bottom{width:100%; height:330px; background-color:#2B2727;}
+	.footer_bottom_area{width:100%;}
+		.footer_info li{width:100%; margin-right:0; padding-bottom:20px;}
 
-		.footer_bottom{width:100%; height:330px; background-color:#2B2727;}
-		.footer_bottom_area{width:100%;}
-			.footer_info li{width:100%; margin-right:0; padding-bottom:20px;}
-
-				.footer_info li dl dt{font-size:14px;}
+			.footer_info li dl dt{font-size:14px;}
 		}
