@@ -23,8 +23,8 @@
 		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
   <![endif]-->
   <script>
-	$(function(){	
-		
+	$(function(){
+
 		//Sub_gnb on/off
 		$(".sub_gnb ul").hide();
 
@@ -33,7 +33,7 @@
 		}).bind("mouseout focusout",function(){
 			$(this).children("ul").stop().slideUp(500);
 		});
-		 
+
 		 //Room 선택 영역
 			$(".pre00_alie").bind("mouseover focusin", function(){
 			$(".room_area img").attr("src","img/room_info/00_alie.jpg");
@@ -73,7 +73,7 @@
 			  $(".login a").bind("click focusin", function(){
 				$("#top_headerWrap").slideDown(500);
 			  });
-			  
+
 			  /*focusout(function(){
 				$("#top_headerWrap").slideUp(500);
 			  });*/
@@ -86,7 +86,7 @@
 			$("#film").prepend($(".scene:last"));
 			$("#film").css({"marginLeft":"-100%"});
 			$(".next").click(function(){
-				
+
 				$("#film").stop().animate({"marginLeft":"-=100%"},1000,"swing",function(){
 					$("#film").append($(".scene:first"));
 					$("#film").css({"marginLeft":"-100%"});
@@ -108,12 +108,12 @@
 
  <body>
 	<div id="wrap">
-		<div id="headerWrap">
+    <div id="headerWrap">
 			<div id="top_headerWrap">
 				<form class="login_info" action="#" method="post">
 					<fieldset>
 						<legend class="blind">로그인 영역</legend>
-            <h2 style="text">LOGIN</h2>
+            <h2>LOGIN</h2>
             <div class="input_user">
 							<p class="input_userid">
 								<input id="userid" type="text" name="userid" required placeholder="ID 입력"/>
@@ -169,30 +169,116 @@
 				<div id="header">
 					<h2 class="blind">HEADER</h2>
 					<h1>
-						<a href="#mome" title="메인 홈페이지로 이동">
+						<a href="#nome" title="메인 홈페이지로 이동">
 							<img src="img/logo_claire.png" alt="로고"/>
 						</a>
 					</h1>
-					<div class="m_l_gnb"><!--모바일 전용 left gnb-->
-						<p>
-							<a href="#none" title="메뉴">
-								<img src="img/menu.png" alt="메뉴 아이콘 이미지"/>
-							</a>
-						</p>
-					</div>
-					<div class="m_r_gnb"><!--모바일 전용 right gnb-->
-						<p class="m_fast_reservation">
-							<a href="#none" title="reservation 페이지로 이동">
-								<img src="img/icon_reservation.png">
-							</a>
-						</p>
-					</div>
-					<div class="gnb">
-						<ul class="sub_gnb_list">
+          <div class="m_header_btn">
+            <p class="m_menu_btn">
+              <a href="#none" title="모바일 메뉴 버튼">
+                <img src="img/menu_black.png" alt="모바일 메뉴 버튼"/>
+              </a>
+            </p>
+            <p class="m_reser_btn">
+              <a href="m_reser_btn" title="모바일 실시간 예약 버튼">
+                <img src="img/menu_black.png" alt=" 모바일 메뉴 버튼"/>
+              </a>
+            </p>
+          </div>
+          <div class="m_header">
+            <div class="m_top">
+  						<p class="m_btn m_menu_close_btn">
+  							<a href="#none" title="메뉴">
+                  <img src="img/cross_black.png" alt="모바일 메뉴 닫기 버튼"/>
+  							</a>
+  						</p>
+              <p class="m_logo">
+                <img src="img/logo_footer_white.png" alt="로고 이미지"/>
+              </p>
+            </div>
+            <div class="m_bottom">
+              <ul class="user_info">
+                <li class="m_login">
+                  <a href="#none" title="모바일 로그인 페이지로 이동">
+                    login
+                  </a>
+                </li>
+                <li class="m_join">
+                  <a href="#none" title="모바일 회원가입 페이지로 이동">
+                    join us
+                  </a>
+                </li>
+              </ul>
+            </div>
+              <!--mobile reservation btn-->
+    					<!--<div class="m_btn m_reser_btn">
+    						<p>
+    							<a href="#none" title="reservation 페이지로 이동">
 
-							<li class="sub_gnb">
-								<a href="#none" title="room info 페이지로 이동"><span></span>room info V</a>
-								<ul>
+    							</a>
+    						</p>
+    					</div>-->
+              <!--mobile login btn-->
+              <!--<div class="m_btn m_login_btn">
+    						<p>
+    							<a href="#none" title="reservation 페이지로 이동">
+
+    							</a>
+    						</p>
+    					</div>
+            -->
+            <div class="m_gnb">
+              <ul class="m_gnb_list">
+  							<li class="m_sub_gnb m_gnb_room">
+  								<a href="#none" title="room info 페이지로 이동">room info<span>∧</span></a>
+  								<ul class="m_sub_gnb_list">
+  									<li><a href="#none" title="ALIE 방 페이지로 이동">ALIE</a></li>
+  									<li><a href="#none" title="AMANT 방 페이지로 이동">AMANT</a></li>
+  									<li><a href="#none" title="MISTER 방 페이지로 이동">MISTER</a></li>
+  									<li><a href="#none" title="HOBBY 방 페이지로 이동">HOBBY</a></li>
+  									<li><a href="#none" title="BLANCNOIR 방 페이지로 이동">BLANCNOIR</a></li>
+  									<li><a href="#none" title="MIENNE 방 페이지로 이동">MIENNE</a></li>
+  									<li><a href="#none" title="MISSA 방 페이지로 이동">MISSA</a></li>
+  									<li><a href="#none" title="BONJOUR 방 페이지로 이동">BONJOUR</a></li>
+  								</ul>
+  							</li>
+  							<li class="m_sub_gnb m_gnb_special">
+  								<a href="#none" title="special 페이지로 이동">special<span>∧</span></a>
+  								<ul class="m_sub_gnb_list">
+  									<li><a href="#none" title="SWIMMING POOL 페이지로 이동">POOL</a></li>
+  									<li><a href="#none" title="ZET SPA  페이지로 이동">ZET SPA</a></li>
+  									<li><a href="#none" title="BARBECUE  페이지로 이동">BARBECUE</a></li>
+  									<li><a href="#none" title="CAFFE  페이지로 이동">CAFFE</a></li>
+  									<li><a href="#none" title="BEAM PROJECT  페이지로 이동">BEAM PROJECT</a></li>
+  									<li><a href="#none" title="GAME CENTER  페이지로 이동">GAME CENTER</a></li>
+  									<li><a href="#none" title="LOUNGE  페이지로 이동">LOUNGE</a></li>
+  									<li><a href="#none" title="EVENT  페이지로 이동">EVENT</a></li>
+  									<li><a href="#none" title="KIDS  페이지로 이동">KIDS</a></li>
+  									<li><a href="#none" title="SERVICE  페이지로 이동">SERVICE</a></li>
+  								</ul>
+  							</li>
+                <li class="m_reservation_gnb">
+  								<a href="#none" title="location 페이지로 이동">reservation</a>
+  							</li>
+  							<li>
+  								<a href="#none" title="guide tour 페이지로 이동">guide tour</a>
+  							</li>
+  							<li class="m_sub_gnb m_gnb_contact">
+  								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
+                  <ul class="m_sub_gnb_list">
+  									<li><a href="#none" title="공지사항 페이지로 이동">공지사항</a></li>
+  									<li><a href="#none" title="QnA  페이지로 이동">QnA</a></li>
+  									<li><a href="#none" title="여행후기 페이지로 이동">여행후기</a></li>
+  								</ul>
+  							</li>
+  						</ul>
+            </div>
+          </div>
+					<div class="gnb">
+						<ul class="gnb_list">
+							<li class="sub_gnb gnb_room">
+								<a href="#none" title="room info 페이지로 이동">room info<span>∧</span></a>
+								<ul class="sub_gnb_list">
 									<li><a href="#none" title="ALIE 방 페이지로 이동">ALIE</a></li>
 									<li><a href="#none" title="AMANT 방 페이지로 이동">AMANT</a></li>
 									<li><a href="#none" title="MISTER 방 페이지로 이동">MISTER</a></li>
@@ -203,8 +289,8 @@
 									<li><a href="#none" title="BONJOUR 방 페이지로 이동">BONJOUR</a></li>
 								</ul>
 							</li>
-							<li class="sub_gnb">
-								<a href="#none" title="special 페이지로 이동"><span></span>special V</a>
+							<li class="sub_gnb gnb_special">
+								<a href="#none" title="special 페이지로 이동">special<span>∧</span></a>
 								<ul class="sub_gnb_list">
 									<li><a href="#none" title="SWIMMING POOL 페이지로 이동">POOL</a></li>
 									<li><a href="#none" title="ZET SPA  페이지로 이동">ZET SPA</a></li>
@@ -219,13 +305,13 @@
 								</ul>
 							</li>
               <li class="reservation_gnb">
-								<a href="#none" title="location 페이지로 이동"><span></span>reservation</a>
+								<a href="#none" title="location 페이지로 이동">reservation</a>
 							</li>
 							<li>
-								<a href="#none" title="guide tour 페이지로 이동"><span></span>guide tour</a>
+								<a href="#none" title="guide tour 페이지로 이동">guide tour</a>
 							</li>
-							<li class="sub_gnb">
-								<a href="#none" title="contact us 페이지로 이동"><span></span>contact us V</a>
+							<li class="sub_gnb gnb_contact">
+								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
                 <ul class="sub_gnb_list">
 									<li><a href="#none" title="공지사항 페이지로 이동">공지사항</a></li>
 									<li><a href="#none" title="QnA  페이지로 이동">QnA</a></li>
@@ -399,7 +485,7 @@
 				</div>
 			</div>
 		</div>
-				<div id="footerWrap">
+    <div id="footerWrap">
 			<h2  class="blind">푸터 영역</h2>
 			<div class="footer_top">
 				<div class="footer_top_area">
@@ -430,6 +516,7 @@
               <img src="img/logo_footer_white.png" alt="footer logo"/>
             </a>
           </p>
+
         </div>
 			</div>
 			<div class="footer_bottom">
@@ -470,7 +557,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
  </body>
 </html>
