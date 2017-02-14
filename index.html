@@ -75,6 +75,7 @@
   });
 
   $(function(){
+    //m_header 높이값 제어
     $(".m_header").css({"height":$window_height});
 
     // Sub_gnb on/off
@@ -142,10 +143,16 @@
     //mobile header on/off
     $(".m_menu_btn").on("click focusin",function(){
       $(".m_header").animate({left:"0px"},500);
+      $("#contentWrap, #footerWrap").on('scroll touchmove mousewheel', function(e) {
+         e.preventDefault();
+         e.stopPropagation();
+         return false;
+       });
     });
 
     $(".m_menu_close_btn").on("click focusin",function(){
       $(".m_header").animate({left:"-320px"},500);
+      $("#contentWrap, #footerWrap").off('scroll touchmove mousewheel');
     });
 
     //로그인 창 on / off
