@@ -151,7 +151,8 @@
 					.room_info_desc ul li p.icon{width:30px; height:30px; margin:25px auto;}
 					p.object{font-size:12px;}
 
-			.slide_btn{display:block;}
+			.slide_btn{height:30px; margin-top:-15px; display:block;}
+				.slide_btn p{width:30px;}
 
 /*########################## footer 320 ~ 480px ###############################*/
 	#footerWrap{height:460px;}

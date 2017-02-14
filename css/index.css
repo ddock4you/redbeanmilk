@@ -96,8 +96,8 @@ body{font-family:"Montserrat", Noto Sans; margin:0;}
 										display:none;
 									 }
 				.m_menu_btn, .m_reser_btn{width:24px; height:24px; position:absolute; top:0;}
-					.m_menu_btn img, .m_reser_btn img{width:100%; height:100%;}
-						.m_menu_btn img a, .m_reser_btn img a{display:block; width:100%; height:100%;}
+					.m_menu_btn a, .m_reser_btn a{display:block; width:100%; height:100%; padding:4px;}
+						.m_menu_btn a img, .m_reser_btn a img{width:100%; height:100%;}
 				.m_menu_btn{left:40px;}
 				.m_reser_btn{right:40px;}
 	/*####################### gnb ###########################*/
@@ -336,7 +336,7 @@ body{font-family:"Montserrat", Noto Sans; margin:0;}
 																		position:absolute;
 																		top:45%;
 																		text-align:center;
-																		color:#bbb;
+																		color:#fff;
 																	}
 								.room_area	ul li div h4{width:100%; font-size:24px; padding-bottom:10px;}
 								.room_area	ul li div p{width:100%; font-size:13px;}

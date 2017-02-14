@@ -108,6 +108,7 @@
 				.film_special li{width:50%; border-radius:0; margin-right:0; border-bottom:1px solid #fff; box-sizing:border-box;}
 				.right{border-right:1px solid #fff; box-sizing:border-box;}
 				.film_special .dark{border-radius:0; opacity:1;}
+					.film_special li a h4{font-size:14px;}
 
 /*#################### tour 481 ~ 768px #######################*/
 	#tour{margin-top:15px; height:370px;}
@@ -190,6 +191,7 @@
 				.film_special li img{margin-left:-210px; margin-top:-80px;}
 				.right{border-right:1px solid #fff; box-sizing:border-box;}
 				.film_special .dark{border-radius:0; opacity:1;}
+					.film_special li a h4{font-size:10px;}
 
 /*#################### tour 320 ~ 480px #######################*/
 	#tour{margin-top:15px; height:280px;}

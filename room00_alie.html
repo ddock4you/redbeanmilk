@@ -46,7 +46,11 @@
 			  });
 
       //visual 이미지 생성
-        $(".visual_main_img").css({"background-image":"url(img/room_info/"+room_name_no+"/"+room_name_no+".jpg)"});
+        $(".visual_main_img").css({"background-image":"url(img/room_info/"+room_name_no+".jpg)"});
+
+      //visual 이미지 애니메이션
+        $(".visual_main_img").scale(1.15).animate({scale:"1"},1000);
+
       // room_info 이미지 생성
         $(".room_info_desc").css({"background-image":"url(img/room_info/"+room_name_no+"/"+room_name_no+"_back.jpg)"});
 

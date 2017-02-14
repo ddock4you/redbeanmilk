@@ -69,14 +69,11 @@
     last_scroll_place=now_scroll_place;
   }
 
-  // visual 영역 애니메이션 효과
-  $(document).ready(function(){
+  $(function(){
+    // visual 영역 애니메이션 효과
     $(".visual_main_img").scale(1.15).animate({scale:"1"},20000);
     $(".visual_main_icon").animate({opacity:"1", top:"20%"},1200, "easeInOutQuart");
     $(".visual_main_text").delay(1000).animate({opacity:"1",top:"52%"},1400, "easeInOutQuart");
-  });
-
-  $(function(){
     //m_header 높이값 제어
     $(".m_header").css({"height":$window_height});
 
@@ -172,14 +169,17 @@
 
 		 //Room 선택 영역
        //Room hover하면 hover된 영역에 글자 애니메이션 표시
-      $(".room_area ul li a").on("mouseover focusin", function(){
-        $(".room_area ul li a div").stop().animate({top:"45%", color:"#bbb"});
-        $(this).children("div").stop().animate({top:"35%", color:"#fff"});
-      })
-      .on("mouseout focusout", function(){
-        $(this).children("div").stop().animate({top:"45%", color:"#bbb"});
-      });
+      if($window_width > 768){
+        $(".room_area ul li a div").css({color:"#bbb"});
 
+        $(".room_area ul li a").on("mouseover focusin", function(){
+          $(".room_area ul li a div").stop().animate({top:"45%", color:"#bbb"});
+          $(this).children("div").stop().animate({top:"35%", color:"#fff"});
+        })
+        .on("mouseout focusout", function(){
+          $(this).children("div").stop().animate({top:"45%", color:"#bbb"});
+        });
+      }
        //Room click하면 선택한 room image를 Room_info 부모영역에 표시
      $(".room_select li").on("click", function(){
        var room_name=["_alie","_amant","_mister","_hobby","_blancnoir","_mienne","_missa","_bonjour"],
@@ -194,7 +194,10 @@
 
       //special hover 기능
       //special 마우스 드래그 기능도 필요.
-      if($window_width < 769){
+      if($window_width > 769){
+        $(".film_special li a").find(".dark").css({opacity:"0"});
+        $(".film_special li a").find("h4").css({opacity:"0"});
+
         $(".film_special li a").on("mouseover focusin", function(){
           $(".film_special li a").find(".dark").stop().animate({opacity:"0"},300);
           $(".film_special li a").find("h4").stop().animate({opacity:"0", top:"55%"},300);
