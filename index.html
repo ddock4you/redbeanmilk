@@ -34,7 +34,9 @@
       last_scroll_place=0,
       $header_height=$("#headerWrap").outerHeight(),
       $window_height=$(window).height(),
-      $window_width=$(window).width();
+      $window_width=$(window).width(),
+      m_header_power = 0;
+      ;
 
   //스크롤 방향에 따른  header 영역 slideIn, slideDown 애니메이션 효과
   $(window).scroll(function(event){
@@ -54,7 +56,7 @@
     if(Math.abs(last_scroll_place - now_scroll_place) <= scroll_value)
     return;
 
-    if(now_scroll_place > last_scroll_place && now_scroll_place > $header_height){
+    if(now_scroll_place > last_scroll_place && now_scroll_place > $header_height && m_header_power==0){
       //Scroll Down
       $("#headerWrap").slideUp(400);
     }
@@ -80,7 +82,8 @@
 
     // Sub_gnb on/off
     $(".sub_gnb_list").hide();
-
+    $(".wrap_dark").hide();
+    $(".visual_main").height($(window).height());
 
     /*gnb영역에서 버튼(들)을 클릭하면 나타나는 효과
     보완 필요.(코드 압축, 일부 영역 Tab 접근 안되는 문제 해결)*/
@@ -142,14 +145,18 @@
 
     //mobile header on/off
     $(".m_menu_btn").on("click focusin",function(){
-      $(".m_header").animate({left:"0px"},500);
-      $("#wrap").css({"height":$window_height});
+      $(".m_header").stop().animate({left:"0px"},300);
+      m_header_power = 1;
+      $(".wrap_dark").stop().fadeIn(300);
     });
 
-    $(".m_menu_close_btn").on("click focusin",function(){
-      $(".m_header").animate({left:"-320px"},500);
-      $("#wrap").css({"height":"100%"});
+    $(".m_menu_close_btn, .wrap_dark").on("click focusin",function(){
+      $(".m_header").stop().animate({left:"-320px"},300);
+      m_header_power = 0;
+      $(".wrap_dark").stop().fadeOut(300);
     });
+
+
 
     //로그인 창 on / off
       $("#top_headerWrap").hide();
@@ -765,5 +772,7 @@
 			</div>
 		</div>
 	</div>
+  <span class="wrap_dark">
+  </span>
  </body>
 </html>

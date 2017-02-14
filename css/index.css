@@ -1,7 +1,7 @@
 body{font-family:"Montserrat", Noto Sans; margin:0;}
 
 /*############################### wrap #######################################*/
-	#wrap{width:100%; height:100%; text-transform:uppercase;}
+	#wrap{width:100%; height:100%; overflow:hidden; text-transform:uppercase;}
 	/*jQuery로 제어*/
 		.wrap_dark{
 								display:block;
@@ -11,7 +11,7 @@ body{font-family:"Montserrat", Noto Sans; margin:0;}
 								top:0;
 								left:0;
 								background-color:rgba(0,0,0,0.8);
-								z-index:4;
+								z-index:3;
 							}
 
 /*############################# headerWRap ###################################*/
@@ -22,7 +22,7 @@ body{font-family:"Montserrat", Noto Sans; margin:0;}
 							border-bottom:1px solid #ccc;
 							position:fixed;
 							top:0;
-							z-index:3;
+							z-index:4;
 							}
 
 
@@ -202,7 +202,6 @@ body{font-family:"Montserrat", Noto Sans; margin:0;}
 		#visual{width:100%; overflow:hidden;}
 			.visual_main{
 										width:100%;
-										height:800px;
 										position:relative;
 									}
 				.visual_main_img{
