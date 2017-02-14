@@ -143,16 +143,12 @@
     //mobile header on/off
     $(".m_menu_btn").on("click focusin",function(){
       $(".m_header").animate({left:"0px"},500);
-      $("#contentWrap, #footerWrap").on('scroll touchmove mousewheel', function(e) {
-         e.preventDefault();
-         e.stopPropagation();
-         return false;
-       });
+      $("#wrap").css({"height":$window_height});
     });
 
     $(".m_menu_close_btn").on("click focusin",function(){
       $(".m_header").animate({left:"-320px"},500);
-      $("#contentWrap, #footerWrap").off('scroll touchmove mousewheel');
+      $("#wrap").css({"height":"100%"});
     });
 
     //로그인 창 on / off
