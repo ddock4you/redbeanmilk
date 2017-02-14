@@ -1,6 +1,5 @@
 @media all and (min-width:1025px) and (max-width:1200px){
 /*################## visual 1025 ~ 1024px ######################*/
-	.visual_main{height:750px;}
 		.visual_main_icon{width:130px; height:130px; margin-left:-65px;}
 
 /*################# room_info 1025 ~ 1200px ####################*/
@@ -24,7 +23,6 @@
 
 /*########################## content 769 ~ 1024px ##############################*/
 /*################# visual 769 ~ 1024px #####################*/
-	.visual_main{height:650px;}
 		.visual_main_text h3{font-size:1.8em;}
 		.visual_main_text em{font-size:1em;}
 
