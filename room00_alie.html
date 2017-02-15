@@ -25,8 +25,8 @@
   <![endif]-->
   <script type=text/javascript>
   //room 폴더 이름(이걸로 각 room_info 컨텐츠 사진 표시 제어 가능)
-  var room_name = ["00_alie","01_amant","02_mister","03_hobby","04_blancnoir","05_mienne","06_missa","07_bonjour"]
-  var room_name_no = room_name[0];
+  var room_name = ["00_alie","01_amant","02_mister","03_hobby","04_blancnoir","05_mienne","06_missa","07_bonjour"],
+  room_name_no = room_name[0];
 	$(function(){
 		//Sub_gnb on/off
 		$(".sub_gnb ul").hide();
@@ -36,7 +36,7 @@
 		}).on("mouseout focusout",function(){
 			$(this).children("ul").stop().slideUp(500);
 		});
-
+      // visual 텍스트 애니메이션 효과
       $(".visual_main_text").hide().fadeIn(1000);
 
 			//로그인 창 on / off
@@ -52,12 +52,12 @@
         $(".visual_main_img").scale(1.15).animate({scale:"1"},1000);
 
       // room_info 이미지 생성
-        $(".room_info_desc").css({"background-image":"url(img/room_info/"+room_name_no+"/"+room_name_no+"_back.jpg)"});
+        $(".room_info_desc").css({"background-image":"url(img/room_info/room"+room_name_no+"/"+room_name_no+"_back.jpg)"});
 
       // li 이미지 생성
         var i = $(".modal_area li").index();
         for(i;i<20;i++){
-          $(".modal_area li:eq("+i+")").css({"background-image":"url(img/room_info/"+room_name_no+"/"+i+".jpg)"});
+          $(".modal_area li:eq("+i+")").css({"background-image":"url(img/room_info/room"+room_name_no+"/"+i+".jpg)"});
         }
       // 모달 팝업
         $(".wrap_dark, .modal").hide();
@@ -84,14 +84,14 @@
 
         $(".next").on("click focusin", function(){
   				$(".room_info_desc ul").stop().animate({"marginLeft":"-=100%"},1000,"swing",function(){
-  					$(".room_info_desc ul")
+  					$(this)
               .append($(".room_info_desc ul li:first"))
   					  .css({"marginLeft":"-100%"},{"height":"auto"});
   				});
   			});
   			$(".prev").on("click focusin", function(){
   				$(".room_info_desc ul").stop().animate({"marginLeft":"+=100%"},1000,"swing",function(){
-  					$(".room_info_desc ul")
+  					$(this)
               .prepend($(".room_info_desc ul li:last"))
   					  .css({"marginLeft":"-100%"},{"height":"auto"});
   				});

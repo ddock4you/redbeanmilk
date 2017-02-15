@@ -1,8 +1,19 @@
-body{font-family:"Montserrat", Noto Sans; margin:0; padding:0;}
-	
+body{font-family:"Montserrat", Noto Sans; margin:0;}
+
 /*############################### wrap #######################################*/
-	#wrap{width:100%; text-transform:uppercase;}
-		
+	#wrap{width:100%; overflow:hidden; text-transform:uppercase;}
+	/*jQuery로 제어*/
+		.wrap_dark{
+								display:block;
+								width:100%;
+								height:100%;
+								position:absolute;
+								top:0;
+								left:0;
+								background-color:rgba(0,0,0,0.8);
+								z-index:3;
+							}
+
 /*############################# headerWRap ###################################*/
 	#headerWrap{
 							width:100%;
@@ -11,8 +22,9 @@ body{font-family:"Montserrat", Noto Sans; margin:0; padding:0;}
 							border-bottom:1px solid #ccc;
 							position:fixed;
 							top:0;
-							z-index:1;
+							z-index:4;
 							}
+
 
 /*###################### top_headerWRap ############################*/
 #top_headerWrap{width:100%; height:240px; background-color:#2B2727;}
@@ -41,13 +53,20 @@ body{font-family:"Montserrat", Noto Sans; margin:0; padding:0;}
 #bottom_headerWrap{width:100%; height:100%; position:relative;}
 
 /*##################### top gnb #########################*/
-		.nav{width:190px; height:20px; position:absolute; top:20px; right:50px; z-index:1;}
+		.nav{
+					width:190px;
+					height:20px;
+					position:absolute;
+					top:20px;
+					right:50px;
+					z-index:1;
+				}
 			.nav ul:after{content:""; dispaly:block; clear:both;}
 			.nav ul li{float:left;}
 				.nav ul li a{padding:0 6px; font-size:12px; color:#333;}
 				.nav ul li.fast_event a{color:#FF3636;}
 					.fast_event a img{width:12px; height:12px;}
-	/*#################### �����Ͽ� gnb ########################*/
+	/*#################### gnb ########################*/
 			.m_r_gnb, .m_l_gnb{position:absolute;top:15px; right:40px; display:none;}
 				.m_l_gnb{ left:40px;}
 				.m_r_gnb p{width:30px; height:30px;}
@@ -57,81 +76,170 @@ body{font-family:"Montserrat", Noto Sans; margin:0; padding:0;}
 
 					.m_r_gnb p img, .m_l_gnb p img{width:100%; height:100%;}
 
-	#header{max-width:1200px; height:90px; margin:0 auto; position:relative;}
-		h1{width:190px; height:40px; position:absolute; top:10px; left:50%; margin-left:-95px;}
+	#header{width:100%; height:90px; margin:0 auto; position:relative;}
+		h1{
+			width:190px;
+			height:40px;
+			 position:absolute;
+			 top:10px; left:50%;
+			 margin-left:-95px;
+			 z-index:1;
+		 }
 			h1 img{width:100%; height:100%;}
 
+			.m_header_btn{
+										width:100%;
+										height:24px;
+										position:absolute;
+										top:13px;
+										left:0;
+										display:none;
+									 }
+				.m_menu_btn, .m_reser_btn{width:24px; height:24px; position:absolute; top:0;}
+					.m_menu_btn a, .m_reser_btn a{display:block; width:100%; height:100%; padding:4px;}
+						.m_menu_btn a img, .m_reser_btn a img{width:100%; height:100%;}
+				.m_menu_btn{left:40px;}
+				.m_reser_btn{right:40px;}
 	/*####################### gnb ###########################*/
 		.gnb{padding-top:60px;text-align:center;}
+			/*main GNB, sub GNB 공통으로 사용*/
 			.gnb ul li{display:inline-block; margin-left:10px; position:relative;}
 			.gnb ul li:last-child{margin-left:0;}
-				.gnb ul li a{display:block;padding:0 8px; color:#AEA288; font-weight:bold;}
-					.gnb ul li a span{
-												display:block;
-												width:100%;
-												height:2px;
-												background-color:#AEA288;
-												transform:scalex(0);
-												transition: all 0.3s ease-in-out;
-												margin-bottom:5px;
-											}
-					.sub_gnb ul{display:block; width:100%; position:absolute; top:30px; left:0; z-index:2;background-color:#fff;}
-					.sub_gnb ul li{display:block; text-align:center; margin-left:0; border-bottom:1px solid #AEA288; padding:3px 0;}
+				/*main GNB 리스트(sub GNB 리스트와 다르게 표시하기 위해 나눔)*/
+				.gnb_list li a{padding:5px 8px; color:#AEA288; font-weight:bold;}
 
-	/*############################## content ###################################*/
-		#contentWrap{width:100%;background-color:#fff; overflow:hidden;}
-		#screen{width:100%; overflow:hidden; padding-top:90px; position:relative;}
-			#film{width:1000%; overflow:hidden;}
-				#film img{width:100%; height:auto; margin-top:-150px;}
-				.scene{width:10%; float:left;}
+					.sub_gnb_list{
+												width:100%;
+												position:fixed;
+												top:95px;
+												left:0;
+												z-index:2;
+												background-color:#2B2727;
+											}
+					.sub_gnb_list li{
+														display:inline-block;
+														text-align:center;
+														margin-left:0;
+														padding:3px 0;
+													}
+						.sub_gnb_list li a{color:#fff; font-size:12px; padding:0 8px;}
+
+						/*.gnb_room a::after,.gnb_special a::after,.gnb_contact a::after  {content:"∧"; padding:0 3px; display:inline; vertical-align: top;}
+						*/
+/*###################### m_header ##########################*/
+	.m_header{
+						width:320px;
+						position:fixed;
+						top:5px;
+						left:-320px;
+						background-color:#fff;
+						z-index:4;
+					}
+
+		.m_top{width:100%; height:50px; position:relative;}
+			.m_logo{
+							width:40px;
+							height:40px;
+							position:absolute;
+							top:5px;
+							left:50%;
+							margin-left:-20px;
+							}
+				.m_logo img{width:100%; height:100%;}
+			.m_menu_close_btn{width:24px; height:24px; position:absolute; top:13px; left:40px;}
+				.m_menu_close_btn img{width:100%; height:100%;}
+
+		.m_bottom{width:100%; height:50px;}
+			.user_info{width:100%; height:100%; background-color:#2B2727;}
+				.user_info li{
+											width:50%;
+											height:100%;
+											line-height:50px;
+											text-align:center;
+											float:left;
+											}
+					.user_info li a{display:block; width:100%; height:100%; color:#fff;}
+					.m_login{border-right:1px solid #ccc; box-sizing:border-box;}
+
+		.m_gnb{width:100%; background-color:#fff; overflow:auto;}
+			.m_gnb_list{width:100%;}
+				.m_gnb_list li{width:100%;}
+					.m_gnb_list li a{
+														display:block;
+														width:305px;
+														height:100%;
+														border-bottom:1px solid #000;
+														padding:13px 0 13px 15px;
+														position:relative;
+														color:#000;
+													}
+						.m_gnb_list li a span{
+																	font-size:24px;
+																	font-weight:bold;
+																	position:absolute;
+																	top:3px;
+																	right:10px;
+																	}
+						.m_sub_gnb_list li a{
+																	width:275px;
+																	padding-left:45px;
+																	font-size:13px;
+																	background-color:#eee;
+																	color:#555;
+																}
+
+/*############################## content ###################################*/
+	#contentWrap{width:100%;background-color:#fff; overflow:hidden;}
+		.slide_area{width:100%; position:relative;}
+			.slide_area ul{width:400%; height:100%; overflow:hidden;}
+				.slide_area ul li{
+													width:25%;
+													height:100%;
+													float:left;
+													background-repeat:no-repeat;
+													background-position:center center;
+													background-size:cover;
+												}
 				.dark{display:block; width:100%; height:100%; background-color:rgba(0,0,0,0.2); position:absolute; top:0; left:0;}
 				.next, .prev{width:60px; height:60px; position:absolute; top:52%; cursor:pointer; z-index:1;}
 					.next{right:0;}
 					.prev{left:0;}
 					.next img, .prev img{width:100%; height:100%;}
 
-				.slide_area_title{width:100%; height:400px; position:absolute; top:35%; text-align:center; color:#fff;}
-					.slide_area_title hr{width:200px; border:2px solid #fff; margin:0 auto; animation:title_stick_ani 1s;}
-					.slide_area_title h2{font-size:48px; letter-spacing:5px; animation:title_ani 1s;}
-					.slide_area_title p{padding-top:30px; animation:title_stick_ani 1s;}
-					
-					@keyframes title_stick_ani{
-					0%{transform:scalex(0);}
-					30%{transform:scalex(0);}
-					100%{transform:scalex(1);}
-				}
+				.slide_area_title{width:100%; position:absolute; top:40%; text-align:center; color:#fff;}
+					.slide_area_title hr{width:200px; border:2px solid #fff; margin:0 auto;}
+					.slide_area_title h2{font-size:48px; letter-spacing:5px;}
+					.slide_area_title p{padding-top:30px;}
 
-				@keyframes title_ani{
-					0%{transform:scaley(0);}
-					50%{transform:scaley(0);}
-					100%{transform:scaley(1);}
-				}
-				
-			
-			.slide_area_text{width:100%; height:250px; position:absolute; bottom:0;}
-			
-				.dark_text{
-							display:block;
-							width:100%;
-							height:250px;
-							background-color:rgba(0,0,0,0.7);
-							position:absolute;
-							bottom:0;
-							}
-				.slide_area_text p{
-												width:700px;
-												height:200px;
-												padding-top:25px;
-												position:absolute;
-												top:25px;
-												left:50%;
-												margin-left:-350px;
-												font-size:14px;
-												color:#fff;
+				.slide_area_text{
+													width:100%;
+													height:250px;
+													position:absolute;
+													bottom:0;
 												}
 
+					.dark_text{
+								display:block;
+								width:100%;
+								height:250px;
+								background-color:rgba(0,0,0,0.7);
+								position:absolute;
+								bottom:0;
+								}
+					.slide_area_text p{
+													width:700px;
+													height:200px;
+													padding-top:25px;
+													position:absolute;
+													top:25px;
+													left:50%;
+													margin-left:-350px;
+													font-size:14px;
+													color:#fff;
+													}
+
 /*############################### footer ######################################*/
-	#footerWrap{width:100%;height:310px;}
+	#footerWrap{width:100%;height:250px; background-color:#2B2727;}
 		#footerWrap h2{
 									font-size:32px;
 									color:#fff;
@@ -142,23 +250,38 @@ body{font-family:"Montserrat", Noto Sans; margin:0; padding:0;}
 									}
 
 	/*#################### footer top ######################*/
-		.footer_top{width:100%; height:200px; background-color:#2B2727; color:#fff;}
-			.footer_top_area{width:1200px; height:100%; margin:0 auto; position:relative;}
-				.footer_gnb{width:470px; height:40px; margin:0 auto; line-height:40px; padding-top:20px;}
+		.footer_top{width:100%; color:#fff;}
+			.footer_top_area{width:100%; height:100%; margin:0 auto; position:relative;}
+				.footer_gnb{
+										width:470px;
+										height:40px;
+										margin:0 auto;
+										line-height:40px;
+										padding-top:10px;
+										font-size:14px;
+									}
 					.footer_gnb li{display:inline-block; margin-left:10px;}
+						.footer_gnb li:first-child{margin-left:0;}
 						.footer_gnb li a{padding:5px 8px; color:#fff; font-weight:bold;}
 
-				.footer_logo{width:80px;height:80px; margin:0 auto; padding-top:20px;}
+				.footer_logo{width:70px;height:70px; margin:0 auto; padding-top:20px;}
 					.footer_logo a{width:100%; height:100%;}
 						.footer_logo a img{width:100%; height:100%;}
 
-				.footer_info{width:1024px; margin:0 auto;}
-					.footer_info:after{content:""; display:block; clear:both; padding-bottom:20px;}
+				.footer_info{width:100%; margin:0 auto;}
+					.footer_info:after{content:""; display:block; clear:both; padding-bottom:10px;}
 					.footer_info li{width:24%; float:left; margin-right:1%;}
-						.footer_info li dl dt{text-align:center;padding-bottom:10px; font-size:15px; font-weight:bold; color:#777;}
-							.footer_info li dl dd{font-size:13px; text-align:center; color:#777;}
+						.footer_info li dl dt{
+																	text-align:center;
+																	padding-bottom:10px;
+																	font-size:13px;
+																	font-weight:bold;
+																	color:#777;
+																}
+							.footer_info li dl dd{font-size:12px; text-align:center; color:#777;}
 							address{font-style:normal;}
+
 	/*#################### footer bottom ######################*/
-		.footer_bottom{width:100%; height:120px; background-color:#2B2727;}
+		.footer_bottom{width:100%; height:90px;}
 			.footer_bottom_area{width:1000px; height:100%; margin:0 auto;}
-				.copyright{color:#444; text-align:center;}
+				.copyright{color:#444; text-align:center; font-size:14px;}
