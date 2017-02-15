@@ -21,8 +21,8 @@
 
 		.slide_area_text, .slide_area_text p{position:static;}
 		.dark_text{display:none;}
-		.slide_area_text{height:180px;}
-			.slide_area_text p{color:#000; margin:0 auto;}
+		.slide_area_text{height:130px; margin:120px auto;}
+			.slide_area_text p{color:#000; height:100%; margin:0 auto; padding-top:0; font-weight:bold;}
 
 /*########################## footer 769 ~ 1024px ###############################*/
 /*############# footer bottom 769 ~ 1024px ###############*/
