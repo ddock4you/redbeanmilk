@@ -78,9 +78,10 @@
       $(".slide_area_title").hide().fadeIn(1000);
       $(".slide_area_text").hide().fadeIn(500);
 
-      //슬라이드 화면 높이 설정
-      $(".slide_area").height($(window).height());
-
+      //슬라이드 화면 높이 설정(pc에만 적용)
+      if($window_width > 1024){
+        $(".slide_area ul").height($(window).height());
+      }
 			//슬라이딩 윈도우
 			$(".slide_area ul").prepend($(".slide_area ul li:last"));
 			$(".slide_area ul").css({"marginLeft":"-100%"});

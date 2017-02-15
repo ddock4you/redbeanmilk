@@ -190,53 +190,55 @@ body{font-family:"Montserrat", Noto Sans; margin:0;}
 
 /*############################## content ###################################*/
 	#contentWrap{width:100%;background-color:#fff; overflow:hidden;}
-		.slide_area{width:100%; position:relative;}
-			.slide_area ul{width:400%; height:100%; overflow:hidden;}
-				.slide_area ul li{
-													width:25%;
-													height:100%;
-													float:left;
-													background-repeat:no-repeat;
-													background-position:center center;
-													background-size:cover;
+
+/*####################### slide ###########################*/
+	.slide_area{width:100%; position:relative;}
+		.slide_area ul{width:400%; height:100%; overflow:hidden;}
+			.slide_area ul li{
+												width:25%;
+												height:100%;
+												float:left;
+												background-repeat:no-repeat;
+												background-position:center center;
+												background-size:cover;
+											}
+			.dark{display:block; width:100%; height:100%; background-color:rgba(0,0,0,0.1); position:absolute; top:0; left:0;}
+			.next, .prev{width:60px; height:60px; position:absolute; top:52%; cursor:pointer; z-index:1;}
+				.next{right:0;}
+				.prev{left:0;}
+				.next img, .prev img{width:100%; height:100%;}
+
+			.slide_area_title{width:100%; position:absolute; top:40%; text-align:center; color:#fff;}
+				.slide_area_title hr{width:200px; border:2px solid #fff; margin:0 auto;}
+				.slide_area_title h2{font-size:48px; letter-spacing:5px;}
+				.slide_area_title p{padding-top:30px;}
+
+			.slide_area_text{
+												width:100%;
+												height:250px;
+												position:absolute;
+												bottom:0;
+											}
+
+				.dark_text{
+							display:block;
+							width:100%;
+							height:250px;
+							background-color:rgba(0,0,0,0.7);
+							position:absolute;
+							bottom:0;
+							}
+				.slide_area_text p{
+												width:700px;
+												height:200px;
+												padding-top:25px;
+												position:absolute;
+												top:25px;
+												left:50%;
+												margin-left:-350px;
+												font-size:14px;
+												color:#fff;
 												}
-				.dark{display:block; width:100%; height:100%; background-color:rgba(0,0,0,0.2); position:absolute; top:0; left:0;}
-				.next, .prev{width:60px; height:60px; position:absolute; top:52%; cursor:pointer; z-index:1;}
-					.next{right:0;}
-					.prev{left:0;}
-					.next img, .prev img{width:100%; height:100%;}
-
-				.slide_area_title{width:100%; position:absolute; top:40%; text-align:center; color:#fff;}
-					.slide_area_title hr{width:200px; border:2px solid #fff; margin:0 auto;}
-					.slide_area_title h2{font-size:48px; letter-spacing:5px;}
-					.slide_area_title p{padding-top:30px;}
-
-				.slide_area_text{
-													width:100%;
-													height:250px;
-													position:absolute;
-													bottom:0;
-												}
-
-					.dark_text{
-								display:block;
-								width:100%;
-								height:250px;
-								background-color:rgba(0,0,0,0.7);
-								position:absolute;
-								bottom:0;
-								}
-					.slide_area_text p{
-													width:700px;
-													height:200px;
-													padding-top:25px;
-													position:absolute;
-													top:25px;
-													left:50%;
-													margin-left:-350px;
-													font-size:14px;
-													color:#fff;
-													}
 
 /*############################### footer ######################################*/
 	#footerWrap{width:100%;height:250px; background-color:#2B2727;}
