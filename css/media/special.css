@@ -109,7 +109,7 @@
 
 		.slide_area_text, .slide_area_text div{position:static;}
 		.dark_text{display:none;}
-		.slide_area_text{height:180px; margin:80px auto;}
+		.slide_area_text{height:200px; margin:40px auto;}
 			.slide_area_text hr{border-color:#000;}
 			.slide_area_text div{
 													width:260px;
