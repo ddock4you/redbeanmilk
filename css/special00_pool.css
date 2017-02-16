@@ -253,7 +253,13 @@ body{font-family:"Montserrat", Noto Sans; margin:0; padding:0;}
 
 	/*#################### footer top ######################*/
 		.footer_top{width:100%; color:#fff;}
-			.footer_top_area{width:100%; height:100%; margin:0 auto; position:relative;}
+			.footer_top_area{
+											width:100%;
+											height:100%;
+											margin:0 auto;
+											position:relative;
+											text-align:center;
+										}
 				.footer_gnb{
 										width:470px;
 										height:40px;

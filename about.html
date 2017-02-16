@@ -4,8 +4,11 @@
   <meta  charset="utf-8"/>
   <title> CLAIRE PENSION </title>
   <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+  <link rel="stylesheet" type="text/css" href="css/about.css"/>
+  <link rel="stylesheet" type="text/css" href="css/media/about.css"/>
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!--[if IE 7]>
 		<link rel="stylesheet" type="text/css" href="css/ie7.css"/>
   <![endif]-->
@@ -18,133 +21,254 @@
   <!--[if IE 10]>
 		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
   <![endif]-->
-  
-  <style type="text/css">
-	
-	body{ font-family:"Montserrat", Noto Sans;}
-	/*############################### wrap #######################################*/
-	#wrap{width:100%; text-transform:uppercase;}
+  <script>
+  $(function(){
+    //Sub_gnb on/off
+    $(".sub_gnb ul").hide();
 
-	/*############################### header ######################################*/
-	#headerWrap{width:100%; border-top:4px solid #2B2727; border-bottom:1px solid #ccc; position:relative; }
-		#headerWrap .nav .fast_reservation{position:absolute; top:20px; right:50px;}
-			.nav .fast_reservation a{padding-left:18px; background:url("img/icon_reservation.png") no-repeat 0 1px; background-size:15px 15px; color:#FFBB00;}
-			
-	#header{width:1200px; height:90px; margin:0 auto; position:relative;}
-		#header h1{width:190px; height:40px; position:absolute; top:10px; left:50%; margin-left:-95px;}
-			#header h1 img{width:100%; height:100%;}
-		
-		/*##### GNB 영역 ######*/
-		#header .gnb{padding-top:60px;text-align:center;}
-		#header .gnb ul li{display:inline-block; margin-left:10px;}
-		#header .gnb ul li:last-child{margin-left:0;}
-			
-			#header .gnb ul li a{padding:0 5px; color:#AEA288; font-weight:bold;}
+    $(".sub_gnb").on("click mouseover focusin",function(){
+      $(this).children("ul").stop().slideDown(500);
+    }).on("mouseout focusout",function(){
+      $(this).children("ul").stop().slideUp(500);
+    });
 
-				/*각 gnb영역의 제목을 hover하면 밑줄이 표시되게 하기 위해 after 사용*/
-				#header .gnb ul li a span:after{content:""; display:block; clear:both; width:100%; height:2px; background-color:#AEA288; margin-top: 2px; margin-left:2px; transform:scale(0); transition: all 0.3s ease-in-out;}
+    //로그인 창 on / off
+      $("#top_headerWrap").hide();
+      $(".login a").on("click focusin", function(){
+      $("#top_headerWrap").slideDown(500);
+      });
 
-			#header .gnb ul li a:hover{color:#D9C9A6;}
-			#header .gnb ul li a:hover:#header .gnb ul li a span:after{transform:scale(1);}/*hover 작동 안되고 있음. 수정 요망*/
-			
-	/*############################### content ######################################*/
-			#contentWrap{width:100%;}
-				#contentWrap .welcome{width:100%; height:600px; background:url("img/about.jpg") no-repeat 0 -400px; }
-					.welcome .welcome_wrap{width:1200px; height:100%;margin:0 auto;  position:relative;}
-					
-					.welcome_wrap h3{width:100%; position:absolute; top:40%; left:50%; margin-left:-600px; text-align:center; animation:h3_ani 1s ease-in-out; text-shadow:2px 2px 2px rgba(0,0,0,0.5);color:#fff;font-size:64px; letter-spacing:5px;}
+    //visual 텍스트 애니메이션
+      $(".welcome_wrap h3").hide().fadeIn(1000);
 
-					@keyframes h3_ani{
-						0%{opacity:0;}
-						20%{opacity:0;}
-					}
-					
-					/*
-					.welcome_text_wrap p.welcome_text2{animation:area1_text1_ani 3.5s ease-in-out;}
-					
-					@keyframes area1_text2_ani{
-						0%{opacity:0;}
-						60%{opacity:0;}
-					}*/
+    //about3 li 이미지 생성
+    var $li = $(".about3 ul li");
+    for(i = 0;i < $li.length;i++){
+      $(".about3 ul li:eq("+i+") p")
+      .css({"background-image":"url(img/about/a"+i+".jpg)"});
+    }
 
-				#contentWrap .about1{width:100%; height:500px; background:url("img/02_09.jpg") no-repeat; background-attachment : fixed; margin:200px 0;}
-					.about1 .about1_wrap{width:1200px; height:100%;margin:0 auto;color:#ddd;font-size:16px;}
 
-					.about1_text_wrap{width:400px; height:100%; background-color:rgba(0,0,0,0.5);position:relative;}
-						.about1_text_wrap p{position:absolute; top:20%; left:0; font-size:18px;line-height:30px;}
-
-					.about2{width:1200px; margin:0 auto 200px; text-align:center; font-size:72px; font-family:"바탕"; font-weight:bold; text-shadow:0px 2px 2px rgba(0,0,0,0.5);}
-					
-					.about3{width:100%; overflow:hidden; margin-bottom:200px;}
-						.about3 ul{width:90%; margin:0 auto;}
-							.about3 ul li{width:20%; float:left; text-align:center;}	
-								.about3 ul li strong{display:block;font-size:20px; padding-bottom:20px;}
-
-					.about4{width:1200px; margin:0 auto 200px; text-align:center;}
-						.about4 p{letter-spacing:5px;}
-						.about4 p.about4_text1{font-size:28px;}
-						.about4 p.about4_text2{font-size:20px;}
-
-					.about5{width:100%; height:880px;}
-						.about5 img{width:100%; height:100%;}
-
-		/*############# footer #############*/
-		#footerWrap{width:100%;background-color:#2B2727;}
-		#footer{width:1200px; height:80px; margin:0 auto; position:relative; color:#ddd;}
-			#footer .footer_logo{width:40px; margin:0 auto;padding:10px 0;}
-				 .footer_logo a{width:100%;}
-				.footer_logo a img{width:100%;}
-
-			.footer_info{width:100%; font-size:11px;}
-				.footer_info address{font-style:normal;}
-				.footer_info p.copyright{text-align:center;}
-					
-					
-  </style>
+  });
+  </script>
  </head>
-
  <body>
 	<div id="wrap">
-		<div id="headerWrap">
-			<div class="nav">
-				<p class="fast_reservation">
-					<a href="#none" title="reservation 페이지로 이동">
-						reservation
-					</a>
-				</p>
+    <div id="headerWrap">
+			<div id="top_headerWrap">
+				<form class="login_info" action="#" method="post">
+					<fieldset>
+						<legend class="blind">로그인 영역</legend>
+            <h2>LOGIN</h2>
+            <div class="input_user">
+							<p class="input_userid">
+								<input id="userid" type="text" name="userid" required placeholder="ID 입력"/>
+							</p>
+							<p class="input_userpw">
+								<input id="userpw" type="password" name="userpw" required placeholder="Password 입력" autocomplete=off;/>
+							</p>
+              <p class="input_btn_login">
+                <input id="btn_login" type="button" name="btn_login" value="login"/>
+              </p>
+						</div>
+            <div class="input_etc">
+              <ul>
+                <li>
+                  <a href="#none" title="회원가입 페이지로 이동">회원가입</a>
+                </li>
+                <li>
+                  <a href="#none" title="아이디 찾기 페이지로 이동">아이디 찾기</a>
+                </li>
+                <li>
+                  <a href="#none" title="비밀번호 찾기 페이지로 이동">비밀번호 찾기</a>
+                </li>
+              </ul>
+            </div>
+					</fieldset>
+				</form>
 			</div>
-			<div id="header">
-				<h2>헤더 영역</h2>
-				<h1>
-					<a href="#mome" title="메인 홈페이지로 이동">
-						<img src="img/logo_claire.png" alt="로고"/>
+			<div id="bottom_headerWrap">
+        <div class="nav"><!--로그인 관련 gnb-->
+          <ul>
+            <li class="login">
+              <a href="#none" title="login page 열기">log in</a>
+            </li>
+            <!--<li class="welcome">
+              <a href="#none" title="welcome">윤승현 님 환영합니다!</a>
+            </li>
+            <li class="logout">
+              <a href="#none" title="log out">log out</a>
+            </li>
+            <li class="mypage">
+              <a href="#none" title="my page">my page</a>
+            </li>-->
+            <li class="joinus">
+              <a href="#none" title="join us 열기">join us</a>
+            </li>
+            <li class="fast_event">
+              <a href="#none" title="log out">
+              <img src="img/icon_event.png" alt="이벤트 이미지"/>
+                event</a>
+            </li>
+          </ul>
+        </div>
+				<div id="header">
+					<h2 class="blind">HEADER</h2>
+					<h1>
+						<a href="#nome" title="메인 홈페이지로 이동">
+							<img src="img/logo_claire.png" alt="로고"/>
 						</a>
-				</h1>
-				<div class="gnb">
-					<ul>
-						<li class="about1">
-							<a href="#none" title="about 페이지로 이동"><span>about</span></a>
-						</li>
-						<li>
-							<a href="#none" title="room info 페이지로 이동"><span>room info</span></a>
-						</li>
-						<li>
-							<a href="#none" title="special 페이지로 이동"><span>special</span></a>
-						</li>
-						<li>
-							<a href="#none" title="guide tour 페이지로 이동"><span>guide tour</span></a>
-						</li>
-						<li>
-							<a href="#none" title="location 페이지로 이동"><span>location</span></a>
-						</li>
-						<li>
-							<a href="#none" title="contact us 페이지로 이동"><span>contact us</span></a>
-						</li>
-					</ul>
+					</h1>
+          <div class="m_header_btn">
+            <p class="m_menu_btn">
+              <a href="#none" title="모바일 메뉴 버튼">
+                <img src="img/menu_black.png" alt="모바일 메뉴 버튼"/>
+              </a>
+            </p>
+            <p class="m_reser_btn">
+              <a href="m_reser_btn" title="모바일 실시간 예약 버튼">
+                <img src="img/menu_black.png" alt=" 모바일 메뉴 버튼"/>
+              </a>
+            </p>
+          </div>
+          <div class="m_header">
+            <div class="m_top">
+  						<p class="m_btn m_menu_close_btn">
+  							<a href="#none" title="메뉴">
+                  <img src="img/cross_black.png" alt="모바일 메뉴 닫기 버튼"/>
+  							</a>
+  						</p>
+              <p class="m_logo">
+                <img src="img/logo_footer_white.png" alt="로고 이미지"/>
+              </p>
+            </div>
+            <div class="m_bottom">
+              <ul class="user_info">
+                <li class="m_login">
+                  <a href="#none" title="모바일 로그인 페이지로 이동">
+                    login
+                  </a>
+                </li>
+                <li class="m_join">
+                  <a href="#none" title="모바일 회원가입 페이지로 이동">
+                    join us
+                  </a>
+                </li>
+              </ul>
+            </div>
+              <!--mobile reservation btn-->
+    					<!--<div class="m_btn m_reser_btn">
+    						<p>
+    							<a href="#none" title="reservation 페이지로 이동">
+
+    							</a>
+    						</p>
+    					</div>-->
+              <!--mobile login btn-->
+              <!--<div class="m_btn m_login_btn">
+    						<p>
+    							<a href="#none" title="reservation 페이지로 이동">
+
+    							</a>
+    						</p>
+    					</div>
+            -->
+            <div class="m_gnb">
+              <ul class="m_gnb_list">
+  							<li class="m_sub_gnb m_gnb_room">
+  								<a href="#none" title="room info 페이지로 이동">room info<span>∧</span></a>
+  								<ul class="m_sub_gnb_list">
+  									<li><a href="#none" title="ALIE 방 페이지로 이동">ALIE</a></li>
+  									<li><a href="#none" title="AMANT 방 페이지로 이동">AMANT</a></li>
+  									<li><a href="#none" title="MISTER 방 페이지로 이동">MISTER</a></li>
+  									<li><a href="#none" title="HOBBY 방 페이지로 이동">HOBBY</a></li>
+  									<li><a href="#none" title="BLANCNOIR 방 페이지로 이동">BLANCNOIR</a></li>
+  									<li><a href="#none" title="MIENNE 방 페이지로 이동">MIENNE</a></li>
+  									<li><a href="#none" title="MISSA 방 페이지로 이동">MISSA</a></li>
+  									<li><a href="#none" title="BONJOUR 방 페이지로 이동">BONJOUR</a></li>
+  								</ul>
+  							</li>
+  							<li class="m_sub_gnb m_gnb_special">
+  								<a href="#none" title="special 페이지로 이동">special<span>∧</span></a>
+  								<ul class="m_sub_gnb_list">
+  									<li><a href="#none" title="SWIMMING POOL 페이지로 이동">POOL</a></li>
+  									<li><a href="#none" title="ZET SPA  페이지로 이동">ZET SPA</a></li>
+  									<li><a href="#none" title="BARBECUE  페이지로 이동">BARBECUE</a></li>
+  									<li><a href="#none" title="CAFFE  페이지로 이동">CAFFE</a></li>
+  									<li><a href="#none" title="BEAM PROJECT  페이지로 이동">BEAM PROJECT</a></li>
+  									<li><a href="#none" title="GAME CENTER  페이지로 이동">GAME CENTER</a></li>
+  									<li><a href="#none" title="LOUNGE  페이지로 이동">LOUNGE</a></li>
+  									<li><a href="#none" title="EVENT  페이지로 이동">EVENT</a></li>
+  									<li><a href="#none" title="KIDS  페이지로 이동">KIDS</a></li>
+  									<li><a href="#none" title="SERVICE  페이지로 이동">SERVICE</a></li>
+  								</ul>
+  							</li>
+                <li class="m_reservation_gnb">
+  								<a href="#none" title="location 페이지로 이동">reservation</a>
+  							</li>
+  							<li>
+  								<a href="#none" title="guide tour 페이지로 이동">guide tour</a>
+  							</li>
+  							<li class="m_sub_gnb m_gnb_contact">
+  								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
+                  <ul class="m_sub_gnb_list">
+  									<li><a href="#none" title="공지사항 페이지로 이동">공지사항</a></li>
+  									<li><a href="#none" title="QnA  페이지로 이동">QnA</a></li>
+  									<li><a href="#none" title="여행후기 페이지로 이동">여행후기</a></li>
+  								</ul>
+  							</li>
+  						</ul>
+            </div>
+          </div>
+					<div class="gnb">
+						<ul class="gnb_list">
+							<li class="sub_gnb gnb_room">
+								<a href="#none" title="room info 페이지로 이동">room info<span>∧</span></a>
+								<ul class="sub_gnb_list">
+									<li><a href="#none" title="ALIE 방 페이지로 이동">ALIE</a></li>
+									<li><a href="#none" title="AMANT 방 페이지로 이동">AMANT</a></li>
+									<li><a href="#none" title="MISTER 방 페이지로 이동">MISTER</a></li>
+									<li><a href="#none" title="HOBBY 방 페이지로 이동">HOBBY</a></li>
+									<li><a href="#none" title="BLANCNOIR 방 페이지로 이동">BLANCNOIR</a></li>
+									<li><a href="#none" title="MIENNE 방 페이지로 이동">MIENNE</a></li>
+									<li><a href="#none" title="MISSA 방 페이지로 이동">MISSA</a></li>
+									<li><a href="#none" title="BONJOUR 방 페이지로 이동">BONJOUR</a></li>
+								</ul>
+							</li>
+							<li class="sub_gnb gnb_special">
+								<a href="#none" title="special 페이지로 이동">special<span>∧</span></a>
+								<ul class="sub_gnb_list">
+									<li><a href="#none" title="SWIMMING POOL 페이지로 이동">POOL</a></li>
+									<li><a href="#none" title="ZET SPA  페이지로 이동">ZET SPA</a></li>
+									<li><a href="#none" title="BARBECUE  페이지로 이동">BARBECUE</a></li>
+									<li><a href="#none" title="CAFFE  페이지로 이동">CAFFE</a></li>
+									<li><a href="#none" title="BEAM PROJECT  페이지로 이동">BEAM PROJECT</a></li>
+									<li><a href="#none" title="GAME CENTER  페이지로 이동">GAME CENTER</a></li>
+									<li><a href="#none" title="LOUNGE  페이지로 이동">LOUNGE</a></li>
+									<li><a href="#none" title="EVENT  페이지로 이동">EVENT</a></li>
+									<li><a href="#none" title="KIDS  페이지로 이동">KIDS</a></li>
+									<li><a href="#none" title="SERVICE  페이지로 이동">SERVICE</a></li>
+								</ul>
+							</li>
+              <li class="reservation_gnb">
+								<a href="#none" title="location 페이지로 이동">reservation</a>
+							</li>
+							<li>
+								<a href="#none" title="guide tour 페이지로 이동">guide tour</a>
+							</li>
+							<li class="sub_gnb gnb_contact">
+								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
+                <ul class="sub_gnb_list">
+									<li><a href="#none" title="공지사항 페이지로 이동">공지사항</a></li>
+									<li><a href="#none" title="QnA  페이지로 이동">QnA</a></li>
+									<li><a href="#none" title="여행후기 페이지로 이동">여행후기</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
-
 		<div id="contentWrap">
 			<div class="welcome">
 				<div class="welcome_wrap">
@@ -156,9 +280,9 @@
 					<div class="about1_text_wrap">
 						<p>
 							산 좋고 물 좋은 이 곳, 끌레르에서 소중한 인연들을 기다리며
-							여행자의 품위 있는 힐링타임을 위하여 하나 하나 정성들여 
+							여행자의 품위 있는 힐링타임을 위하여 하나 하나 정성들여
 							꾸미고 가꾸어 힐링공간을 준비 하였습니다.<br/><br/><br/>
-					
+
 							삶의 여유를 즐기며 바쁜 일상에서 하루쯤 사랑하는 연인, 친구, 가족들과 함께
 							특별하고 아름다운 추억을 만들어보세요.
 						</p>
@@ -175,31 +299,26 @@
 					<li>
 						<strong>#4계절온수수영장</strong>
 						<p>
-							<img src="img/about/a1.jpg" alt="4계절온수수영장 이미지"/>
 						</p>
 					</li>
 					<li>
 						<strong>#테마스파</strong>
 						<p>
-							<img src="img/about/a2.jpg" alt="테마스파 이미지"/>
 						</p>
 					</li>
 					<li>
 						<strong>#여유로운 휴식</strong>
 						<p>
-							<img src="img/about/a3.jpg" alt="여유로운 휴식 이미지"/>
 						</p>
 					</li>
 					<li>
 						<strong>#라이프 리프레시</strong>
 						<p>
-							<img src="img/about/a4.jpg" alt="라이프 리프레시 이미지"/>
 						</p>
 					</li>
 					<li>
 						<strong>#감성충전</strong>
 						<p>
-							<img src="img/about/a5.jpg" alt="감성충전 이미지"/>
 						</p>
 					</li>
 				</ul>
@@ -212,23 +331,78 @@
 					끌레르는 당신을 기다리고 있어요.
 				</p>
 			</div>
-			<div class="about5">	
-				<img src="img/about/img01_03.jpg" alt="클레르 어바웃 이미지"/>
+			<div class="about5">
 			</div>
 		</div>
+    <div id="footerWrap">
+			<h2  class="blind">푸터 영역</h2>
+			<div class="footer_top">
+				<div class="footer_top_area">
+          <ul class="footer_gnb">
+            <li>
+              <a href="#none" title="about 페이지로 이동">
+              about
+              </a>
+            </li>
+            <li>
+              <a href="#none" title="이용 약관 페이지로 이동">
+                개인정보·수집 이용
+              </a>
+            </li>
+            <li>
+              <a href="#none" title="개인정보·수집 이용 페이지로 이동">
+                이용약관
+              </a>
+            </li>
+            <li>
+              <a href="#none" title="location 페이지로 이동">
+                location
+              </a>
+            </li>
+          </ul>
+          <p class="footer_logo">
+            <a href="index.html" title="메인 페이지로 이동">
+              <img src="img/logo_footer_white.png" alt="footer logo"/>
+            </a>
+          </p>
 
-		<div id="footerWrap">
-			<div id="footer">
-				<h2>푸터 영역</h2>
-				<div class="footer_logo">
-					<a class="footer_logo_img" href="index.html" title="메인으로">
-						<img src="img/logo_footer.png" alt="푸터 로고"/>
-					</a>
-				</div>
-				<div class="footer_info">
-					<p class="copyright">
-						Copyright 2016 YSH&copy; all rights reserved
-					</p>
+        </div>
+			</div>
+			<div class="footer_bottom">
+					<div class="footer_bottom_area">
+					<div class="footer_info1">
+            <ul class="footer_info">
+              <li class="address_area">
+                <dl>
+                  <dt>주소</dt>
+                  <dd>
+                    <address>경기도 가평군 북면 백둔리 455-18번지</address>
+                  </dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>계좌번호</dt>
+                  <dd>농협 352-0275-6308-13 예금주 정보경</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>사업자 번호</dt>
+                  <dd>105-12-99908</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>통신판매 신고번호</dt>
+                  <dd>제2013-경기가평-51호</dd>
+                </dl>
+              </li>
+            </ul>
+						<p class="copyright">
+							Copyright 2016 YSH&copy; all rights reserved
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>

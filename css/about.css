@@ -7,8 +7,7 @@ body{font-family:"Montserrat", Noto Sans; margin:0; padding:0;}
 								display:block;
 								width:100%;
 								height:100%;
-								position:fixed;/*환불규정 확인*/
-									.refund_info ul li{list-style:disc; font-size:14px; padding-left:20px;}
+								position:fixed;
 								top:0;
 								left:0;
 								background-color:rgba(0,0,0,0.8);
@@ -187,154 +186,144 @@ body{font-family:"Montserrat", Noto Sans; margin:0; padding:0;}
 																	background-color:#eee;
 																	color:#555;
 																}
+/*############################### content ######################################*/
+  #contentWrap{width:100%; padding-top:90px;}
 
-/*############################### content #####################################*/
-	#contentWrap{width:100%;background-color:#fff; padding-top:90px;}
-/*####################### visual ###########################*/
-  .visual_area{width:100%; height:500px; position:relative; overflow:hidden;}
-    .visual_area_img{
-										width:100%;
-										height:100%;
-										background:url("../img/tour/tour_main_img00.jpg") no-repeat center center;
-										background-size:cover;
-									}
-      .visual_area p img{width:100%; height:100%;}
-    .dark{
-					display:block;
-					width:100%;
-					height:100%;
-					background-color:rgba(0,0,0,0.1);
-					position:absolute;
-					top:0;
-					left:0;
-				}
+/*######################### visual #############################*/
+    .welcome{
+              width:100%;
+              height:500px;
+              background:url("../img/about.jpg") no-repeat center center;
+              background-size:cover;
+             }
+      .welcome_wrap{width:100%; height:100%;margin:0 auto;  position:relative;}
 
-    .visual_area_title{
-												width:100%;
-												height:70px;
-												position:absolute;
-												top:45%;
-												text-align:center;
-												color:#fff;
-											}
-      .visual_area_title hr{width:200px; border:2px solid #fff; margin:0 auto;}
-      .visual_area_title h2{font-size:48px; letter-spacing:5px;}
-	/*############################## reservation_form ################################*/
-		.reservation_form{width:1024px; overflow:hidden; margin:0 auto;}
+      .welcome_wrap h3{
+                        position:absolute;
+                        top:45%;
+                        left:50%;
+                        margin-left:-340px;
+                        color:#fff;
+                        font-size:44px;
+                        letter-spacing:5px;
+                      }
 
-		/*##################### comman_matter #######################*/
-			.option{width:100%; margin:20px 0;}
-				.option_title{font-size:16px;}
-					.option_title hr{width:30px; border:2px solid #000;display:block; margin:10px 0;}
-			.table_area{border:1px solid #ccc;}
-			.table_1{width:100%; border-collapse:collapse;}
-				.table_1 th{
-										width:160px;
-										padding:10px 0;
-										background-color:#F2F2F2;
-										box-sizing:border-box;
-									}
-				.table_1 td{padding-left:20px; border-bottom:1px solid #ccc; box-sizing:border-box;}
-					td.last{border-bottom:none;}
-					.info_text{font-size:13px;color:#999; margin-bottom:5px;}
-				.table_1 input{height:30px; margin:10px 0;}
-				.table_1 select{height:30px; margin:10px 0 5px;}
-					.table_1 select option{text-align:center;}
+/*######################### about1 #############################*/
+    .about1{
+            width:100%;
+            height:500px;
+            background:url("../img/02_09.jpg") no-repeat center center;
+            background-attachment:fixed;
+            background-size:cover;
+            margin:200px 0;
+          }
+      .about1_wrap{
+                    width:100%;
+                    height:100%;
+                    margin:0 auto;
+                    position:relative;
 
-			/*####################### option #########################*/
-				.price_box{width:120px; float:left;}
-				.price_value{display:block; width:120px; float:left; text-align:right;}
-				.won{display:block; width:25px; float:left; text-align:center;}
-				.oper{display:block; width:20px; float:left;}
-				.last div{clear:both; margin:5px 0;}
-				.last hr{width:300px; border-color:#000;}
+                  }
 
-			/*#################### personal_info ######################*/
-				.phone_area input{width:100px; text-align:center;}
+      .about1_text_wrap{
+                        width:400px;
+                        height:100%;
+                        background-color:rgba(0,0,0,0.5);
+                        position:absolute;
+                        top:0;
+                        left:10%;
 
-			/*####################### comment #########################*/
-				.comment_area textarea{width:90%; padding:10px; margin:10px 0;}
+                      }
+        .about1_text_wrap p{
+                            position:absolute;
+                            top:20%;
+                            left:0;
+                            line-height:30px;
+                            color:#ddd;
+                            padding:0 5%;
+                          }
 
-			/*##################### refund_rule #######################*/
-				.refund_info ul li{list-style:disc; font-size:14px; padding-left:20px;}
-				.table_2{
-									width:100%;
+/*######################### about2 #############################*/
+      .about2{
+              width:100%;
+              margin:0 auto 200px;
+              text-align:center;
+              font-size:72px;
+              font-family:"바탕";
+              font-weight:bold;
+              }
+
+/*######################### about3 #############################*/
+      .about3{width:1200px; overflow:hidden; margin:200px auto 200px;}
+        .about3 ul{width:100%; margin:0 auto;}
+          .about3 ul li{width:20%; float:left; text-align:center;}
+            .about3 ul li strong{display:block;font-size:20px; padding-bottom:20px;}
+            .about3 ul li p{
+                            width:100%;
+                            height:500px;
+                            background-position:center center;
+                            background-repeat:no-repeat;
+                          }
+
+/*######################### about4 #############################*/
+      .about4{width:100%; margin:0 auto 200px; text-align:center;}
+        .about4 p{letter-spacing:5px;}
+        .about4 .about4_text1{font-size:28px;}
+        .about4 .about4_text2{font-size:20px;}
+
+/*######################### about5 #############################*/
+      .about5{
+              width:100%;
+              height:500px;
+              background:url("../img/about/img01_03.jpg") no-repeat center center;
+              background-size:cover;
+            }
+        .about5 img{width:100%; height:100%;}
+
+/*############################### footer ######################################*/
+	#footerWrap{width:100%;height:250px; background-color:#2B2727;}
+		#footerWrap h2{
+									font-size:32px;
+									color:#fff;
+									padding:20px 0;
 									text-align:center;
-									border-collapse:collapse;
-									border-top:1px solid #ccc;
-									border-bottom:1px solid #ccc;
-									margin-top:20px;
-									box-sizing:border-box;
+									letter-spacing:15px;
+									font-weight:400;
+									}
+
+/*#################### footer top ######################*/
+	.footer_top{width:100%; height:160px; color:#fff;}
+		.footer_top_area{width:100%; height:100%; margin:0 auto; position:relative; text-align:center;}
+			.footer_gnb{
+									width:470px;
+									height:40px;
+									margin:0 auto;
+									line-height:40px;
+									padding-top:10px;
+									font-size:14px;
 								}
-					.table_2 caption{font-size:14px; text-align:left; font-weight:bold;}
-					.table_2 thead{font-size:14px;}
-					.table_2 tbody{font-size:13px;}
-					.table_2 th, .table_2 td{padding:10px 0;}
-					.table_2 th{background-color:#F2F2F2;}
+				.footer_gnb li{display:inline-block; margin-left:10px;}
+					.footer_gnb li:first-child{margin-left:0;}
+					.footer_gnb li a{padding:5px 8px; color:#fff; font-weight:bold;}
 
+			.footer_logo{width:70px;height:70px; margin:0 auto; padding-top:20px;}
+				.footer_logo a{width:100%; height:100%;}
+					.footer_logo a img{width:100%; height:100%;}
 
-				.btn_submit_area{border-top:2px solid #000; text-align:center;}
-					#btn_submit{
-											margin:30px;
-											width:200px;
-											height:50px;
-											border:2px solid #000;
-											background-color:#fff;
-											font-size:20px;
-											font-weight:bold;
-											cursor:pointer;
-										}
+			.footer_info{width:100%; margin:0 auto; padding-top:20px;}
+				.footer_info:after{content:""; display:block; clear:both; padding-bottom:10px;}
+				.footer_info li{width:24%; float:left; margin-right:1%;}
+					.footer_info li dl dt{
+																text-align:center;
+																padding-bottom:10px;
+																font-size:13px;
+																font-weight:bold;
+																color:#777;
+															}
+						.footer_info li dl dd{font-size:12px; text-align:center; color:#777;}
+						address{font-style:normal;}
 
-		/*############################### footer ######################################*/
-			#footerWrap{width:100%;height:250px; background-color:#2B2727;}
-				#footerWrap h2{
-											font-size:32px;
-											color:#fff;
-											padding:20px 0;
-											text-align:center;
-											letter-spacing:15px;
-											font-weight:400;
-											}
-
-			/*#################### footer top ######################*/
-				.footer_top{width:100%; color:#fff;}
-					.footer_top_area{
-													width:100%;
-													height:100%;
-													margin:0 auto;
-													position:relative;
-													text-align:center;
-												}
-						.footer_gnb{
-												width:470px;
-												height:40px;
-												margin:0 auto;
-												line-height:40px;
-												padding-top:10px;
-												font-size:14px;
-											}
-							.footer_gnb li{display:inline-block; margin-left:10px;}
-								.footer_gnb li:first-child{margin-left:0;}
-								.footer_gnb li a{padding:5px 8px; color:#fff; font-weight:bold;}
-
-						.footer_logo{width:70px;height:70px; margin:0 auto; padding-top:20px;}
-							.footer_logo a{width:100%; height:100%;}
-								.footer_logo a img{width:100%; height:100%;}
-
-						.footer_info{width:100%; margin:0 auto; padding-top:20px;}
-							.footer_info:after{content:""; display:block; clear:both; padding-bottom:10px;}
-							.footer_info li{width:24%; float:left; margin-right:1%;}
-								.footer_info li dl dt{
-																			text-align:center;
-																			padding-bottom:10px;
-																			font-size:13px;
-																			font-weight:bold;
-																			color:#777;
-																		}
-									.footer_info li dl dd{font-size:12px; text-align:center; color:#777;}
-									address{font-style:normal;}
-
-			/*#################### footer bottom ######################*/
-				.footer_bottom{width:100%; height:90px;}
-					.footer_bottom_area{width:1000px; height:100%; margin:0 auto;}
-						.copyright{color:#444; text-align:center; font-size:14px;}
+/*#################### footer bottom ######################*/
+	.footer_bottom{width:100%; height:90px;}
+		.footer_bottom_area{width:1000px; height:100%; margin:0 auto;}
+			.copyright{color:#444; text-align:center; font-size:14px;}
