@@ -48,28 +48,28 @@
 		.m_header_btn{display:block;}
 
 
-		/*########################## content 481 ~ 768px ##############################*/
-		/*#################### visual 481 ~ 768px ########################*/
-			.slide_area{padding-top:50px;}
-				.slide_area ul{height:300px;}
-					.slide_area_title{top:30%;}
-					.slide_area_title hr{width:120px;}
-					.slide_area_title h2{font-size:24px; letter-spacing:3px;}
-					.dark{height:350px;}/*slide_area 높이값 + .slide_area ul 높이값*/
-					.next, .prev{width:50px; height:50px; top:28%;}
+	/*########################## content 481 ~ 768px ##############################*/
+	/*#################### visual 481 ~ 768px ########################*/
+		.slide_area{padding-top:50px;}
+			.slide_area ul{height:300px;}
+				.slide_area_title{top:30%;}
+				.slide_area_title hr{width:120px;}
+				.slide_area_title h2{font-size:24px; letter-spacing:3px;}
+				.dark{height:350px;}/*slide_area 높이값 + .slide_area ul 높이값*/
+				.next, .prev{width:50px; height:50px; top:28%;}
 
-				.slide_area_text, .slide_area_text div{position:static;}
-				.dark_text{display:none;}
-				.slide_area_text{height:180px; margin:80px auto;}
-					.slide_area_text hr{border-color:#000;}
-					.slide_area_text div{
-															width:400px;
-															color:#000;
-															height:100%;
-															margin:0 auto;
-															padding-top:0;
-															font-size:12px;
-															}
+			.slide_area_text, .slide_area_text div{position:static;}
+			.dark_text{display:none;}
+			.slide_area_text{height:180px; margin:80px auto;}
+				.slide_area_text hr{border-color:#000;}
+				.slide_area_text div{
+														width:400px;
+														color:#000;
+														height:100%;
+														margin:0 auto;
+														padding-top:0;
+														font-size:12px;
+														}
 
 /*########################## footer 481 ~ 768px ###############################*/
 #footerWrap{height:460px;}
@@ -96,6 +96,28 @@
 		.d_gnb{display:none;}
 		.gnb{display:none;}
 		.nav{display:none;}
+
+		.slide_area{padding-top:50px;}
+			.slide_area ul{height:200px;}
+				.slide_area_title{top:30%;}
+				.slide_area_title hr{width:100px;}
+				.slide_area_title h2{font-size:18px; letter-spacing:2px;}
+				.dark{height:250px;}/*slide_area 높이값 + .slide_area ul 높이값*/
+				.next, .prev{width:30px; height:30px; top:28%;}
+
+			.slide_area_text, .slide_area_text div{position:static;}
+			.dark_text{display:none;}
+			.slide_area_text{height:180px; margin:80px auto;}
+				.slide_area_text hr{border-color:#000;}
+				.slide_area_text div{
+														width:260px;
+														color:#000;
+														height:100%;
+														margin:0 auto;
+														padding-top:0;
+														font-size:11px;
+														}
+
 
 /*########################## content 320 ~ 480px ##############################*/
 /*##################### visual 320 ~ 480px #########################*/
