@@ -228,7 +228,7 @@ body{font-family:"Montserrat", Noto Sans; margin:0;}
 							position:absolute;
 							bottom:0;
 							}
-				.slide_area_text p{
+				.slide_area_text div{
 												width:700px;
 												height:200px;
 												padding-top:25px;
@@ -239,6 +239,7 @@ body{font-family:"Montserrat", Noto Sans; margin:0;}
 												font-size:14px;
 												color:#fff;
 												}
+				.slide_area_text hr{width:10px; margin:0 auto; border:1px solid #fff;}
 
 /*############################### footer ######################################*/
 	#footerWrap{width:100%;height:250px; background-color:#2B2727;}

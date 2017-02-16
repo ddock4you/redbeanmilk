@@ -19,10 +19,16 @@
 			.dark{height:590px;}/*slide_area 높이값 + .slide_area ul 높이값*/
 			.next, .prev{width:50px; height:50px; top:42%;}
 
-		.slide_area_text, .slide_area_text p{position:static;}
+		.slide_area_text, .slide_area_text div{position:static;}
 		.dark_text{display:none;}
 		.slide_area_text{height:130px; margin:120px auto;}
-			.slide_area_text p{color:#000; height:100%; margin:0 auto; padding-top:0; font-weight:bold;}
+			.slide_area_text hr{border-color:#000;}
+			.slide_area_text div{
+													color:#000;
+													height:100%;
+													margin:0 auto;
+													padding-top:0;
+													}
 
 /*########################## footer 769 ~ 1024px ###############################*/
 /*############# footer bottom 769 ~ 1024px ###############*/
@@ -41,40 +47,29 @@
 		.nav{display:none;}
 		.m_header_btn{display:block;}
 
-/*########################## content 481 ~ 768px ##############################*/
-/*##################### visual 481 ~ 768px #########################*/
-	#visual{padding-top:50px;}
-		.visual_main{height:300px;}
-			.visual_main_text hr{width:120px;}
-			.visual_main_text h2{font-size:24px; letter-spacing:3px;}
-			.visual_main_text p{padding-top:30px; font-size:12px;}
 
-/*##################### modal 481 ~ 768px #########################*/
-	.modal_area{padding-top:50px;}
-		.modal_area ul li{width:50%; height:170px;}
-		.modal{height:300px; margin-top:-125px;}
+		/*########################## content 481 ~ 768px ##############################*/
+		/*#################### visual 481 ~ 768px ########################*/
+			.slide_area{padding-top:50px;}
+				.slide_area ul{height:300px;}
+					.slide_area_title{top:30%;}
+					.slide_area_title hr{width:120px;}
+					.slide_area_title h2{font-size:24px; letter-spacing:3px;}
+					.dark{height:350px;}/*slide_area 높이값 + .slide_area ul 높이값*/
+					.next, .prev{width:50px; height:50px; top:28%;}
 
-
-/*################### room_desc 481 ~ 768px #######################*/
-		.room_info_text{width:100%; margin:40px auto 0; font-size:12px;}
-
-/*################## price_table 481 ~ 768px ######################*/
-	.table{width:480px; height:280px; margin:40px auto;}
-		.table hr{margin:15px auto;}
-		.table span{font-size:24px; font-weight:bold;}
-			.table p strong{font-size:16px;}
-			.table p b{font-size:14px;}
-
-/*################### room_info 481 ~ 768px #######################*/
-		.room_info_desc{height:290px; overflow:hidden;}
-			.room_info_desc ul{width:400%; height:100%; margin:0}
-				.room_info_desc ul li{width:25%; height:230px; margin:30px auto;}
-					.room_info_desc ul li.right{margin-right:0;}
-
-					.room_info_desc ul li p.icon{width:30px; height:30px; margin:25px auto;}
-					p.object{font-size:12px;}
-
-			.slide_btn{display:block;}
+				.slide_area_text, .slide_area_text div{position:static;}
+				.dark_text{display:none;}
+				.slide_area_text{height:180px; margin:80px auto;}
+					.slide_area_text hr{border-color:#000;}
+					.slide_area_text div{
+															width:400px;
+															color:#000;
+															height:100%;
+															margin:0 auto;
+															padding-top:0;
+															font-size:12px;
+															}
 
 /*########################## footer 481 ~ 768px ###############################*/
 #footerWrap{height:460px;}
