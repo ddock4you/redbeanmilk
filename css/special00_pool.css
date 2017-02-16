@@ -1,17 +1,16 @@
-body{font-family:"Montserrat", Noto Sans; margin:0;}
+body{font-family:"Montserrat", Noto Sans; margin:0; padding:0;}
 
 /*############################### wrap #######################################*/
-	#wrap{width:100%; overflow:hidden; text-transform:uppercase;}
+	#wrap{width:100%; text-transform:uppercase;}
 	/*jQuery로 제어*/
 		.wrap_dark{
 								display:block;
 								width:100%;
 								height:100%;
-								position:absolute;
+								position:fixed;
 								top:0;
 								left:0;
 								background-color:rgba(0,0,0,0.8);
-								z-index:3;
 							}
 
 /*############################# headerWRap ###################################*/
@@ -22,113 +21,113 @@ body{font-family:"Montserrat", Noto Sans; margin:0;}
 							border-bottom:1px solid #ccc;
 							position:fixed;
 							top:0;
-							z-index:4;
+							z-index:3;
 							}
 
-
 /*###################### top_headerWRap ############################*/
-#top_headerWrap{width:100%; height:240px; background-color:#2B2727;}
-	.login_info{width:100%;}
-		.login_info h2{padding:30px 0; color:#fff; text-align:center;}
-			.login_info fieldset{border:none;}
-		.input_user{width:700px; height:40px; margin:0 auto 20px;}
-			.input_user p{width:200px; height:35px; float:left;margin-left:30px;}
-				.input_user p.input_btn_login{width:80px; height:39px;}
-				.input_user p.input_userid{margin-left:80px;}
-				.input_user p input{
-														width:100%;
-														height:100%;
-														border:2px solid #fff;
-														background-color:#2B2727;
-														color:#fff;
-													 }
-					#userid, #userpw{text-indent:12px;}
+	#top_headerWrap{width:100%; height:240px; background-color:#2B2727;}
+		.login_info{width:100%;}
+			.login_info h2{padding:30px 0; color:#fff; text-align:center;}
+				.login_info fieldset{border:none;}
+			.input_user{width:700px; height:40px; margin:0 auto 20px;}
+				.input_user p{width:200px; height:35px; float:left;margin-left:30px;}
+					.input_user p.input_btn_login{width:80px; height:39px;}
+					.input_user p.input_userid{margin-left:80px;}
+					.input_user p input{
+															width:100%;
+															height:100%;
+															border:2px solid #fff;
+															background-color:#2B2727;
+															color:#fff;
+														 }
+						#userid, #userpw{text-indent:12px;}
 
-		.input_etc{width:700px; margin:0 auto; text-align:center;}
-			.input_etc ul:after{content:""; display:block; clear:both;}
-				.input_etc ul li{display:inline-block; padding:0 7px; color:#fff;}
-					.input_etc ul li a{color:#fff;}
+			.input_etc{width:700px; margin:0 auto; text-align:center;}
+				.input_etc ul:after{content:""; display:block; clear:both;}
+					.input_etc ul li{display:inline-block; padding:0 7px; color:#fff;}
+						.input_etc ul li a{color:#fff;}
 
 /*###################### bottom_headerWRap #########################*/
-#bottom_headerWrap{width:100%; height:100%; position:relative;}
+	#bottom_headerWrap{width:100%; height:100%; position:relative;}
 
 /*##################### top gnb #########################*/
-		.nav{
-					width:190px;
-					height:20px;
-					position:absolute;
-					top:20px;
-					right:50px;
-					z-index:1;
-				}
-			.nav ul:after{content:""; dispaly:block; clear:both;}
-			.nav ul li{float:left;}
-				.nav ul li a{padding:0 6px; font-size:12px; color:#333;}
-				.nav ul li.fast_event a{color:#FF3636;}
-					.fast_event a img{width:12px; height:12px;}
-	/*#################### gnb ########################*/
-			.m_r_gnb, .m_l_gnb{position:absolute;top:15px; right:40px; display:none;}
-				.m_l_gnb{ left:40px;}
-				.m_r_gnb p{width:30px; height:30px;}
+	.nav{
+				width:190px;
+				height:20px;
+				position:absolute;
+				top:20px;
+				right:50px;
+				z-index:1;
+			}
+		.nav ul:after{content:""; dispaly:block; clear:both;}
+		.nav ul li{float:left;}
+			.nav ul li a{padding:0 6px; font-size:12px; color:#333;}
+			.nav ul li.fast_event a{color:#FF3636;}
+				.fast_event a img{width:12px; height:12px;}
 
-				.m_l_gnb{top:18px;}
-				 .m_l_gnb p{width:26px; height:26px;}
+/*#################### gnb ########################*/
+		.m_r_gnb, .m_l_gnb{position:absolute;top:15px; right:40px; display:none;}
+			.m_l_gnb{ left:40px;}
+			.m_r_gnb p{width:30px; height:30px;}
 
-					.m_r_gnb p img, .m_l_gnb p img{width:100%; height:100%;}
+			.m_l_gnb{top:18px;}
+			 .m_l_gnb p{width:26px; height:26px;}
 
-	#header{width:100%; height:90px; margin:0 auto; position:relative;}
-		h1{
-			width:190px;
-			height:40px;
-			 position:absolute;
-			 top:10px; left:50%;
-			 margin-left:-95px;
-			 z-index:1;
-		 }
-			h1 img{width:100%; height:100%;}
+				.m_r_gnb p img, .m_l_gnb p img{width:100%; height:100%;}
 
-			.m_header_btn{
-										width:100%;
-										height:24px;
-										position:absolute;
-										top:13px;
-										left:0;
-										display:none;
-									 }
-				.m_menu_btn, .m_reser_btn{width:24px; height:24px; position:absolute; top:0;}
-					.m_menu_btn a, .m_reser_btn a{display:block; width:100%; height:100%; padding:4px;}
-						.m_menu_btn a img, .m_reser_btn a img{width:100%; height:100%;}
-				.m_menu_btn{left:40px;}
-				.m_reser_btn{right:40px;}
-	/*####################### gnb ###########################*/
-		.gnb{padding-top:60px;text-align:center;}
-			/*main GNB, sub GNB 공통으로 사용*/
-			.gnb ul li{display:inline-block; margin-left:10px; position:relative;}
-			.gnb ul li:last-child{margin-left:0;}
-				/*main GNB 리스트(sub GNB 리스트와 다르게 표시하기 위해 나눔)*/
-				.gnb_list li a{padding:5px 8px; color:#AEA288; font-weight:bold;}
+#header{width:100%; height:90px; margin:0 auto; position:relative;}
+	h1{
+		width:190px;
+		height:40px;
+		 position:absolute;
+		 top:10px; left:50%;
+		 margin-left:-95px;
+		 z-index:1;
+	 }
+		h1 img{width:100%; height:100%;}
 
-					.sub_gnb_list{
-												width:100%;
-												position:fixed;
-												top:95px;
-												left:0;
-												z-index:2;
-												background-color:#2B2727;
-											}
-					.sub_gnb_list li{
-														display:inline-block;
-														text-align:center;
-														margin-left:0;
-														padding:3px 0;
-													}
-						.sub_gnb_list li a{color:#fff; font-size:12px; padding:0 8px;}
+		.m_header_btn{
+									width:100%;
+									height:24px;
+									position:absolute;
+									top:13px;
+									left:0;
+									display:none;
+								 }
+			.m_menu_btn, .m_reser_btn{width:24px; height:24px; position:absolute; top:0;}
+				.m_menu_btn img, .m_reser_btn img{width:100%; height:100%;}
+					.m_menu_btn img a, .m_reser_btn img a{display:block; width:100%; height:100%;}
+			.m_menu_btn{left:40px;}
+			.m_reser_btn{right:40px;}
 
-						/*.gnb_room a::after,.gnb_special a::after,.gnb_contact a::after  {content:"∧"; padding:0 3px; display:inline; vertical-align: top;}
-						*/
+/*####################### gnb ###########################*/
+	.gnb{padding-top:60px;text-align:center;}
+		/*main GNB, sub GNB 공통으로 사용*/
+		.gnb ul li{display:inline-block; margin-left:10px; position:relative;}
+		.gnb ul li:last-child{margin-left:0;}
+			/*main GNB 리스트(sub GNB 리스트와 다르게 표시하기 위해 나눔)*/
+			.gnb_list li a{padding:5px 8px; color:#AEA288; font-weight:bold;}
+
+				.sub_gnb_list{
+											width:100%;
+											position:fixed;
+											top:95px;
+											left:0;
+											z-index:2;
+											background-color:#2B2727;
+										}
+				.sub_gnb_list li{
+													display:inline-block;
+													text-align:center;
+													margin-left:0;
+													padding:3px 0;
+												}
+					.sub_gnb_list li a{color:#fff; font-size:12px; padding:0 8px;}
+
 /*###################### m_header ##########################*/
 	.m_header{
 						width:320px;
+						height:950px;
 						position:fixed;
 						top:5px;
 						left:-320px;

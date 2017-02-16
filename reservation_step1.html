@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
   <link rel="stylesheet" type="text/css" href="css/reset.css"/>
   <link rel="stylesheet" type="text/css" href="css/reservation_step1.css"/>
-  <link rel="stylesheet" type="text/css" href="css/media_index.css"/>
+  <link rel="stylesheet" type="text/css" href="css/media/reservation_step1.css"/>
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
   <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js"></script>
   <!--[if IE 7]>
 		<link rel="stylesheet" type="text/css" href="css/ie7.css"/>
   <![endif]-->
@@ -28,54 +29,24 @@
   </style>
   <script type="text/javascript">
   //Sub_gnb 영역
-  jQuery(document).ready(function(){
-	$(".sub_gnb ul").hide();
+  $(function(){
+    	$(".sub_gnb ul").hide();
 
-	$(".sub_gnb").bind("click mouseover focusin",function(){
-		$(this).children("ul").stop().slideDown(500);
-	}).bind("mouseout focusout",function(){
-		$(this).children("ul").stop().slideUp(500);
-	});
+  	$(".sub_gnb").bind("click mouseover focusin",function(){
+  		$(this).children("ul").stop().slideDown(500);
+  	}).bind("mouseout focusout",function(){
+  		$(this).children("ul").stop().slideUp(500);
+  	});
 
 
-  });
+    //visual 이미지 생성
+    $(".visual_area_title").hide().fadeIn(1000);
 
-  //Room 선택 영역
-	jQuery(document).ready(function(){
-		$(".pre00_alie").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/00_alie.jpg");
-		});
+  //visual 이미지 애니메이션
+    $(".visual_area_img").scale(1.15).animate({scale:"1"},1000);
 
-		$(".pre01_amant").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/01_amant.jpg");
-		});
-
-		$(".pre02_mistere").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/02_mister.jpg");
-		});
-
-		$(".pre03_hobby").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/03_hobby.jpg");
-		});
-
-		$(".pre04_blancmoir").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/04_blancnoir.jpg");
-		});
-
-		$(".pre05_mienne").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/05_mienne.jpg");
-		});
-
-		$(".pre06_rosa").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/06_missa.jpg");
-		});
-
-		$(".pre07_bonuour").bind("mouseover focusin", function(){
-			$(".room_area img").attr("src","img/room_info/07_bonjour.jpg");
-		});
-	});
   //로그인 페이지 on/off
-  	jQuery(document).ready(function(){
+
       $("#top_headerWrap").hide();
       $(".login a").bind("click focusin", function(){
         $("#top_headerWrap").slideDown(500);
@@ -86,13 +57,14 @@
       $(".login a").siblings().click(function(){
         $("#top_headerWrap").slideUp(500);
       });
+
     });
   </script>
  </head>
 
  <body>
 	<div id="wrap">
-		<div id="headerWrap">
+    <div id="headerWrap">
 			<div id="top_headerWrap">
 				<form class="login_info" action="#" method="post">
 					<fieldset>
@@ -153,30 +125,116 @@
 				<div id="header">
 					<h2 class="blind">HEADER</h2>
 					<h1>
-						<a href="#mome" title="메인 홈페이지로 이동">
+						<a href="#nome" title="메인 홈페이지로 이동">
 							<img src="img/logo_claire.png" alt="로고"/>
 						</a>
 					</h1>
-					<div class="m_l_gnb"><!--모바일 전용 left gnb-->
-						<p>
-							<a href="#none" title="메뉴">
-								<img src="img/menu.png" alt="메뉴 아이콘 이미지"/>
-							</a>
-						</p>
-					</div>
-					<div class="m_r_gnb"><!--모바일 전용 right gnb-->
-						<p class="m_fast_reservation">
-							<a href="#none" title="reservation 페이지로 이동">
-								<img src="img/icon_reservation.png">
-							</a>
-						</p>
-					</div>
-					<div class="gnb">
-						<ul class="sub_gnb_list">
+          <div class="m_header_btn">
+            <p class="m_menu_btn">
+              <a href="#none" title="모바일 메뉴 버튼">
+                <img src="img/menu_black.png" alt="모바일 메뉴 버튼"/>
+              </a>
+            </p>
+            <p class="m_reser_btn">
+              <a href="m_reser_btn" title="모바일 실시간 예약 버튼">
+                <img src="img/menu_black.png" alt=" 모바일 메뉴 버튼"/>
+              </a>
+            </p>
+          </div>
+          <div class="m_header">
+            <div class="m_top">
+  						<p class="m_btn m_menu_close_btn">
+  							<a href="#none" title="메뉴">
+                  <img src="img/cross_black.png" alt="모바일 메뉴 닫기 버튼"/>
+  							</a>
+  						</p>
+              <p class="m_logo">
+                <img src="img/logo_footer_white.png" alt="로고 이미지"/>
+              </p>
+            </div>
+            <div class="m_bottom">
+              <ul class="user_info">
+                <li class="m_login">
+                  <a href="#none" title="모바일 로그인 페이지로 이동">
+                    login
+                  </a>
+                </li>
+                <li class="m_join">
+                  <a href="#none" title="모바일 회원가입 페이지로 이동">
+                    join us
+                  </a>
+                </li>
+              </ul>
+            </div>
+              <!--mobile reservation btn-->
+    					<!--<div class="m_btn m_reser_btn">
+    						<p>
+    							<a href="#none" title="reservation 페이지로 이동">
 
-							<li class="sub_gnb">
-								<a href="#none" title="room info 페이지로 이동"><span></span>room info V</a>
-								<ul>
+    							</a>
+    						</p>
+    					</div>-->
+              <!--mobile login btn-->
+              <!--<div class="m_btn m_login_btn">
+    						<p>
+    							<a href="#none" title="reservation 페이지로 이동">
+
+    							</a>
+    						</p>
+    					</div>
+            -->
+            <div class="m_gnb">
+              <ul class="m_gnb_list">
+  							<li class="m_sub_gnb m_gnb_room">
+  								<a href="#none" title="room info 페이지로 이동">room info<span>∧</span></a>
+  								<ul class="m_sub_gnb_list">
+  									<li><a href="#none" title="ALIE 방 페이지로 이동">ALIE</a></li>
+  									<li><a href="#none" title="AMANT 방 페이지로 이동">AMANT</a></li>
+  									<li><a href="#none" title="MISTER 방 페이지로 이동">MISTER</a></li>
+  									<li><a href="#none" title="HOBBY 방 페이지로 이동">HOBBY</a></li>
+  									<li><a href="#none" title="BLANCNOIR 방 페이지로 이동">BLANCNOIR</a></li>
+  									<li><a href="#none" title="MIENNE 방 페이지로 이동">MIENNE</a></li>
+  									<li><a href="#none" title="MISSA 방 페이지로 이동">MISSA</a></li>
+  									<li><a href="#none" title="BONJOUR 방 페이지로 이동">BONJOUR</a></li>
+  								</ul>
+  							</li>
+  							<li class="m_sub_gnb m_gnb_special">
+  								<a href="#none" title="special 페이지로 이동">special<span>∧</span></a>
+  								<ul class="m_sub_gnb_list">
+  									<li><a href="#none" title="SWIMMING POOL 페이지로 이동">POOL</a></li>
+  									<li><a href="#none" title="ZET SPA  페이지로 이동">ZET SPA</a></li>
+  									<li><a href="#none" title="BARBECUE  페이지로 이동">BARBECUE</a></li>
+  									<li><a href="#none" title="CAFFE  페이지로 이동">CAFFE</a></li>
+  									<li><a href="#none" title="BEAM PROJECT  페이지로 이동">BEAM PROJECT</a></li>
+  									<li><a href="#none" title="GAME CENTER  페이지로 이동">GAME CENTER</a></li>
+  									<li><a href="#none" title="LOUNGE  페이지로 이동">LOUNGE</a></li>
+  									<li><a href="#none" title="EVENT  페이지로 이동">EVENT</a></li>
+  									<li><a href="#none" title="KIDS  페이지로 이동">KIDS</a></li>
+  									<li><a href="#none" title="SERVICE  페이지로 이동">SERVICE</a></li>
+  								</ul>
+  							</li>
+                <li class="m_reservation_gnb">
+  								<a href="#none" title="location 페이지로 이동">reservation</a>
+  							</li>
+  							<li>
+  								<a href="#none" title="guide tour 페이지로 이동">guide tour</a>
+  							</li>
+  							<li class="m_sub_gnb m_gnb_contact">
+  								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
+                  <ul class="m_sub_gnb_list">
+  									<li><a href="#none" title="공지사항 페이지로 이동">공지사항</a></li>
+  									<li><a href="#none" title="QnA  페이지로 이동">QnA</a></li>
+  									<li><a href="#none" title="여행후기 페이지로 이동">여행후기</a></li>
+  								</ul>
+  							</li>
+  						</ul>
+            </div>
+          </div>
+					<div class="gnb">
+						<ul class="gnb_list">
+							<li class="sub_gnb gnb_room">
+								<a href="#none" title="room info 페이지로 이동">room info<span>∧</span></a>
+								<ul class="sub_gnb_list">
 									<li><a href="#none" title="ALIE 방 페이지로 이동">ALIE</a></li>
 									<li><a href="#none" title="AMANT 방 페이지로 이동">AMANT</a></li>
 									<li><a href="#none" title="MISTER 방 페이지로 이동">MISTER</a></li>
@@ -187,8 +245,8 @@
 									<li><a href="#none" title="BONJOUR 방 페이지로 이동">BONJOUR</a></li>
 								</ul>
 							</li>
-							<li class="sub_gnb">
-								<a href="#none" title="special 페이지로 이동"><span></span>special V</a>
+							<li class="sub_gnb gnb_special">
+								<a href="#none" title="special 페이지로 이동">special<span>∧</span></a>
 								<ul class="sub_gnb_list">
 									<li><a href="#none" title="SWIMMING POOL 페이지로 이동">POOL</a></li>
 									<li><a href="#none" title="ZET SPA  페이지로 이동">ZET SPA</a></li>
@@ -203,13 +261,13 @@
 								</ul>
 							</li>
               <li class="reservation_gnb">
-								<a href="#none" title="location 페이지로 이동"><span></span>reservation</a>
+								<a href="#none" title="location 페이지로 이동">reservation</a>
 							</li>
 							<li>
-								<a href="#none" title="guide tour 페이지로 이동"><span></span>guide tour</a>
+								<a href="#none" title="guide tour 페이지로 이동">guide tour</a>
 							</li>
-							<li class="sub_gnb">
-								<a href="#none" title="contact us 페이지로 이동"><span></span>contact us V</a>
+							<li class="sub_gnb gnb_contact">
+								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
                 <ul class="sub_gnb_list">
 									<li><a href="#none" title="공지사항 페이지로 이동">공지사항</a></li>
 									<li><a href="#none" title="QnA  페이지로 이동">QnA</a></li>
@@ -222,9 +280,11 @@
 			</div>
 		</div>
 		<div id="contentWrap">
-      <div class="slide_area">
+      <div class="visual_area">
+        <div class="visual_area_img">
+        </div>
 				<span class="dark"></span>
-				<div class="slide_area_title">
+				<div class="visual_area_title">
 					<hr/>
 					<h2>RESERVATION</h2>
 				</div>
@@ -523,6 +583,18 @@
               </li>
             </ul>
           </div>
+          <div class="none_selected_step none_selected_step1">
+            <div class="step_area step_area_step1">
+              <div class="step_info step_info_step1">
+                <p class="step_radius">
+                  step 1
+                </p>
+                <p class="step_text">
+                  객실을 선택해주세요.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="option_area">
           <div class="option_area_right">
@@ -586,12 +658,12 @@
               <div class="option_content add_option_content">
                 <ul>
                   <li>
-                    <input type="checkbox" id="charcoal_2p" name="charcoal_2p">
-                    <label for="charcoal_2p">숯불+바베큐그릴 2인 10,000원</label>
+                    <!--<input type="checkbox" id="charcoal_2p" name="charcoal_2p">-->
+                    <label for="charcoal_2p_select">숯불+바베큐그릴 2인 10,000원</label>
                     <select name="charcoal_2p_select" id="charcoal_2p_select">
-                      <option value="select" selected>선택</option>
-                      <option value="1" selected>1회</option>
-                      <option value="2" selected>2회</option>
+                      <option value="select" selected>선택안함</option>
+                      <option value="1">1회</option>
+                      <option value="2">2회</option>
                     </select>
                     <p>
                       숯불과 바비큐그릴을 이용하실 수 있습니다.<br/>
@@ -599,12 +671,12 @@
                     </p>
                   </li>
                   <li>
-                    <input type="checkbox" id="charcoal_4p" name="charcoal_4p">
-                    <label for="charcoal_4p">숯불+바베큐그릴 3~4인 20,000원</label>
+                    <!--<input type="checkbox" id="charcoal_4p" name="charcoal_4p">-->
+                    <label for="charcoal_4p_select">숯불+바베큐그릴 3~4인 20,000원</label>
                     <select name="charcoal_4p_select" id="charcoal_4p_select">
-                      <option value="select" selected>선택</option>
-                      <option value="1" selected>1회</option>
-                      <option value="2" selected>2회</option>
+                      <option value="select" selected>선택안함</option>
+                      <option value="1">1회</option>
+                      <option value="2">2회</option>
                     </select>
                     <p>
                       숯불과 바비큐그릴을 이용하실 수 있습니다.<br/>
@@ -612,19 +684,19 @@
                     </p>
                   </li>
                   <li>
-                    <input type="checkbox" id="balloon_event" name="balloon_event">
-                    <label for="balloon_event">풍선이벤트(기본 110,000원, 전화요망)</label>
+                    <!--<input type="checkbox" id="balloon_event" name="balloon_event">-->
+                    <label for="balloon_event_select">풍선이벤트(기본 110,000원, 전화요망)</label>
                     <select name="balloon_select" id="balloon_select">
-                      <option value="select" selected>선택</option>
-                      <option value="1" selected>1회</option>
-                      <option value="2" selected>2회</option>
-                      <option value="3" selected>3회</option>
-                      <option value="4" selected>4회</option>
-                      <option value="5" selected>5회</option>
-                      <option value="6" selected>6회</option>
-                      <option value="7" selected>7회</option>
-                      <option value="8" selected>8회</option>
-                      <option value="9" selected>9회</option>
+                      <option value="select" selected>선택안함</option>
+                      <option value="1">1회</option>
+                      <option value="2">2회</option>
+                      <option value="3">3회</option>
+                      <option value="4">4회</option>
+                      <option value="5">5회</option>
+                      <option value="6">6회</option>
+                      <option value="7">7회</option>
+                      <option value="8">8회</option>
+                      <option value="9">9회</option>
                     </select>
                     <p>
                       아기자기한 풍선으로 멋진, 깜짝 이벤트를 선물하세요!<br/>
@@ -634,19 +706,19 @@
                     </p>
                   </li>
                   <li>
-                    <input type="checkbox" id="sparkling_wine" name="sparkling_wine">
-                    <label for="sparkling_wine">스파클링 와인(기본 20,000원)</label>
+                    <!--<input type="checkbox" id="sparkling_wine" name="sparkling_wine">-->
+                    <label for="sparkling_wine_select">스파클링 와인(기본 20,000원)</label>
                     <select name="sparkling_wine_select" id="sparkling_wine_select">
-                      <option value="select" selected>선택</option>
-                      <option value="1" selected>1회</option>
-                      <option value="2" selected>2회</option>
-                      <option value="3" selected>3회</option>
-                      <option value="4" selected>4회</option>
-                      <option value="5" selected>5회</option>
-                      <option value="6" selected>6회</option>
-                      <option value="7" selected>7회</option>
-                      <option value="8" selected>8회</option>
-                      <option value="9" selected>9회</option>
+                      <option value="select" selected>선택안함</option>
+                      <option value="1">1회</option>
+                      <option value="2">2회</option>
+                      <option value="3">3회</option>
+                      <option value="4">4회</option>
+                      <option value="5">5회</option>
+                      <option value="6">6회</option>
+                      <option value="7">7회</option>
+                      <option value="8">8회</option>
+                      <option value="9">9회</option>
                     </select>
                     <p>
                       와인잔에 얼음을 채워서 드시면 시원하고 달콤한맛이 진해집니다.<br/>
@@ -654,19 +726,19 @@
                     </p>
                   </li>
                   <li>
-                    <input type="checkbox" id="red_wine" name="red_wine">
-                    <label for="red_wine">가또 네그로 까베르네쇼비뇽 (20,000 원)</label>
+                    <!--<input type="checkbox" id="red_wine" name="red_wine">-->
+                    <label for="red_wine_select">가또 네그로 까베르네쇼비뇽 (20,000 원)</label>
                     <select name="red_wine_select" id="red_wine_select">
-                      <option value="select" selected>선택</option>
-                      <option value="1" selected>1회</option>
-                      <option value="2" selected>2회</option>
-                      <option value="3" selected>3회</option>
-                      <option value="4" selected>4회</option>
-                      <option value="5" selected>5회</option>
-                      <option value="6" selected>6회</option>
-                      <option value="7" selected>7회</option>
-                      <option value="8" selected>8회</option>
-                      <option value="9" selected>9회</option>
+                      <option value="select" selected>선택안함</option>
+                      <option value="1">1회</option>
+                      <option value="2">2회</option>
+                      <option value="3">3회</option>
+                      <option value="4">4회</option>
+                      <option value="5">5회</option>
+                      <option value="6">6회</option>
+                      <option value="7">7회</option>
+                      <option value="8">8회</option>
+                      <option value="9">9회</option>
                     </select>
                     <p>
                       생산자는 산 페드로사이고 검은 고양이가 그려진 칠레의 대표와인.<br/>
@@ -678,23 +750,6 @@
             </div>
           </div>
           <div class="option_area_left">
-            <div class="mileage">
-              <div class="option_title price_title">
-                <h3>적립금 사용</h3>
-              </div>
-              <div class="option_content mileage_content">
-                <p>
-                  <label for="have_mileage">사용가능 적립금</label>
-                  <input type="text" id="have_mileage" name="have_mileage" readonly/>
-                  <span>원</span>
-                </p>
-                <p>
-                  <label for="use_mileage">적립금 사용</label>
-                  <input type="text" id="use_mileage" name="use_mileage">
-                  <span>원</span>
-                </p>
-              </div>
-            </div>
             <div class="option price">
               <div class="option_title price_title">
                 <h3>금액</h3>
@@ -728,13 +783,25 @@
               </div>
             </div>
           </div>
+          <div class="none_selected_step none_selected_step2">
+            <div class="step_area step_area_step2">
+              <div class="step_info step_info_step2">
+                <p class="step_radius">
+                  step 2
+                </p>
+                <p class="step_text">
+                  체크인 날짜를 선택해주세요.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="btn_submit_area">
           <input type="submit" id="btn_submit" name="btn_submit" value="다음단계"/>
         </div>
   		</form>
     </div>
-		<div id="footerWrap">
+    <div id="footerWrap">
 			<h2  class="blind">푸터 영역</h2>
 			<div class="footer_top">
 				<div class="footer_top_area">
