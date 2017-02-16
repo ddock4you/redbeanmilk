@@ -1,0 +1,129 @@
+@media all and (min-width:1025px) and (max-width:1200px){
+
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+@media all and (min-width:769px) and (max-width:1024px){
+/*########################## header 769 ~ 1024px ###############################*/
+/*#################### gnb 769 ~ 1024px #######################*/
+	.sub_gnb_list li a{color:#fff; font-size:11px; padding:0 5px;}
+
+/*########################## content 769 ~ 1024px ##############################*/
+/*#################### visual 769 ~ 1024px ########################*/
+	.visual_area{height:400px;}
+		.visual_area_title hr{width:150px;}
+		.visual_area_title h2{font-size:32px; letter-spacing:4px;}
+
+/*################# room_select 769 ~ 1024px #####################*/
+	.reservation_form{width:700px;}
+
+
+/*########################## footer 769 ~ 1024px ###############################*/
+/*############# footer bottom 769 ~ 1024px ###############*/
+	.footer_bottom_area{width:100%; height:100%; margin:0 auto;}
+	}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+@media all and (min-width:481px) and (max-width:768px){
+/*########################## header 481 ~ 768px ###############################*/
+/*#################### gnb 481 ~ 768px #######################*/
+	#header{width:100%; height:50px;}
+		h1{width:140px; height:30px; margin-left:-70px; top:5px;}
+		.d_gnb{display:none;}
+		.gnb{display:none;}
+		.nav{display:none;}
+		.m_header_btn{display:block;}
+
+/*########################## content 481 ~ 768px ##############################*/
+/*##################### visual 481 ~ 768px #########################*/
+	#contentWrap{padding-top:50px;}
+		.visual_area{height:300px;}
+			.visual_area_title hr{width:120px;}
+			.visual_area_title h2{font-size:24px; letter-spacing:3px;}
+
+/*##################### 공통사항 481 ~ 768px ######################*/
+	.table_1 th{font-size:14px;}
+	.table_1 td{font-size:13px;}
+
+/*################# room_select 481 ~ 768px #####################*/
+	.reservation_form{width:100%;}
+
+	/*개인정보 입력*/
+		.phone_area input{width:78px; text-align:center;}
+
+		/*환불규정 확인*/
+			.refund_info ul li{list-style:disc; font-size:14px; padding:0 20px;}
+			.table_2 thead{font-size:13px;}
+			.table_2 tbody{font-size:11px;}
+
+/*########################## footer 481 ~ 768px ###############################*/
+#footerWrap{height:460px;}
+	.footer_gnb{width:100%; font-size:12px; text-align:center;}
+
+	.footer_bottom{width:100%; height:330px; background-color:#2B2727;}
+	.footer_bottom_area{width:100%;}
+		.footer_info li{width:100%; margin-right:0; padding-bottom:20px;}
+
+		.footer_info li dl dt{font-size:14px;}
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+@media all and (min-width:320px) and (max-width:480px){
+/*########################## header 320 ~ 480px ###############################*/
+	.m_menu_btn{left:20px;}
+	.m_reser_btn{right:20px;}
+	.m_menu_close_btn{left:20px;}
+	.m_header_btn{display:block;}
+/*#################### gnb 320 ~ 480px #######################*/
+	#header{width:100%; height:50px;}
+		h1{width:140px; height:30px; margin-left:-70px; top:5px;}
+		.d_gnb{display:none;}
+		.gnb{display:none;}
+		.nav{display:none;}
+
+/*########################## content 320 ~ 480px ##############################*/
+/*##################### visual 320 ~ 480px #########################*/
+	#contentWrap{padding-top:50px;}
+		.visual_area{height:200px;}
+			.visual_area_title hr{width:100px;}
+			.visual_area_title h2{font-size:18px; letter-spacing:2px;}
+
+/*################### comman_matter 320 ~ 480px ####################*/
+	h3{font-size:16px; padding-left:10px;}
+	.option_title hr{width:20px; margin-left:10px;}
+	.table_1 th{width:80px; font-size:12px;}
+	.table_1 td{font-size:11px;}
+		.table_1 td p{font-size:11px;}
+
+/*###################### option 320 ~ 480px #######################*/
+	.price_box{width:70px;}
+	.price_value{width:70px;}
+	.last hr{width:180px; border-color:#000;}
+
+/*################# room_select 320 ~ 480px #####################*/
+	.reservation_form{width:100%;}
+
+	/*############# personal_info 320 ~ 480px ######################*/
+		.phone_area input{width:55px; text-align:center;}
+
+		/*############ refund rule 320 ~ 480px ######################*/
+			.refund_info ul li{list-style:disc; font-size:12px; padding:0 20px;}
+			.table_2 thead{font-size:13px;}
+			.table_2 tbody{font-size:11px;}
+
+/*########################## footer 320 ~ 480px ###############################*/
+	#footerWrap{height:460px;}
+		.footer_gnb{width:100%; font-size:12px; text-align:center;}
+			.footer_gnb li{margin-left:2px;}
+				.footer_gnb li a{padding:5px 3px;}
+		.footer_logo{padding-top:10px;}
+
+	.footer_bottom{width:100%; height:330px; background-color:#2B2727;}
+	.footer_bottom_area{width:100%;}
+		.footer_info li{width:100%; margin-right:0; padding-bottom:20px;}
+
+			.footer_info li dl dt{font-size:14px;}
+		}
