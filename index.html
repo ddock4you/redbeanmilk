@@ -181,6 +181,7 @@
         });
       }
        //Room click하면 선택한 room image를 Room_info 부모영역에 표시
+       //hover로 하면 같은 영역에서도 hover인식이 여러번되서 뺐음.
      $(".room_select li").on("click", function(){
        var room_name=["_alie","_amant","_mister","_hobby","_blancnoir","_mienne","_missa","_bonjour"],
            $room_number=$(this).index();
