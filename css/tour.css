@@ -189,13 +189,32 @@ body{font-family:"Montserrat", Noto Sans; margin:0; padding:0;}
 
 /*############################## content ###################################*/
 /*####################### visual ###########################*/
-	#contentWrap{width:100%;background-color:#fff; overflow:hidden; padding-top:90px;}
+	#contentWrap{width:100%;background-color:#fff; overflow:hidden;padding-top:90px;}
 		.slide_area{width:100%; height:500px; overflow:hidden; position:relative;}
-			.slide_img{width:100%; height:100%; background:url("../img/tour/tour_main_img00.jpg") no-repeat center center; background-size:cover;}
-			.dark{display:block; width:100%; height:100%; background-color:rgba(0,0,0,0.2); position:absolute; top:0; left:0;}
-			.slide_area_title{width:100%; position:absolute; top:48%; text-align:center; color:#fff;}
-				.slide_area_title hr{width:200px; border:2px solid #fff; margin:0 auto; animation:title_stick_ani 1s;}
-				.slide_area_title h2{font-size:48px; letter-spacing:5px; animation:title_ani 1s;}
+			.slide_img{
+									width:100%;
+									height:100%;
+									background:url("../img/tour/tour_main_img00.jpg") no-repeat center center;
+									background-size:cover;
+								}
+			.dark{
+						display:block;
+						width:100%;
+						height:100%;
+						background-color:rgba(0,0,0,0.2);
+						position:absolute;
+						top:0;
+						left:0;
+					}
+			.slide_area_title{
+												width:100%;
+												position:absolute;
+												top:48%;
+												text-align:center;
+												color:#fff;
+											}
+				.slide_area_title hr{width:200px; border:2px solid #fff; margin:0 auto;}
+				.slide_area_title h2{font-size:48px; letter-spacing:5px;}
 
 
 /*###################### tour_area ##########################*/
@@ -203,16 +222,40 @@ body{font-family:"Montserrat", Noto Sans; margin:0; padding:0;}
 
 		.tour_info, .tour_info_area{width:100%; height:100%;}
 			.tour_info_area{position:relative;}
-			.tour_info_area li{width:575px; overflow:hidden; background-color:#fff; float:left; margin-top:50px;}
+			.tour_info_area li{
+													width:575px;
+													overflow:hidden;
+													background-color:#fff;
+													float:left;
+													margin-top:50px;
+												}
 			.tour_info_area li.right{margin-right:50px;}
 				.location_img{width:100%; height:100%; background-color:red;}
-				.tour_img{width:100%; height:300px; background-color:#ccc; background-repeat:no-repeat; background-size:cover;}
+				.tour_img{
+									width:100%;
+									height:300px;
+									background-color:#ccc;
+									background-repeat:no-repeat;
+									background-size:cover;
+								}
 
 				.tour_text{width:90%; padding:5%; text-align:justify; position:relative;}
 					.tour_text h3{text-align:center;}
-					.tour_text hr{width:20px; height:1px; border:2px solid #000; background-color:#000; margin:10px auto;}
+					.tour_text h3 a{color:#000; cursor:context-menu; text-decoration:none;}
+					.tour_text hr{
+												width:20px;
+												height:1px;
+												border:2px solid #000;
+												background-color:#000;
+												margin:10px auto;
+											}
 					.tour_text_area{font-size:14px;}
-					.tour_text_minute{text-align:center; padding-top:5px; font-weight:bold; color:#AEA288;}
+					.tour_text_minute{
+														text-align:center;
+														padding-top:5px;
+														font-weight:bold;
+														color:#AEA288;
+													}
 
 /*############################### footer ######################################*/
 	#footerWrap{width:100%;height:250px; background-color:#2B2727;}
