@@ -1,0 +1,143 @@
+@media all and (min-width:1025px) and (max-width:1200px){
+/*######################### content 1025 ~ 1200px ###############################*/
+/*################## visual 1025 ~ 1200px ######################*/
+	.tour_area{width:1024px;}
+
+		.tour_info_area li{width:490px;}
+		.tour_info_area li.right{margin-right:44px;}
+		.tour_img{height:270px;}
+
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+@media all and (min-width:769px) and (max-width:1024px){
+/*########################## header 769 ~ 1024px ###############################*/
+/*#################### gnb 769 ~ 1024px #######################*/
+	.sub_gnb_list li a{color:#fff; font-size:11px; padding:0 5px;}
+
+/*########################## content 769 ~ 1024px ##############################*/
+/*#################### visual 769 ~ 1024px ########################*/
+.slide_area{height:400px;}
+	.slide_area_title hr{width:150px;}
+	.slide_area_title h2{font-size:32px; letter-spacing:4px;}
+
+/*################## tour_area 769 ~ 1024px #######################*/
+	.tour_area{width:100%;}
+		.tour_info_area li{width:47.5%; margin-top:30px;}
+		.tour_info_area li.right{margin-right:5%;}
+
+		.tour_img{height:240px;}
+
+/*########################## footer 769 ~ 1024px ###############################*/
+/*############# footer bottom 769 ~ 1024px ###############*/
+	#footerWrap{height:270px;}
+		.footer_bottom_area{width:100%; height:100%; margin:0 auto;}
+	}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+@media all and (min-width:481px) and (max-width:768px){
+/*########################## header 481 ~ 768px ###############################*/
+/*#################### gnb 481 ~ 768px #######################*/
+	#header{width:100%; height:50px;}
+		h1{width:140px; height:30px; margin-left:-70px; top:5px;}
+		.d_gnb{display:none;}
+		.gnb{display:none;}
+		.nav{display:none;}
+		.m_header_btn{display:block;}
+
+/*########################## content 481 ~ 768px ##############################*/
+/*##################### visual 481 ~ 768px #########################*/
+	#contentWrap{padding-top:50px;}
+		.slide_area{height:300px;}
+			.slide_area_title hr{width:120px;}
+			.slide_area_title h2{font-size:24px; letter-spacing:3px;}
+
+/*################## tour_area 481 ~ 768px #######################*/
+	.tour_area{width:100%;}
+		.tour_info_area li{width:100%; margin-top:30px;}
+		.tour_info_area li.right{margin-right:5%;}
+
+		.tour_img{height:250px;}
+
+/*########################## footer 481 ~ 768px ###############################*/
+#footerWrap{height:460px;}
+		.footer_gnb{width:100%; font-size:12px; text-align:center;}
+
+	.footer_bottom{width:100%; height:330px; background-color:#2B2727;}
+	.footer_bottom_area{width:100%;}
+		.footer_info li{width:100%; margin-right:0; padding-bottom:20px;}
+
+			.footer_info li dl dt{font-size:14px;}
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+@media all and (min-width:320px) and (max-width:480px){
+/*########################## header 320 ~ 480px ###############################*/
+	.m_menu_btn{left:20px;}
+	.m_reser_btn{right:20px;}
+	.m_menu_close_btn{left:20px;}
+	.m_header_btn{display:block;}
+/*#################### gnb 320 ~ 480px #######################*/
+	#header{width:100%; height:50px;}
+		h1{width:140px; height:30px; margin-left:-70px; top:5px;}
+		.d_gnb{display:none;}
+		.gnb{display:none;}
+		.nav{display:none;}
+
+/*########################## content 320 ~ 480px ##############################*/
+/*##################### visual 320 ~ 480px #########################*/
+	#contentWrap{padding-top:50px;}
+		.slide_area{height:200px;}
+			.slide_area_title hr{width:100px;}
+			.slide_area_title h2{font-size:18px; letter-spacing:2px;}
+
+/*################## tour_area 320 ~ 480px #######################*/
+	.tour_area{width:100%;}
+		.tour_info_area li{width:100%; margin-top:30px;}
+		.tour_info_area li.right{margin-right:5%;}
+
+		.tour_img{height:170px;}
+			.tour_text h3{font-size:16px;}
+			.tour_text hr{width:15px;}
+			.tour_text_area{font-size:12px;}
+			.tour_text_minute{font-size:14px;}
+
+
+/*################### room_desc 320 ~ 480px #######################*/
+		.room_info_text{width:100%; margin:40px auto 0; font-size:11px;}
+
+/*################## price_table 320 ~ 480px ######################*/
+	.table{width:320px; height:280px; margin:40px auto;}
+		.table hr{margin:15px auto;}
+		.table span{font-size:18px; font-weight:bold;}
+			.table p strong{font-size:14px;}
+			.table p b{font-size:12px;}
+
+/*################### room_info 320 ~ 480px #######################*/
+		.room_info_desc{height:290px; overflow:hidden;}
+			.room_info_desc ul{width:400%; height:100%; margin:0}
+				.room_info_desc ul li{width:25%; height:230px; margin:30px auto;}
+					.room_info_desc ul li.right{margin-right:0;}
+
+					.room_info_desc ul li p.icon{width:30px; height:30px; margin:25px auto;}
+					p.object{font-size:12px;}
+
+			.slide_btn{height:30px; margin-top:-15px; display:block;}
+				.slide_btn p{width:30px;}
+
+/*########################## footer 320 ~ 480px ###############################*/
+	#footerWrap{height:460px;}
+		.footer_gnb{width:100%; font-size:12px; text-align:center;}
+			.footer_gnb li{margin-left:2px;}
+				.footer_gnb li a{padding:5px 3px;}
+		.footer_logo{padding-top:10px;}
+
+	.footer_bottom{width:100%; height:330px; background-color:#2B2727;}
+	.footer_bottom_area{width:100%;}
+		.footer_info li{width:100%; margin-right:0; padding-bottom:20px;}
+
+			.footer_info li dl dt{font-size:14px;}
+		}

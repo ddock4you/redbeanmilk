@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-sclalable=no"/>
   <link rel="stylesheet" type="text/css" href="css/reset.css"/>
   <link rel="stylesheet" type="text/css" href="css/tour.css"/>
-  <link rel="stylesheet" type="text/css" href="css/media/room00_alie.css"/>
+  <link rel="stylesheet" type="text/css" href="css/media/tour.css"/>
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js"></script>
   <!--[if IE 7]>
 		<link rel="stylesheet" type="text/css" href="css/ie7.css"/>
   <![endif]-->
@@ -22,74 +23,260 @@
   <!--[if IE 10]>
 		<link rel="stylesheet" type="text/css" href="css/ie.css"/>
   <![endif]-->
-  
   <script>
-	
+  $(function(){
+    //Sub_gnb on/off
+		$(".sub_gnb ul").hide();
+
+		$(".sub_gnb").on("click mouseover focusin",function(){
+			$(this).children("ul").stop().slideDown(500);
+		}).on("mouseout focusout",function(){
+			$(this).children("ul").stop().slideUp(500);
+		});
+
+
+			//로그인 창 on / off
+			  $("#top_headerWrap").hide();
+			  $(".login a").on("click focusin", function(){
+				$("#top_headerWrap").slideDown(500);
+			  });
+
+      // visual 텍스트 애니메이션 효과
+      $(".slide_area_title").hide().fadeIn(1000);
+
+      //visual 이미지 애니메이션
+        $(".slide_img").scale(1.15).animate({scale:"1"},1000);
+
+    var $tour = $(".tour_info_area li").length;
+    console.log($tour);
+    for(var i = 0; i < $tour; i++){
+      $(".tour_info_area li:eq("+i+")").children(".tour_img").css({"background-image":"url(img/tour/tour_li/"+i+".jpg)"});
+    }
+  });
   </script>
  </head>
 
  <body>
 	<div id="wrap">
-		<div id="headerWrap">
-			<div class="d_gnb">
-				<p class="fast_event">
-					<a href="#none" title="event 페이지로 이동">
-						event
-					</a>
-				</p>
-				<p class="fast_reservation">
-					<a href="#none" title="reservation 페이지로 이동">
-						reservation
-					</a>
-				</p>
+    <div id="headerWrap">
+			<div id="top_headerWrap">
+				<form class="login_info" action="#" method="post">
+					<fieldset>
+						<legend class="blind">로그인 영역</legend>
+            <h2>LOGIN</h2>
+            <div class="input_user">
+							<p class="input_userid">
+								<input id="userid" type="text" name="userid" required placeholder="ID 입력"/>
+							</p>
+							<p class="input_userpw">
+								<input id="userpw" type="password" name="userpw" required placeholder="Password 입력" autocomplete=off;/>
+							</p>
+              <p class="input_btn_login">
+                <input id="btn_login" type="button" name="btn_login" value="login"/>
+              </p>
+						</div>
+            <div class="input_etc">
+              <ul>
+                <li>
+                  <a href="#none" title="회원가입 페이지로 이동">회원가입</a>
+                </li>
+                <li>
+                  <a href="#none" title="아이디 찾기 페이지로 이동">아이디 찾기</a>
+                </li>
+                <li>
+                  <a href="#none" title="비밀번호 찾기 페이지로 이동">비밀번호 찾기</a>
+                </li>
+              </ul>
+            </div>
+					</fieldset>
+				</form>
 			</div>
-			<div id="header">
-				<h2 class="blind">HEADER</h2>
-				<h1>
-					<a href="#mome" title="메인 홈페이지로 이동">
-						<img src="img/logo_claire.png" alt="로고"/>
-					</a>
-				</h1>
-				<div class="m_l_gnb"><!--모바일 전용 left gnb-->
-					<p>
-						<a href="#none" title="메뉴">
-							<img src="img/menu.png" alt="메뉴 아이콘 이미지"/>
+			<div id="bottom_headerWrap">
+        <div class="nav"><!--로그인 관련 gnb-->
+          <ul>
+            <li class="login">
+              <a href="#none" title="login page 열기">log in</a>
+            </li>
+            <!--<li class="welcome">
+              <a href="#none" title="welcome">윤승현 님 환영합니다!</a>
+            </li>
+            <li class="logout">
+              <a href="#none" title="log out">log out</a>
+            </li>
+            <li class="mypage">
+              <a href="#none" title="my page">my page</a>
+            </li>-->
+            <li class="joinus">
+              <a href="#none" title="join us 열기">join us</a>
+            </li>
+            <li class="fast_event">
+              <a href="#none" title="log out">
+              <img src="img/icon_event.png" alt="이벤트 이미지"/>
+                event</a>
+            </li>
+          </ul>
+        </div>
+				<div id="header">
+					<h2 class="blind">HEADER</h2>
+					<h1>
+						<a href="#nome" title="메인 홈페이지로 이동">
+							<img src="img/logo_claire.png" alt="로고"/>
 						</a>
-					</p>
-				</div>
-				<div class="m_r_gnb"><!--모바일 전용 right gnb-->
-					<p class="m_fast_reservation">
-						<a href="#none" title="reservation 페이지로 이동">
-							<img src="img/icon_reservation.png">
-						</a>
-					</p>
-				</div>
-				<div class="gnb">
-					<ul>
-						<li class="about1">
-							<a href="#none" title="about 페이지로 이동"><span></span>about</a>
-						</li>
-						<li>
-							<a href="#none" title="room info 페이지로 이동"><span></span>room info</a>
-						</li>
-						<li>
-							<a href="#none" title="special 페이지로 이동"><span></span>special</a>
-						</li>
-						<li>
-							<a href="#none" title="guide tour 페이지로 이동"><span></span>guide tour</a>
-						</li>
-						<li>
-							<a href="#none" title="location 페이지로 이동"><span></span>location</a>
-						</li>
-						<li>
-							<a href="#none" title="contact us 페이지로 이동"><span></span>contact us</a>
-						</li>
-					</ul>
+					</h1>
+          <div class="m_header_btn">
+            <p class="m_menu_btn">
+              <a href="#none" title="모바일 메뉴 버튼">
+                <img src="img/menu_black.png" alt="모바일 메뉴 버튼"/>
+              </a>
+            </p>
+            <p class="m_reser_btn">
+              <a href="m_reser_btn" title="모바일 실시간 예약 버튼">
+                <img src="img/menu_black.png" alt=" 모바일 메뉴 버튼"/>
+              </a>
+            </p>
+          </div>
+          <div class="m_header">
+            <div class="m_top">
+  						<p class="m_btn m_menu_close_btn">
+  							<a href="#none" title="메뉴">
+                  <img src="img/cross_black.png" alt="모바일 메뉴 닫기 버튼"/>
+  							</a>
+  						</p>
+              <p class="m_logo">
+                <img src="img/logo_footer_white.png" alt="로고 이미지"/>
+              </p>
+            </div>
+            <div class="m_bottom">
+              <ul class="user_info">
+                <li class="m_login">
+                  <a href="#none" title="모바일 로그인 페이지로 이동">
+                    login
+                  </a>
+                </li>
+                <li class="m_join">
+                  <a href="#none" title="모바일 회원가입 페이지로 이동">
+                    join us
+                  </a>
+                </li>
+              </ul>
+            </div>
+              <!--mobile reservation btn-->
+    					<!--<div class="m_btn m_reser_btn">
+    						<p>
+    							<a href="#none" title="reservation 페이지로 이동">
+
+    							</a>
+    						</p>
+    					</div>-->
+              <!--mobile login btn-->
+              <!--<div class="m_btn m_login_btn">
+    						<p>
+    							<a href="#none" title="reservation 페이지로 이동">
+
+    							</a>
+    						</p>
+    					</div>
+            -->
+            <div class="m_gnb">
+              <ul class="m_gnb_list">
+  							<li class="m_sub_gnb m_gnb_room">
+  								<a href="#none" title="room info 페이지로 이동">room info<span>∧</span></a>
+  								<ul class="m_sub_gnb_list">
+  									<li><a href="#none" title="ALIE 방 페이지로 이동">ALIE</a></li>
+  									<li><a href="#none" title="AMANT 방 페이지로 이동">AMANT</a></li>
+  									<li><a href="#none" title="MISTER 방 페이지로 이동">MISTER</a></li>
+  									<li><a href="#none" title="HOBBY 방 페이지로 이동">HOBBY</a></li>
+  									<li><a href="#none" title="BLANCNOIR 방 페이지로 이동">BLANCNOIR</a></li>
+  									<li><a href="#none" title="MIENNE 방 페이지로 이동">MIENNE</a></li>
+  									<li><a href="#none" title="MISSA 방 페이지로 이동">MISSA</a></li>
+  									<li><a href="#none" title="BONJOUR 방 페이지로 이동">BONJOUR</a></li>
+  								</ul>
+  							</li>
+  							<li class="m_sub_gnb m_gnb_special">
+  								<a href="#none" title="special 페이지로 이동">special<span>∧</span></a>
+  								<ul class="m_sub_gnb_list">
+  									<li><a href="#none" title="SWIMMING POOL 페이지로 이동">POOL</a></li>
+  									<li><a href="#none" title="ZET SPA  페이지로 이동">ZET SPA</a></li>
+  									<li><a href="#none" title="BARBECUE  페이지로 이동">BARBECUE</a></li>
+  									<li><a href="#none" title="CAFFE  페이지로 이동">CAFFE</a></li>
+  									<li><a href="#none" title="BEAM PROJECT  페이지로 이동">BEAM PROJECT</a></li>
+  									<li><a href="#none" title="GAME CENTER  페이지로 이동">GAME CENTER</a></li>
+  									<li><a href="#none" title="LOUNGE  페이지로 이동">LOUNGE</a></li>
+  									<li><a href="#none" title="EVENT  페이지로 이동">EVENT</a></li>
+  									<li><a href="#none" title="KIDS  페이지로 이동">KIDS</a></li>
+  									<li><a href="#none" title="SERVICE  페이지로 이동">SERVICE</a></li>
+  								</ul>
+  							</li>
+                <li class="m_reservation_gnb">
+  								<a href="#none" title="location 페이지로 이동">reservation</a>
+  							</li>
+  							<li>
+  								<a href="#none" title="guide tour 페이지로 이동">guide tour</a>
+  							</li>
+  							<li class="m_sub_gnb m_gnb_contact">
+  								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
+                  <ul class="m_sub_gnb_list">
+  									<li><a href="#none" title="공지사항 페이지로 이동">공지사항</a></li>
+  									<li><a href="#none" title="QnA  페이지로 이동">QnA</a></li>
+  									<li><a href="#none" title="여행후기 페이지로 이동">여행후기</a></li>
+  								</ul>
+  							</li>
+  						</ul>
+            </div>
+          </div>
+					<div class="gnb">
+						<ul class="gnb_list">
+							<li class="sub_gnb gnb_room">
+								<a href="#none" title="room info 페이지로 이동">room info<span>∧</span></a>
+								<ul class="sub_gnb_list">
+									<li><a href="#none" title="ALIE 방 페이지로 이동">ALIE</a></li>
+									<li><a href="#none" title="AMANT 방 페이지로 이동">AMANT</a></li>
+									<li><a href="#none" title="MISTER 방 페이지로 이동">MISTER</a></li>
+									<li><a href="#none" title="HOBBY 방 페이지로 이동">HOBBY</a></li>
+									<li><a href="#none" title="BLANCNOIR 방 페이지로 이동">BLANCNOIR</a></li>
+									<li><a href="#none" title="MIENNE 방 페이지로 이동">MIENNE</a></li>
+									<li><a href="#none" title="MISSA 방 페이지로 이동">MISSA</a></li>
+									<li><a href="#none" title="BONJOUR 방 페이지로 이동">BONJOUR</a></li>
+								</ul>
+							</li>
+							<li class="sub_gnb gnb_special">
+								<a href="#none" title="special 페이지로 이동">special<span>∧</span></a>
+								<ul class="sub_gnb_list">
+									<li><a href="#none" title="SWIMMING POOL 페이지로 이동">POOL</a></li>
+									<li><a href="#none" title="ZET SPA  페이지로 이동">ZET SPA</a></li>
+									<li><a href="#none" title="BARBECUE  페이지로 이동">BARBECUE</a></li>
+									<li><a href="#none" title="CAFFE  페이지로 이동">CAFFE</a></li>
+									<li><a href="#none" title="BEAM PROJECT  페이지로 이동">BEAM PROJECT</a></li>
+									<li><a href="#none" title="GAME CENTER  페이지로 이동">GAME CENTER</a></li>
+									<li><a href="#none" title="LOUNGE  페이지로 이동">LOUNGE</a></li>
+									<li><a href="#none" title="EVENT  페이지로 이동">EVENT</a></li>
+									<li><a href="#none" title="KIDS  페이지로 이동">KIDS</a></li>
+									<li><a href="#none" title="SERVICE  페이지로 이동">SERVICE</a></li>
+								</ul>
+							</li>
+              <li class="reservation_gnb">
+								<a href="#none" title="location 페이지로 이동">reservation</a>
+							</li>
+							<li>
+								<a href="#none" title="guide tour 페이지로 이동">guide tour</a>
+							</li>
+							<li class="sub_gnb gnb_contact">
+								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
+                <ul class="sub_gnb_list">
+									<li><a href="#none" title="공지사항 페이지로 이동">공지사항</a></li>
+									<li><a href="#none" title="QnA  페이지로 이동">QnA</a></li>
+									<li><a href="#none" title="여행후기 페이지로 이동">여행후기</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div id="contentWrap">
 			<div class="slide_area">
+        <div class="slide_img">
+        </div>
 				<span class="dark"></span>
 				<div class="slide_area_title">
 					<hr/>
@@ -97,270 +284,154 @@
 				</div>
 			</div>
 			<div class="tour_area">
-				<div class="timeline">
-					<p class="road"></p>
-					<ul class="point">
-						<li class="start"></li>
-						<li class="point_5m"></li>
-						<li class="point_15m"></li>
-						<li class="point_35m"></li>
-						<li class="point_40m"></li>
-						<li class="point_45m"></li>
-						<li class="point_50m"></li>
-						<li class="arrive"></li>
-					</ul>
-				</div>
-				<div class="tour_info">
 					<ul class="tour_info_area">
-						<li class="tour00_baekdun">
-							<div class="location_img">
-								<img src="img/location_img.png" alt="지도 이미지"/>		<!--지도 영역-->
-							</div>
-							<div class="tour_title">		<!--관광지 제목 영역-->
-								<span class="dark"></span>
-								<h3>백둔 계곡</h3>
-								<p>5분</p>
+						<li class="right tour00_baekdun">
+							<div class="tour_img">		<!--관광지 제목 영역-->
 							</div>
 							<div class="tour_text">	<!--관광지 내용 영역-->
-								<p class="tour_text_area">
+                <h3>백둔 계곡</h3>
+                <hr/>
+                <p class="tour_text_area">
 									백둔계곡은 청정지역으로 알려진 가평군 북면,
 									명지산과 연인산에서 흘러내리는 계곡이다.
 									백둔계곡은 계곡을 따라 숙박시설등이 많이 있고
 									물놀이를 즐기기에도 적당한 편이어서 여름이면
 									사람들이 많이 찾는 계곡이다.
 								</p>
-								<p class="btn_area">
-									<input id="btn_location" type="image"  name="btn_location" src="img/icon_place_black.png" title="지도 보기"/>
-									<input id="btn_text" type="image"  name="btn_text" src="img/icon_back.png" title="내용 보기"/>
+								<p class="tour_text_minute">
+									5분 거리
 								</p>
 							</div>
 						</li>
 						<li class="tour01_myungji">
-							<div class="location_img">
-								<img src="img/location_img.png" alt="지도 이미지"/>		<!--지도 영역-->
-							</div>
-							<div class="tour_title">		<!--관광지 제목 영역-->
-								<span class="dark"></span>
-								<h3>명지산&amp;계곡</h3>
-								<p>15분</p>
+              <div class="tour_img">		<!--관광지 제목 영역-->
 							</div>
 							<div class="tour_text">	<!--관광지 내용 영역-->
-								<p class="tour_text_area">
-									높이 1,267m, 1991년 9월 30일 군립공원으로 지정. 
-									산세가 웅장하고 수려하며 정상에 오르면 광덕산(1,046m)·화악산·칼봉산(900m)등의 
-									고봉과 남쪽으로 북한강이 바라다 보인다.정상 쪽 능선에는 젓나무·굴참나무 군락과 
-									고사목 등이 장관이고 봄에는 진달래, 가을에는 붉게 물든 활엽수의 단풍, 겨울에는 능선의 
-									눈꽃이 볼 만하다. 특히 30㎞에 이르는 명지계곡은 여름철 수도권의 피서지로 인기가 높다.
+                <h3>명지산 &amp; 계곡</h3>
+                <hr/>
+                <p class="tour_text_area">
+									높이 1,267M, 1991년 9월 30일 군립공원으로 지정.
+                  산세가 웅장하고 수려하며 정상에 오르면
+                  광덕산(1,046M)·화악산·칼봉산(900M)등의 고봉과 남쪽으로
+                  북한강이 바라다 보인다.정상 쪽 능선에는 젓나무·굴참나무 군락과
+                  고사목 등이 장관이고 봄에는 진달래, 가을에는 붉게 물든 활엽수의 단풍,
+                  겨울에는 능선의 눈꽃이 볼 만하다. 특히 30㎞에 이르는 명지계곡은
+                  여름철 수도권의 피서지로 인기가 높다.
 								</p>
-								<p class="btn_area">
-									<input id="btn_location" type="image"  name="btn_location" src="img/icon_place_black.png" title="지도 보기"/>
-									<input id="btn_text" type="image"  name="btn_text" src="img/icon_back.png" title="내용 보기"/>
+								<p class="tour_text_minute">
+									15분 거리
 								</p>
 							</div>
 						</li>
-						<li class="tour02_charcoal">
-							<div class="location_img">
-								<img src="img/location_img.png" alt="지도 이미지"/>		<!--지도 영역-->
-							</div>
-							<div class="tour_title">		<!--관광지 제목 영역-->
-								<span class="dark"></span>
-								<h3>참숯가마찜질방</h3>
-								<p>15분</p>
+						<li class="right tour02_charcoal">
+              <div class="tour_img">		<!--관광지 제목 영역-->
 							</div>
 							<div class="tour_text">	<!--관광지 내용 영역-->
-								<p class="tour_text_area">
-									참숯가마 찜질방은 가평 제일 청정지역인 명지산 부근에 위치해 있으며, 
-									이곳에서 자생되는 참나무와 인근 고산지대에서 자생되는 참나무만을 
-									엄선하여 황토가마에 약 6~7일간 불을 지펴 만드는 숯으로 그 품질이 
-									우수하고 특히, 참숯을 구워내고 난 다음 황토가마에서 
-									찜질을 하시면 피로와 찌든 노페물이 쫙 빠져서 그야말로 건강보약이라 할 수 있습니다.
+                <h3>참숯가마찜질방</h3>
+                <hr/>
+                <p class="tour_text_area">
+									참숯가마 찜질방은 가평 제일 청정지역인 명지산 부근에 위치해 있으며, 이곳에서 자생되는 참나무와 인근 고산지대에서 자생되는 참나무만을 엄선하여 황토가마에 약 6~7일간 불을 지펴 만드는 숯으로 그 품질이 우수하고 특히, 참숯을 구워내고 난 다음 황토가마에서 찜질을 하시면 피로와 찌든 노페물이 쫙 빠져서 그야말로 건강보약이라 할 수 있습니다.
 								</p>
-								<p class="btn_area">
-									<input id="btn_location" type="image"  name="btn_location" src="img/icon_place_black.png" title="지도 보기"/>
-									<input id="btn_text" type="image"  name="btn_text" src="img/icon_back.png" title="내용 보기"/>
+								<p class="tour_text_minute">
+									15분 거리
 								</p>
 							</div>
 						</li>
 						<li class="tour03_nami">
-							<div class="location_img">
-								<img src="img/location_img.png" alt="지도 이미지"/>		<!--지도 영역-->
-							</div>
-							<div class="tour_title">		<!--관광지 제목 영역-->
-								<span class="dark"></span>
-								<h3>남이섬</h3>
-								<p>35분</p>
+              <div class="tour_img">		<!--관광지 제목 영역-->
 							</div>
 							<div class="tour_text">	<!--관광지 내용 영역-->
-								<p class="tour_text_area">
-									넓디 넓은 잔디밭, 숲 속 오솔길, 보트타기,
-									자작나무가 늘어선 강변 한 켠의 눈썰매장 등등
-									낭만이 가득 밴 데이트 코스들이 발길 닿는 곳, 눈길가는 곳마다 이어진다.
-									낭만열차, 도깨비성, 모노레일, 회전목마 등 다양한 유희시설 또한 동심의 세계로 안내한다.
-									남이섬 선착장에서 도선을 타면 10분만에 건너간다.
-									남이섬은 잔잔한 호수같은 북한강 물줄기 위에 떠있는 섬이다.
+                <h3>남이섬</h3>
+                <hr/>
+                <p class="tour_text_area">
+									넓디 넓은 잔디밭, 숲 속 오솔길, 보트타기, 자작나무가 늘어선 강변 한 켠의 눈썰매장 등등 낭만이 가득 밴 데이트 코스들이 발길 닿는 곳, 눈길가는 곳마다 이어진다. 낭만열차, 도깨비성, 모노레일, 회전목마 등 다양한 유희시설 또한 동심의 세계로 안내한다. 남이섬 선착장에서 도선을 타면 10분만에 건너간다. 남이섬은 잔잔한 호수같은 북한강 물줄기 위에 떠있는 섬이다.
 								</p>
-								<p class="btn_area">
-									<input id="btn_location" type="image"  name="btn_location" src="img/icon_place_black.png" title="지도 보기"/>
-									<input id="btn_text" type="image"  name="btn_text" src="img/icon_back.png" title="내용 보기"/>
+								<p class="tour_text_minute">
+									35분 거리
 								</p>
 							</div>
 						</li>
-						<li class="tour04_bike">
-							<div class="location_img">
-								<img src="img/location_img.png" alt="지도 이미지"/>		<!--지도 영역-->
-							</div>
-							<div class="tour_title">		<!--관광지 제목 영역-->
-								<span class="dark"></span>
-								<h3>강촌레일바이크</h3>
-								<p>35분</p>
+						<li class="right tour04_bike">
+              <div class="tour_img">		<!--관광지 제목 영역-->
 							</div>
 							<div class="tour_text">	<!--관광지 내용 영역-->
-								<p class="tour_text_area">
-									70여 년간 달려온 경춘선 열차가 영원히 멈춰 섰습니다. 
-									어떤 이에게는 사랑을, 어떤 이에게는 추억을, 
-									어떤 이에게는 이별을 그리고 어떤 이에게는 희망을 안겨준 경춘선 열차...
-									멈춰버린 경춘선에 새로운 생명을 불어넣어 다시 달리고 있습니다. 
-									새로운 생명의 경춘선은 여러분의 사랑과 관심을 원동력으로 달려 나아갈 수 있습니다.
+                <h3>강촌레일 바이크</h3>
+                <hr/>
+                <p class="tour_text_area">
+									70여 년간 달려온 경춘선 열차가 영원히 멈춰 섰습니다. 어떤 이에게는 사랑을, 어떤 이에게는 추억을, 어떤 이에게는 이별을 그리고 어떤 이에게는 희망을 안겨준 경춘선 열차... 멈춰버린 경춘선에 새로운 생명을 불어넣어 다시 달리고 있습니다. 새로운 생명의 경춘선은 여러분의 사랑과 관심을 원동력으로 달려 나아갈 수 있습니다.
 								</p>
-								<p class="btn_area">
-									<input id="btn_location" type="image"  name="btn_location" src="img/icon_place_black.png" title="지도 보기"/>
-									<input id="btn_text" type="image"  name="btn_text" src="img/icon_back.png" title="내용 보기"/>
+								<p class="tour_text_minute">
+									35분 거리
 								</p>
 							</div>
 						</li>
 						<li class="tour05_garden">
-							<div class="location_img">
-								<img src="img/location_img.png" alt="지도 이미지"/>		<!--지도 영역-->
-							</div>
-							<div class="tour_title">		<!--관광지 제목 영역-->
-								<span class="dark"></span>
-								<h3>제이드가든</h3>
-								<p>35분</p>
+              <div class="tour_img">		<!--관광지 제목 영역-->
 							</div>
 							<div class="tour_text">	<!--관광지 내용 영역-->
-								<p class="tour_text_area">
-									수많은 꽃과 나무가 즐비한 '제이드가든’에 가족여행을 가면, 
-									좋은 경치와 함께 좋은 음악을 들으며 일상에 지친 몸과 
-									마음을 리프레시시키는 시간을 가질 수 있다.
-									길을 걷는 곳곳에서 스탠드형 스피커를 만날 수 있는데, 
-									이 스피커에서는 심신안정에 도움이 될만한 클래식 음악이 흘러나온다. 
+                <h3>제이드가든</h3>
+                <hr/>
+                <p class="tour_text_area">
+									수많은 꽃과 나무가 즐비한 '제이드가든’에 가족여행을 가면, 좋은 경치와 함께 좋은 음악을 들으며 일상에 지친 몸과 마음을 리프레시시키는 시간을 가질 수 있다. 길을 걷는 곳곳에서 스탠드형 스피커를 만날 수 있는데, 이 스피커에서는 심신안정에 도움이 될만한 클래식 음악이 흘러나온다.
 								</p>
-								<p class="btn_area">
-									<input id="btn_location" type="image"  name="btn_location" src="img/icon_place_black.png" title="지도 보기"/>
-									<input id="btn_text" type="image"  name="btn_text" src="img/icon_back.png" title="내용 보기"/>
+								<p class="tour_text_minute">
+									35분 거리
 								</p>
 							</div>
 						</li>
-						<li class="tour06_homyung">
-							<div class="location_img">
-								<img src="img/location_img.png" alt="지도 이미지"/>		<!--지도 영역-->
-							</div>
-							<div class="tour_title">		<!--관광지 제목 영역-->
-								<span class="dark"></span>
-								<h3>호명 호수</h3>
-								<p>40분</p>
+						<li class="right tour06_homyung">
+              <div class="tour_img">		<!--관광지 제목 영역-->
 							</div>
 							<div class="tour_text">	<!--관광지 내용 영역-->
-								<p class="tour_text_area">
-									가평8경중 제2경으로 국내 최초로 건설된 양수식 발전소의 상부저수지로
-									호면산의 수려한 산세와 더불어 넓은 저수지는 백두산 저수지를 
-									연상시키는 아름다운 절경이다. 가평읍에서 시내버스를 타고
-									산유리에서 하차, 또는 청평면 상천역에서 하차하여 
-									호명호수까지 등산을 하며 주변경관을 즐길 수 있다.
+                <h3>호명 호수</h3>
+                <hr/>
+                <p class="tour_text_area">
+									가평8경중 제2경으로 국내 최초로 건설된 양수식 발전소의 상부저수지로 호면산의 수려한 산세와 더불어 넓은 저수지는 백두산 저수지를 연상시키는 아름다운 절경이다. 가평읍에서 시내버스를 타고 산유리에서 하차, 또는 청평면 상천역에서 하차하여 호명호수까지 등산을 하며 주변경관을 즐길 수 있다.
 								</p>
-								<p class="btn_area">
-									<input id="btn_location" type="image"  name="btn_location" src="img/icon_place_black.png" title="지도 보기"/>
-									<input id="btn_text" type="image"  name="btn_text" src="img/icon_back.png" title="내용 보기"/>
+								<p class="tour_text_minute">
+									40분 거리
 								</p>
 							</div>
 						</li>
 						<li class="tour07_elysian">
-							<div class="location_img">
-								<img src="img/location_img.png" alt="지도 이미지"/>		<!--지도 영역-->
-							</div>
-							<div class="tour_title">		<!--관광지 제목 영역-->
-								<span class="dark"></span>
-								<h3>엘리시안강촌</h3>
-								<p>45분</p>
+							<div class="tour_img">		<!--관광지 제목 영역-->
 							</div>
 							<div class="tour_text">	<!--관광지 내용 영역-->
-								<p class="tour_text_area">
-									콘도미니엄,골프,스키가 결합된 사계절 가족휴양지리조트 안에 계절별로 골프와 스키를 즐길 수 있도록 하여 더욱 편리합니다. 온 가족이 사계절 어느 때나 
-									편안한 휴식을 즐길 수 있는 공간입니다. 낭만과 자연을 느낄 수 있는 서구형 콘도와 객실, 
-									대자연을 품에 포근히 안은 듯한 디자인과 수준 높을 인테리어의 격조 높은 시설로 
-									리조트 문화의 진정한 가치와 품격을 드립니다.
+                <h3>호명 호수</h3>
+                <hr/>
+                <p class="tour_text_area">
+									콘도미니엄,골프,스키가 결합된 사계절 가족휴양지리조트 안에 계절별로 골프와 스키를 즐길 수 있도록 하여 더욱 편리합니다. 온 가족이 사계절 어느 때나 편안한 휴식을 즐길 수 있는 공간입니다. 낭만과 자연을 느낄 수 있는 서구형 콘도와 객실, 대자연을 품에 포근히 안은 듯한 디자인과 수준 높을 인테리어의 격조 높은 시설로 리조트 문화의 진정한 가치와 품격을 드립니다.
 								</p>
-								<p class="btn_area">
-									<input id="btn_location" type="image"  name="btn_location" src="img/icon_place_black.png" title="지도 보기"/>
-									<input id="btn_text" type="image"  name="btn_text" src="img/icon_back.png" title="내용 보기"/>
+								<p class="tour_text_minute">
+									45분 거리
 								</p>
 							</div>
 						</li>
-						<li class="tour08_france">
-							<div class="location_img">
-								<img src="img/location_img.png" alt="지도 이미지"/>		<!--지도 영역-->
-							</div>
-							<div class="tour_title">		<!--관광지 제목 영역-->
-								<span class="dark"></span>
-								<h3>쁘띠프랑스</h3>
-								<p>50분</p>
+						<li class="right tour08_france">
+              <div class="tour_img">		<!--관광지 제목 영역-->
 							</div>
 							<div class="tour_text">	<!--관광지 내용 영역-->
-								<p class="tour_text_area">
-									프랑스의 다양한 문화를 체험하는 곳으로 경기도 가평에 위치하고 있으며, 
-									프랑스 현지와 정식 계약한 어린왕자 테마파크와 자연을 그대로 
-									살린 친자연 공간이다. 어린왕자의 작가인 생택쥐페리 기념관과 
-									150년된 프랑스 고택을 그대로 옮겨놓은 프랑스 전통 주택전시관, 
-									중앙광장 컬드색, 오르골 하우스, 프랑스 음식문화를 배울 수 있는 비스트로, 
-									유럽의 문화를 감상할 수 있는 갤러리와 인형극장으로 구성되어 있다.
+                <h3>쁘띠 프랑스</h3>
+                <hr/>
+                <p class="tour_text_area">
+									프랑스의 다양한 문화를 체험하는 곳으로 경기도 가평에 위치하고 있으며, 프랑스 현지와 정식 계약한 어린왕자 테마파크와 자연을 그대로 살린 친자연 공간이다. 어린왕자의 작가인 생택쥐페리 기념관과 150년된 프랑스 고택을 그대로 옮겨놓은 프랑스 전통 주택전시관, 중앙광장 컬드색, 오르골 하우스, 프랑스 음식문화를 배울 수 있는 비스트로, 유럽의 문화를 감상할 수 있는 갤러리와 인형극장으로 구성되어 있다.
 								</p>
-								<p class="btn_area">
-									<input id="btn_location" type="image"  name="btn_location" src="img/icon_place_black.png" title="지도 보기"/>
-									<input id="btn_text" type="image"  name="btn_text" src="img/icon_back.png" title="내용 보기"/>
+								<p class="tour_text_minute">
+									50분 거리
 								</p>
 							</div>
 						</li>
 						<li class="tour09_morning">
-							<div class="location_img">
-								<img src="img/location_img.png" alt="지도 이미지"/>		<!--지도 영역-->
-							</div>
-							<div class="tour_title">		<!--관광지 제목 영역-->
-								<span class="dark"></span>
-								<h3>아침고요수목원</h3>
-								<p>50분</p>
+              <div class="tour_img">		<!--관광지 제목 영역-->
 							</div>
 							<div class="tour_text">	<!--관광지 내용 영역-->
-								<p class="tour_text_area">
-									아침고요수목원은 축령산 기슭에 위치해있으며 1996년 한상경 교수가 설립하여 개원한 곳으로 
-									하경정원, 분재정원, 아리리스 정원, 한국정원, 침엽수림정원,탑골정원, 계곡정원 등이 있다.
-									특히 최진실과 박신양이 주연한 영화&lt;편지&gt;에서 나오는 수목원 및 환유나무가 있는 곳으로 더욱 
-									유명해졌으며 수목원안에 작은 계곡과 허브 매장, 기념품 매장 등 볼거리, 먹거리가 있는 곳이다.
+                <h3>아침고요 수목원</h3>
+                <hr/>
+                <p class="tour_text_area">
+									아침고요수목원은 축령산 기슭에 위치해있으며 1996년 한상경 교수가 설립하여 개원한 곳으로 하경정원, 분재정원, 아리리스 정원, 한국정원, 침엽수림정원,탑골정원, 계곡정원 등이 있다. 특히 최진실과 박신양이 주연한 영화<편지>에서 나오는 수목원 및 환유나무가 있는 곳으로 더욱 유명해졌으며 수목원안에 작은 계곡과 허브 매장, 기념품 매장 등 볼거리, 먹거리가 있는 곳이다.
 								</p>
-								<p class="btn_area">
-									<input id="btn_location" type="image"  name="btn_location" src="img/icon_place_black.png" title="지도 보기"/>
-									<input id="btn_text" type="image"  name="btn_text" src="img/icon_back.png" title="내용 보기"/>
-								</p>
-							</div>
-						</li>
-						<li class="tour10_cheongpyeong">
-							<div class="location_img">
-								<img src="img/location_img.png" alt="지도 이미지"/>		<!--지도 영역-->
-							</div>
-							<div class="tour_title">		<!--관광지 제목 영역-->
-								<span class="dark"></span>
-								<h3>청평호수</h3>
-								<p>50분</p>
-							</div>
-							<div class="tour_text">	<!--관광지 내용 영역-->
-								<p class="tour_text_area">
-									청평호수는 1944년 청평댐이 준공됨으로써 이루어진 곳으로 
-									호수면적은 만수시에 580만평에 달하는 대단위 수면이다. 
-									호수 양편으로 호명산이 높이 솟아 청결한 호수와 잘 어우러져 있다. 
-									청평호수는 여름철의 피서객을 비롯하여 4계절 계속하여 관광객의 발길이 끊이지 않고 있는 곳이다.
-								</p>
-								<p class="btn_area">
-									<input id="btn_location" type="image"  name="btn_location" src="img/icon_place_black.png" title="지도 보기"/>
-									<input id="btn_text" type="image"  name="btn_text" src="img/icon_back.png" title="내용 보기"/>
+								<p class="tour_text_minute">
+									50분 거리
 								</p>
 							</div>
 						</li>
@@ -368,65 +439,71 @@
 				</div>
 			</div>
 		</div>
-		<div id="footerWrap">
+    <div id="footerWrap">
 			<h2  class="blind">푸터 영역</h2>
 			<div class="footer_top">
 				<div class="footer_top_area">
-					<h2>CONTACT</h2>
-					<p class="to_top">
-						<a href="#" title="맨 위로">
-							<img src="img/to_top.png" alt="to top 이미지"/>
-						</a>
-					</p>
-					<div class="footer_top_left">
-						<address class="master_place">
-							<img src="img/icon_place_white.png" alt="주소 이미지"/>
-							경북 청도군 운문면 신원리 449
-						</address>
-						<p class="master_email">
-							<a href="dnjftnr122@naver.com" title="클레르 펜션 이메일">
-								<img src="img/icon_letter_white.png" alt="주소 이미지"/>
-								dnjftnr122@naver.com
-							</a>
-						</p>
-						<p class="master_phone">
-							<img src="img/icon_phone_white.png" alt="주소 이미지"/>
-							010-5214-2701
-						</p>
-					</div>
-					<form class="footer_top_right" action="#" method="post">
-						<fieldset>
-							<legend>contact 영역</legend>
-							<p class="input contact_name">
-								<input id="name" type="text" name="name" required placeholder="NAME"/>
-							</p>
-							<p class="input contact_email">
-								<input id="email" type="email" name="email" required placeholder="EMAIL ex) abc@abc.com"/>
-							</p>
-							<p class="input contact_message">
-								<textarea placeholder="MESSAGE"></textarea>
-							</p>
-						</fieldset>
-						<p class="btn_submit">
-							<input id="submit" type="submit" name="submit" value="SEND"/>
-						</p>
-					</form>
-				</div>
+          <ul class="footer_gnb">
+            <li>
+              <a href="#none" title="about 페이지로 이동">
+              about
+              </a>
+            </li>
+            <li>
+              <a href="#none" title="이용 약관 페이지로 이동">
+                개인정보·수집 이용
+              </a>
+            </li>
+            <li>
+              <a href="#none" title="개인정보·수집 이용 페이지로 이동">
+                이용약관
+              </a>
+            </li>
+            <li>
+              <a href="#none" title="location 페이지로 이동">
+                location
+              </a>
+            </li>
+          </ul>
+          <p class="footer_logo">
+            <a href="index.html" title="메인 페이지로 이동">
+              <img src="img/logo_footer_white.png" alt="footer logo"/>
+            </a>
+          </p>
+
+        </div>
 			</div>
 			<div class="footer_bottom">
 					<div class="footer_bottom_area">
-					<div class="footer_logo">
-						<a class="footer_logo_img" href="index.html" title="메인으로">
-							<img src="img/logo_footer_white.png" alt="푸터 로고"/>
-						</a>
-					</div>
-					<div class="footer_info">
-						<p>
-							사업자 번호 : 105-12-99908
-						</p>
-						</p>
-							통신판매신고번호 : 제2013-경기가평-51호
-						</p>
+					<div class="footer_info1">
+            <ul class="footer_info">
+              <li class="address_area">
+                <dl>
+                  <dt>주소</dt>
+                  <dd>
+                    <address>경기도 가평군 북면 백둔리 455-18번지</address>
+                  </dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>계좌번호</dt>
+                  <dd>농협 352-0275-6308-13 예금주 정보경</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>사업자 번호</dt>
+                  <dd>105-12-99908</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>통신판매 신고번호</dt>
+                  <dd>제2013-경기가평-51호</dd>
+                </dl>
+              </li>
+            </ul>
 						<p class="copyright">
 							Copyright 2016 YSH&copy; all rights reserved
 						</p>

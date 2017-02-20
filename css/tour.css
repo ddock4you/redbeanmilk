@@ -2,8 +2,18 @@ body{font-family:"Montserrat", Noto Sans; margin:0; padding:0;}
 
 /*############################### wrap #######################################*/
 	#wrap{width:100%; text-transform:uppercase;}
+	/*jQuery로 제어*/
+		.wrap_dark{
+								display:block;
+								width:100%;
+								height:100%;
+								position:fixed;
+								top:0;
+								left:0;
+								background-color:rgba(0,0,0,0.8);
+							}
 
-/*############################### header #####################################*/
+/*############################# headerWRap ###################################*/
 	#headerWrap{
 							width:100%;
 							border-top:4px solid #2B2727;
@@ -11,144 +21,201 @@ body{font-family:"Montserrat", Noto Sans; margin:0; padding:0;}
 							border-bottom:1px solid #ccc;
 							position:fixed;
 							top:0;
-							z-index:9999;
+							z-index:3;
 							}
 
-	/*##################### top gnb #########################*/
-		.d_gnb{position:absolute; top:20px; right:50px;}
-			.d_gnb p{float:left;}
-				.d_gnb p a{padding-left:18px; background-size:15px 15px;}
-					.fast_event a{
-										background-image:url("../img/icon_event.png");
-										background-repeat:no-repeat;
-										color:#FF3636;
+/*###################### top_headerWRap ############################*/
+	#top_headerWrap{width:100%; height:240px; background-color:#2B2727;}
+		.login_info{width:100%;}
+			.login_info h2{padding:30px 0; color:#fff; text-align:center;}
+				.login_info fieldset{border:none;}
+			.input_user{width:700px; height:40px; margin:0 auto 20px;}
+				.input_user p{width:200px; height:35px; float:left;margin-left:30px;}
+					.input_user p.input_btn_login{width:80px; height:39px;}
+					.input_user p.input_userid{margin-left:80px;}
+					.input_user p input{
+															width:100%;
+															height:100%;
+															border:2px solid #fff;
+															background-color:#2B2727;
+															color:#fff;
+														 }
+						#userid, #userpw{text-indent:12px;}
+
+			.input_etc{width:700px; margin:0 auto; text-align:center;}
+				.input_etc ul:after{content:""; display:block; clear:both;}
+					.input_etc ul li{display:inline-block; padding:0 7px; color:#fff;}
+						.input_etc ul li a{color:#fff;}
+
+/*###################### bottom_headerWRap #########################*/
+	#bottom_headerWrap{width:100%; height:100%; position:relative;}
+
+/*##################### top gnb #########################*/
+	.nav{
+				width:190px;
+				height:20px;
+				position:absolute;
+				top:20px;
+				right:50px;
+				z-index:1;
+			}
+		.nav ul:after{content:""; dispaly:block; clear:both;}
+		.nav ul li{float:left;}
+			.nav ul li a{padding:0 6px; font-size:12px; color:#333;}
+			.nav ul li.fast_event a{color:#FF3636;}
+				.fast_event a img{width:12px; height:12px;}
+
+/*#################### gnb ########################*/
+		.m_r_gnb, .m_l_gnb{position:absolute;top:15px; right:40px; display:none;}
+			.m_l_gnb{ left:40px;}
+			.m_r_gnb p{width:30px; height:30px;}
+
+			.m_l_gnb{top:18px;}
+			 .m_l_gnb p{width:26px; height:26px;}
+
+				.m_r_gnb p img, .m_l_gnb p img{width:100%; height:100%;}
+
+#header{width:100%; height:90px; margin:0 auto; position:relative;}
+	h1{
+		width:190px;
+		height:40px;
+		 position:absolute;
+		 top:10px; left:50%;
+		 margin-left:-95px;
+		 z-index:1;
+	 }
+		h1 img{width:100%; height:100%;}
+
+		.m_header_btn{
+									width:100%;
+									height:24px;
+									position:absolute;
+									top:13px;
+									left:0;
+									display:none;
+								 }
+			.m_menu_btn, .m_reser_btn{width:24px; height:24px; position:absolute; top:0;}
+				.m_menu_btn img, .m_reser_btn img{width:100%; height:100%;}
+					.m_menu_btn img a, .m_reser_btn img a{display:block; width:100%; height:100%;}
+			.m_menu_btn{left:40px;}
+			.m_reser_btn{right:40px;}
+
+/*####################### gnb ###########################*/
+	.gnb{padding-top:60px;text-align:center;}
+		/*main GNB, sub GNB 공통으로 사용*/
+		.gnb ul li{display:inline-block; margin-left:10px; position:relative;}
+		.gnb ul li:last-child{margin-left:0;}
+			/*main GNB 리스트(sub GNB 리스트와 다르게 표시하기 위해 나눔)*/
+			.gnb_list li a{padding:5px 8px; color:#AEA288; font-weight:bold;}
+
+				.sub_gnb_list{
+											width:100%;
+											position:fixed;
+											top:95px;
+											left:0;
+											z-index:2;
+											background-color:#2B2727;
 										}
-				.fast_reservation{margin-left:10px;}
-					.fast_reservation a{
-													background-image:url("../img/icon_reservation.png");
-													background-repeat:no-repeat;
-													color:#FFBB00;
-													}
+				.sub_gnb_list li{
+													display:inline-block;
+													text-align:center;
+													margin-left:0;
+													padding:3px 0;
+												}
+					.sub_gnb_list li a{color:#fff; font-size:12px; padding:0 8px;}
 
-	/*#################### �����Ͽ� gnb ########################*/
-			.m_r_gnb, .m_l_gnb{position:absolute;top:15px; right:40px; display:none;}
-				.m_l_gnb{ left:40px;}
-				.m_r_gnb p{width:30px; height:30px;}
+/*###################### m_header ##########################*/
+	.m_header{
+						width:320px;
+						height:950px;
+						position:fixed;
+						top:5px;
+						left:-320px;
+						background-color:#fff;
+						z-index:4;
+					}
 
-				.m_l_gnb{top:18px;}
-				 .m_l_gnb p{width:26px; height:26px;}
+		.m_top{width:100%; height:50px; position:relative;}
+			.m_logo{
+							width:40px;
+							height:40px;
+							position:absolute;
+							top:5px;
+							left:50%;
+							margin-left:-20px;
+							}
+				.m_logo img{width:100%; height:100%;}
+			.m_menu_close_btn{width:24px; height:24px; position:absolute; top:13px; left:40px;}
+				.m_menu_close_btn img{width:100%; height:100%;}
 
-					.m_r_gnb p img, .m_l_gnb p img{width:100%; height:100%;}
-
-	#header{max-width:1200px; height:90px; margin:0 auto; position:relative;}
-		h1{width:190px; height:40px; position:absolute; top:10px; left:50%; margin-left:-95px;}
-			h1 img{width:100%; height:100%;}
-
-	/*####################### gnb ###########################*/
-		.gnb{padding-top:60px;text-align:center;}
-			.gnb ul li{display:inline-block; margin-left:10px;}
-			.gnb ul li:last-child{margin-left:0;}
-				.gnb ul li a{display:block;padding:0 8px; color:#AEA288; font-weight:bold;}
-					.gnb ul li a span{
-												display:block;
-												width:100%;
-												height:2px;
-												background-color:#AEA288;
-												transform:scalex(0);
-												transition: all 0.3s ease-in-out;
-												margin-bottom:5px;
+		.m_bottom{width:100%; height:50px;}
+			.user_info{width:100%; height:100%; background-color:#2B2727;}
+				.user_info li{
+											width:50%;
+											height:100%;
+											line-height:50px;
+											text-align:center;
+											float:left;
 											}
+					.user_info li a{display:block; width:100%; height:100%; color:#fff;}
+					.m_login{border-right:1px solid #ccc; box-sizing:border-box;}
+
+		.m_gnb{width:100%; background-color:#fff; overflow:auto;}
+			.m_gnb_list{width:100%;}
+				.m_gnb_list li{width:100%;}
+					.m_gnb_list li a{
+														display:block;
+														width:305px;
+														height:100%;
+														border-bottom:1px solid #000;
+														padding:13px 0 13px 15px;
+														position:relative;
+														color:#000;
+													}
+						.m_gnb_list li a span{
+																	font-size:24px;
+																	font-weight:bold;
+																	position:absolute;
+																	top:3px;
+																	right:10px;
+																	}
+						.m_sub_gnb_list li a{
+																	width:275px;
+																	padding-left:45px;
+																	font-size:13px;
+																	background-color:#eee;
+																	color:#555;
+																}
 
 /*############################## content ###################################*/
-	#contentWrap{width:100%;background-color:#fff; overflow:hidden;}
-		.slide_area{width:100%; height:550px; padding-top:90px; position:relative; background-image:url("../img/tour/tour_main_img00.jpg");background-repeat:no-repeat; background-size:cover; background-position:0 -250px; background-attachment : fixed;}
-			.slide_area p{width:100%; height:100%;}
-				.slide_area p img{width:100%; height:100%;}
+/*####################### visual ###########################*/
+	#contentWrap{width:100%;background-color:#fff; overflow:hidden; padding-top:90px;}
+		.slide_area{width:100%; height:500px; overflow:hidden; position:relative;}
+			.slide_img{width:100%; height:100%; background:url("../img/tour/tour_main_img00.jpg") no-repeat center center; background-size:cover;}
 			.dark{display:block; width:100%; height:100%; background-color:rgba(0,0,0,0.2); position:absolute; top:0; left:0;}
-
-			.slide_area_title{width:100%; height:400px; position:absolute; top:45%; text-align:center; color:#fff;}
+			.slide_area_title{width:100%; position:absolute; top:48%; text-align:center; color:#fff;}
 				.slide_area_title hr{width:200px; border:2px solid #fff; margin:0 auto; animation:title_stick_ani 1s;}
 				.slide_area_title h2{font-size:48px; letter-spacing:5px; animation:title_ani 1s;}
 
 
-				@keyframes title_stick_ani{
-				0%{transform:scalex(0);}
-				30%{transform:scalex(0);}
-				100%{transform:scalex(1);}
-			}
+/*###################### tour_area ##########################*/
+	.tour_area{width:1200px; margin:50px auto; auto; overflow:hidden;}
 
-			@keyframes title_ani{
-				0%{transform:scaley(0);}
-				50%{transform:scaley(0);}
-				100%{transform:scaley(1);}
-			}
+		.tour_info, .tour_info_area{width:100%; height:100%;}
+			.tour_info_area{position:relative;}
+			.tour_info_area li{width:575px; overflow:hidden; background-color:#fff; float:left; margin-top:50px;}
+			.tour_info_area li.right{margin-right:50px;}
+				.location_img{width:100%; height:100%; background-color:red;}
+				.tour_img{width:100%; height:300px; background-color:#ccc; background-repeat:no-repeat; background-size:cover;}
 
-			.scroll_down{display:block; position:absolute; top: 70%; width:150px; left:50%; color:#fff; margin-left:-75px; text-align:center;  text-transform:none; animation:title_stick_ani 1s;}
-
-				.scroll_down p{font-weight:bold; animation:up_down 1s infinite;}
-
-				@keyframes up_down{
-					50%{margin-top:20px;}
-				}
-		.tour_area{width:1200px; height:4800px; margin:0 auto; background-color:#EFE6D4; position:relative;}
-			.timeline{width:200px; height:100%; position:absolute; top:0; left:50%; margin-left:-100px;}
-				.road{width:3px; height:4650px; background-color:#ccc; position:absolute; top:0; left:50%; margin-left:-1.5px;}
-					.point{width:25px; height:100%; margin:0 auto; position:relative;}
-						.point li{width:11px; height:11px; background-color:#EFE6D4; border:2px solid #ccc; border-radius:50%; position:absolute; left:50%; margin-left:-7.5px;}
-
-						.start{top:-7.5px;}
-						.point_5m{top:265px;}
-						.point_15m{top:885px;}
-						.point_35m{top:1895px;}
-						.point_40m{top:2715px;}
-						.point_45m{top:3155px;}
-						.point_50m{top:3975px;}
-						.arrive{top:4642.5px;}
-
-			.tour_info, .tour_info_area{width:100%; height:100%;}
-				.tour_info_area{position:relative;}
-				.tour_info_area li{width:400px; overflow:hidden; background-color:#fff; position:absolute;}
-					.location_img{width:100%; height:100%; background-color:red; position:absolute; top:0; left:0; z-index:-1;}
-					.tour_title{width:100%; height:180px; background-color:#ccc; position:relative; background-repeat:no-repeat; background-size:cover;}
-
-						/*�� ��� ����ȭ��*/
-						.tour00_baekdun .tour_title{background-image:url("../img/tour/tour li/tour00_baekdun.jpg");}
-						.tour01_myungji .tour_title{background-image:url("../img/tour/tour li/tour01_myungji.jpg");}
-						.tour02_charcoal .tour_title{background-image:url("../img/tour/tour li/tour02_charcoal.jpg");}
-						.tour03_nami .tour_title{background-image:url("../img/tour/tour li/tour03_nami.jpg");}
-						.tour04_bike .tour_title{background-image:url("../img/tour/tour li/tour04_bike.jpg");}
-						.tour05_garden .tour_title{background-image:url("../img/tour/tour li/tour05_garden.jpg");}
-						.tour06_homyung .tour_title{background-image:url("../img/tour/tour li/tour06_homyung.jpg");}
-						.tour07_elysian .tour_title{background-image:url("../img/tour/tour li/tour07_elysian.jpg");}
-						.tour08_france .tour_title{background-image:url("../img/tour/tour li/tour08_france.jpg");}
-						.tour09_morning .tour_title{background-image:url("../img/tour/tour li/tour09_morning.jpg");}
-						.tour10_cheongpyeong .tour_title{background-image:url("../img/tour/tour li/tour10_cheongpyeong.jpg");}
-
-					.tour_title h3{float:left; width:100%; position:absolute; bottom:5%; color:#fff; text-indent:12px;}
-					.tour_title p{float:right; display:none;}
-					.tour_text{width:90%; padding:5%; height:110px; font-size:12px; text-align:justify; position:relative;}
-						.btn_area{width:40px; height:40px; background-color:blue; position:absolute; bottom:0; right:0;}
-							.btn_area input{width:100%; height:100%; position:absolute; top:0; left:0;}
-
-						/*
-							������ ���� ��ǥ ����
-							������ ������ ���� �ٸ� ���⿡�� ������ ���� margin-bottom ������ 100px�� ����
-							        ""           ���� ���� ���⿡�� ������ ����           ""              ""        50px�� ����
-						*/
-						.tour00_baekdun{top:100px; left:8%;}
-						.tour01_myungji{top:530px; right:8%;}
-						.tour02_charcoal{top:910px; right:8%;}
-						.tour03_nami{top:1350px; left:8%;}
-						.tour04_bike{top:1730px; left:8%;}
-						.tour05_garden{top:2110px; left:8%;}
-						.tour06_homyung{top:2550px; right:8%;}
-						.tour07_elysian{top:2990px; left:8%;}
-						.tour08_france{top:3430px; right:8%;}
-						.tour09_morning{top:3810px; right:8%;}
-						.tour10_cheongpyeong{top:4190px; right:8%;}
+				.tour_text{width:90%; padding:5%; text-align:justify; position:relative;}
+					.tour_text h3{text-align:center;}
+					.tour_text hr{width:20px; height:1px; border:2px solid #000; background-color:#000; margin:10px auto;}
+					.tour_text_area{font-size:14px;}
+					.tour_text_minute{text-align:center; padding-top:5px; font-weight:bold; color:#AEA288;}
 
 /*############################### footer ######################################*/
-	#footerWrap{width:100%;height:420px;}
+	#footerWrap{width:100%;height:250px; background-color:#2B2727;}
 		#footerWrap h2{
 									font-size:32px;
 									color:#fff;
@@ -158,54 +225,46 @@ body{font-family:"Montserrat", Noto Sans; margin:0; padding:0;}
 									font-weight:400;
 									}
 
-	/*#################### footer top ######################*/
-		.footer_top{width:100%; height:310px; background-color:#777; color:#fff;}
-			.footer_top_area{width:1000px; height:100%; margin:0 auto;position:relative;}
-				.to_top{width:26px; height:26px; position:absolute; top:20px; right:50px; border:2px solid #fff; border-radius:2px;}
-					.to_top a{display:block; width:100%; height:100%;}
-						.to_top a img{width:90%; height:90%;padding:5%;}
+/*#################### footer top ######################*/
+	.footer_top{width:100%; height:160px; color:#fff;}
+		.footer_top_area{
+										width:100%;
+										height:100%;
+										margin:0 auto;
+										position:relative;
+										text-align:center;
+									}
+			.footer_gnb{
+									width:470px;
+									height:40px;
+									margin:0 auto;
+									line-height:40px;
+									padding-top:10px;
+									font-size:14px;
 
-				.footer_top_left, .footer_top_right{width:50%; height:220px; float:left;}
+								}
+				.footer_gnb li{display:inline-block; margin-left:10px;}
+					.footer_gnb li:first-child{margin-left:0;}
+					.footer_gnb li a{padding:5px 8px; color:#fff; font-weight:bold;}
 
-					.footer_top_left p, .master_place{
-																	margin:20px 0 20px 30px;
-																	padding-left:20px
-																	;text-transform:lowercase;
-																}
-					.footer_top_left img{width:20px; height:20px; padding-right:5px;}
-					.master_place{font-style:normal;}
-					.master_email a{color:#fff;}
+			.footer_logo{width:70px;height:70px; margin:0 auto; padding-top:20px;}
+				.footer_logo a{width:100%; height:100%;}
+					.footer_logo a img{width:100%; height:100%;}
 
-					fieldset{border:none; width:400px; margin:0 auto;}
-					legend{display:none;}
-					.contact_name, .contact_email{width:100%; height:30px; margin-bottom:10px;}
-						.contact_name input, .contact_email input{width:100%; height:100%;}
+			.footer_info{width:100%; margin:0 auto; padding-top:20px;}
+				.footer_info:after{content:""; display:block; clear:both; padding-bottom:10px;}
+				.footer_info li{width:24%; float:left; margin-right:1%;}
+					.footer_info li dl dt{
+																text-align:center;
+																padding-bottom:10px;
+																font-size:13px;
+																font-weight:bold;
+																color:#777;
+															}
+						.footer_info li dl dd{font-size:12px; text-align:center; color:#777;}
+						address{font-style:normal;}
 
-
-					.contact_message{width:100%; height:100px;}
-						.contact_message textarea{width:100%; height:100%; font-size:16px;}
-
-					.contact_name input, .contact_email input, .contact_message textarea{
-																													border:none; text-indent:12px;
-																													}
-
-					.btn_submit{text-align:center; margin:10px 0;}
-						#submit{
-										width:100px;
-										height:30px;
-										border:3px solid #fff;
-										border-radius:3px;
-										font-weight:bold;
-										background:none;
-										color:#fff;
-										cursor:pointer;
-										}
-
-	/*#################### footer bottom ######################*/
-		.footer_bottom{width:100%; height:120px; background-color:#2B2727;}
-			.footer_bottom_area{width:1000px; height:100%; margin:0 auto;}
-				.footer_logo{width:40px; height:40px; margin:0 auto; padding:10px 0;}
-					.footer_logo img{width:100%; height:100%;}
-
-				.footer_info{width:100%; font-size:11px; text-align:center; color:#fff;}
-					.footer_info p{padding-bottom:3px;}
+/*#################### footer bottom ######################*/
+	.footer_bottom{width:100%; height:90px;}
+		.footer_bottom_area{width:1000px; height:100%; margin:0 auto;}
+			.copyright{color:#444; text-align:center; font-size:14px;}
