@@ -12,6 +12,7 @@
   <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
   <script src="http://maps.google.com/maps/api/js"></script>
   <script src="js/gmaps.js"></script>
+  <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=bcde93ee515681c5691cb8c330d5ca6a"></script>
   <!--[if IE 7]>
 		<link rel="stylesheet" type="text/css" href="css/ie7.css"/>
   <![endif]-->
@@ -42,21 +43,27 @@
       $("#top_headerWrap").slideDown(500);
       });
 
-    //Google Maps 연동
-    var map = new GMaps({
-        el: ".location_google",
-        lat: 37.904981,
-        lng: 127.45361589999993
+    //daum Map API 연동
+    var container = document.getElementById('location_google');
+		var options = {
+			center: new daum.maps.LatLng(37.904981, 127.45361589999993),
+			level: 3
+		};
+
+		var map = new daum.maps.Map(container, options);
+
+    // 마커가 표시될 위치입니다
+    var markerPosition  = new daum.maps.LatLng(37.904981, 127.45361589999993);
+
+    // 마커를 생성합니다
+    var marker = new daum.maps.Marker({
+        position: markerPosition
     });
 
-    map.addMarker({
-        lat: 37.904981,
-        lng: 127.45361589999993,
-    });
+    // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(map);
 
-    infoWindow: {
-  content: '<p>HTML Content</p>'
-  }
+
 	});
   </script>
  </head>
@@ -281,7 +288,7 @@
 		<div id="contentWrap">
 			<div class="content">
         <h2 class="blind">location</h2>
-					<div class="location_google">
+					<div id="location_google">
 						<span class="blind">지도 이미지 영역</span><!------ 지도 이미지 영역 ------>
 					</div>
 				</div>

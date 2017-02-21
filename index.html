@@ -4,6 +4,12 @@
   <meta  charset="utf-8"/>
   <title> CLAIRE PENSION </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="robots" content="ALL"/>
+  <meta name="keywords" content="여행,가족,커플,모임,허니문,신혼여행,바베큐,조식,이벤트,프로포즈,바베큐장,개별바베큐,바베큐,빔프로젝트,홈씨어터,보드게임,무선인터넷,자전거,산책로,주차장,카페,수영장,온수수영장,사계절온수수영장루메네스,데크,픽업서비스,커플샤워,닌텐도wii,와이파이,wifi,스파,spa,계곡,앨리시안강촌,남이섬,아침고요수목원,쁘띠프랑스,명지산,명지계곡,용추계곡,청평호수,참숯가마찜질,수상레져,수상스키,번지점프,모터보트,바나나보트,서바이벌,하이킹,ATV,래프팅"/>
+  <meta name ="description" content="경기도 가평군 위치, 커플, 가족, 복층펜션, 제트스파, 닌텐도, 바베큐시설, 남이섬 등 주변관광지"/>
+  <meta name ="author" content ="redbeanmilk"/>
+  <meta name ="content-language" content="kr"/>
+  <meta name ="content-language" content="en"/>
   <link rel="stylesheet" type="text/css" href="css/reset.css"/>
   <link rel="stylesheet" type="text/css" href="css/index.css"/>
   <link rel="stylesheet" type="text/css" href="css/media/media_index.css"/>
@@ -13,150 +19,58 @@
   <script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js"></script>
   <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
   <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-  <!--[if lt IE 9]>
+  <script type="text/javascript" src="js/header.js"></script>
+  <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=bcde93ee515681c5691cb8c330d5ca6a"></script>
 
+  <!--[if IE 8]>
+		<link rel="stylesheet" type="text/css" href="css/cross/ie8_index.css"/>
   <![endif]-->
   <style type="text/css">
 
   </style>
   <script type="text/javascript">
-  var scroll_event,
-      scroll_value=5,
-      last_scroll_place=0,
-      $header_height=$("#headerWrap").outerHeight(),
-      $window_height=$(window).height(),
-      $window_width=$(window).width(),
-      m_header_power = 0;
-      ;
 
-  //스크롤 방향에 따른  header 영역 slideIn, slideDown 애니메이션 효과
-  $(window).scroll(function(event){
-    scroll_event=true;
-  });
-
-  setInterval(function(){
-    if(scroll_event){
-      has_scrolled();
-      scroll_event=false;
-    }
-  }, 250);
-
-  function has_scrolled(){
-    var now_scroll_place=$(this).scrollTop();
-
-    if(Math.abs(last_scroll_place - now_scroll_place) <= scroll_value)
-    return;
-
-    if(now_scroll_place > last_scroll_place && now_scroll_place > $header_height && m_header_power==0){
-      //Scroll Down
-      $("#headerWrap").slideUp(400);
-    }
-    else{
-      //Scroll Up
-      if(now_scroll_place + $(window).height() < $(document).height()){
-        $("#headerWrap").slideDown(400);
-      }
-    }
-    last_scroll_place=now_scroll_place;
-  }
 
   $(function(){
     // visual 영역 애니메이션 효과
     $(".visual_main_img").scale(1.15).animate({scale:"1"},20000);
     $(".visual_main_icon").animate({opacity:"1", top:"20%"},1200, "easeInOutQuart");
     $(".visual_main_text").delay(1000).animate({opacity:"1",top:"52%"},1400, "easeInOutQuart");
-    //m_header 높이값 제어
-    $(".m_header").css({"height":$window_height});
 
-    // Sub_gnb on/off
-    $(".sub_gnb_list").hide();
-    $(".wrap_dark").hide();
-    $(".visual_main").css({"height":$(window).height()});
+      //팝업창 제어
+      $(".drag_area").mousedown(function(e){
 
-    /*gnb영역에서 버튼(들)을 클릭하면 나타나는 효과
-    보완 필요.(코드 압축, 일부 영역 Tab 접근 안되는 문제 해결)*/
-		$(".gnb_room").on("click focusin",function(){
-      $(".sub_gnb_list").hide();
-      $(".gnb_list").children().children("a").css({"color":"#AEA288"});
-      $(".gnb_list").find("span").html("∧");
-      $(this).children("a").css({"color":"#E41B23"});
-      $(this).find("span").html("∨");
-      $(this).children("ul").slideDown(300);
-		});
+				$("body").on("selectstart",function(){ return false; });
 
-    $(".gnb_special").on("click focusin",function(){
-      $(".gnb_list").children().children("a").css({"color":"#AEA288"});
-      $(".gnb_list").find("span").html("∧");
-      $(this).children("a").css({"color":"#E41B23"});
-      $(this).find("span").html("∨");
-      $(".sub_gnb_list").hide();
-      $(this).children("ul").slideDown(300);
-		});
+				$("#event").data("clickX",e.pageX-$("#event").offset().left)
+										.data("clickY",e.pageY-$("#event").offset().top);
 
-    $(".gnb_contact").on("click focusin",function(){
-      $(".gnb_list").children().children("a").css({"color":"#AEA288"});
-      $(".gnb_list").find("span").html("∧");
-      $(this).children("a").css({"color":"#E41B23"});
-      $(this).find("span").html("∨");
-      $(".sub_gnb_list").hide();
-      $(this).children("ul").slideDown(300);
-		});
+				$(document).mousemove(function(e){
+					$("#event").css({"left":e.pageX-$("#event").data("clickX")+"px","top":e.pageY-$("#event").data("clickY")+"px"});
+				}).mouseup(function(){
 
-    /*gnb영역에서 버튼(들)을 클릭하면 나타나는 효과
-    보완 필요.(코드 압축, 일부 영역 Tab 접근 안되는 문제 해결)*/
-    $(".m_sub_gnb_list").hide();
-    $(".m_gnb_room").on("click focusin",function(){
+					$(document).off("mousemove");
+					$("body").off("selectstart");
+				});
+			});
 
-      $(".m_gnb_list").children().children("a").css({"color":"#000"});
-      $(".m_gnb_list").find("span").html("∧");
-      $(this).find("span").html("∨");
-      $(".m_sub_gnb_list").stop().slideUp();
-      $(this).children("ul").stop().slideDown(300);
-		});
+      //메인 페이지 접속할 때 팝업창을 열지 닫을지 여부
+      var expiredays = 1;
+      function startTime(){
+        var cName ="event";
+        var time = new Date();
+        var year = time.getFullYear();
 
-
-    $(".m_gnb_special").on("click focusin",function(){
-      $(".m_gnb_list").children().children("a").css({"color":"#000"});
-      $(".m_gnb_list").find("span").html("∧");
-      $(this).find("span").html("∨");
-      $(".m_sub_gnb_list").stop().slideUp();
-      $(this).children("ul").stop().slideDown(300);
-		});
-
-    $(".m_gnb_contact").on("click focusin",function(){
-      $(".m_gnb_list").children().children("a").css({"color":"#000"});
-      $(".m_gnb_list").find("span").html("∧");
-      $(this).find("span").html("∨");
-      $(".m_sub_gnb_list").stop().slideUp();
-      $(this).children("ul").stop().slideDown(300);
-		});
-
-    //mobile header on/off
-    $(".m_menu_btn").on("click focusin",function(){
-      $(".m_header").stop().animate({left:"0px"},300);
-      m_header_power = 1;
-      $(".wrap_dark").stop().fadeIn(300);
-    });
-
-    $(".m_menu_close_btn, .wrap_dark").on("click focusin",function(){
-      $(".m_header").stop().animate({left:"-320px"},300);
-      m_header_power = 0;
-      $(".wrap_dark").stop().fadeOut(300);
-    });
-
-
-
-    //로그인 창 on / off
-      $("#top_headerWrap").hide();
-      $(".login a").on("mouseover focusin", function(){
-        $("#top_headerWrap").slideDown(500);
-      });
-
-    //다른 영역 클릭 시 로그인 영역 비활성화(숨기기)
-    //보완 필요(세부적인 영역 설정)
-      $("#bottom_headerWrap, #contentWrap, #footerWrap").click(function(){
-        $("#top_headerWrap").slideUp(500);
-      });
+         cookieIndex = getCookie(cName);
+          if ( !cookieIndex ){
+              document.getElementById('event').style.visibility = "visible";
+              alert("됨");
+          }
+          else{
+              document.getElementById('event').style.visibility = "hidden";
+              alert("안됨");
+          }
+      }
 
 		 //Room 선택 영역
        //Room hover하면 hover된 영역에 글자 애니메이션 표시
@@ -211,7 +125,9 @@
           $(".pic_back").stop().animate({bottom:"5%", left:"2%"},400);
         });
       };
+
 		});
+
 
 
   </script>
@@ -435,14 +351,76 @@
 			</div>
 		</div>
 		<div id="contentWrap">
-			<!--<div class="event">
-				<h2>이벤트 영역</h2>
-				<div class="event_area">
-					<p class="event_power_btn">
-						버튼
-					</p>
+			<form id="event" name="event">
+        <p class="drag_area"></p>
+        <p class="event_img">
+          <img src="img/event1.jpg" alt="사계절 온수 수영장 오픈 이미지"/>
+        </p>
+				<div class="event_btn">
+				  <label for="close_cookies">오늘하루 이 창을 열지 않음</label>
+          <input id="close_cookies" type="checkbox" name="close_cookies"/>
+          <a class="close_btn" href="#none" title="닫기" onclick="closeWin_23()">닫기</a>
 				</div>
-			</div>-->
+			</form>
+      <script>
+        bn_cookiedata = document.cookie;
+
+        if (bn_cookiedata.indexOf("maindiv_23=done") < 0 ) {
+            document.all['event'].style.visibility = "visible";
+        }
+        else {
+            document.all['event'].style.visibility = "hidden";
+        }
+
+        function closeWin_23() {
+          if ( document.event.close_cookies.checked ) {
+            setCookie( "maindiv_23", "done" , 1 );
+          }
+          document.all['event'].style.visibility = "hidden";
+        }
+
+        //팝업창을 열지 닫을지 여부
+        var expiredays = 1;
+
+        function startTime(){
+          var cName ="event";
+          var time = new Date();
+          var year = time.getFullYear();
+
+           cookieIndex = getCookie(cName);
+            if ( !cookieIndex ){
+                document.getElementById('event').style.visibility = "visible";
+                alert("됨");
+            }
+            else{
+                document.getElementById('event').style.visibility = "hidden";
+                alert("안됨");
+            }
+        }
+
+        function setCookie( name, value, expiredays ){
+            var todayDate = new Date();
+            todayDate.setDate(todayDate.getDate() + expiredays);
+            document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+        }
+
+        function getCookie(name){
+          var nameOfCookie = name + "=";
+          var x = 0;
+          while ( x <= document.cookie.length ){
+              var y = (x+nameOfCookie.length);
+              if ( document.cookie.substring( x, y ) == nameOfCookie ){
+                  if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
+                  endOfCookie = document.cookie.length;
+                  return unescape( document.cookie.substring( y, endOfCookie ) );
+              }
+              x = document.cookie.indexOf( " ", x ) + 1;
+              if ( x == 0 )
+              break;
+           		}
+           return "";
+        }
+      </script>
 			<div id="visual">
 				<h2 class="blind">VISUAL</h2>
 				<div class="visual_main">
@@ -458,16 +436,6 @@
 					</div>
 				</div>
 			</div>
-			<!--
-			<div id="about">
-				<h2 class="blind">about claire</h2>
-				<p class="about_text">
-					<a href="#none" title="ABOUT 페이지로 이동">
-						<strong>안녕하세요.</strong><br/>
-						<em>끌레르 펜션 소개</em>
-					</a>
-				</p>
-			</div>-->
 			<div id="room_info">
 				<h2>choose a room</h2>
 					<div class="room_area">
@@ -690,7 +658,6 @@
               </p>
             </div>
             <p class="location_img">
-              <img src="img/location_img.jpg" alt="지도 이미지"/>
             </p>
           </a>
         </div>
@@ -768,8 +735,8 @@
 				</div>
 			</div>
 		</div>
+    <p class="wrap_dark">
+    </p>
 	</div>
-  <span class="wrap_dark">
-  </span>
  </body>
 </html>

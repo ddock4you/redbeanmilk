@@ -11,7 +11,7 @@
 
 /*########################## content 769 ~ 1024px ##############################*/
 /*############## google_maps 769 ~ 1024px ###################*/
-.location_google{height:400px;}
+	#location_google{height:400px;}
 
 /*############# location_info 769 ~ 1024px #################*/
 	.location_info{width:100%;}
@@ -37,7 +37,7 @@
 /*########################## content 481 ~ 768px ##############################*/
 /*################## google_maps 481 ~ 768px ######################*/
 	#contentWrap{padding-top:50px;}
-		.location_google{height:300px;}
+		#location_google{height:300px;}
 
 /*################ location_info 481 ~ 768px #####################*/
 	.location_info{width:100%;}
@@ -76,7 +76,7 @@
 /*########################## content 320 ~ 480px ##############################*/
 /*################## google_maps 320 ~ 480px ######################*/
 	#contentWrap{padding-top:50px;}
-		.location_google{height:200px;}
+		#location_google{height:200px;}
 
 /*################ location_info 320 ~ 480px #####################*/
 	.location_info{width:100%;}
