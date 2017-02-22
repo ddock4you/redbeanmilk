@@ -1,0 +1,49 @@
+﻿///////////// phpMyAdmin or mysql에서 해야 할 작업 /////////////////////
+01) 데이터베이스 만들기
+	+ 데이터베이스명 inboard
+	+ utf8_general_ci
+
+02) 테이블 만들기 (로그인시 사용될 회원가입 테이블)
+	+ 테이블명 members
+	+ utf8_general_ci
+
+03) 필드만들기
+	no, userid, userpass, useremail, userphone, address
+	+ no부분은 숫자 자동증가, 중복되지 않는 유일한키 설정
+	+ address는 자료형 text 선택
+		+ text를 선택하는 이유? 255자 이상 쓸때 사용
+	+ no, address 제외하고 나머진 varchar(50)
+
+_______________________________________________________________________________
+
+01) 테이블만들기 (게시글을 남길 테이블)
+	+ 테이블명 freeboard
+	+ utf8_general_ci
+
+02) 필드만들기
+	no, name, email, pass, title, content, wdate, ip, view
+	+ no부분은 숫자 자동증가, 중복되지 않은 유일한 키 설정
+	+ name varchar(20), email(30), pass(30), title(50)
+	+ content는 자료형 text
+	+ wdate는 자료형 (오늘날짜) : datetime
+	+ view 는 자료형 int
+
+//////////////// php 문서 만들기 ///////////////
+
+01) 02_join_control.php문서만들기
+	+ 01_join_insert.php 문서를 보면 name값들 가져오기
+	+ IDchkBtn 부분의 name은 넘겨받지 말것, 다른영역에서 체크할 것임!
+	+ address 필드에 넘길때 필요한 :: 변수 address 만들기
+	address = add1+add2+add3 조합하기
+	ex) total = kor+eng+math
+	
+	+ 넘겨받은 name공간이 비어있지 않다면 members 테이블에 저장될수
+	있도록 만들기
+	+ 비어있다면 내용이 비어있습니다. p태그로 표현하기!
+
+02) 입력한 정보가 members 테이블에 있으면 회원가입에 성공했습니다. p태그로
+표시하고 03_login_insert.php로 연결하기(문서넘기기)
+
+03) 없으면 회원가입에 실패했습니다. 표시하기
+
+
