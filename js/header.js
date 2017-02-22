@@ -52,38 +52,36 @@ $(function(){
       $(".wrap_dark").stop().fadeOut(500);
     });
 
-  // Sub_gnb on/off
-  $(".sub_gnb_list").hide();
-  $(".wrap_dark").hide();
-  $(".visual_main").css({"height":$(window).height()});
 
-  /*gnb영역에서 버튼(들)을 클릭하면 나타나는 효과
-  보완 필요.(코드 압축, 일부 영역 Tab 접근 안되는 문제 해결)*/
-  $(".gnb_room").on("click focusin",function(){
+  //sub_gnb 숨겨놓기
     $(".sub_gnb_list").hide();
+  //wrap_dark 숨겨놓기
+    $(".wrap_dark").hide();
+
+  //로그인 창 placeholder
+    $("#userid, #userpw").placeholder();
+
+  $(".sub_gnb").on("mouseover focusin",function(){
     $(".gnb_list").children().children("a").css({"color":"#AEA288"});
     $(".gnb_list").find("span").html("∧");
-    $(this).children("a").css({"color":"#E41B23"});
     $(this).find("span").html("∨");
-    $(this).children("ul").slideDown(300);
+    $(this).children("a").css({"color":"#E41B23"});
+    $(this).children("ul").stop().slideDown(500);
+  }).on("mouseout focusout",function(){
+    $(".gnb_list").children().children("a").css({"color":"#AEA288"});
+    $(".gnb_list").find("span").html("∧");
+    $(this).children("ul").stop().slideUp(500);
   });
 
-  $(".gnb_special").on("click focusin",function(){
-    $(".gnb_list").children().children("a").css({"color":"#AEA288"});
-    $(".gnb_list").find("span").html("∧");
-    $(this).children("a").css({"color":"#E41B23"});
+  //모바일 gnb 제어
+  $(".m_sub_gnb_list").hide();
+  $(".m_gnb_room, .m_gnb_special, .m_gnb_reservation, .m_gnb_contact")
+  .on("click focusin",function(){
+    $(".m_gnb_list").children().children("a").css({"color":"#000"});
+    $(".m_gnb_list").find("span").html("∧");
     $(this).find("span").html("∨");
-    $(".sub_gnb_list").hide();
-    $(this).children("ul").slideDown(300);
-  });
-
-  $(".gnb_contact").on("click focusin",function(){
-    $(".gnb_list").children().children("a").css({"color":"#AEA288"});
-    $(".gnb_list").find("span").html("∧");
-    $(this).children("a").css({"color":"#E41B23"});
-    $(this).find("span").html("∨");
-    $(".sub_gnb_list").hide();
-    $(this).children("ul").slideDown(300);
+    $(".m_sub_gnb_list").stop().slideUp();
+    $(this).children("ul").stop().slideDown(300);
   });
 
   //m_header 높이값 제어
