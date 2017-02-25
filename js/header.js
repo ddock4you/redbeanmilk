@@ -42,7 +42,7 @@ $(function(){
   //로그인 창 on / off
     $("#top_headerWrap").hide();
 
-    $(".login a").on("click focusin", function(){
+    $(".login_btn").on("click focusin", function(){
       $("#top_headerWrap").stop().slideDown(500);
       $(".wrap_dark").stop().fadeIn(500);
     });
