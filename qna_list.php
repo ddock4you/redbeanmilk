@@ -1,3 +1,25 @@
+<?php
+	header("content-type:text/html; charset=utf-8");
+	session_cache_expire(30);
+	session_start();
+
+	include "00_conn.php";
+
+	$result = mysql_query("SELECT *FROM freeboard ORDER BY no DESC");
+
+	$rowCnt = mysql_affected_rows();
+	#echo $rowCnt;
+	/*
+		var cnt=0;
+		while(cnt>5){
+			doument.write(cnt);
+			cnt++;
+		}
+		# 게시글이 있다면 있는 만큼 출력해주세요!
+
+	*/
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
  <head>
@@ -299,23 +321,35 @@
 				</tr>
 			  </thead>
 			  <tbody>
+          <?php
+          	$cnt=0;
+          	while($row = mysql_fetch_array($result)){
+          ?>
 				<tr>
 				  <td class="table_no">
-					  <a href="#" title="no">번호</a>
+					  <a href="read.php?no=<?=$row['no']?>" title="no">
+					    <?=$rowCnt-$cnt?>
+					  </a>
 				  </td>
 				  <td class="table_title">
-					  <a href="#" title="title">제목</a>
+            <a href="read.php?no=<?=$row['title']?>" title="title">
+              <?=$row['title']?>
+            </a>
 				  </td>
-				  <td class="table_person">작성자</td>
-				  <td class="table_date">작성일</td>
-				  <td class="table_view">조회</td>
+				  <td class="table_person"><?=$row['name']?></td>
+				  <td class="table_date"><?=$row['wdate']?></td>
+				  <td class="table_view"><?=$row['view']?></td>
 				</tr>
+        <?php $cnt++; } mysql_close($conn); ?>
 			  </tbody>
 			</table>
 		  </div>
 		  <div class="btn_group">
-			<a href="#none" title="로그인">로그인</a>
-			<a href="#none" title="글쓰기">글쓰기</a>
+        <?php if( empty($_SESSION['userid'])){ ?>
+        						<a href="m_login.php" title="로그인">로그인</a>
+        <?php }else { ?>
+        						<a href="qna_write.php" title="글쓰기">글쓰기</a>
+        <?php }?>
 		  </div>
 		</div>
     <div id="footerWrap">

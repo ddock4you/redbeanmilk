@@ -1,13 +1,13 @@
-<?php	
+<?php
 	header("content-type:text/html; charset=utf-8");
 	session_cache_expire(30);
 	session_start();
-	
+
 	include "00_conn.php";
-	
+
 	# freeboard에서 테이블값 가져오기
 	$result = mysql_query("SELECT *FROM freeboard ORDER BY no DESC");
-	
+
 	# no 수정하기
 	# database에서 가져오는 것이 아니라 전체 게시글 숫자에서 빼주기
 
@@ -21,7 +21,7 @@
 			cnt++;
 		}
 		# 게시글이 있다면 있는 만큼 출력해주세요!
-	
+
 	*/
 ?>
 <!DOCTYPE html>
@@ -48,7 +48,7 @@
 		#freeboard th{background-color:#f5f5f5;
 								color:#e52202;
 								border-right:1px solid #fefefe;}
-		
+
 		#freeboard .writeClk td{border:none;}
 		.writeClk{text-align:right;}
 		.writeClk a{border:1px solid #ccc; padding:5px 10px; color:#333;}
@@ -70,7 +70,7 @@
 <?php }else{?>
 			[<strong style='color:#f09;'><?=$_SESSION['userid']?></strong>] 님 환영합니다.
 			<span>*</span><a href="03_1_logout.php" title="login">LOGOUT</a>
-<?php  echo "<meta http-equiv='Refresh' content='10; url=03_1_logout.php'/>";}?>			
+<?php  echo "<meta http-equiv='Refresh' content='10; url=03_1_logout.php'/>";}?>
 			<span>*</span><a href="01_join_insert.php" title="login">JOIN</a>
 		</div>
 		<table id="freeboard" title="게시판제작">

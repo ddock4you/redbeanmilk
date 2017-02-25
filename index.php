@@ -21,7 +21,7 @@
   <meta name ="content-language" content="en"/>
   <link rel="shortcut icon" href="img/short_cut.ico"/>
   <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-  
+  <link rel="stylesheet" type="text/css" href="css/index.css"/>
   <link rel="stylesheet" type="text/css" href="css/media/media_index.css"/>
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -30,7 +30,6 @@
   <script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js"></script>
   <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
   <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=bcde93ee515681c5691cb8c330d5ca6a"></script>
 
   <!--[if IE 8]>
 		<link rel="stylesheet" type="text/css" href="css/cross/ie8_index.css"/>
@@ -207,11 +206,11 @@
           <ul>
             <li class="login">
               <?php if(empty($_SESSION['userid'])){ ?>
-              <a class="login_btn" href="#none" title="login page 열기">aa</a>
+              <a class="login_btn" href="#none" title="login page 열기">log in</a>
               <?php }else{?>
-                [<strong style='color:#f09;'><?=$_SESSION['userid']?></strong>] 님 환영합니다.
+                <span class="login_user">[<strong style='color:#f09;'><?=$_SESSION['userid']?></strong>] 님 환영합니다.</span>
                 <span>*</span><a href="03_1_logout.php" title="login">LOGOUT</a>
-          <?php  echo "<meta http-equiv='Refresh' content='1; url=logout.php'/>";}?>
+          <?php  }?>
             </li>
             <!--<li class="welcome">
               <a href="#none" title="welcome">윤승현 님 환영합니다!</a>
@@ -223,14 +222,14 @@
               <a href="#none" title="my page">my page</a>
             </li>-->
             <li class="joinus">
-              <a href="#none" title="join us 열기">join us</a>
+              <a href="form.html" title="join us 열기">join us</a>
             </li>
           </ul>
         </div>
 				<div id="header">
 					<h2 class="blind">HEADER</h2>
 					<h1>
-						<a href="index.html" title="메인 홈페이지로 이동">
+						<a href="index.php" title="메인 홈페이지로 이동">
 							<img src="img/logo_claire.png" alt="로고"/>
 						</a>
 					</h1>
@@ -386,7 +385,7 @@
           <a class="close_btn" href="#none" title="닫기" onclick="closeWin_23()">닫기</a>
 				</div>
 			</form>
-      <script>
+      <!--<script>
         bn_cookiedata = document.cookie;
 
         if (bn_cookiedata.indexOf("maindiv_23=done") < 0 ) {
@@ -444,7 +443,7 @@
            		}
            return "";
         }
-      </script>
+      </script>-->
 			<div id="visual">
 				<h2 class="blind">VISUAL</h2>
 				<div class="visual_main">
@@ -714,7 +713,7 @@
             </li>
           </ul>
           <p class="footer_logo">
-            <a href="index.html" title="메인 페이지로 이동">
+            <a href="index.php" title="메인 페이지로 이동">
               <img src="img/logo_footer_white.png" alt="footer logo"/>
             </a>
           </p>

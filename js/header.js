@@ -87,19 +87,6 @@ $(function(){
   //m_header 높이값 제어
   $(".m_header").css({"height":$window_height});
 
-  //로그인 창 on / off
-    $("#top_headerWrap").hide();
-
-    $(".login a").on("click focusin", function(){
-      $("#top_headerWrap").stop().slideDown(500);
-      $(".wrap_dark").stop().fadeIn(500);
-    });
-
-    $(".wrap_dark").on("click focusin", function(){
-      $("#top_headerWrap").stop().slideUp(500);
-      $(".wrap_dark").stop().fadeOut(500);
-    });
-
   //mobile header on/off
   $(".m_menu_btn").on("click focusin",function(){
     $(".m_header").stop().animate({left:"0px"},300);
