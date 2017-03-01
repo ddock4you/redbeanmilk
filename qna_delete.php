@@ -1,17 +1,28 @@
+<?php
+
+	include "conn.php";
+	$no = $_GET['no'];
+
+	# 데이터들 호출하기 :
+	#	현재 클릭한 no와 같은 데이터 값들 호출하기
+	$result = mysql_query("SELECT *FROM qna WHERE no='$no' ");
+	$row = mysql_fetch_array( $result );
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
  <head>
   <meta  charset="utf-8"/>
-  <title> CLAIRE PENSION </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes"/>
-  <meta name="robots" content="ALL"/>
-  <meta name="keywords" content="여행,가족,커플,모임,허니문,신혼여행,바베큐,조식,이벤트,프로포즈,바베큐장,개별바베큐,바베큐,빔프로젝트,홈씨어터,보드게임,무선인터넷,자전거,산책로,주차장,카페,수영장,온수수영장,사계절온수수영장루메네스,데크,픽업서비스,커플샤워,닌텐도wii,와이파이,wifi,스파,spa,계곡,앨리시안강촌,남이섬,아침고요수목원,쁘띠프랑스,명지산,명지계곡,용추계곡,청평호수,참숯가마찜질,수상레져,수상스키,번지점프,모터보트,바나나보트,서바이벌,하이킹,ATV,래프팅"/>
-  <meta name ="description" content="경기도 가평군 위치, 커플, 가족, 복층펜션, 제트스파, 닌텐도, 바베큐시설, 남이섬 등 주변관광지"/>
-  <meta name ="author" content ="redbeanmilk"/>
-  <meta name ="content-language" content="kr"/>
-  <link rel="shortcut icon" href="img/short_cut.ico"/>
+	<title> CLAIRE PENSION </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes"/>
+	<meta name="robots" content="ALL"/>
+	<meta name="keywords" content="여행,가족,커플,모임,허니문,신혼여행,바베큐,조식,이벤트,프로포즈,바베큐장,개별바베큐,바베큐,빔프로젝트,홈씨어터,보드게임,무선인터넷,자전거,산책로,주차장,카페,수영장,온수수영장,사계절온수수영장루메네스,데크,픽업서비스,커플샤워,닌텐도wii,와이파이,wifi,스파,spa,계곡,앨리시안강촌,남이섬,아침고요수목원,쁘띠프랑스,명지산,명지계곡,용추계곡,청평호수,참숯가마찜질,수상레져,수상스키,번지점프,모터보트,바나나보트,서바이벌,하이킹,ATV,래프팅"/>
+	<meta name ="description" content="경기도 가평군 위치, 커플, 가족, 복층펜션, 제트스파, 닌텐도, 바베큐시설, 남이섬 등 주변관광지"/>
+	<meta name ="author" content ="redbeanmilk"/>
+	<meta name ="content-language" content="kr"/>
+	<link rel="shortcut icon" href="img/short_cut.ico"/>
   <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-  <link rel="stylesheet" type="text/css" href="css/header_footer.css"/>
+	<link rel="stylesheet" type="text/css" href="css/header_footer.css"/>
   <link rel="stylesheet" type="text/css" href="css/board_write.css"/>
   <link rel="stylesheet" type="text/css" href="css/media/board_write.css"/>
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
@@ -19,8 +30,7 @@
   <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
   <script type="text/javascript" src="js/header.js"></script>
   <script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js"></script>
-  <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
-
+	<script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
   <script type="text/javascript">
   $(function(){
     // visual 텍스트 애니메이션 효과
@@ -34,7 +44,7 @@
 
  <body>
 	<div id="wrap">
-    <div id="headerWrap">
+		<div id="headerWrap">
 			<div id="top_headerWrap">
 				<form class="login_info" action="login_control.php" method="post">
 					<fieldset>
@@ -235,105 +245,91 @@
 						<h2>QnA</h2>
 					</div>
 				</div>
-		  <form class="board_write" action="qna_write_control.php" method="POST">
+		  <form class="board_write" action="qna_delete_control.php?no=<?=$row['no']?>" method="POST">
 				<legend class="blind">게시판 글 작성</legend>
-				<p class="first">
-					<label for="title">제목</label><input type="text" id="title" name="title"/>
-				</p>
-				<p>
-					<label for="user">작성자</label><input type="text" id="user" name="user"/>
-				</p>
-				<p>
-					<label for="userpw">비밀번호</label><input type="password" id="userpw" name="userpw"/>
-				</p>
-				<p>
-					<label for="email">이메일</label><input type="email" id="email" name="email"/>
-				</p>
-				<p class="text_area">
-				<label for="text">내용</label>
-					<textarea name="text" id="text"></textarea>
-				</p>
+        <p>
+          <label for="userpw">비밀번호</label><input type="text" id="userpw" name="userpw" value="<?=$row['pass']?>"/>
+        </p>
 			  <div class="btn_group">
-          <input class="button" type="submit" value="저장"/>
+          <input class="button" type="submit" value="완료"/>
   				<input class="button" type="reset" value="다시쓰기"/>
-  				<a href="qna_list.php" title="목록"><input class="button" type="button" value="목록"/></a>
 			  </div>
 		  </form>
 		</div>
-    <div id="footerWrap">
-      <h2  class="blind">푸터 영역</h2>
-      <div class="footer_top">
-        <div class="footer_top_area">
-          <ul class="footer_gnb">
-            <li>
-              <a href="about.html" title="about 페이지로 이동">
-              about
-              </a>
-            </li>
-            <li>
-              <a href="privacy.html" title="개인정보·수집 이용 페이지로 이동">
-                개인정보·수집 이용
-              </a>
-            </li>
-            <li>
-              <a href="policy.html" title="이용 약관 페이지로 이동">
-                이용약관
-              </a>
-            </li>
-            <li>
-              <a href="location.html" title="location 페이지로 이동">
-                location
-              </a>
-            </li>
-          </ul>
-          <p class="footer_logo">
-            <a href="index.php" title="메인 페이지로 이동">
-              <img src="img/logo_footer_white.png" alt="footer logo"/>
-            </a>
-          </p>
+		<div id="footerWrap">
+			<h2  class="blind">푸터 영역</h2>
+			<div class="footer_top">
+				<div class="footer_top_area">
+					<ul class="footer_gnb">
+						<li>
+							<a href="about.html" title="about 페이지로 이동">
+							about
+							</a>
+						</li>
+						<li>
+							<a href="privacy.html" title="개인정보·수집 이용 페이지로 이동">
+								개인정보·수집 이용
+							</a>
+						</li>
+						<li>
+							<a href="policy.html" title="이용 약관 페이지로 이동">
+								이용약관
+							</a>
+						</li>
+						<li>
+							<a href="location.html" title="location 페이지로 이동">
+								location
+							</a>
+						</li>
+					</ul>
+					<p class="footer_logo">
+						<a href="index.php" title="메인 페이지로 이동">
+							<img src="img/logo_footer_white.png" alt="footer logo"/>
+						</a>
+					</p>
 
-        </div>
-      </div>
-      <div class="footer_bottom">
-          <div class="footer_bottom_area">
-          <div class="footer_info1">
-            <ul class="footer_info">
-              <li class="address_area">
-                <dl>
-                  <dt>주소</dt>
-                  <dd>
-                    <address>경기도 가평군 북면 백둔리 455-18번지</address>
-                  </dd>
-                </dl>
-              </li>
-              <li>
-                <dl>
-                  <dt>계좌번호</dt>
-                  <dd>농협 352-0275-6308-13 예금주 정보경</dd>
-                </dl>
-              </li>
-              <li>
-                <dl>
-                  <dt>사업자 번호</dt>
-                  <dd>105-12-99908</dd>
-                </dl>
-              </li>
-              <li>
-                <dl>
-                  <dt>통신판매 신고번호</dt>
-                  <dd>제2013-경기가평-51호</dd>
-                </dl>
-              </li>
-            </ul>
-            <p class="copyright">
-              Copyright 2016 YSH&copy; all rights reserved
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="wrap_dark">
-    </p>
+				</div>
+			</div>
+			<div class="footer_bottom">
+					<div class="footer_bottom_area">
+					<div class="footer_info1">
+						<ul class="footer_info">
+							<li class="address_area">
+								<dl>
+									<dt>주소</dt>
+									<dd>
+										<address>경기도 가평군 북면 백둔리 455-18번지</address>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>계좌번호</dt>
+									<dd>농협 352-0275-6308-13 예금주 정보경</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>사업자 번호</dt>
+									<dd>105-12-99908</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>통신판매 신고번호</dt>
+									<dd>제2013-경기가평-51호</dd>
+								</dl>
+							</li>
+						</ul>
+						<p class="copyright">
+							Copyright 2016 YSH&copy; all rights reserved
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<p class="wrap_dark">
+		</p>
 	</div>
  </body>
 </html>

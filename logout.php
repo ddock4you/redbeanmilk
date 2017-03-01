@@ -13,6 +13,6 @@
 	#04) 로그아웃이 되었습니다. 띄우기
 	# login 페이지로 이동하기
 
-	echo "<script> alert('로그아웃 되었습니다.') </script>";
+	echo "<script> alert('로그아웃 되었습니다.'); </script>";
 	echo "<meta http-equiv='Refresh' content='1; url=index.php'/>";
 ?>

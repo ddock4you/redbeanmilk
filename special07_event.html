@@ -12,24 +12,56 @@
   <link rel="shortcut icon" href="img/short_cut.ico"/>
   <link rel="stylesheet" type="text/css" href="css/reset.css"/>
   <link rel="stylesheet" type="text/css" href="css/header_footer.css"/>
-  <link rel="stylesheet" type="text/css" href="css/reservation_info.css"/>
-  <link rel="stylesheet" type="text/css" href="css/media_index.css"/>
+  <link rel="stylesheet" type="text/css" href="css/special00_pool.css"/>
+  <link rel="stylesheet" type="text/css" href="css/media/special.css"/>
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
   <script type="text/javascript" src="js/header.js"></script>
   <script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js"></script>
   <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
- </head>
- <script>
- $(function(){
-   // slide 텍스트 애니메이션 효과
-     $(".slide_area_title").hide().fadeIn(1000);
+  <script>
+  //special 폴더 이름(이걸로 각 room_info 컨텐츠 사진 표시 제어 가능)
+  var special_name = ["00_pool","01_zet","02_barbecue","03_cafe","04_beam","05_game","06_lounge","07_event","08_kids","09_service"],
+  special_name_no = special_name[7];
 
-   //visual 이미지 애니메이션
-     $(".slide_img").scale(1.15).animate({scale:"1"},1000);
- });
- </script>
+	$(function(){
+      // slide 텍스트 애니메이션 효과
+      $(".slide_area_title").hide().fadeIn(1000);
+      $(".slide_area_text").hide().fadeIn(500);
+
+      //슬라이드 화면 높이 설정(pc에만 적용)
+      if($window_width > 1024){
+        $(".slide_area ul").height($(window).height());
+      }
+			//슬라이딩 윈도우
+			$(".slide_area ul").prepend($(".slide_area ul li:last"));
+			$(".slide_area ul").css({"marginLeft":"-100%"});
+
+      $(".next").on("click focusin", function(){
+				$(".slide_area ul").stop().animate({"marginLeft":"-=100%"},1000,"swing",function(){
+					$(this).append($(".slide_area ul li:first")).css({"marginLeft":"-100%"});
+          clearInterval(autoClicks);
+				});
+			});
+			$(".prev").on("click focusin", function(){
+				$(".slide_area ul").stop().animate({"marginLeft":"+=100%"},1000,"swing",function(){
+					$(this).prepend($(".slide_area ul li:last")).css({"marginLeft":"-100%"});
+          clearInterval(autoClicks);
+				});
+			});
+			var autoClicks = setInterval(function(){ $(".slide_area ul").stop().animate({"marginLeft":"-=100%"},1000,"swing",function(){
+        $(this).append($(".slide_area ul li:first")).css({"marginLeft":"-100%"});}); },3000);
+
+      // li 이미지 생성
+        var i = $(".slide_area ul li").index();
+        for(i;i<4;i++){
+          $(".slide_area ul li:eq("+i+")").css({"background-image":"url(img/special/spe"+special_name_no+"/"+i+".jpg)"});
+        }
+		});
+  </script>
+ </head>
+
  <body>
 	<div id="wrap">
     <div id="headerWrap">
@@ -224,221 +256,43 @@
 			</div>
 		</div>
 		<div id="contentWrap">
-      <div class="slide_area">
-        <p class="slide_img">
-        </p>
+			<div class="slide_area">
+				<ul>
+					<li>
+					</li>
+					<li>
+					</li>
+					<li>
+					</li>
+					<li>
+					</li>
+				</ul>
+				<p class="next">
+					<img src="img/btn_next_darkgrey.png" alt="다음 이미지"/>
+				</p>
+				<p class="prev">
+					<img src="img/btn_prev_darkgrey.png" alt="이전 이미지"/>
+				</p>
 				<span class="dark"></span>
 				<div class="slide_area_title">
 					<hr/>
-					<h2>RESERVATION GUIDE</h2>
+					<h2>LOVE EVENT</h2>
+				</div>
+				<div class="slide_area_text">
+					<span class="dark_text"></span>
+					<div>
+            <hr/>
+            <br/>
+            그녀를 위한 특별한 이벤트!! 끌레르의 특별한 이벤트<br/><br/>
+
+            너만을 사랑해....오래전부터 준비해온 그말...<br/>
+            사랑하는 그녀에게 멋진 이벤트를 선물하세요.<br/>
+            전문업체에서 정성들여 설치해 드립니다<br/><br/>
+
+            * 이벤트를 원하시는 분은 전화문의 바랍니다.
+					</div>
 				</div>
 			</div>
-      <div class="reser_guide_area">
-        <div class="room_rate">
-          <div class="reser_guide_title">
-            <h3>요금안내</h3>
-            <hr/>
-          </div>
-          <table>
-            <caption class="blind">요금안내</caption>
-            <colgroup>
-              <col width="10%">
-              <col width="10%">
-              <col width="10%">
-              <col width="10%">
-              <col width="10%">
-              <col width="10%">
-              <col width="10%">
-              <col width="10%">
-              <col width="10%">
-              <col width="10%">
-            </colgroup>
-            <thead>
-              <tr>
-                <th rowspan="2" class="b_bottom b_right">객실이름</th>
-                <th colspan="2" class="b_right">인원</th>
-                <th colspan="3" class="b_right">비수기</th>
-                <th colspan="2" class="b_right">준성수기</th>
-                <th colspan="2">성수기</th>
-              </tr>
-              <tr>
-                <th class="b_bottom">기준</th>
-                <th class="b_bottom b_right">최대</th>
-                <th class="b_bottom">금요일</th>
-                <th class="b_bottom">주말</th>
-                <th class="b_bottom b_right">주중</th>
-                <th class="b_bottom">주말</th>
-                <th class="b_bottom b_right">주중</th>
-                <th class="b_bottom">주말</th>
-                <th class="b_bottom">주중</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="b_right">엘</td>
-                <td>2명</td>
-                <td class="b_right">5명</td>
-                <td>20만원</td>
-                <td>23만원</td>
-                <td class="b_right">27만원</td>
-                <td>25만원</td>
-                <td class="b_right">32만원</td>
-                <td>29만원</td>
-                <td class="b_right">34만원</td>
-              </tr>
-              <tr>
-                <td class="b_right">아망뜨</td>
-                <td>2명</td>
-                <td class="b_right">4명</td>
-                <td>19만원</td>
-                <td>22만원</td>
-                <td class="b_right">26만원</td>
-                <td>24만원</td>
-                <td class="b_right">31만원</td>
-                <td>28만원</td>
-                <td class="b_right">33만원</td>
-              </tr>
-              <tr>
-                <td class="b_right">미스떼르</td>
-                <td>2명</td>
-                <td class="b_right">4명</td>
-                <td>19만원</td>
-                <td>22만원</td>
-                <td class="b_right">26만원</td>
-                <td>24만원</td>
-                <td class="b_right">31만원</td>
-                <td>28만원</td>
-                <td class="b_right">33만원</td>
-              </tr>
-              <tr>
-                <td class="b_right">하비</td>
-                <td>2명</td>
-                <td class="b_right">8명</td>
-                <td>29만원</td>
-                <td>33만원</td>
-                <td class="b_right">39만원</td>
-                <td>37만원</td>
-                <td class="b_right">43만원</td>
-                <td>42만원</td>
-                <td class="b_right">45만원</td>
-              </tr>
-              <tr>
-                <td class="b_right">브랑누아</td>
-                <td>2명</td>
-                <td class="b_right">6명</td>
-                <td>23만원</td>
-                <td>26만원</td>
-                <td class="b_right">32만원</td>
-                <td>29만원</td>
-                <td class="b_right">37만원</td>
-                <td>34만원</td>
-                <td class="b_right">40만원</td>
-              </tr>
-              <tr>
-                <td class="b_right">미엔느</td>
-                <td>2명</td>
-                <td class="b_right">6명</td>
-                <td>21만원</td>
-                <td>24만원</td>
-                <td class="b_right">29만원</td>
-                <td>27만원</td>
-                <td class="b_right">33만원</td>
-                <td>30만원</td>
-                <td class="b_right">35만원</td>
-              </tr>
-              <tr>
-                <td class="b_right">로사</td>
-                <td>2명</td>
-                <td class="b_right">6명</td>
-                <td>25만원</td>
-                <td>28만원</td>
-                <td class="b_right">35만원</td>
-                <td>32만원</td>
-                <td class="b_right">41만원</td>
-                <td>37만원</td>
-                <td class="b_right">43만원</td>
-              </tr>
-              <tr>
-                <td class="b_right">봉쥬르</td>
-                <td>2명</td>
-                <td class="b_right">3명</td>
-                <td>15만원</td>
-                <td>17만원</td>
-                <td class="b_right">23만원</td>
-                <td>21만원</td>
-                <td class="b_right">26만원</td>
-                <td>24만원</td>
-                <td class="b_right">28만원</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="reser_info">
-          <div class="reser_guide_title">
-            <h3>예약안내</h3>
-            <hr/>
-          </div>
-          <ul>
-            <li>예약전화 : 010-9543-9177 / 010-9350-9177</li>
-            <li>예약계좌 : 농협 352-0275-6308-13 예금주 : 정보경</li>
-            <li>예약방법은 실시간예약과 전화로만 가능합니다.</li>
-            <li>전화예약은 오후10시까지만 받고 있습니다.</li>
-            <li>정해진 정원을 초과하실 경우 1인당 20,000원의 추가비용을 받고 있습니다.</li>
-          </ul>
-        </div>
-        <div class="basic_rules">
-          <div class="reser_guide_title">
-            <h3>기본사항</h3>
-            <hr/>
-          </div>
-          <ul>
-            <li>입실은 오후 3시 이후부터 가능합니다.</li>
-            <li>퇴실은 오전 11시까지 해주시길 바랍니다.</li>
-            <li>모든 객실에서 제트스파를 즐기실 수 있습니다. (수영복 지참하세요 ^^)</li>
-            <li>전 객실 독립형구조(객실별로 스파와 바베큐시설이 테라스에 설치되어 있습니다.)</li>
-            <li>침대는 축광(루메네스)소재를 사용, 빛을 스스로 축적하였다가 조명을 끄게되면 축전된 빛을 발광시키면서
-            향균, 탈취기능과 원적외선 방사기능이 있는 국제특허 진행중인 웰빙&최점단 신소재로 만들어졌습니다.</li>
-            <li>루메네스 소재가 벽화가 함께 어우러져 소등한 후 바라보는 침대와 벽화의 모습이 환상적입니다. (미엔느, 로사, 봉쥬르)</li>
-            <li>스파 이용시 거품목욕제, 기타입욕제를 절대 사용하실 수 없으며, 이를 위반하여 스파에 이상이 생길 시 필터교체 비용이 청구됩니다. (30만원상당)</li>
-            <li>객실내에서 화재의 위험이 있는 양초를 사용하실 수 없으며, 풍선부착을 삼가해주시기 바랍니다. 어길시에는 원상복구 비용이 청구됩니다.</li>
-            <li>다음 객실을 이용하시는 손님분들께 피해를 주므로 생선, 해물 등 냄새가 심한 음식은 객실내에서 조리하실 수 없습니다.</li>
-          </ul>
-        </div>
-        <div class="attention_rules">
-          <div class="reser_guide_title">
-            <h3>주의사항</h3>
-            <hr/>
-          </div>
-          <ul>
-            <li>송금 약속날짜까지 미입금시 자동 해약 처리 됩니다.</li>
-            <li>예약자나 송금하실 분은 동일한 이름으로 사용하시고 오시는 날짜와 성명을 정확히 써주세요.</li>
-            <li>예약자와 입금자가 다를 경우 펜션으로 연락바랍니다.</li>
-            <li>애완동물과 함께 펜션을 이용하실 수 없습니다.</li>
-            <li>파손물품에 대해서는 객실 이용자가 변상을 원칙으로 하여 구입가격으로 상환합니다.</li>
-            <li>퇴실 시 객실 안에 있는 모든 음식물과 일반쓰레기를 분리수거하여 주시기 바랍니다.</li>
-            <li>저녁10시 이후 도착예정이신 분은 사전에 미리 말씀해주시기 바랍니다.</li>
-          </ul>
-          <dl>
-            <dt><strong>★ 수영장 이용시 주의사항 ★</strong></dt>
-            <dd>* 동절기에는 오후3시 ~ 8시까지 이용가능합니다. (이용시간 전에는 청소등으로 이용이 어려우니 양해부탁드립니다.)</dd>
-            <dd>1. 한여름을 제외한 1년중 300일 이상 온수 수영장을 이용하실 수 있습니다. </dd>
-            <dd>2. 평균 수온 37도 이상을 유지하여 영하의 날씨에도 수영장을 이용하실 수 있습니다. </dd>
-            <dd>3. 유아 및 어린이는 보호자와 함께 이용하시고 안전사고예방하시기 바랍니다.</dd>
-            <dd>4. 수영복을 꼭 지참해주세요.</dd>
-            <dd>5. 음주 후 수영장 이용은 절대 금지입니다.</dd>
-            <dd>* 안전수칙을 지키지 않아서 발생된 사고는 펜션에서 법적책임을 지지 않습니다.</dd>
-          </dl>
-          <dl>
-            <dt><strong>★ 제트스파 이용시 주의사항 ★</strong></dt>
-            <dd>1.제트스파 이용시 수영복을 착용하셔야 합니다.</dd>
-            <dd>2.트리트먼트, 꽃잎, 입욕제, 오일, 거품제, 샴푸 등은 사용을 금합니다. (고장의 원인이 될 수 있습니다.)</dd>
-            <dd>3.와인잔 사용은 가능하나 깨질 염려가 있고 스파안으로 유리조각이 들어갈 수 있으니 조심하시기 바랍니다.</dd>
-            <dd>4.촛불은 스파외관에 치명적인 흠집을 남길 수 있으니 절대 사용을 금합니다.</dd>
-            <dd>5.임산부 및 노약자, 음주 직후의 스파를 금합니다.</dd>
-            <dd>6.위 사항 위반시 스파 수리비가 30만원부터 청구가 됨을 알려드립니다.</dd>
-          </dl>
-        </div>
-      </div>
 		</div>
     <div id="footerWrap">
       <h2  class="blind">푸터 영역</h2>

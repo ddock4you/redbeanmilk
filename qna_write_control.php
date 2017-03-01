@@ -22,5 +22,5 @@
 
 	mysql_query($sql, $conn) or die(mysql_error());
 	mysql_close( $conn );
-	echo "<meta http-equiv='Refresh' content='1; url=list.php' />";
+	echo "<meta http-equiv='Refresh' content='1; url=qna_list.php' />";
 ?>

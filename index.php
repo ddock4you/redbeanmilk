@@ -3,7 +3,7 @@
 	session_cache_expire(30);
 	session_start();
 
-	include "00_conn.php";
+	include "conn.php";
 ?>
 
 
@@ -18,10 +18,10 @@
   <meta name ="description" content="경기도 가평군 위치, 커플, 가족, 복층펜션, 제트스파, 닌텐도, 바베큐시설, 남이섬 등 주변관광지"/>
   <meta name ="author" content ="redbeanmilk"/>
   <meta name ="content-language" content="kr"/>
-  <meta name ="content-language" content="en"/>
   <link rel="shortcut icon" href="img/short_cut.ico"/>
   <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-  <link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="css/header_footer.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
   <link rel="stylesheet" type="text/css" href="css/media/media_index.css"/>
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -209,7 +209,7 @@
               <a class="login_btn" href="#none" title="login page 열기">log in</a>
               <?php }else{?>
                 <span class="login_user">[<strong style='color:#f09;'><?=$_SESSION['userid']?></strong>] 님 환영합니다.</span>
-                <span>*</span><a href="03_1_logout.php" title="login">LOGOUT</a>
+                <span>*</span><a href="logout.php" title="login">LOGOUT</a>
           <?php  }?>
             </li>
             <!--<li class="welcome">
@@ -256,7 +256,7 @@
             <div class="m_bottom">
               <ul class="user_info">
                 <li class="m_login">
-                  <a href="#none" title="모바일 로그인 페이지로 이동">
+                  <a href="m_login.php" title="모바일 로그인 페이지로 이동">
                     login
                   </a>
                 </li>
@@ -306,7 +306,7 @@
   								</ul>
   							</li>
   							<li>
-  								<a href="#none" title="guide tour 페이지로 이동">guide tour</a>
+  								<a href="#tour.html" title="guide tour 페이지로 이동">guide tour</a>
   							</li>
   							<li class="m_sub_gnb m_gnb_contact">
   								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
@@ -358,7 +358,7 @@
                 </ul>
 							</li>
 							<li>
-								<a href="#none" title="guide tour 페이지로 이동">guide tour</a>
+								<a href="tour.html" title="guide tour 페이지로 이동">guide tour</a>
 							</li>
 							<li class="sub_gnb gnb_contact">
 								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
