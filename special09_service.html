@@ -18,6 +18,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
   <script type="text/javascript" src="js/header.js"></script>
+  <script type="text/javascript" src="js/special.js"></script>
   <script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js"></script>
   <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
   <script>
@@ -25,40 +26,6 @@
   var special_name = ["00_pool","01_zet","02_barbecue","03_cafe","04_beam","05_game","06_lounge","07_event","08_kids","09_service"],
   special_name_no = special_name[9];
 
-	$(function(){
-      // slide 텍스트 애니메이션 효과
-      $(".slide_area_title").hide().fadeIn(1000);
-      $(".slide_area_text").hide().fadeIn(500);
-
-      //슬라이드 화면 높이 설정(pc에만 적용)
-      if($window_width > 1024){
-        $(".slide_area ul").height($(window).height());
-      }
-			//슬라이딩 윈도우
-			$(".slide_area ul").prepend($(".slide_area ul li:last"));
-			$(".slide_area ul").css({"marginLeft":"-100%"});
-
-      $(".next").on("click focusin", function(){
-				$(".slide_area ul").stop().animate({"marginLeft":"-=100%"},1000,"swing",function(){
-					$(this).append($(".slide_area ul li:first")).css({"marginLeft":"-100%"});
-          clearInterval(autoClicks);
-				});
-			});
-			$(".prev").on("click focusin", function(){
-				$(".slide_area ul").stop().animate({"marginLeft":"+=100%"},1000,"swing",function(){
-					$(this).prepend($(".slide_area ul li:last")).css({"marginLeft":"-100%"});
-          clearInterval(autoClicks);
-				});
-			});
-			var autoClicks = setInterval(function(){ $(".slide_area ul").stop().animate({"marginLeft":"-=100%"},1000,"swing",function(){
-        $(this).append($(".slide_area ul li:first")).css({"marginLeft":"-100%"});}); },3000);
-
-      // li 이미지 생성
-        var i = $(".slide_area ul li").index();
-        for(i;i<4;i++){
-          $(".slide_area ul li:eq("+i+")").css({"background-image":"url(img/special/spe"+special_name_no+"/"+i+".jpg)"});
-        }
-		});
   </script>
  </head>
 
@@ -193,9 +160,9 @@
   							<li class="m_sub_gnb m_gnb_contact">
   								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
                   <ul class="m_sub_gnb_list">
-  									<li><a href="notice.html" title="공지사항 페이지로 이동">공지사항</a></li>
-  									<li><a href="qna.html" title="QnA  페이지로 이동">QnA</a></li>
-  									<li><a href="review.html" title="여행후기 페이지로 이동">여행후기</a></li>
+  									<li><a href="notice_list.php" title="공지사항 페이지로 이동">공지사항</a></li>
+  									<li><a href="qna_list.php" title="QnA  페이지로 이동">QnA</a></li>
+  									<li><a href="review_list.php" title="여행후기 페이지로 이동">여행후기</a></li>
   								</ul>
   							</li>
   						</ul>
@@ -245,9 +212,9 @@
 							<li class="sub_gnb gnb_contact">
 								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
                 <ul class="sub_gnb_list">
-                  <li><a href="notice.html" title="공지사항 페이지로 이동">공지사항</a></li>
-                  <li><a href="qna.html" title="QnA  페이지로 이동">QnA</a></li>
-                  <li><a href="review.html" title="여행후기 페이지로 이동">여행후기</a></li>
+                  <li><a href="notice_list.php" title="공지사항 페이지로 이동">공지사항</a></li>
+                  <li><a href="qna_list.php" title="QnA  페이지로 이동">QnA</a></li>
+                  <li><a href="review_list.php" title="여행후기 페이지로 이동">여행후기</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -355,7 +322,7 @@
               </li>
             </ul>
             <p class="copyright">
-              Copyright 2016 YSH&copy; all rights reserved
+              Copyright 2017 YSH&copy; all rights reserved
             </p>
           </div>
         </div>

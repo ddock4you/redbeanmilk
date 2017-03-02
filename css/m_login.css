@@ -4,7 +4,7 @@
 /*#################### m_login #######################*/
 	.m_login_info{width:320px; margin:0 auto; overflow:hidden;}
 		.m_login_info h2{padding:30px 0; text-align:center; letter-spacing:3px;}
-			.m_login_area{width:100%; margin:150px auto 209px;}
+			.m_login_area{width:100%; margin:80px auto 110px;}
 		.m_input_user{width:100%; overflow:hidden; margin:0 auto 20px;}
 			.m_input_user p{width:240px; height:35px; margin:10px auto;}
 				p.m_input_btn_login{height:59px; margin:0 auto; font-size:20px;}

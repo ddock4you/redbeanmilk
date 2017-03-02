@@ -1,5 +1,7 @@
 /*############################### content #####################################*/
 	#contentWrap{width:100%;background-color:#fff; padding-top:94px;}
+
+/*######################## visual ##############################*/
     .slide_area{
 								width:100%;
 								height:500px;
@@ -9,7 +11,7 @@
       .slide_img{
 									width:100%;
 									height:100%;
-									background:url("../img/tour/tour_main_img00.jpg") no-repeat center center;
+									background:url("../img/reservation/planer.jpg") no-repeat center center;
 									background-size:cover;
 								}
       .dark{display:block; width:100%; height:100%; background-color:rgba(0,0,0,0.2); position:absolute; top:0; left:0;}
@@ -18,9 +20,10 @@
         .slide_area_title hr{width:200px; border:2px solid #fff; margin:0 auto;}
         .slide_area_title h2{font-size:48px; letter-spacing:5px;}
 
+/*###################### reser_info_table ###########################*/
     .reser_guide_area{width:1200px; margin:0 auto; overflow:hidden;}
       .reser_guide_title{margin-top:40px;}
-        .reser_guide_title hr{margin:10px 0; display:block; width:30px; border:2px solid #AEA288;}
+        .reser_guide_title hr{margin:10px 0; display:block; width:30px; border:2px solid #2B2727;}
       .room_rate{width:100%; margin:0 auto; overflow:hidden;}
         .room_rate table{width:100%; text-align:center; border-collapse:collapse; margin:20px 0;}
           .b_bottom{border-bottom:1px solid #777; border-bottom-width:2px;}

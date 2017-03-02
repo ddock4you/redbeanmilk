@@ -15,12 +15,8 @@
 	.slide_area_title hr{width:150px;}
 	.slide_area_title h2{font-size:32px; letter-spacing:4px;}
 
-/*##################### board 769 ~ 1024px ########################*/
-.table_area{width:90%;padding:0 5%;}
-	.table_title{width:450px;}
-
-	.btn_group{width:90%;padding:0 5%;}
-
+/*############### reser_info_table 769 ~ 1024px ###################*/
+.reser_guide_area{width:100%;}
 
 /*########################## footer 769 ~ 1024px ###############################*/
 /*############# footer bottom 769 ~ 1024px ###############*/
@@ -47,16 +43,14 @@
 			.slide_area_title hr{width:120px;}
 			.slide_area_title h2{font-size:24px; letter-spacing:3px;}
 
-/*##################### board 481 ~ 768px ########################*/
-.table_area{width:90%;padding:0 5%;}
-	.table_area table th{padding: 8px 0;}
-	.table_no, .table_person, .table_date, .table_view{width:30px; font-size:12px; padding:8px 0;}
-	.table_person{width:50px;}
-	.table_date{width:40px;}
-	.table_title{width:180px; font-size:13px;}
+/*############### reser_info_table 481 ~ 768px ###################*/
+	.reser_guide_area{width:100%;}
+		.room_rate table thead th{font-size:13px;}
+		.room_rate table tbody td{font-size:12px;}
+		.reser_guide_title hr{width:20px;}
 
-	.btn_group{width:90%;padding:0 5%;}
-		.btn_group a{font-size:13px;}
+		h3{font-size:16px;}
+		.reser_guide_area li, .reser_guide_area dd{font-size:13px;}
 
 /*########################## footer 481 ~ 768px ###############################*/
 #footerWrap{height:460px;}
@@ -91,17 +85,14 @@
 			.slide_area_title hr{width:100px;}
 			.slide_area_title h2{font-size:18px; letter-spacing:2px;}
 
-/*##################### board 320 ~ 480px ########################*/
-.table_area{width:90%;padding:0 5%; margin:100px auto 5px}
-	.table_area table th{padding: 8px 0;}
-	.table_no, .table_person, .table_date, .table_view{width:35px; font-size:12px; padding:8px 0;}
-	.table_view{display:none;}
-	.table_person{width:55px;}
-	.table_date{width:40px;}
-	.table_title{width:120px; font-size:11px;}
+/*############### reser_info_table 320 ~ 480px ###################*/
+	.reser_guide_area{width:100%;}
+		.room_rate table thead th{font-size:11px;}
+		.room_rate table tbody td{font-size:10px;}
+		.reser_guide_title hr{width:15px;}
 
-	.btn_group{width:90%;padding:0 5%; margin: 10px auto 100px;}
-		.btn_group a{font-size:12px;}
+	h3{font-size:15px;}
+	.reser_guide_area li, .reser_guide_area dd{font-size:12px;}
 
 /*########################## footer 320 ~ 480px ###############################*/
 	#footerWrap{height:460px;}

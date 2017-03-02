@@ -205,22 +205,8 @@
         <div class="nav"><!--로그인 관련 gnb-->
           <ul>
             <li class="login">
-              <?php if(empty($_SESSION['userid'])){ ?>
               <a class="login_btn" href="#none" title="login page 열기">log in</a>
-              <?php }else{?>
-                <span class="login_user">[<strong style='color:#f09;'><?=$_SESSION['userid']?></strong>] 님 환영합니다.</span>
-                <span>*</span><a href="logout.php" title="login">LOGOUT</a>
-          <?php  }?>
             </li>
-            <!--<li class="welcome">
-              <a href="#none" title="welcome">윤승현 님 환영합니다!</a>
-            </li>
-            <li class="logout">
-              <a href="#none" title="log out">log out</a>
-            </li>
-            <li class="mypage">
-              <a href="#none" title="my page">my page</a>
-            </li>-->
             <li class="joinus">
               <a href="form.html" title="join us 열기">join us</a>
             </li>
@@ -306,14 +292,14 @@
   								</ul>
   							</li>
   							<li>
-  								<a href="#tour.html" title="guide tour 페이지로 이동">guide tour</a>
+  								<a href="tour.html" title="guide tour 페이지로 이동">guide tour</a>
   							</li>
   							<li class="m_sub_gnb m_gnb_contact">
   								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
                   <ul class="m_sub_gnb_list">
-  									<li><a href="notice.html" title="공지사항 페이지로 이동">공지사항</a></li>
-  									<li><a href="qna.html" title="QnA  페이지로 이동">QnA</a></li>
-  									<li><a href="review.html" title="여행후기 페이지로 이동">여행후기</a></li>
+  									<li><a href="notice_list.php" title="공지사항 페이지로 이동">공지사항</a></li>
+  									<li><a href="qna_list.php" title="QnA  페이지로 이동">QnA</a></li>
+  									<li><a href="review_list.php" title="여행후기 페이지로 이동">여행후기</a></li>
   								</ul>
   							</li>
   						</ul>
@@ -363,9 +349,9 @@
 							<li class="sub_gnb gnb_contact">
 								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
                 <ul class="sub_gnb_list">
-                  <li><a href="notice.html" title="공지사항 페이지로 이동">공지사항</a></li>
-                  <li><a href="qna.html" title="QnA  페이지로 이동">QnA</a></li>
-                  <li><a href="review.html" title="여행후기 페이지로 이동">여행후기</a></li>
+                  <li><a href="notice_list.php" title="공지사항 페이지로 이동">공지사항</a></li>
+                  <li><a href="qna_list.php" title="QnA  페이지로 이동">QnA</a></li>
+                  <li><a href="review_list.php" title="여행후기 페이지로 이동">여행후기</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -752,7 +738,7 @@
               </li>
             </ul>
 						<p class="copyright">
-							Copyright 2016 YSH&copy; all rights reserved
+							Copyright 2017 YSH&copy; all rights reserved
 						</p>
 					</div>
 				</div>

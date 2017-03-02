@@ -18,6 +18,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
   <script type="text/javascript" src="js/header.js"></script>
+  <script type="text/javascript" src="js/room.js"></script>
   <script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js"></script>
   <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
 
@@ -25,64 +26,7 @@
   //room 폴더 이름(이걸로 각 room_info 컨텐츠 사진 표시 제어 가능)
   var room_name = ["00_alie","01_amant","02_mister","03_hobby","04_blancnoir","05_mienne","06_missa","07_bonjour"],
   room_name_no = room_name[0];
-	$(function(){
 
-      // visual 텍스트 애니메이션 효과
-      $(".visual_main_text").hide().fadeIn(1000);
-
-      //visual 이미지 생성
-        $(".visual_main_img").css({"background-image":"url(img/room_info/"+room_name_no+".jpg)"});
-
-      //visual 이미지 애니메이션
-        $(".visual_main_img").scale(1.15).animate({scale:"1"},1000);
-
-      // room_info 이미지 생성
-        $(".room_info_desc").css({"background-image":"url(img/room_info/room"+room_name_no+"/"+room_name_no+"_back.jpg)"});
-
-      // li 이미지 생성
-        var i = $(".modal_area li").index();
-        for(i;i<20;i++){
-          $(".modal_area li:eq("+i+")").css({"background-image":"url(img/room_info/room"+room_name_no+"/"+i+".jpg)"});
-        }
-      // 모달 팝업
-        $(".wrap_dark, .modal").hide();
-        $(".modal_area li a").on("click focusin", function(){
-          var j = $(this).parent().index();
-          $(".modal").css({"background-image":"url(img/room_info/room"+room_name_no+"/"+j+".jpg)"});
-          $(".wrap_dark, .modal").show();
-          return false;
-        });
-
-        $(".wrap_dark, .modal").on("click", function(){
-          $(".wrap_dark, .modal").hide();
-        });
-      // footer_gnb에 focusin되면 모달 팝업창 꺼지게 설정(탭키 접근)
-        $(".footer_gnb").on("focusin", function(){
-          $(".wrap_dark, .modal").hide();
-        });
-
-        //슬라이딩 윈도우
-      var $window_width = $(window).width();
-      if($window_width < 769){
-  			$(".room_info_desc ul").prepend($(".room_info_desc ul li:last"));
-  			$(".room_info_desc ul").css({"marginLeft":"-100%"});
-
-        $(".next").on("click focusin", function(){
-  				$(".room_info_desc ul").stop().animate({"marginLeft":"-=100%"},1000,"swing",function(){
-  					$(this)
-              .append($(".room_info_desc ul li:first"))
-  					  .css({"marginLeft":"-100%"},{"height":"auto"});
-  				});
-  			});
-  			$(".prev").on("click focusin", function(){
-  				$(".room_info_desc ul").stop().animate({"marginLeft":"+=100%"},1000,"swing",function(){
-  					$(this)
-              .prepend($(".room_info_desc ul li:last"))
-  					  .css({"marginLeft":"-100%"},{"height":"auto"});
-  				});
-        });
-      }
-		});
   </script>
  </head>
 
@@ -217,9 +161,9 @@
   							<li class="m_sub_gnb m_gnb_contact">
   								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
                   <ul class="m_sub_gnb_list">
-  									<li><a href="notice.html" title="공지사항 페이지로 이동">공지사항</a></li>
-  									<li><a href="qna.html" title="QnA  페이지로 이동">QnA</a></li>
-  									<li><a href="review.html" title="여행후기 페이지로 이동">여행후기</a></li>
+  									<li><a href="notice_list.php" title="공지사항 페이지로 이동">공지사항</a></li>
+  									<li><a href="qna_list.php" title="QnA  페이지로 이동">QnA</a></li>
+  									<li><a href="review_list.php" title="여행후기 페이지로 이동">여행후기</a></li>
   								</ul>
   							</li>
   						</ul>
@@ -269,9 +213,9 @@
 							<li class="sub_gnb gnb_contact">
 								<a href="#none" title="contact us 페이지로 이동">contact us<span>∧</span></a>
                 <ul class="sub_gnb_list">
-                  <li><a href="notice.html" title="공지사항 페이지로 이동">공지사항</a></li>
-                  <li><a href="qna.html" title="QnA  페이지로 이동">QnA</a></li>
-                  <li><a href="review.html" title="여행후기 페이지로 이동">여행후기</a></li>
+                  <li><a href="notice_list.php" title="공지사항 페이지로 이동">공지사항</a></li>
+                  <li><a href="qna_list.php" title="QnA  페이지로 이동">QnA</a></li>
+                  <li><a href="review_list.php" title="여행후기 페이지로 이동">여행후기</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -515,7 +459,7 @@
               </li>
             </ul>
             <p class="copyright">
-              Copyright 2016 YSH&copy; all rights reserved
+              Copyright 2017 YSH&copy; all rights reserved
             </p>
           </div>
         </div>
