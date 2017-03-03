@@ -7,12 +7,19 @@
 
 @media all and (min-width:769px) and (max-width:1024px){
 /*########################## header 769 ~ 1024px ###############################*/
+	#header{width:100%; height:50px;}
+		h1{width:140px; height:30px; margin-left:-70px; top:5px;}
+		.d_gnb{display:none;}
+		.gnb{display:none;}
+		.nav{display:none;}
+		.m_header_btn{display:block;}
+
 /*#################### gnb 769 ~ 1024px #######################*/
 	.sub_gnb_list li a{color:#fff; font-size:11px; padding:0 5px;}
 
 /*########################## content 769 ~ 1024px ##############################*/
 /*#################### visual 769 ~ 1024px ########################*/
-	.slide_area{padding-top:90px;}
+	.slide_area{padding-top:50px;}
 		.slide_area ul{height:500px;}
 			.slide_area_title hr{width:150px;}
 			.slide_area_title h2{font-size:32px; letter-spacing:4px;}

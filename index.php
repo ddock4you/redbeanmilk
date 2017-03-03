@@ -22,7 +22,7 @@
   <link rel="stylesheet" type="text/css" href="css/reset.css"/>
 	<link rel="stylesheet" type="text/css" href="css/header_footer.css"/>
 	<link rel="stylesheet" type="text/css" href="css/index.css"/>
-  <link rel="stylesheet" type="text/css" href="css/media/media_index.css"/>
+  <link rel="stylesheet" type="text/css" href="css/media/index.css"/>
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
@@ -30,6 +30,7 @@
   <script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js"></script>
   <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
   <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=bcde93ee515681c5691cb8c330d5ca6a"></script>
 
   <!--[if IE 8]>
 		<link rel="stylesheet" type="text/css" href="css/cross/ie8_index.css"/>
@@ -87,27 +88,26 @@
 		 //Room 선택 영역
        //Room hover하면 hover된 영역에 글자 애니메이션 표시
         if($window_width > 768){
-          $(".room_area ul li a div").css({color:"#bbb"});
+          $(".room_area ul li a div").css({color:"#cfcfcf"});
 
           $(".room_area ul li a").on("mouseover focusin", function(){
-            $(".room_area ul li a div").stop().animate({top:"45%", color:"#bbb"});
+            $(".room_area ul li a div").stop().animate({top:"45%", color:"#cfcfcf"});
             $(this).children("div").stop().animate({top:"35%", color:"#fff"});
           })
           .on("mouseout focusout", function(){
-            $(this).children("div").stop().animate({top:"45%", color:"#bbb"});
+            $(this).children("div").stop().animate({top:"45%", color:"#cfcfcf"});
           });
         }
      //Room click하면 선택한 room image를 Room_info 부모영역에 표시
      //hover로 하면 같은 영역에서도 hover인식이 여러번되서 뺐음.
-       $(".room_select li").on("click", function(){
+       $(".room_select li").on("mouseenter", function(){
          var room_name=["_alie","_amant","_mister","_hobby","_blancnoir","_mienne","_missa","_bonjour"],
              $room_number=$(this).index();
 
          $(".room_area img").before("<img src='img/room_info/0"+$room_number+room_name[$room_number]+".jpg' alt='방 이미지'/>");
-           $(".room_area img:last").fadeOut(300, function(){
+           $(".room_area img:gt(0)").fadeOut(300, function(){
              $(this).remove();
          });
-         return false;
        });
 
       //special hover 기능
@@ -127,25 +127,33 @@
           });
         }
 
-      //special 마우스 드래그 기능(정상작동 안됨)
-        $("#special").on("mousedown", special_drag);
+				//special 슬라이딩 윈도우
+				$(".film_special").prepend($(".film_special li:last"));
 
-          function special_drag(event){
-    			var lastMouseX = event.pageX;
+				$(window).on("resize", function(){
+					$window_width=$(window).width();
+					
+					if($window_width > 768){
+						$(".film_special").css({"marginLeft":"-300px"});
+					}else{
+						$(".film_special").css({"marginLeft":"0"});
+					}
+					console.log($window_width);
+				});
 
-    			$(document).on("mousemove", function(event){
-    				if( lastMouseX - event.pageX >= 20){
-    					lastMouseX = event.pageX;
-              $(".film_special").css({"marginLeft":lastMouseX});
 
-    				}else if (lastMouseX - event.pageX <= -20){
-    					lastMouseX = event.pageX;
-              $(".film_special").css({"marginLeft":lastMouseX});
-    				}
-    			});
+				$(".next").on("click focusin", function(){
+					$(".film_special").stop().animate({"marginLeft":"-=300px"},500,"swing",function(){
+						$(this).append($(".film_special li:first")).css({"marginLeft":"-300px"});
 
-    			$(document).on("mouseup", function(){ $(document).off("mousemove"); });
-    		}
+					});
+				});
+				$(".prev").on("click focusin", function(){
+					$(".film_special").stop().animate({"marginLeft":"+=300px"},500,"swing",function(){
+						$(this).prepend($(".film_special li:last")).css({"marginLeft":"-300px"});
+
+					});
+				});
 
     //tour hover 기능
       if($window_width > 1024){
@@ -161,6 +169,26 @@
       else{
         $(".pic_back").animate({bottom:"10%", left:"10%"},400);
       }
+
+			//daum Map API 연동
+	    var container = document.getElementById('location_area');
+			var options = {
+				center: new daum.maps.LatLng(37.904981, 127.45361589999993),
+				level: 3
+			};
+
+			var map = new daum.maps.Map(container, options);
+
+	    // 마커가 표시될 위치입니다
+	    var markerPosition  = new daum.maps.LatLng(37.904981, 127.45361589999993);
+
+	    // 마커를 생성합니다
+	    var marker = new daum.maps.Marker({
+	        position: markerPosition
+	    });
+
+	    // 마커가 지도 위에 표시되도록 설정합니다
+	    marker.setMap(map);
 		});
 
   </script>
@@ -179,7 +207,7 @@
 								<input id="userid" type="text" name="userid" required placeholder="ID 입력"/>
 							</p>
 							<p class="input_userpw">
-								<input id="userpw" type="password" name="userpw" required placeholder="Password 입력" autocomplete=off />
+								<input id="userpw" type="password" name="userpw" required placeholder="Password 입력" autocomplete=off/>
 							</p>
               <p class="input_btn_login">
                 <input id="btn_login" type="submit" name="btn_login" value="LOGIN"/>
@@ -533,9 +561,6 @@
 			<div id="special">
 				<h2>special</h2>
 				<div class="special_area">
-				<p class="scroll">
-					<span class="stick"></span>
-				</p>
 					<ul class="film_special">
 						<li class="right spe00_pool">
 							<a href="special00_pool.html" title="온수수영장 상세 페이지로 이동">
@@ -607,8 +632,13 @@
 								<h4>service</h4>
 							</a>
 						</li>
-
 					</ul>
+					<p class="next">
+						<img src="img/btn_next_darkgrey.png" alt="다음 이미지"/>
+					</p>
+					<p class="prev">
+						<img src="img/btn_prev_darkgrey.png" alt="이전 이미지"/>
+					</p>
 				</div>
 			</div>
 			<div id="tour">
@@ -649,26 +679,7 @@
         <h2>
           location
         </h2>
-        <div class="location_area">
-          <a href="location.html" title="location 페이지로 이동">
-            <div class="location_text_area">
-              <p class="location_text">
-                <strong>Clare Location</strong>
-                경기도 가평군<br/>
-                북면 백둔리<br/>
-                455-18번지
-              </p>
-              <p class="location_text location_phone">
-                <img src="img/icon_phone_white.png" alt="전화번호 이미지"/>
-                010.9543.9177
-              </p>
-              <p class="more_info">
-                More Info
-              </p>
-            </div>
-            <p class="location_img">
-            </p>
-          </a>
+        <div class="location_area" id="location_area">
         </div>
       </div>
 		</div>

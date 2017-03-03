@@ -131,6 +131,7 @@ body{width:100%; height:100%; font-family:"Montserrat", Noto Sans; margin:0;}
 /*###################### m_header ##########################*/
 	.m_header{
 						width:320px;
+						height:100%;
 						position:fixed;
 						top:5px;
 						left:-320px;

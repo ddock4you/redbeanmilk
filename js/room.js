@@ -18,15 +18,38 @@ $(function(){
         $(".modal_area li:eq("+i+")").css({"background-image":"url(img/room_info/room"+room_name_no+"/"+i+".jpg)"});
       }
     // 모달 팝업
+      var j;
       $(".wrap_dark, .modal").hide();
       $(".modal_area li a").on("click focusin", function(){
-        var j = $(this).parent().index();
-        $(".modal").css({"background-image":"url(img/room_info/room"+room_name_no+"/"+j+".jpg)"});
+        j = $(this).parent().index();
+
+        $(".view").css({"background-image":"url(img/room_info/room"+room_name_no+"/"+j+".jpg)"});
         $(".wrap_dark, .modal").show();
-        return false;
       });
 
-      $(".wrap_dark, .modal").on("click", function(){
+      $(".modal_next").on("click", function(){
+        j += 1;
+        if(j==21){
+          j=0;
+        }
+        else if(j==-1){
+          j=20;
+        }
+        $(".view").css({"background-image":"url(img/room_info/room"+room_name_no+"/"+j+".jpg)"});
+
+      });
+      $(".modal_prev").on("click", function(){
+        j -= 1;
+        if(j==21){
+          j=0;
+        }
+        else if(j==-1){
+          j=20;
+        }
+        $(".view").css({"background-image":"url(img/room_info/room"+room_name_no+"/"+j+".jpg)"});
+      });
+
+      $(".view, .wrap_dark").on("click", function(){
         $(".wrap_dark, .modal").hide();
       });
     // footer_gnb에 focusin되면 모달 팝업창 꺼지게 설정(탭키 접근)
