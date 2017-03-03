@@ -1,12 +1,36 @@
 $(function(){
+    $window_width = $(window).width();
+    $window_height = $(window).height();
+
     // slide 텍스트 애니메이션 효과
     $(".slide_area_title").hide().fadeIn(1000);
     $(".slide_area_text").hide().fadeIn(500);
 
     //슬라이드 화면 높이 설정(pc에만 적용)
-    if($window_width > 1024){
-      $(".slide_area ul").height($(window).height());
-    }
+
+
+    $(".slide_area ul").css({"height":$window_height});
+
+    $(window).on("resize", function(){
+      $window_width = $(window).width();
+      $window_height = $(window).height();
+
+      if($window_width < 481){
+        $(".slide_area ul").css({"height":"200px"});
+      }
+
+      else if($window_width < 769){
+        $(".slide_area ul").css({"height":"300px"});
+      }
+
+      else if($window_width < 1024){
+        $(".slide_area ul").css({"height":"500px"});
+      }
+      else{
+        $(".slide_area ul").css({"height":$window_height});
+      }
+    });
+
     //슬라이딩 윈도우
     $(".slide_area ul").prepend($(".slide_area ul li:last"));
     $(".slide_area ul").css({"marginLeft":"-100%"});
