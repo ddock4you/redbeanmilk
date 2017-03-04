@@ -30,22 +30,22 @@ $(function(){
 
       $(".modal_next").on("click", function(){
         j += 1;
-        if(j==21){
+        if(j==20){
           j=0;
         }
         else if(j==-1){
-          j=20;
+          j=19;
         }
         $(".view").css({"background-image":"url(img/room_info/room"+room_name_no+"/"+j+".jpg)"});
 
       });
       $(".modal_prev").on("click", function(){
         j -= 1;
-        if(j==21){
+        if(j==20){
           j=0;
         }
         else if(j==-1){
-          j=20;
+          j=19;
         }
         $(".view").css({"background-image":"url(img/room_info/room"+room_name_no+"/"+j+".jpg)"});
       });
@@ -68,7 +68,9 @@ $(function(){
        $window_width = $(window).width();
        if($window_width < 769){
          slide_room_info();
-       }
+       }else{
+            $(".room_info_desc ul").css({"margin":"0 auto"});
+          }
      });
 
      if($window_width < 769){
@@ -76,9 +78,10 @@ $(function(){
      }
 
          $(".room_info_desc ul").prepend($(".room_info_desc ul li:last"));
-         $(".room_info_desc ul").css({"marginLeft":"-100%"});
+
 
         function slide_room_info(){
+        $(".room_info_desc ul").css({"marginLeft":"-100%"});
          $(".next").on("click focusin", function(){
            $(".room_info_desc ul").stop().animate({"marginLeft":"-=100%"},500,"swing",function(){
              $(this)

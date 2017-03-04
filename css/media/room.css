@@ -43,8 +43,8 @@
 /*################## room_info 769 ~ 1024px ######################*/
 		.room_info_desc{height:550px;}
 			.room_info_desc ul{width:750px; height:100%; margin:50px auto;}
-				.room_info_desc ul li{width:360px; height:230px; margin-right:30px; margin-top:30px; background-color:#fff; float:left;}
-					.room_info_desc ul li.right{margin-right:0;}
+				.room_info_desc ul li{width:360px; height:230px; margin-right:0; margin-top:30px; background-color:#fff; float:left;}
+					.room_info_desc ul li.right{margin-right:30px;}
 
 					.room_info_desc ul li p.icon{width:30px; height:30px; margin:25px auto;}
 					p.object{font-size:12px;}
