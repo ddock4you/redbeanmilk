@@ -21,6 +21,7 @@
    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
    <link rel="stylesheet" type="text/css" href="css/header_footer.css"/>
    <link rel="stylesheet" type="text/css" href="css/m_login.css"/>
+	 <link rel="stylesheet" type="text/css" href="css/media/index.css"/>
    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>

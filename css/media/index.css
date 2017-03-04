@@ -181,9 +181,9 @@
 
 /*################### special 320 ~ 480px ######################*/
 	#special{height:580px;}
-		#special h2{padding-top:10px;}
+		#special h2{padding:10px 0;}
 		/*높이값 = #special - #special h2(padding) - .special_area(padding)*/
-		.special_area{height:546px; padding-top:10px;}
+		.special_area{height:546px;}
 			.stick{display:none;}
 			.film_special{width:100%; height:100%; padding-top:0;}
 				.film_special li{width:50%; height:110px; border-radius:0; margin-right:0; border-bottom:1px solid #fff; box-sizing:border-box;}
