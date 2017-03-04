@@ -42,6 +42,7 @@
 
 
   $(function(){
+			var $window_width = $(window).width();
     //visual 이미지 높이값 설정
       $(".visual_main").css({"height":$(window).height()});
 
@@ -132,14 +133,14 @@
 
 				$(window).on("resize", function(){
 					$window_width=$(window).width();
-					
-					if($window_width > 768){
-						$(".film_special").css({"marginLeft":"-300px"});
-					}else{
+
+					if($window_width < 769){
 						$(".film_special").css({"marginLeft":"0"});
 					}
-					console.log($window_width);
 				});
+				if($window_width > 769){
+				$(".film_special").css({"marginLeft":"-300px"});
+				}
 
 
 				$(".next").on("click focusin", function(){

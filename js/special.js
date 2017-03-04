@@ -7,13 +7,14 @@ $(function(){
     $(".slide_area_text").hide().fadeIn(500);
 
     //슬라이드 화면 높이 설정(pc에만 적용)
+    if($window_width > 1025){
 
-
-    $(".slide_area ul").css({"height":$window_height});
+      $(".slide_area ul").css({"height":$window_height});
+    }
+    console.log($window_width);
 
     $(window).on("resize", function(){
       $window_width = $(window).width();
-      $window_height = $(window).height();
 
       if($window_width < 481){
         $(".slide_area ul").css({"height":"200px"});
@@ -23,7 +24,7 @@ $(function(){
         $(".slide_area ul").css({"height":"300px"});
       }
 
-      else if($window_width < 1024){
+      else if($window_width < 1025){
         $(".slide_area ul").css({"height":"500px"});
       }
       else{
