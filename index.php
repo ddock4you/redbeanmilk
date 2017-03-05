@@ -501,11 +501,11 @@
 										</div>
 									</a>
 								</li>
-								<li class="bottom pre02_mistere">
+								<li class="bottom pre02_mister">
                   <span class="dark"></span>
-									<a href="room02_mistere.html" title="mistere 방 상세 페이지로 이동">
-										<div class="pre02_mistere_text">
-											<h4>mistere</h4>
+									<a href="room02_mister.html" title="mister 방 상세 페이지로 이동">
+										<div class="pre02_mister_text">
+											<h4>mister</h4>
 											<p>SEMICLASSIC &amp; MODERN</p>
 										</div>
 									</a>
@@ -519,11 +519,11 @@
 										</div>
 									</a>
 								</li>
-								<li class="pre04_blancmoir">
+								<li class="pre04_blancnoir">
                   <span class="dark"></span>
-									<a href="room04_blancmoir.html" title="blancmoir 방 상세 페이지로 이동">
+									<a href="room04_blancnoir.html" title="blancnoir 방 상세 페이지로 이동">
 										<div class="pre04_blancmoir_text">
-											<h4>blancmoir</h4>
+											<h4>blancnoir</h4>
 											<p>SEMICLASSIC &amp; MODERN</p>
 										</div>
 									</a>
@@ -537,20 +537,20 @@
 										</div>
 									</a>
 								</li>
-								<li class="pre06_rosa">
+								<li class="pre06_missa">
                   <span class="dark"></span>
-									<a href="room06_rosa.html" title="rosa 방 상세 페이지로 이동">
+									<a href="room06_missa.html" title="misa 방 상세 페이지로 이동">
 										<div class="pre06_rosa_text">
-											<h4>rosa</h4>
+											<h4>missa</h4>
 											<p>WHITE  &amp; MODERN</p>
 										</div>
 									</a>
 								</li>
-								<li class="pre07_bonuour">
+								<li class="pre07_bonjour">
                   <span class="dark"></span>
-									<a href="room07_bonuour.html" title="bonuour 방 상세 페이지로 이동">
-										<div class="pre07_bonuour_text">
-											<h4>bonuour</h4>
+									<a href="room07_bonjour.html" title="bonjour 방 상세 페이지로 이동">
+										<div class="pre07_bonjour_text">
+											<h4>bonjour</h4>
 											<p>CUTE &amp; LUMINOUS</p>
 										</div>
 									</a>

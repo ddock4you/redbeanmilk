@@ -28,7 +28,7 @@
 
 	if($result){
 		echo "<script> alert('회원가입에 성공했습니다!');</script>";
-		echo "<meta http-equiv='Refresh' content='1; url=index.html'/>";
+		echo "<meta http-equiv='Refresh' content='1; url=index.php'/>";
 	}
 	else{
 		echo "<script> alert('회원가입에 실패했습니다. 다시 시도해주세요.');</script>";

@@ -169,13 +169,13 @@
           user_id.focus();
           return false;
         }
-
+        /*
         id_match = "중복된 아이디입니다.";
         if(id_match.value == result_id_chk.value){
           alert("이미 가입된 아이디가 있습니다.\n다른 아이디를 입력해주세요.");
           user_id.focus();
           return false;
-        }
+        }*/
   }
   // 전체 동의 버튼
     full_accept = document.getElementById("full_accept");

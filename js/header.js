@@ -2,9 +2,18 @@ $(function(){
   //로그인 창 on / off
     $("#top_headerWrap").hide();
 
+    var login_switch = 0;
+
     $(".login_btn").on("click focusin", function(){
-      $("#top_headerWrap").stop().slideDown(500);
-      $(".wrap_dark").stop().fadeIn(500);
+      if(login_switch == 0){
+        $("#top_headerWrap").stop().slideDown(500);
+        $(".wrap_dark").stop().fadeIn(500);
+        login_switch = 1;
+      }else{
+        $("#top_headerWrap").stop().slideUp(500);
+        $(".wrap_dark").stop().fadeOut(500);
+        login_switch = 0;
+      }
     });
 
     $(".wrap_dark").on("click focusin", function(){
