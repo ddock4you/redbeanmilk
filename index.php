@@ -205,10 +205,12 @@
             <h2>LOGIN</h2>
             <div class="input_user">
 							<p class="input_userid">
+								<label for="userid" class="blind">id 입력</label>
 								<input id="userid" type="text" name="userid" required placeholder="ID 입력"/>
 							</p>
 							<p class="input_userpw">
-								<input id="userpw" type="password" name="userpw" required placeholder="Password 입력" autocomplete=off/>
+								<label for="userpw" class="blind">password 입력</label>
+								<input id="userpw" type="password" name="userpw" required placeholder="Password 입력" autocomplete=off />
 							</p>
               <p class="input_btn_login">
                 <input id="btn_login" type="submit" name="btn_login" value="LOGIN"/>
