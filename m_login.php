@@ -237,13 +237,13 @@
           <h2>LOGIN</h2>
           <div class="m_input_user">
             <p class="m_input_userid">
-              <input id="userid" type="text" name="userid" required placeholder="ID 입력"/>
+              <input id="m_userid" type="text" name="userid" required placeholder="ID 입력"/>
             </p>
             <p class="m_input_userpw">
-              <input id="userpw" type="password" name="userpw" required placeholder="Password 입력" autocomplete=off />
+              <input id="m_userpw" type="password" name="userpw" required placeholder="Password 입력" autocomplete=off />
             </p>
             <p class="m_input_btn_login">
-              <input id="btn_login" type="submit" name="btn_login" value="LOGIN"/>
+              <input id="m_btn_login" type="submit" name="btn_login" value="LOGIN"/>
             </p>
           </div>
           <div class="m_input_etc">

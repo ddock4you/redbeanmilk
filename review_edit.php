@@ -259,7 +259,7 @@
 					<label for="user">작성자</label><input type="text" id="user" name="user" value="<?=$row['name']?>"/>
 				</p>
         <p>
-          <label for="userpw">비밀번호</label><input type="password" id="userpw" name="userpw" value="<?=$row['pass']?>" readonly/>
+          <label for="m_userpw">비밀번호</label><input type="password" id="m_userpw" name="userpw" value="<?=$row['pass']?>" readonly/>
         </p>
         <p>
 					<label for="email">이메일</label><input type="email" id="email" name="email" value="<?=$row['email']?>"/>

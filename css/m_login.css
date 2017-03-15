@@ -15,7 +15,7 @@
 														box-sizing:border-box;
 													 }
 				p.m_input_btn_login input{background-color:#2B2727; color:#fff; border:2px solid #2B2727;}
-					#userid, #userpw{text-indent:12px;}
+					#m_userid, #m_userpw{text-indent:12px;}
 
 		.m_input_etc{width:100%; margin:0 auto; text-align:center;}
 			.m_input_etc ul:after{content:""; display:block; clear:both;}

@@ -252,9 +252,10 @@
           <p class="result_pw_chk"></p>
         </div>
         <div class="input_area user_email_area">
-          <label for="user_front_email" class="basic_label">이메일</label>
+          <label for="user_front_email" class="basic_label">이메일 앞자리</label>
           <input id="user_front_email" type="text" name="user_front_email" required maxlength="16"/>
           @
+          <label for="user_back_email" class="blind">이메일 뒷자리</label>
           <input id="user_back_email" type="text" name="user_back_email" required maxlength="16"/>
           <select name="user_back_select_email" id="user_back_select_email">
             <option value="selected" selected>선택하세요.</option>
@@ -281,11 +282,13 @@
           </select>
         </div>
         <div class="input_area user_phone">
-          <label for="user_phone_first" class="basic_label">휴대폰 번호</label>
+          <label for="user_phone_first" class="basic_label">휴대폰 번호 앞자리</label>
           <input id="user_phone_first" type="text" name="user_phone_first" required maxlength="3"/>
           -
+          <label for="user_phone_second" class="basic_label">휴대폰 번호 중간자리</label>
           <input id="user_phone_second" type="text" name="user_phone_second" required maxlength="4"/>
           -
+          <label for="user_phone_last" class="basic_label">휴대폰 번호 뒷자리</label>
           <input id="user_phone_last" type="text" name="user_phone_last" required maxlength="4"/>
         </div>
         <div class="btn_group">
@@ -300,19 +303,19 @@
             <h3>고객 동의</h3>
             <span class="accept_area">
               <label for="full_accept">전체 동의 </label><input id="full_accept" type="checkbox" name="full_accept"/>
-            </p>
+            </span>
           </li>
           <li>
             <div class="terms_title">
               <a href="#none" title="이용약관">
-                <h4><span>V</span> 이용약관</h3>
+                <h3><span>V</span> 이용약관</h3>
               </a>
               <span class="accept_area">
                 <label for="accept_1">동의합니다. </label><input id="accept_1" type="checkbox" name="accecpt_1">
               </span>
             </div>
             <div class="terms_text">
-              <textarea name="use_text" id="use_text" cols="30" rows="10">
+              <textarea name="use_text" class="use_text" cols="30" rows="10">
                 인터넷 쇼핑몰 『 (주)끌레르 사이버 몰』회원 약관
 
 
@@ -636,7 +639,7 @@
               </span>
             </div>
             <div class="terms_text">
-              <textarea name="use_text" id="use_text" cols="30" rows="10">
+              <textarea name="use_text" class="use_text" cols="30" rows="10">
                 인터넷 쇼핑몰 『 (주)끌레르 사이버 몰』회원 약관
 
 

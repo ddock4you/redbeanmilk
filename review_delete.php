@@ -250,7 +250,7 @@
 		  <form class="board_write" action="review_delete_control.php?no=<?=$row['no']?>" method="POST">
 				<legend class="blind">게시판 글 작성</legend>
         <p>
-          <label for="userpw">비밀번호</label><input type="text" id="userpw" name="userpw" value="<?=$row['pass']?>"/>
+          <label for="m_userpw">비밀번호</label><input type="text" id="m_userpw" name="userpw" value="<?=$row['pass']?>"/>
         </p>
 			  <div class="btn_group">
           <input class="button" type="submit" value="완료"/>
