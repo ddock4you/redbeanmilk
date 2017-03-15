@@ -237,9 +237,11 @@
           <h2>LOGIN</h2>
           <div class="m_input_user">
             <p class="m_input_userid">
+							<label for="m_userid" class="blind">id 입력</label>
               <input id="m_userid" type="text" name="userid" required placeholder="ID 입력"/>
             </p>
             <p class="m_input_userpw">
+							<label for="m_userpw" class="blind">password 입력</label>
               <input id="m_userpw" type="password" name="userpw" required placeholder="Password 입력" autocomplete=off />
             </p>
             <p class="m_input_btn_login">
