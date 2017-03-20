@@ -236,7 +236,12 @@
         <div class="nav"><!--로그인 관련 gnb-->
           <ul>
             <li class="login">
+							<?php if(empty($_SESSION['userid'])){ ?>
               <a class="login_btn" href="#none" title="login page 열기">log in</a>
+              <?php }else{?>
+                <span class="login_user">[<strong style='color:#f09;'><?=$_SESSION['userid']?></strong>] 님 환영합니다.</span>
+                <span>*</span><a href="logout.php" title="login">LOGOUT</a>
+          	<?php  }?>
             </li>
             <li class="joinus">
               <a href="form.html" title="join us 열기">join us</a>
